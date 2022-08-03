@@ -1,0 +1,177 @@
+timestamp=[2022-01-03 22:04:40], mode=WORKBENCH_START, duration=0:00:08.709, duration_ms=8709, data={}
+timestamp=[2022-01-03 22:04:40], mode=WORKBENCH_UI_INIT, duration=0:00:00.289, duration_ms=289, data={editors_count=0, platform_editors_count=0, projects_count=0, platform_projects_count=0, active_platform_editor=false, projects=}
+timestamp=[2022-01-03 22:04:41], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.070, duration_ms=70, data={}
+timestamp=[2022-01-03 22:06:58], mode=APP_CREATION, duration=0:00:17.113, duration_ms=17113, data={name=spi_and_LVDS_tests, project_type=sdk, os=standalone, processor=ps7_cortexa9, runtime=cpp, platform=top_wrapper, application_type=application}
+timestamp=[2022-01-03 22:08:22], mode=PLATFORM_GENERATION, duration=0:00:17.385, duration_ms=17385, data={name=top_wrapper}
+timestamp=[2022-01-03 22:08:25], mode=BUILD, duration=0:00:00.831, duration_ms=831, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-03 22:10:09], mode=BUILD, duration=0:00:00.574, duration_ms=574, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-03 22:12:08], mode=BUILD, duration=0:00:00.574, duration_ms=574, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-03 22:12:14], mode=BUILD, duration=0:00:00.274, duration_ms=274, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-04 12:24:57], mode=BUILD, duration=0:00:02.629, duration_ms=2629, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-04 12:37:22], mode=BUILD, duration=0:00:00.627, duration_ms=627, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-04 15:46:32], mode=BUILD, duration=0:00:00.579, duration_ms=579, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-04 15:50:35], mode=BUILD, duration=0:00:00.575, duration_ms=575, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-04 15:51:37], mode=BUILD, duration=0:00:00.576, duration_ms=576, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-04 19:48:46], mode=BUILD, duration=0:00:00.776, duration_ms=776, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-04 19:56:58], mode=BUILD, duration=0:00:00.575, duration_ms=575, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-04 19:57:14], mode=BUILD, duration=0:00:00.273, duration_ms=273, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-04 20:34:27], mode=PLATFORM_GENERATION, duration=0:00:13.019, duration_ms=13019, data={name=top_wrapper}
+timestamp=[2022-01-04 20:34:29], mode=BUILD, duration=0:00:01.276, duration_ms=1276, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-04 23:46:08], mode=PLATFORM_GENERATION, duration=0:00:15.436, duration_ms=15436, data={name=top_wrapper}
+timestamp=[2022-01-04 23:46:13], mode=BUILD, duration=0:00:03.179, duration_ms=3179, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-05 11:45:59], mode=PLATFORM_GENERATION, duration=0:00:44.638, duration_ms=44638, data={name=top_wrapper}
+timestamp=[2022-01-05 11:46:01], mode=BUILD, duration=0:00:00.426, duration_ms=426, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-05 11:47:16], mode=BUILD, duration=0:00:00.376, duration_ms=376, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-05 11:48:26], mode=BUILD, duration=0:00:00.379, duration_ms=379, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-05 11:48:56], mode=BUILD, duration=0:00:00.377, duration_ms=377, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-05 11:51:14], mode=BUILD, duration=0:00:01.431, duration_ms=1431, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-05 11:52:47], mode=BUILD, duration=0:00:00.677, duration_ms=677, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-05 20:20:48], mode=BUILD, duration=0:00:01.092, duration_ms=1092, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-05 20:24:38], mode=BUILD, duration=0:00:00.375, duration_ms=375, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-05 20:26:48], mode=BUILD, duration=0:00:00.382, duration_ms=382, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-05 20:28:36], mode=BUILD, duration=0:00:00.376, duration_ms=376, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-05 20:29:14], mode=BUILD, duration=0:00:00.378, duration_ms=378, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-05 20:29:58], mode=BUILD, duration=0:00:00.888, duration_ms=888, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-05 20:41:49], mode=BUILD, duration=0:00:00.579, duration_ms=579, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-05 20:46:01], mode=BUILD, duration=0:00:00.580, duration_ms=580, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-05 20:50:29], mode=BUILD, duration=0:00:00.630, duration_ms=630, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-05 22:10:23], mode=BUILD, duration=0:00:00.732, duration_ms=732, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-05 22:10:37], mode=BUILD, duration=0:00:00.681, duration_ms=681, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-05 22:15:37], mode=BUILD, duration=0:00:00.680, duration_ms=680, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-05 22:19:51], mode=BUILD, duration=0:00:00.378, duration_ms=378, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-05 22:20:22], mode=BUILD, duration=0:00:00.378, duration_ms=378, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-05 22:20:44], mode=BUILD, duration=0:00:00.579, duration_ms=579, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-05 23:24:25], mode=BUILD, duration=0:00:00.885, duration_ms=885, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-05 23:27:08], mode=BUILD, duration=0:00:00.380, duration_ms=380, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-05 23:31:29], mode=BUILD, duration=0:00:00.493, duration_ms=493, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-05 23:31:45], mode=BUILD, duration=0:00:00.690, duration_ms=690, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-05 23:34:18], mode=BUILD, duration=0:00:00.694, duration_ms=694, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-05 23:36:51], mode=BUILD, duration=0:00:00.684, duration_ms=684, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-05 23:37:57], mode=BUILD, duration=0:00:00.685, duration_ms=685, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-05 23:38:26], mode=BUILD, duration=0:00:00.685, duration_ms=685, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-05 23:40:19], mode=BUILD, duration=0:00:00.687, duration_ms=687, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-05 23:43:57], mode=BUILD, duration=0:00:00.684, duration_ms=684, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-05 23:47:22], mode=BUILD, duration=0:00:00.690, duration_ms=690, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-05 23:50:41], mode=BUILD, duration=0:00:00.686, duration_ms=686, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-05 23:52:40], mode=BUILD, duration=0:00:00.430, duration_ms=430, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-05 23:53:04], mode=BUILD, duration=0:00:00.434, duration_ms=434, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-05 23:53:20], mode=BUILD, duration=0:00:00.690, duration_ms=690, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-05 23:55:16], mode=BUILD, duration=0:00:00.683, duration_ms=683, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-05 23:56:21], mode=BUILD, duration=0:00:00.741, duration_ms=741, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-05 23:57:20], mode=BUILD, duration=0:00:00.732, duration_ms=732, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-05 23:58:03], mode=BUILD, duration=0:00:00.733, duration_ms=733, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 00:12:08], mode=BUILD, duration=0:00:00.686, duration_ms=686, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 00:20:23], mode=BUILD, duration=0:00:00.689, duration_ms=689, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 00:28:36], mode=BUILD, duration=0:00:00.434, duration_ms=434, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 00:33:05], mode=BUILD, duration=0:00:00.432, duration_ms=432, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 00:33:26], mode=BUILD, duration=0:00:00.684, duration_ms=684, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 00:35:07], mode=BUILD, duration=0:00:00.434, duration_ms=434, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 00:35:19], mode=BUILD, duration=0:00:00.439, duration_ms=439, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 00:36:00], mode=BUILD, duration=0:00:00.430, duration_ms=430, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 00:37:39], mode=BUILD, duration=0:00:00.431, duration_ms=431, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 00:41:12], mode=BUILD, duration=0:00:00.683, duration_ms=683, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 00:42:03], mode=BUILD, duration=0:00:00.684, duration_ms=684, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 00:46:38], mode=BUILD, duration=0:00:00.687, duration_ms=687, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 00:49:57], mode=BUILD, duration=0:00:00.691, duration_ms=691, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 01:08:10], mode=BUILD, duration=0:00:00.686, duration_ms=686, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 01:19:52], mode=BUILD, duration=0:00:00.434, duration_ms=434, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 01:20:22], mode=BUILD, duration=0:00:00.933, duration_ms=933, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 01:21:49], mode=BUILD, duration=0:00:00.739, duration_ms=739, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 01:24:53], mode=BUILD, duration=0:00:00.684, duration_ms=684, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 01:27:47], mode=BUILD, duration=0:00:00.435, duration_ms=435, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 01:28:12], mode=BUILD, duration=0:00:00.685, duration_ms=685, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 01:34:28], mode=BUILD, duration=0:00:00.685, duration_ms=685, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 01:36:33], mode=BUILD, duration=0:00:00.431, duration_ms=431, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 01:37:44], mode=BUILD, duration=0:00:00.684, duration_ms=684, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 01:39:08], mode=BUILD, duration=0:00:00.681, duration_ms=681, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 01:44:07], mode=BUILD, duration=0:00:00.684, duration_ms=684, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 01:46:36], mode=BUILD, duration=0:00:00.684, duration_ms=684, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 01:48:47], mode=BUILD, duration=0:00:00.681, duration_ms=681, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 01:50:30], mode=BUILD, duration=0:00:00.683, duration_ms=683, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 02:03:26], mode=BUILD, duration=0:00:00.379, duration_ms=379, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 02:03:50], mode=BUILD, duration=0:00:00.582, duration_ms=582, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 02:04:39], mode=BUILD, duration=0:00:00.581, duration_ms=581, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 02:05:37], mode=BUILD, duration=0:00:00.681, duration_ms=681, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 02:08:05], mode=BUILD, duration=0:00:00.583, duration_ms=583, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 02:09:31], mode=BUILD, duration=0:00:00.579, duration_ms=579, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 02:10:58], mode=BUILD, duration=0:00:00.585, duration_ms=585, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 02:11:46], mode=BUILD, duration=0:00:00.585, duration_ms=585, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 02:12:57], mode=BUILD, duration=0:00:00.630, duration_ms=630, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 02:14:04], mode=BUILD, duration=0:00:00.582, duration_ms=582, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 02:15:23], mode=BUILD, duration=0:00:00.577, duration_ms=577, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 02:18:20], mode=BUILD, duration=0:00:00.581, duration_ms=581, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 02:20:02], mode=BUILD, duration=0:00:00.581, duration_ms=581, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 02:28:07], mode=BUILD, duration=0:00:00.587, duration_ms=587, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 02:29:52], mode=BUILD, duration=0:00:00.578, duration_ms=578, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 02:33:31], mode=BUILD, duration=0:00:00.580, duration_ms=580, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 12:13:44], mode=PLATFORM_GENERATION, duration=0:00:14.978, duration_ms=14978, data={name=top_wrapper}
+timestamp=[2022-01-06 12:13:49], mode=BUILD, duration=0:00:02.284, duration_ms=2284, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 12:18:55], mode=BUILD, duration=0:00:00.431, duration_ms=431, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 12:27:24], mode=BUILD, duration=0:00:01.684, duration_ms=1684, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 13:24:03], mode=BUILD, duration=0:00:00.580, duration_ms=580, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 13:25:20], mode=BUILD, duration=0:00:00.831, duration_ms=831, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 13:26:31], mode=BUILD, duration=0:00:00.379, duration_ms=379, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 13:26:41], mode=BUILD, duration=0:00:00.579, duration_ms=579, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 13:28:25], mode=BUILD, duration=0:00:00.581, duration_ms=581, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 13:29:10], mode=BUILD, duration=0:00:00.580, duration_ms=580, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 13:29:48], mode=BUILD, duration=0:00:00.579, duration_ms=579, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 13:30:42], mode=BUILD, duration=0:00:00.634, duration_ms=634, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 13:32:03], mode=BUILD, duration=0:00:00.580, duration_ms=580, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 14:54:07], mode=BUILD, duration=0:00:00.378, duration_ms=378, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 14:54:29], mode=BUILD, duration=0:00:00.579, duration_ms=579, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 14:59:47], mode=BUILD, duration=0:00:00.630, duration_ms=630, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 15:01:42], mode=BUILD, duration=0:00:00.580, duration_ms=580, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 15:05:59], mode=BUILD, duration=0:00:00.334, duration_ms=334, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 20:10:48], mode=BUILD, duration=0:00:01.834, duration_ms=1834, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 20:11:47], mode=BUILD, duration=0:00:00.639, duration_ms=639, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-06 20:11:53], mode=BUILD, duration=0:00:00.331, duration_ms=331, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-08 21:13:32], mode=BUILD, duration=0:00:00.584, duration_ms=584, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-08 21:21:21], mode=PLATFORM_GENERATION, duration=0:00:17.647, duration_ms=17647, data={name=top_wrapper}
+timestamp=[2022-01-08 21:21:24], mode=BUILD, duration=0:00:00.986, duration_ms=986, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-08 23:13:32], mode=BUILD, duration=0:00:00.287, duration_ms=287, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-11 11:43:40], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.221, duration_ms=221, data={}
+timestamp=[2022-01-11 11:43:42], mode=WORKBENCH_START, duration=0:00:21.692, duration_ms=21692, data={}
+timestamp=[2022-01-11 11:43:47], mode=WORKBENCH_UI_INIT, duration=0:00:05.276, duration_ms=5276, data={editors_count=2, platform_editors_count=0, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,spi_and_LVDS_tests,spi_and_LVDS_tests_system,top_wrapper}
+timestamp=[2022-01-11 12:53:34], mode=BUILD, duration=0:00:03.397, duration_ms=3397, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-01-25 12:42:34], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.022, duration_ms=22, data={}
+timestamp=[2022-01-25 12:42:35], mode=WORKBENCH_START, duration=0:00:14.689, duration_ms=14689, data={}
+timestamp=[2022-01-25 12:42:37], mode=WORKBENCH_UI_INIT, duration=0:00:02.056, duration_ms=2056, data={editors_count=2, platform_editors_count=0, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,spi_and_LVDS_tests,spi_and_LVDS_tests_system,top_wrapper}
+timestamp=[2022-02-01 13:25:02], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:01.434, duration_ms=1434, data={}
+timestamp=[2022-02-01 13:25:04], mode=WORKBENCH_START, duration=0:00:23.594, duration_ms=23594, data={}
+timestamp=[2022-02-01 13:25:11], mode=WORKBENCH_UI_INIT, duration=0:00:07.813, duration_ms=7813, data={editors_count=2, platform_editors_count=0, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,spi_and_LVDS_tests,spi_and_LVDS_tests_system,top_wrapper}
+timestamp=[2022-03-31 13:03:37], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.022, duration_ms=22, data={}
+timestamp=[2022-03-31 13:03:37], mode=WORKBENCH_START, duration=0:00:10.191, duration_ms=10191, data={}
+timestamp=[2022-03-31 13:03:39], mode=WORKBENCH_UI_INIT, duration=0:00:01.881, duration_ms=1881, data={editors_count=2, platform_editors_count=0, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,spi_and_LVDS_tests,spi_and_LVDS_tests_system,top_wrapper}
+timestamp=[2022-05-09 09:38:31], mode=WORKBENCH_START, duration=0:00:09.187, duration_ms=9187, data={}
+timestamp=[2022-05-09 09:38:32], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.030, duration_ms=30, data={}
+timestamp=[2022-05-09 09:38:32], mode=WORKBENCH_UI_INIT, duration=0:00:01.291, duration_ms=1291, data={editors_count=5, platform_editors_count=1, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,spi_and_LVDS_tests,spi_and_LVDS_tests_system,top_wrapper}
+timestamp=[2022-05-09 09:40:36], mode=PLATFORM_GENERATION, duration=0:00:26.957, duration_ms=26957, data={name=top_wrapper}
+timestamp=[2022-05-09 09:40:39], mode=BUILD, duration=0:00:00.940, duration_ms=940, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-05-09 09:49:43], mode=BUILD, duration=0:00:00.270, duration_ms=270, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-05-09 09:49:52], mode=BUILD, duration=0:00:07.938, duration_ms=7938, data={name=spi_and_LVDS_tests_system, configuration=Debug, clean_build=false}
+timestamp=[2022-08-02 10:53:00], mode=WORKBENCH_START, duration=0:00:08.672, duration_ms=8672, data={}
+timestamp=[2022-08-02 10:53:02], mode=WORKBENCH_UI_INIT, duration=0:00:01.886, duration_ms=1886, data={editors_count=5, platform_editors_count=1, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,spi_and_LVDS_tests,spi_and_LVDS_tests_system,top_wrapper}
+timestamp=[2022-08-02 10:53:02], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.204, duration_ms=204, data={}
+timestamp=[2022-08-02 11:12:12], mode=PLATFORM_GENERATION, duration=0:00:20.951, duration_ms=20951, data={name=top_wrapper}
+timestamp=[2022-08-02 11:12:16], mode=BUILD, duration=0:00:02.579, duration_ms=2579, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-08-02 11:12:57], mode=BUILD, duration=0:00:00.118, duration_ms=118, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-08-02 11:13:04], mode=BUILD, duration=0:00:06.175, duration_ms=6175, data={name=spi_and_LVDS_tests_system, configuration=Debug, clean_build=false}
+timestamp=[2022-08-02 11:18:13], mode=BUILD, duration=0:00:00.369, duration_ms=369, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-08-02 11:24:05], mode=BUILD, duration=0:00:00.169, duration_ms=169, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-08-02 11:24:23], mode=BUILD, duration=0:00:00.368, duration_ms=368, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-08-02 11:24:29], mode=BUILD, duration=0:00:05.775, duration_ms=5775, data={name=spi_and_LVDS_tests_system, configuration=Debug, clean_build=false}
+timestamp=[2022-08-02 11:27:31], mode=BUILD, duration=0:00:00.373, duration_ms=373, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-08-02 11:27:37], mode=BUILD, duration=0:00:05.977, duration_ms=5977, data={name=spi_and_LVDS_tests_system, configuration=Debug, clean_build=false}
+timestamp=[2022-08-02 11:30:38], mode=BUILD, duration=0:00:00.436, duration_ms=436, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-08-02 11:30:44], mode=BUILD, duration=0:00:06.175, duration_ms=6175, data={name=spi_and_LVDS_tests_system, configuration=Debug, clean_build=false}
+timestamp=[2022-08-02 11:31:47], mode=BUILD, duration=0:00:00.430, duration_ms=430, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-08-02 11:31:53], mode=BUILD, duration=0:00:05.879, duration_ms=5879, data={name=spi_and_LVDS_tests_system, configuration=Debug, clean_build=false}
+timestamp=[2022-08-02 11:34:12], mode=BUILD, duration=0:00:00.369, duration_ms=369, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-08-02 11:35:01], mode=BUILD, duration=0:00:00.369, duration_ms=369, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-08-02 11:37:19], mode=BUILD, duration=0:00:00.370, duration_ms=370, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-08-02 11:40:48], mode=BUILD, duration=0:00:00.370, duration_ms=370, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-08-02 11:42:42], mode=BUILD, duration=0:00:00.373, duration_ms=373, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-08-02 11:53:27], mode=BUILD, duration=0:00:00.218, duration_ms=218, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-08-02 11:54:32], mode=BUILD, duration=0:00:00.372, duration_ms=372, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-08-02 11:54:56], mode=BUILD, duration=0:00:00.370, duration_ms=370, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-08-02 11:58:40], mode=BUILD, duration=0:00:00.469, duration_ms=469, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}

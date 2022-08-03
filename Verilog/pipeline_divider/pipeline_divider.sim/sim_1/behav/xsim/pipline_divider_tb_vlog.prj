@@ -1,0 +1,10 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../pipeline_divider.srcs/sources_1/new/pipline_divider.v" \
+"../../../../pipeline_divider.srcs/sim_1/new/pipline_divider_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

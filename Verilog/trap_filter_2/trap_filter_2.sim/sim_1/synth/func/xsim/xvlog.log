@@ -1,0 +1,5 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/jdiro/Desktop/git/Verilog Tests/trap_filter_2/trap_filter_2.sim/sim_1/synth/func/xsim/bench2_func_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module trap_filter_2
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/jdiro/Desktop/git/Verilog Tests/trap_filter_2/trap_filter_2.srcs/sim_1/new/bench1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bench2

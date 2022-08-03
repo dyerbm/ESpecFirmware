@@ -1,0 +1,11 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../../pipeline_divider/pipeline_divider.srcs/sources_1/new/pipeline_divider.v" \
+"../../../../trap_filter.srcs/sources_1/new/trap_filter.v" \
+"../../../../trap_filter.srcs/sim_1/new/bench1.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

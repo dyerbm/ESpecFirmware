@@ -1,0 +1,17 @@
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: E:/Xilinx-Vitis/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto 6204b3f3489d4eb886ad80ec0f0e8096 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot bench1_behav xil_defaultlib.bench1 xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 12 differs from formal bit length 11 for port 'new_dividend' [C:/Users/jdiro/Desktop/git/Verilog-Tests/trap_filter/trap_filter.srcs/sources_1/new/trap_filter.v:47]
+WARNING: [VRFC 10-3091] actual bit length 12 differs from formal bit length 11 for port 'new_dividend' [C:/Users/jdiro/Desktop/git/Verilog-Tests/trap_filter/trap_filter.srcs/sources_1/new/trap_filter.v:54]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.pipeline_divider(n=11,D=10)
+Compiling module xil_defaultlib.trap_filter(L=10,G=10,B=8)
+Compiling module xil_defaultlib.bench1
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot bench1_behav

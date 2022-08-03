@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="spi_test_1" location="/home/dyerbm/workspace/spi_test_1" platform="/home/dyerbm/workspace/top_wrapper/export/top_wrapper/top_wrapper.xpfm" platformUID="xilinx:zedboard::0.0(custom)" systemProject="spi_test_1_system" sysConfig="top_wrapper" runtime="cpp" cpu="standalone_ps7_cortexa9_0" cpuInstance="ps7_cortexa9_0" os="standalone" mssSignature="84ee34f34b617e3f6afb48315d5e6031">
+  <configuration name="Debug" id="xilinx.gnu.armv7.exe.debug.2078197779" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.armv7.exe.release.1415970060" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="hello_world"/>
+</sdkproject:SdkProject>

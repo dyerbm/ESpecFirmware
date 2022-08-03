@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Wed Jan  5 11:32:57 2022
+# Process ID: 616755
+# Current directory: /home/dyerbm/Documents/Mac-PhD/Verilog-Tests/SPI_Tests/SPI_Tests.runs/impl_1
+# Command line: vivado -log top_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source top_wrapper.tcl -notrace
+# Log file: /home/dyerbm/Documents/Mac-PhD/Verilog-Tests/SPI_Tests/SPI_Tests.runs/impl_1/top_wrapper.vdi
+# Journal file: /home/dyerbm/Documents/Mac-PhD/Verilog-Tests/SPI_Tests/SPI_Tests.runs/impl_1/vivado.jou
+# Running On: benjamin-manjaro, OS: Linux, CPU Frequency: 3700.000 MHz, CPU Physical cores: 6, Host memory: 33530 MB
+#-----------------------------------------------------------
+source top_wrapper.tcl -notrace
