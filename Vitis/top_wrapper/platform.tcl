@@ -35,3 +35,5 @@ platform active {top_wrapper}
 platform config -updatehw {/home/dyerbm/Documents/Mac-PhD/Verilog-Tests/SPI_Tests/top_wrapper.xsa}
 platform generate
 platform generate
+platform generate
+platform generate

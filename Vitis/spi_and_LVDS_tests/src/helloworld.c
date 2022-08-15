@@ -380,7 +380,7 @@ int main()
     //----------- End of Bit Slip Alignment ----------//
 
 
-    for (int i=0;i<16383;i++){
+    for (int i=0;i<16383;i+=100){
         Status = ADC_Check_Alignment(&SpiInstance, &input, 1, i);
         xil_printf("Alignment Check Value = %i\r\n", i);
         if (Status==1) {

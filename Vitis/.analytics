@@ -175,3 +175,17 @@ timestamp=[2022-08-02 11:53:27], mode=BUILD, duration=0:00:00.218, duration_ms=2
 timestamp=[2022-08-02 11:54:32], mode=BUILD, duration=0:00:00.372, duration_ms=372, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
 timestamp=[2022-08-02 11:54:56], mode=BUILD, duration=0:00:00.370, duration_ms=370, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
 timestamp=[2022-08-02 11:58:40], mode=BUILD, duration=0:00:00.469, duration_ms=469, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-08-03 10:52:16], mode=WORKBENCH_START, duration=0:00:11.505, duration_ms=11505, data={}
+timestamp=[2022-08-03 10:52:17], mode=WORKBENCH_UI_INIT, duration=0:00:00.989, duration_ms=989, data={editors_count=5, platform_editors_count=1, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,spi_and_LVDS_tests,spi_and_LVDS_tests_system,top_wrapper}
+timestamp=[2022-08-03 10:52:17], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.108, duration_ms=108, data={}
+timestamp=[2022-08-03 10:52:32], mode=PLATFORM_GENERATION, duration=0:00:09.859, duration_ms=9859, data={name=top_wrapper}
+timestamp=[2022-08-03 10:52:33], mode=BUILD, duration=0:00:00.129, duration_ms=129, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-08-03 10:52:40], mode=BUILD, duration=0:00:06.232, duration_ms=6232, data={name=spi_and_LVDS_tests_system, configuration=Debug, clean_build=false}
+timestamp=[2022-08-03 13:05:11], mode=WORKBENCH_START, duration=0:00:13.554, duration_ms=13554, data={}
+timestamp=[2022-08-03 13:05:13], mode=WORKBENCH_UI_INIT, duration=0:00:02.455, duration_ms=2455, data={editors_count=5, platform_editors_count=1, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,spi_and_LVDS_tests,spi_and_LVDS_tests_system,top_wrapper}
+timestamp=[2022-08-03 13:05:16], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:02.055, duration_ms=2055, data={}
+timestamp=[2022-08-03 13:12:47], mode=PLATFORM_GENERATION, duration=0:00:11.077, duration_ms=11077, data={name=top_wrapper}
+timestamp=[2022-08-03 13:12:50], mode=BUILD, duration=0:00:01.679, duration_ms=1679, data={name=spi_and_LVDS_tests, configuration=Debug, clean_build=false}
+timestamp=[2022-08-08 15:04:36], mode=WORKBENCH_START, duration=0:00:11.523, duration_ms=11523, data={}
+timestamp=[2022-08-08 15:04:38], mode=WORKBENCH_UI_INIT, duration=0:00:02.075, duration_ms=2075, data={editors_count=5, platform_editors_count=1, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,spi_and_LVDS_tests,spi_and_LVDS_tests_system,top_wrapper}
+timestamp=[2022-08-08 15:04:41], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:01.501, duration_ms=1501, data={}
