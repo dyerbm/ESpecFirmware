@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "/home/dyerbm/Documents/Mac-PhD/Verilog-Tests/SPI_Tests/SPI_Tests.runs/synth_1/top_wrapper.tcl"
+  variable script "C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.runs/synth_1/top_wrapper.tcl"
   variable category "vivado_synth"
 }
 
@@ -55,22 +55,9 @@ if {$::dispatch::connected} {
   }
 }
 
-proc create_report { reportName command } {
-  set status "."
-  append status $reportName ".fail"
-  if { [file exists $status] } {
-    eval file delete [glob $status]
-  }
-  send_msg_id runtcl-4 info "Executing : $command"
-  set retval [eval catch { $command } msg]
-  if { $retval != 0 } {
-    set fp [open $status w]
-    close $fp
-    send_msg_id runtcl-5 warning "$msg"
-  }
-}
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 3
+set_param chipscope.maxJobs 6
+set_param bd.open.in_stealth_mode 1
 set_msg_config -id {HDL-1065} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z020clg484-1
@@ -79,37 +66,77 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir /home/dyerbm/Documents/Mac-PhD/Verilog-Tests/SPI_Tests/SPI_Tests.cache/wt [current_project]
-set_property parent.project_path /home/dyerbm/Documents/Mac-PhD/Verilog-Tests/SPI_Tests/SPI_Tests.xpr [current_project]
+set_property webtalk.parent_dir C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.cache/wt [current_project]
+set_property parent.project_path C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.xpr [current_project]
 set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property board_part digilentinc.com:zedboard:part0:1.0 [current_project]
-set_property ip_output_repo /home/dyerbm/Documents/Mac-PhD/Verilog-Tests/SPI_Tests/SPI_Tests.cache/ip [current_project]
+set_property ip_output_repo c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_verilog -library xil_defaultlib /home/dyerbm/Documents/Mac-PhD/Verilog-Tests/SPI_Tests/SPI_Tests.srcs/sources_1/imports/hdl/top_wrapper.v
-add_files /home/dyerbm/Documents/Mac-PhD/Verilog-Tests/SPI_Tests/SPI_Tests.srcs/sources_1/bd/top/top.bd
-set_property used_in_implementation false [get_files -all /home/dyerbm/Documents/Mac-PhD/Verilog-Tests/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_processing_system7_0_0/top_processing_system7_0_0.xdc]
-set_property used_in_implementation false [get_files -all /home/dyerbm/Documents/Mac-PhD/Verilog-Tests/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_quad_spi_0_0/top_axi_quad_spi_0_0_board.xdc]
-set_property used_in_implementation false [get_files -all /home/dyerbm/Documents/Mac-PhD/Verilog-Tests/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_quad_spi_0_0/top_axi_quad_spi_0_0.xdc]
-set_property used_in_implementation false [get_files -all /home/dyerbm/Documents/Mac-PhD/Verilog-Tests/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_quad_spi_0_0/top_axi_quad_spi_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/dyerbm/Documents/Mac-PhD/Verilog-Tests/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_quad_spi_0_0/top_axi_quad_spi_0_0_clocks.xdc]
-set_property used_in_implementation false [get_files -all /home/dyerbm/Documents/Mac-PhD/Verilog-Tests/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_rst_ps7_0_100M_0/top_rst_ps7_0_100M_0_board.xdc]
-set_property used_in_implementation false [get_files -all /home/dyerbm/Documents/Mac-PhD/Verilog-Tests/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_rst_ps7_0_100M_0/top_rst_ps7_0_100M_0.xdc]
-set_property used_in_implementation false [get_files -all /home/dyerbm/Documents/Mac-PhD/Verilog-Tests/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_rst_ps7_0_100M_0/top_rst_ps7_0_100M_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/dyerbm/Documents/Mac-PhD/Verilog-Tests/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_xbar_0/top_xbar_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/dyerbm/Documents/Mac-PhD/Verilog-Tests/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_selectio_wiz_0_0/top_selectio_wiz_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/dyerbm/Documents/Mac-PhD/Verilog-Tests/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_selectio_wiz_0_0/top_selectio_wiz_0_0.xdc]
-set_property used_in_implementation false [get_files -all /home/dyerbm/Documents/Mac-PhD/Verilog-Tests/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_gpio_0_0/top_axi_gpio_0_0_board.xdc]
-set_property used_in_implementation false [get_files -all /home/dyerbm/Documents/Mac-PhD/Verilog-Tests/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_gpio_0_0/top_axi_gpio_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/dyerbm/Documents/Mac-PhD/Verilog-Tests/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_gpio_0_0/top_axi_gpio_0_0.xdc]
-set_property used_in_implementation false [get_files -all /home/dyerbm/Documents/Mac-PhD/Verilog-Tests/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_gpio_1_0/top_axi_gpio_1_0_board.xdc]
-set_property used_in_implementation false [get_files -all /home/dyerbm/Documents/Mac-PhD/Verilog-Tests/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_gpio_1_0/top_axi_gpio_1_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/dyerbm/Documents/Mac-PhD/Verilog-Tests/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_gpio_1_0/top_axi_gpio_1_0.xdc]
-set_property used_in_implementation false [get_files -all /home/dyerbm/Documents/Mac-PhD/Verilog-Tests/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_auto_pc_0/top_auto_pc_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/dyerbm/Documents/Mac-PhD/Verilog-Tests/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/top_ooc.xdc]
+read_verilog -library xil_defaultlib C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/hdl/top_wrapper.v
+add_files C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.srcs/sources_1/bd/top/top.bd
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_processing_system7_0_0/top_processing_system7_0_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_quad_spi_0_0/top_axi_quad_spi_0_0_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_quad_spi_0_0/top_axi_quad_spi_0_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_quad_spi_0_0/top_axi_quad_spi_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_quad_spi_0_0/top_axi_quad_spi_0_0_clocks.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_rst_ps7_0_100M_0/top_rst_ps7_0_100M_0_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_rst_ps7_0_100M_0/top_rst_ps7_0_100M_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_rst_ps7_0_100M_0/top_rst_ps7_0_100M_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_gpio_0_0/top_axi_gpio_0_0_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_gpio_0_0/top_axi_gpio_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_gpio_0_0/top_axi_gpio_0_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_gpio_1_0/top_axi_gpio_1_0_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_gpio_1_0/top_axi_gpio_1_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_gpio_1_0/top_axi_gpio_1_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_smc_0/bd_0/ip/ip_1/bd_b43a_psr_aclk_0_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_smc_0/bd_0/ip/ip_1/bd_b43a_psr_aclk_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_smc_0/bd_0/ip/ip_2/bd_b43a_arinsw_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_smc_0/bd_0/ip/ip_3/bd_b43a_rinsw_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_smc_0/bd_0/ip/ip_4/bd_b43a_awinsw_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_smc_0/bd_0/ip/ip_5/bd_b43a_winsw_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_smc_0/bd_0/ip/ip_6/bd_b43a_binsw_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_smc_0/bd_0/ip/ip_7/bd_b43a_aroutsw_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_smc_0/bd_0/ip/ip_8/bd_b43a_routsw_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_smc_0/bd_0/ip/ip_9/bd_b43a_awoutsw_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_smc_0/bd_0/ip/ip_10/bd_b43a_woutsw_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_smc_0/bd_0/ip/ip_11/bd_b43a_boutsw_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_smc_0/bd_0/ip/ip_12/bd_b43a_arni_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_smc_0/bd_0/ip/ip_13/bd_b43a_rni_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_smc_0/bd_0/ip/ip_14/bd_b43a_awni_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_smc_0/bd_0/ip/ip_15/bd_b43a_wni_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_smc_0/bd_0/ip/ip_16/bd_b43a_bni_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_smc_0/bd_0/ip/ip_20/bd_b43a_s00a2s_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_smc_0/bd_0/ip/ip_21/bd_b43a_sarn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_smc_0/bd_0/ip/ip_22/bd_b43a_srn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_smc_0/bd_0/ip/ip_23/bd_b43a_sawn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_smc_0/bd_0/ip/ip_24/bd_b43a_swn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_smc_0/bd_0/ip/ip_25/bd_b43a_sbn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_smc_0/bd_0/ip/ip_26/bd_b43a_m00s2a_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_smc_0/bd_0/ip/ip_27/bd_b43a_m00arn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_smc_0/bd_0/ip/ip_28/bd_b43a_m00rn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_smc_0/bd_0/ip/ip_29/bd_b43a_m00awn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_smc_0/bd_0/ip/ip_30/bd_b43a_m00wn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_smc_0/bd_0/ip/ip_31/bd_b43a_m00bn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_smc_0/bd_0/ip/ip_33/bd_b43a_m01s2a_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_smc_0/bd_0/ip/ip_34/bd_b43a_m01arn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_smc_0/bd_0/ip/ip_35/bd_b43a_m01rn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_smc_0/bd_0/ip/ip_36/bd_b43a_m01awn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_smc_0/bd_0/ip/ip_37/bd_b43a_m01wn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_smc_0/bd_0/ip/ip_38/bd_b43a_m01bn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_smc_0/bd_0/ip/ip_40/bd_b43a_m02s2a_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_smc_0/bd_0/ip/ip_41/bd_b43a_m02arn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_smc_0/bd_0/ip/ip_42/bd_b43a_m02rn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_smc_0/bd_0/ip/ip_43/bd_b43a_m02awn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_smc_0/bd_0/ip/ip_44/bd_b43a_m02wn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_smc_0/bd_0/ip/ip_45/bd_b43a_m02bn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_smc_0/ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_smc_0/smartconnect.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_selectio_wiz_0_1/top_selectio_wiz_0_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_selectio_wiz_0_1/top_selectio_wiz_0_1.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/top_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -120,14 +147,14 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc /home/dyerbm/Documents/Mac-PhD/Verilog-Tests/SPI_Tests/SPI_Tests.srcs/constrs_1/new/ADC_FMC_const.xdc
-set_property used_in_implementation false [get_files /home/dyerbm/Documents/Mac-PhD/Verilog-Tests/SPI_Tests/SPI_Tests.srcs/constrs_1/new/ADC_FMC_const.xdc]
+read_xdc C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.srcs/constrs_1/new/ADC_FMC_const.xdc
+set_property used_in_implementation false [get_files C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.srcs/constrs_1/new/ADC_FMC_const.xdc]
 
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 
-read_checkpoint -auto_incremental -incremental /home/dyerbm/Documents/Mac-PhD/Verilog-Tests/SPI_Tests/SPI_Tests.srcs/utils_1/imports/synth_1/top_wrapper.dcp
+read_checkpoint -auto_incremental -incremental C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.srcs/utils_1/imports/synth_1/top_wrapper.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
@@ -144,7 +171,7 @@ set_param constraints.enableBinaryConstraints false
 write_checkpoint -force -noxdef top_wrapper.dcp
 OPTRACE "write_checkpoint" END { }
 OPTRACE "synth reports" START { REPORT }
-create_report "synth_1_synth_report_utilization_0" "report_utilization -file top_wrapper_utilization_synth.rpt -pb top_wrapper_utilization_synth.pb"
+generate_parallel_reports -reports { "report_utilization -file top_wrapper_utilization_synth.rpt -pb top_wrapper_utilization_synth.pb"  } 
 OPTRACE "synth reports" END { }
 file delete __synthesis_is_running__
 close [open __synthesis_is_complete__ w]

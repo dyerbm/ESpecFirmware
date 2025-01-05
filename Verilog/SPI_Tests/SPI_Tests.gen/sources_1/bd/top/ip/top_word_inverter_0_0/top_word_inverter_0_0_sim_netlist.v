@@ -1,10 +1,11 @@
-// Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+// Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+// Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-// Date        : Thu Jan  6 11:47:06 2022
-// Host        : benjamin-manjaro running 64-bit Manjaro Linux
+// Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+// Date        : Sun Jan  5 02:12:01 2025
+// Host        : DESKTOP-DRF538C running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               /home/dyerbm/Documents/Mac-PhD/Verilog-Tests/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_word_inverter_0_0/top_word_inverter_0_0_sim_netlist.v
+//               c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_word_inverter_0_0/top_word_inverter_0_0_sim_netlist.v
 // Design      : top_word_inverter_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -13,30 +14,46 @@
 `timescale 1 ps / 1 ps
 
 (* CHECK_LICENSE_TYPE = "top_word_inverter_0_0,word_inverter,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* IP_DEFINITION_SOURCE = "module_ref" *) 
-(* X_CORE_INFO = "word_inverter,Vivado 2021.2" *) 
+(* X_CORE_INFO = "word_inverter,Vivado 2024.2" *) 
 (* NotValidForBitStream *)
 module top_word_inverter_0_0
    (data_in,
-    data_out);
-  input [13:0]data_in;
-  output [13:0]data_out;
+    data_out_ch1,
+    data_out_ch2);
+  input [27:0]data_in;
+  output [13:0]data_out_ch1;
+  output [13:0]data_out_ch2;
 
-  wire [13:0]data_in;
+  wire [27:0]data_in;
 
-  assign data_out[13] = data_in[0];
-  assign data_out[12] = data_in[1];
-  assign data_out[11] = data_in[2];
-  assign data_out[10] = data_in[3];
-  assign data_out[9] = data_in[4];
-  assign data_out[8] = data_in[5];
-  assign data_out[7] = data_in[6];
-  assign data_out[6] = data_in[7];
-  assign data_out[5] = data_in[8];
-  assign data_out[4] = data_in[9];
-  assign data_out[3] = data_in[10];
-  assign data_out[2] = data_in[11];
-  assign data_out[1] = data_in[12];
-  assign data_out[0] = data_in[13];
+  assign data_out_ch1[13] = data_in[0];
+  assign data_out_ch1[12] = data_in[1];
+  assign data_out_ch1[11] = data_in[2];
+  assign data_out_ch1[10] = data_in[3];
+  assign data_out_ch1[9] = data_in[4];
+  assign data_out_ch1[8] = data_in[5];
+  assign data_out_ch1[7] = data_in[6];
+  assign data_out_ch1[6] = data_in[7];
+  assign data_out_ch1[5] = data_in[8];
+  assign data_out_ch1[4] = data_in[9];
+  assign data_out_ch1[3] = data_in[10];
+  assign data_out_ch1[2] = data_in[11];
+  assign data_out_ch1[1] = data_in[12];
+  assign data_out_ch1[0] = data_in[13];
+  assign data_out_ch2[13] = data_in[14];
+  assign data_out_ch2[12] = data_in[15];
+  assign data_out_ch2[11] = data_in[16];
+  assign data_out_ch2[10] = data_in[17];
+  assign data_out_ch2[9] = data_in[18];
+  assign data_out_ch2[8] = data_in[19];
+  assign data_out_ch2[7] = data_in[20];
+  assign data_out_ch2[6] = data_in[21];
+  assign data_out_ch2[5] = data_in[22];
+  assign data_out_ch2[4] = data_in[23];
+  assign data_out_ch2[3] = data_in[24];
+  assign data_out_ch2[2] = data_in[25];
+  assign data_out_ch2[1] = data_in[26];
+  assign data_out_ch2[0] = data_in[27];
 endmodule
 `ifndef GLBL
 `define GLBL

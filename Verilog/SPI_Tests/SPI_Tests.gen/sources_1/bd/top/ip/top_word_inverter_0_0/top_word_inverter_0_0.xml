@@ -7,6 +7,18 @@
   <spirit:model>
     <spirit:views>
       <spirit:view>
+        <spirit:name>xilinx_anylanguagebehavioralsimulation</spirit:name>
+        <spirit:displayName>Simulation</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:simulation</spirit:envIdentifier>
+        <spirit:modelName>word_inverter</spirit:modelName>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>outputProductCRC</spirit:name>
+            <spirit:value>9:3765c546</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
         <spirit:name>xilinx_anylanguagesynthesis</spirit:name>
         <spirit:displayName>Synthesis</spirit:displayName>
         <spirit:envIdentifier>:vivado.xilinx.com:synthesis</spirit:envIdentifier>
@@ -14,7 +26,36 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:b23fff8d</spirit:value>
+            <spirit:value>9:3d566d7c</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_blockmodel</spirit:name>
+        <spirit:displayName>Block Model files</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:block_model</spirit:envIdentifier>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>outputProductCRC</spirit:name>
+            <spirit:value>9:3d566d7c</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_externalfiles</spirit:name>
+        <spirit:displayName>External Files</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:external.files</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_externalfiles_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>GENtimestamp</spirit:name>
+            <spirit:value>Sun Jan 05 07:12:01 UTC 2025</spirit:value>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>outputProductCRC</spirit:name>
+            <spirit:value>9:3d566d7c</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -25,39 +66,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:b23fff8d</spirit:value>
-          </spirit:parameter>
-        </spirit:parameters>
-      </spirit:view>
-      <spirit:view>
-        <spirit:name>xilinx_verilogsynthesiswrapper</spirit:name>
-        <spirit:displayName>Verilog Synthesis Wrapper</spirit:displayName>
-        <spirit:envIdentifier>verilogSource:vivado.xilinx.com:synthesis.wrapper</spirit:envIdentifier>
-        <spirit:language>verilog</spirit:language>
-        <spirit:modelName>top_word_inverter_0_0</spirit:modelName>
-        <spirit:fileSetRef>
-          <spirit:localName>xilinx_verilogsynthesiswrapper_view_fileset</spirit:localName>
-        </spirit:fileSetRef>
-        <spirit:parameters>
-          <spirit:parameter>
-            <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Jan 06 16:46:21 UTC 2022</spirit:value>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:b23fff8d</spirit:value>
-          </spirit:parameter>
-        </spirit:parameters>
-      </spirit:view>
-      <spirit:view>
-        <spirit:name>xilinx_anylanguagebehavioralsimulation</spirit:name>
-        <spirit:displayName>Simulation</spirit:displayName>
-        <spirit:envIdentifier>:vivado.xilinx.com:simulation</spirit:envIdentifier>
-        <spirit:modelName>word_inverter</spirit:modelName>
-        <spirit:parameters>
-          <spirit:parameter>
-            <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:fd4a9536</spirit:value>
+            <spirit:value>9:3d566d7c</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -73,29 +82,31 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Jan 06 16:46:21 UTC 2022</spirit:value>
+            <spirit:value>Sun Jan 05 07:11:12 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:fd4a9536</spirit:value>
+            <spirit:value>9:3765c546</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
       <spirit:view>
-        <spirit:name>xilinx_externalfiles</spirit:name>
-        <spirit:displayName>External Files</spirit:displayName>
-        <spirit:envIdentifier>:vivado.xilinx.com:external.files</spirit:envIdentifier>
+        <spirit:name>xilinx_verilogsynthesiswrapper</spirit:name>
+        <spirit:displayName>Verilog Synthesis Wrapper</spirit:displayName>
+        <spirit:envIdentifier>verilogSource:vivado.xilinx.com:synthesis.wrapper</spirit:envIdentifier>
+        <spirit:language>verilog</spirit:language>
+        <spirit:modelName>top_word_inverter_0_0</spirit:modelName>
         <spirit:fileSetRef>
-          <spirit:localName>xilinx_externalfiles_view_fileset</spirit:localName>
+          <spirit:localName>xilinx_verilogsynthesiswrapper_view_fileset</spirit:localName>
         </spirit:fileSetRef>
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Jan 06 16:47:06 UTC 2022</spirit:value>
+            <spirit:value>Sun Jan 05 07:11:12 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:b23fff8d</spirit:value>
+            <spirit:value>9:3d566d7c</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -105,6 +116,23 @@
         <spirit:name>data_in</spirit:name>
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">27</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>data_out_ch1</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
           <spirit:vector>
             <spirit:left spirit:format="long">13</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
@@ -119,7 +147,7 @@
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>data_out</spirit:name>
+        <spirit:name>data_out_ch2</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
@@ -138,22 +166,6 @@
     </spirit:ports>
   </spirit:model>
   <spirit:fileSets>
-    <spirit:fileSet>
-      <spirit:name>xilinx_verilogsynthesiswrapper_view_fileset</spirit:name>
-      <spirit:file>
-        <spirit:name>synth/top_word_inverter_0_0.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
-      </spirit:file>
-    </spirit:fileSet>
-    <spirit:fileSet>
-      <spirit:name>xilinx_verilogsimulationwrapper_view_fileset</spirit:name>
-      <spirit:file>
-        <spirit:name>sim/top_word_inverter_0_0.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
-      </spirit:file>
-    </spirit:fileSet>
     <spirit:fileSet>
       <spirit:name>xilinx_externalfiles_view_fileset</spirit:name>
       <spirit:file>
@@ -190,6 +202,22 @@
         <spirit:logicalName>xil_defaultlib</spirit:logicalName>
       </spirit:file>
     </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_verilogsimulationwrapper_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>sim/top_word_inverter_0_0.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_verilogsynthesiswrapper_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>synth/top_word_inverter_0_0.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
+      </spirit:file>
+    </spirit:fileSet>
   </spirit:fileSets>
   <spirit:description>xilinx.com:module_ref:word_inverter:1.0</spirit:description>
   <spirit:parameters>
@@ -205,7 +233,7 @@
       <xilinx:coreRevision>1</xilinx:coreRevision>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
-      <xilinx:xilinxVersion>2021.2</xilinx:xilinxVersion>
+      <xilinx:xilinxVersion>2024.2</xilinx:xilinxVersion>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>

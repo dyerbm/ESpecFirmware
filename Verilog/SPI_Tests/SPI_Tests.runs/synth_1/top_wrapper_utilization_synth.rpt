@@ -1,14 +1,14 @@
-Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
------------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-| Date         : Thu Jan  6 11:47:57 2022
-| Host         : benjamin-manjaro running 64-bit Manjaro Linux
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Sun Jan  5 02:14:21 2025
+| Host         : DESKTOP-DRF538C running 64-bit major release  (build 9200)
 | Command      : report_utilization -file top_wrapper_utilization_synth.rpt -pb top_wrapper_utilization_synth.pb
 | Design       : top_wrapper
 | Device       : xc7z020clg484-1
 | Speed File   : -1
 | Design State : Synthesized
------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------
 
 Utilization Design Information
 
@@ -41,6 +41,8 @@ Table of Contents
 | F8 Muxes                |    0 |     0 |          0 |     13300 |  0.00 |
 +-------------------------+------+-------+------------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
+Warning! LUT value is adjusted to account for LUT combining.
+Warning! For any ECO changes, please run place_design if there are unplaced instances
 
 
 1.1 Summary of Registers by Type
@@ -158,15 +160,14 @@ Table of Contents
 +----------------------------+------+
 |          Ref Name          | Used |
 +----------------------------+------+
-| top_xbar_0                 |    1 |
 | top_word_inverter_0_0      |    1 |
-| top_selectio_wiz_0_0       |    1 |
+| top_selectio_wiz_0_1       |    1 |
 | top_rst_ps7_0_100M_0       |    1 |
 | top_processing_system7_0_0 |    1 |
+| top_axi_smc_0              |    1 |
 | top_axi_quad_spi_0_0       |    1 |
 | top_axi_gpio_1_0           |    1 |
 | top_axi_gpio_0_0           |    1 |
-| top_auto_pc_0              |    1 |
 +----------------------------+------+
 
 

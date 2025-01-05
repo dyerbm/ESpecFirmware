@@ -455,6 +455,30 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
+            <spirit:name>SCK_I</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>sck_i</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>SCK_O</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>sck_o</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>SCK_T</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>sck_t</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
             <spirit:name>SPISEL</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
@@ -553,7 +577,7 @@
       <spirit:displayName>STARTUP_IO</spirit:displayName>
       <spirit:busType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="startup" spirit:version="1.0"/>
       <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="startup_rtl" spirit:version="1.0"/>
-      <spirit:master/>
+      <spirit:slave/>
       <spirit:portMaps>
         <spirit:portMap>
           <spirit:logicalPort>
@@ -665,7 +689,9 @@
       <spirit:displayName>AXI_LITE</spirit:displayName>
       <spirit:busType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="aximm" spirit:version="1.0"/>
       <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="aximm_rtl" spirit:version="1.0"/>
-      <spirit:slave/>
+      <spirit:slave>
+        <spirit:memoryMapRef spirit:memoryMapRef="AXI_LITE"/>
+      </spirit:slave>
       <spirit:portMaps>
         <spirit:portMap>
           <spirit:logicalPort>
@@ -996,7 +1022,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>NUM_READ_OUTSTANDING</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.AXI_LITE.NUM_READ_OUTSTANDING">2</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.AXI_LITE.NUM_READ_OUTSTANDING">8</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -1005,7 +1031,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>NUM_WRITE_OUTSTANDING</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.AXI_LITE.NUM_WRITE_OUTSTANDING">2</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.AXI_LITE.NUM_WRITE_OUTSTANDING">8</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -1545,7 +1571,7 @@
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>DATA_WIDTH</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.AXI_FULL.DATA_WIDTH">32</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.AXI_FULL.DATA_WIDTH">1</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -1554,7 +1580,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>PROTOCOL</spirit:name>
-          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.AXI_FULL.PROTOCOL">AXI4</spirit:value>
+          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.AXI_FULL.PROTOCOL">AXI4LITE</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -1581,7 +1607,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>ADDR_WIDTH</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.AXI_FULL.ADDR_WIDTH">32</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.AXI_FULL.ADDR_WIDTH">1</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -1644,7 +1670,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>HAS_BURST</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.AXI_FULL.HAS_BURST">1</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.AXI_FULL.HAS_BURST">0</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -1653,7 +1679,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>HAS_LOCK</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.AXI_FULL.HAS_LOCK">1</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.AXI_FULL.HAS_LOCK">0</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -1662,7 +1688,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>HAS_PROT</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.AXI_FULL.HAS_PROT">1</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.AXI_FULL.HAS_PROT">0</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -1671,7 +1697,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>HAS_CACHE</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.AXI_FULL.HAS_CACHE">1</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.AXI_FULL.HAS_CACHE">0</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -1680,7 +1706,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>HAS_QOS</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.AXI_FULL.HAS_QOS">1</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.AXI_FULL.HAS_QOS">0</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -1689,7 +1715,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>HAS_REGION</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.AXI_FULL.HAS_REGION">1</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.AXI_FULL.HAS_REGION">0</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -1698,7 +1724,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>HAS_WSTRB</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.AXI_FULL.HAS_WSTRB">1</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.AXI_FULL.HAS_WSTRB">0</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -1707,7 +1733,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>HAS_BRESP</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.AXI_FULL.HAS_BRESP">1</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.AXI_FULL.HAS_BRESP">0</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -1716,7 +1742,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>HAS_RRESP</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.AXI_FULL.HAS_RRESP">1</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.AXI_FULL.HAS_RRESP">0</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -1725,7 +1751,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>SUPPORTS_NARROW_BURST</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.AXI_FULL.SUPPORTS_NARROW_BURST">1</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.AXI_FULL.SUPPORTS_NARROW_BURST">0</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -1752,7 +1778,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>MAX_BURST_LENGTH</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.AXI_FULL.MAX_BURST_LENGTH">256</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.AXI_FULL.MAX_BURST_LENGTH">1</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -4605,6 +4631,49 @@ This bit has no significance in dual or quad mode.
   <spirit:model>
     <spirit:views>
       <spirit:view>
+        <spirit:name>xilinx_anylanguagebehavioralsimulation</spirit:name>
+        <spirit:displayName>Simulation</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:simulation</spirit:envIdentifier>
+        <spirit:modelName>axi_quad_spi</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagebehavioralsimulation_xilinx_com_ip_dist_mem_gen_8_0__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagebehavioralsimulation_xilinx_com_ip_lib_pkg_1_0__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagebehavioralsimulation_xilinx_com_ip_lib_cdc_1_0__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagebehavioralsimulation_xilinx_com_ip_lib_srl_fifo_1_0__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagebehavioralsimulation_xilinx_com_ip_fifo_generator_13_2__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagebehavioralsimulation_xilinx_com_ip_lib_fifo_1_0__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagebehavioralsimulation_xilinx_com_ip_axi_lite_ipif_3_0__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagebehavioralsimulation_xilinx_com_ip_interrupt_control_3_1__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>GENtimestamp</spirit:name>
+            <spirit:value>Thu Nov 28 17:13:48 UTC 2024</spirit:value>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>outputProductCRC</spirit:name>
+            <spirit:value>9:2c563457</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
         <spirit:name>xilinx_anylanguagesynthesis</spirit:name>
         <spirit:displayName>Synthesis</spirit:displayName>
         <spirit:envIdentifier>:vivado.xilinx.com:synthesis</spirit:envIdentifier>
@@ -4642,11 +4711,58 @@ This bit has no significance in dual or quad mode.
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Jan 03 18:13:50 UTC 2022</spirit:value>
+            <spirit:value>Thu Nov 28 17:13:48 UTC 2024</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:65e0f146</spirit:value>
+            <spirit:value>9:3151a5a1</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_blockmodel</spirit:name>
+        <spirit:displayName>Block Model files</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:block_model</spirit:envIdentifier>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>outputProductCRC</spirit:name>
+            <spirit:value>9:3151a5a1</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_externalfiles</spirit:name>
+        <spirit:displayName>External Files</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:external.files</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_externalfiles_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>GENtimestamp</spirit:name>
+            <spirit:value>Thu Nov 28 17:15:07 UTC 2024</spirit:value>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>outputProductCRC</spirit:name>
+            <spirit:value>9:3151a5a1</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_implementation</spirit:name>
+        <spirit:displayName>Implementation</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:implementation</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_implementation_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>GENtimestamp</spirit:name>
+            <spirit:value>Thu Nov 28 17:13:48 UTC 2024</spirit:value>
+          </spirit:parameter>
+          <spirit:parameter>
+            <spirit:name>outputProductCRC</spirit:name>
+            <spirit:value>9:3151a5a1</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -4657,70 +4773,7 @@ This bit has no significance in dual or quad mode.
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:65e0f146</spirit:value>
-          </spirit:parameter>
-        </spirit:parameters>
-      </spirit:view>
-      <spirit:view>
-        <spirit:name>xilinx_vhdlsynthesiswrapper</spirit:name>
-        <spirit:displayName>VHDL Synthesis Wrapper</spirit:displayName>
-        <spirit:envIdentifier>vhdlSource:vivado.xilinx.com:synthesis.wrapper</spirit:envIdentifier>
-        <spirit:language>vhdl</spirit:language>
-        <spirit:modelName>top_axi_quad_spi_0_0</spirit:modelName>
-        <spirit:fileSetRef>
-          <spirit:localName>xilinx_vhdlsynthesiswrapper_view_fileset</spirit:localName>
-        </spirit:fileSetRef>
-        <spirit:parameters>
-          <spirit:parameter>
-            <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Jan 03 18:13:50 UTC 2022</spirit:value>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:65e0f146</spirit:value>
-          </spirit:parameter>
-        </spirit:parameters>
-      </spirit:view>
-      <spirit:view>
-        <spirit:name>xilinx_anylanguagebehavioralsimulation</spirit:name>
-        <spirit:displayName>Simulation</spirit:displayName>
-        <spirit:envIdentifier>:vivado.xilinx.com:simulation</spirit:envIdentifier>
-        <spirit:modelName>axi_quad_spi</spirit:modelName>
-        <spirit:fileSetRef>
-          <spirit:localName>xilinx_anylanguagebehavioralsimulation_xilinx_com_ip_dist_mem_gen_8_0__ref_view_fileset</spirit:localName>
-        </spirit:fileSetRef>
-        <spirit:fileSetRef>
-          <spirit:localName>xilinx_anylanguagebehavioralsimulation_xilinx_com_ip_lib_pkg_1_0__ref_view_fileset</spirit:localName>
-        </spirit:fileSetRef>
-        <spirit:fileSetRef>
-          <spirit:localName>xilinx_anylanguagebehavioralsimulation_xilinx_com_ip_lib_cdc_1_0__ref_view_fileset</spirit:localName>
-        </spirit:fileSetRef>
-        <spirit:fileSetRef>
-          <spirit:localName>xilinx_anylanguagebehavioralsimulation_xilinx_com_ip_lib_srl_fifo_1_0__ref_view_fileset</spirit:localName>
-        </spirit:fileSetRef>
-        <spirit:fileSetRef>
-          <spirit:localName>xilinx_anylanguagebehavioralsimulation_xilinx_com_ip_fifo_generator_13_2__ref_view_fileset</spirit:localName>
-        </spirit:fileSetRef>
-        <spirit:fileSetRef>
-          <spirit:localName>xilinx_anylanguagebehavioralsimulation_xilinx_com_ip_lib_fifo_1_0__ref_view_fileset</spirit:localName>
-        </spirit:fileSetRef>
-        <spirit:fileSetRef>
-          <spirit:localName>xilinx_anylanguagebehavioralsimulation_xilinx_com_ip_axi_lite_ipif_3_0__ref_view_fileset</spirit:localName>
-        </spirit:fileSetRef>
-        <spirit:fileSetRef>
-          <spirit:localName>xilinx_anylanguagebehavioralsimulation_xilinx_com_ip_interrupt_control_3_1__ref_view_fileset</spirit:localName>
-        </spirit:fileSetRef>
-        <spirit:fileSetRef>
-          <spirit:localName>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:localName>
-        </spirit:fileSetRef>
-        <spirit:parameters>
-          <spirit:parameter>
-            <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Jan 03 18:13:50 UTC 2022</spirit:value>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:6f2509b8</spirit:value>
+            <spirit:value>9:3151a5a1</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -4736,47 +4789,31 @@ This bit has no significance in dual or quad mode.
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Jan 03 18:13:50 UTC 2022</spirit:value>
+            <spirit:value>Thu Nov 28 17:13:48 UTC 2024</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:6f2509b8</spirit:value>
+            <spirit:value>9:2c563457</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
       <spirit:view>
-        <spirit:name>xilinx_implementation</spirit:name>
-        <spirit:displayName>Implementation</spirit:displayName>
-        <spirit:envIdentifier>:vivado.xilinx.com:implementation</spirit:envIdentifier>
+        <spirit:name>xilinx_vhdlsynthesiswrapper</spirit:name>
+        <spirit:displayName>VHDL Synthesis Wrapper</spirit:displayName>
+        <spirit:envIdentifier>vhdlSource:vivado.xilinx.com:synthesis.wrapper</spirit:envIdentifier>
+        <spirit:language>vhdl</spirit:language>
+        <spirit:modelName>top_axi_quad_spi_0_0</spirit:modelName>
         <spirit:fileSetRef>
-          <spirit:localName>xilinx_implementation_view_fileset</spirit:localName>
+          <spirit:localName>xilinx_vhdlsynthesiswrapper_view_fileset</spirit:localName>
         </spirit:fileSetRef>
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Jan 03 18:13:50 UTC 2022</spirit:value>
+            <spirit:value>Thu Nov 28 17:13:48 UTC 2024</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:65e0f146</spirit:value>
-          </spirit:parameter>
-        </spirit:parameters>
-      </spirit:view>
-      <spirit:view>
-        <spirit:name>xilinx_externalfiles</spirit:name>
-        <spirit:displayName>External Files</spirit:displayName>
-        <spirit:envIdentifier>:vivado.xilinx.com:external.files</spirit:envIdentifier>
-        <spirit:fileSetRef>
-          <spirit:localName>xilinx_externalfiles_view_fileset</spirit:localName>
-        </spirit:fileSetRef>
-        <spirit:parameters>
-          <spirit:parameter>
-            <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Jan 03 18:13:52 UTC 2022</spirit:value>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:65e0f146</spirit:value>
+            <spirit:value>9:3151a5a1</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -5290,7 +5327,7 @@ This bit has no significance in dual or quad mode.
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S_AXI4_ID_WIDTH&apos;)) - 1)">0</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S_AXI4_ID_WIDTH&apos;)) - 1)">3</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -5665,7 +5702,7 @@ This bit has no significance in dual or quad mode.
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S_AXI4_ID_WIDTH&apos;)) - 1)">0</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S_AXI4_ID_WIDTH&apos;)) - 1)">3</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -5756,7 +5793,7 @@ This bit has no significance in dual or quad mode.
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S_AXI4_ID_WIDTH&apos;)) - 1)">0</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S_AXI4_ID_WIDTH&apos;)) - 1)">3</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -6011,7 +6048,7 @@ This bit has no significance in dual or quad mode.
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S_AXI4_ID_WIDTH&apos;)) - 1)">0</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S_AXI4_ID_WIDTH&apos;)) - 1)">3</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -7275,7 +7312,7 @@ This bit has no significance in dual or quad mode.
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_S_AXI4_ID_WIDTH</spirit:name>
         <spirit:displayName>C S Axi4 Id Width</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_S_AXI4_ID_WIDTH" spirit:minimum="0" spirit:maximum="32" spirit:rangeType="long">1</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_S_AXI4_ID_WIDTH" spirit:minimum="0" spirit:maximum="32" spirit:rangeType="long">4</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_SHARED_STARTUP</spirit:name>
@@ -7369,287 +7406,17 @@ This bit has no significance in dual or quad mode.
   </spirit:choices>
   <spirit:fileSets>
     <spirit:fileSet>
-      <spirit:name>xilinx_anylanguagesynthesis_xilinx_com_ip_dist_mem_gen_8_0__ref_view_fileset</spirit:name>
-      <spirit:file>
-        <spirit:name>../../ipshared/0bf5/hdl/dist_mem_gen_v8_0_vhsyn_rfs.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:logicalName>dist_mem_gen_v8_0_13</spirit:logicalName>
-      </spirit:file>
-      <spirit:vendorExtensions>
-        <xilinx:subCoreRef>
-          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="dist_mem_gen" xilinx:version="8.0" xilinx:isGenerated="true" xilinx:checksum="e2fb48d4">
-            <xilinx:mode xilinx:name="copy_mode"/>
-          </xilinx:componentRef>
-        </xilinx:subCoreRef>
-      </spirit:vendorExtensions>
-    </spirit:fileSet>
-    <spirit:fileSet>
-      <spirit:name>xilinx_anylanguagesynthesis_xilinx_com_ip_axi_lite_ipif_3_0__ref_view_fileset</spirit:name>
-      <spirit:file>
-        <spirit:name>../../ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:logicalName>axi_lite_ipif_v3_0_4</spirit:logicalName>
-      </spirit:file>
-      <spirit:vendorExtensions>
-        <xilinx:subCoreRef>
-          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="axi_lite_ipif" xilinx:version="3.0" xilinx:isGenerated="true" xilinx:checksum="db189391">
-            <xilinx:mode xilinx:name="copy_mode"/>
-          </xilinx:componentRef>
-        </xilinx:subCoreRef>
-      </spirit:vendorExtensions>
-    </spirit:fileSet>
-    <spirit:fileSet>
-      <spirit:name>xilinx_anylanguagesynthesis_xilinx_com_ip_lib_pkg_1_0__ref_view_fileset</spirit:name>
-      <spirit:file>
-        <spirit:name>../../ipshared/0513/hdl/lib_pkg_v1_0_rfs.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:logicalName>lib_pkg_v1_0_2</spirit:logicalName>
-      </spirit:file>
-      <spirit:vendorExtensions>
-        <xilinx:subCoreRef>
-          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="lib_pkg" xilinx:version="1.0" xilinx:isGenerated="true" xilinx:checksum="7b6d6b71">
-            <xilinx:mode xilinx:name="copy_mode"/>
-          </xilinx:componentRef>
-        </xilinx:subCoreRef>
-      </spirit:vendorExtensions>
-    </spirit:fileSet>
-    <spirit:fileSet>
-      <spirit:name>xilinx_anylanguagesynthesis_xilinx_com_ip_lib_cdc_1_0__ref_view_fileset</spirit:name>
-      <spirit:file>
-        <spirit:name>../../ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:logicalName>lib_cdc_v1_0_2</spirit:logicalName>
-      </spirit:file>
-      <spirit:vendorExtensions>
-        <xilinx:subCoreRef>
-          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="lib_cdc" xilinx:version="1.0" xilinx:isGenerated="true" xilinx:checksum="726cb4eb">
-            <xilinx:mode xilinx:name="copy_mode"/>
-          </xilinx:componentRef>
-        </xilinx:subCoreRef>
-      </spirit:vendorExtensions>
-    </spirit:fileSet>
-    <spirit:fileSet>
-      <spirit:name>xilinx_anylanguagesynthesis_xilinx_com_ip_blk_mem_gen_8_4__ref_view_fileset</spirit:name>
-      <spirit:file>
-        <spirit:name>../../ipshared/25a8/hdl/blk_mem_gen_v8_4_vhsyn_rfs.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:logicalName>blk_mem_gen_v8_4_5</spirit:logicalName>
-      </spirit:file>
-      <spirit:vendorExtensions>
-        <xilinx:subCoreRef>
-          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="blk_mem_gen" xilinx:version="8.4" xilinx:isGenerated="true" xilinx:checksum="ccbeb8e5">
-            <xilinx:mode xilinx:name="copy_mode"/>
-          </xilinx:componentRef>
-        </xilinx:subCoreRef>
-      </spirit:vendorExtensions>
-    </spirit:fileSet>
-    <spirit:fileSet>
-      <spirit:name>xilinx_anylanguagesynthesis_xilinx_com_ip_fifo_generator_13_2__ref_view_fileset</spirit:name>
-      <spirit:file>
-        <spirit:name>../../ipshared/8ae1/hdl/fifo_generator_v13_2_vhsyn_rfs.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:logicalName>fifo_generator_v13_2_6</spirit:logicalName>
-      </spirit:file>
-      <spirit:vendorExtensions>
-        <xilinx:subCoreRef>
-          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="fifo_generator" xilinx:version="13.2" xilinx:isGenerated="true" xilinx:checksum="f648df4c">
-            <xilinx:mode xilinx:name="copy_mode"/>
-          </xilinx:componentRef>
-        </xilinx:subCoreRef>
-      </spirit:vendorExtensions>
-    </spirit:fileSet>
-    <spirit:fileSet>
-      <spirit:name>xilinx_anylanguagesynthesis_xilinx_com_ip_lib_fifo_1_0__ref_view_fileset</spirit:name>
-      <spirit:file>
-        <spirit:name>../../ipshared/a4ed/hdl/lib_fifo_v1_0_rfs.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:logicalName>lib_fifo_v1_0_15</spirit:logicalName>
-      </spirit:file>
-      <spirit:vendorExtensions>
-        <xilinx:subCoreRef>
-          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="lib_fifo" xilinx:version="1.0" xilinx:isGenerated="true" xilinx:checksum="4f18359a">
-            <xilinx:mode xilinx:name="copy_mode"/>
-          </xilinx:componentRef>
-        </xilinx:subCoreRef>
-      </spirit:vendorExtensions>
-    </spirit:fileSet>
-    <spirit:fileSet>
-      <spirit:name>xilinx_anylanguagesynthesis_xilinx_com_ip_lib_srl_fifo_1_0__ref_view_fileset</spirit:name>
-      <spirit:file>
-        <spirit:name>../../ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:logicalName>lib_srl_fifo_v1_0_2</spirit:logicalName>
-      </spirit:file>
-      <spirit:vendorExtensions>
-        <xilinx:subCoreRef>
-          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="lib_srl_fifo" xilinx:version="1.0" xilinx:isGenerated="true" xilinx:checksum="4d35e89b">
-            <xilinx:mode xilinx:name="copy_mode"/>
-          </xilinx:componentRef>
-        </xilinx:subCoreRef>
-      </spirit:vendorExtensions>
-    </spirit:fileSet>
-    <spirit:fileSet>
-      <spirit:name>xilinx_anylanguagesynthesis_xilinx_com_ip_interrupt_control_3_1__ref_view_fileset</spirit:name>
-      <spirit:file>
-        <spirit:name>../../ipshared/a040/hdl/interrupt_control_v3_1_vh_rfs.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:logicalName>interrupt_control_v3_1_4</spirit:logicalName>
-      </spirit:file>
-      <spirit:vendorExtensions>
-        <xilinx:subCoreRef>
-          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="interrupt_control" xilinx:version="3.1" xilinx:isGenerated="true" xilinx:checksum="40b9039f">
-            <xilinx:mode xilinx:name="copy_mode"/>
-          </xilinx:componentRef>
-        </xilinx:subCoreRef>
-      </spirit:vendorExtensions>
-    </spirit:fileSet>
-    <spirit:fileSet>
-      <spirit:name>xilinx_anylanguagesynthesis_view_fileset</spirit:name>
-      <spirit:file>
-        <spirit:name>top_axi_quad_spi_0_0.xdc</spirit:name>
-        <spirit:userFileType>xdc</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>netlist/mode_1_memory_0_mixed.mif</spirit:name>
-        <spirit:userFileType>mif</spirit:userFileType>
-        <spirit:logicalName>axi_quad_spi_v3_2_24</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>netlist/mode_1_memory_1_wb.mif</spirit:name>
-        <spirit:userFileType>mif</spirit:userFileType>
-        <spirit:logicalName>axi_quad_spi_v3_2_24</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>netlist/mode_1_memory_2_nm.mif</spirit:name>
-        <spirit:userFileType>mif</spirit:userFileType>
-        <spirit:logicalName>axi_quad_spi_v3_2_24</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>netlist/mode_1_memory_4_mx.mif</spirit:name>
-        <spirit:userFileType>mif</spirit:userFileType>
-        <spirit:logicalName>axi_quad_spi_v3_2_24</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>netlist/mode_2_memory_0_mixed.mif</spirit:name>
-        <spirit:userFileType>mif</spirit:userFileType>
-        <spirit:logicalName>axi_quad_spi_v3_2_24</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>netlist/mode_2_memory_1_wb.mif</spirit:name>
-        <spirit:userFileType>mif</spirit:userFileType>
-        <spirit:logicalName>axi_quad_spi_v3_2_24</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>netlist/mode_2_memory_2_nm.mif</spirit:name>
-        <spirit:userFileType>mif</spirit:userFileType>
-        <spirit:logicalName>axi_quad_spi_v3_2_24</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>netlist/mode_2_memory_4_mx.mif</spirit:name>
-        <spirit:userFileType>mif</spirit:userFileType>
-        <spirit:logicalName>axi_quad_spi_v3_2_24</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>netlist/mode_2_memory_3_sp.mif</spirit:name>
-        <spirit:userFileType>mif</spirit:userFileType>
-        <spirit:logicalName>axi_quad_spi_v3_2_24</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>netlist/mode_1_memory_3_sp.mif</spirit:name>
-        <spirit:userFileType>mif</spirit:userFileType>
-        <spirit:logicalName>axi_quad_spi_v3_2_24</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>netlist/mode_1_memory_0_mixed.mem</spirit:name>
-        <spirit:userFileType>mem</spirit:userFileType>
-        <spirit:logicalName>axi_quad_spi_v3_2_24</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>netlist/mode_1_memory_1_wb.mem</spirit:name>
-        <spirit:userFileType>mem</spirit:userFileType>
-        <spirit:logicalName>axi_quad_spi_v3_2_24</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>netlist/mode_1_memory_2_nm.mem</spirit:name>
-        <spirit:userFileType>mem</spirit:userFileType>
-        <spirit:logicalName>axi_quad_spi_v3_2_24</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>netlist/mode_1_memory_4_mx.mem</spirit:name>
-        <spirit:userFileType>mem</spirit:userFileType>
-        <spirit:logicalName>axi_quad_spi_v3_2_24</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>netlist/mode_2_memory_0_mixed.mem</spirit:name>
-        <spirit:userFileType>mem</spirit:userFileType>
-        <spirit:logicalName>axi_quad_spi_v3_2_24</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>netlist/mode_2_memory_1_wb.mem</spirit:name>
-        <spirit:userFileType>mem</spirit:userFileType>
-        <spirit:logicalName>axi_quad_spi_v3_2_24</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>netlist/mode_2_memory_2_nm.mem</spirit:name>
-        <spirit:userFileType>mem</spirit:userFileType>
-        <spirit:logicalName>axi_quad_spi_v3_2_24</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>netlist/mode_2_memory_4_mx.mem</spirit:name>
-        <spirit:userFileType>mem</spirit:userFileType>
-        <spirit:logicalName>axi_quad_spi_v3_2_24</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>netlist/mode_2_memory_3_sp.mem</spirit:name>
-        <spirit:userFileType>mem</spirit:userFileType>
-        <spirit:logicalName>axi_quad_spi_v3_2_24</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>netlist/mode_1_memory_3_sp.mem</spirit:name>
-        <spirit:userFileType>mem</spirit:userFileType>
-        <spirit:logicalName>axi_quad_spi_v3_2_24</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>top_axi_quad_spi_0_0_ooc.xdc</spirit:name>
-        <spirit:userFileType>xdc</spirit:userFileType>
-        <spirit:userFileType>USED_IN_implementation</spirit:userFileType>
-        <spirit:userFileType>USED_IN_out_of_context</spirit:userFileType>
-        <spirit:userFileType>USED_IN_synthesis</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>top_axi_quad_spi_0_0_clocks.xdc</spirit:name>
-        <spirit:userFileType>xdc</spirit:userFileType>
-        <spirit:define>
-          <spirit:name>processing_order</spirit:name>
-          <spirit:value>late</spirit:value>
-        </spirit:define>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>../../ipshared/9b93/hdl/axi_quad_spi_v3_2_rfs.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:logicalName>axi_quad_spi_v3_2_24</spirit:logicalName>
-      </spirit:file>
-    </spirit:fileSet>
-    <spirit:fileSet>
-      <spirit:name>xilinx_vhdlsynthesiswrapper_view_fileset</spirit:name>
-      <spirit:file>
-        <spirit:name>synth/top_axi_quad_spi_0_0.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
-      </spirit:file>
-    </spirit:fileSet>
-    <spirit:fileSet>
       <spirit:name>xilinx_anylanguagebehavioralsimulation_xilinx_com_ip_dist_mem_gen_8_0__ref_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/0bf5/simulation/dist_mem_gen_v8_0.v</spirit:name>
+        <spirit:name>../../ipshared/fa7e/simulation/dist_mem_gen_v8_0.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-        <spirit:logicalName>dist_mem_gen_v8_0_13</spirit:logicalName>
-        <spirit:exportedName>dist_mem_gen_v8_0_13</spirit:exportedName>
+        <spirit:logicalName>dist_mem_gen_v8_0_15</spirit:logicalName>
+        <spirit:exportedName>dist_mem_gen_v8_0_15</spirit:exportedName>
       </spirit:file>
       <spirit:vendorExtensions>
         <xilinx:subCoreRef>
-          <xilinx:componentRef xsi:type="xilinx:componentRefType" xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="dist_mem_gen" xilinx:version="8.0" xilinx:isGenerated="true" xilinx:checksum="a12315e6">
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="dist_mem_gen" xilinx:version="8.0" xilinx:isGenerated="true" xilinx:checksum="083e3a08">
             <xilinx:mode xilinx:name="copy_mode"/>
           </xilinx:componentRef>
         </xilinx:subCoreRef>
@@ -7658,14 +7425,14 @@ This bit has no significance in dual or quad mode.
     <spirit:fileSet>
       <spirit:name>xilinx_anylanguagebehavioralsimulation_xilinx_com_ip_lib_pkg_1_0__ref_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/0513/hdl/lib_pkg_v1_0_rfs.vhd</spirit:name>
+        <spirit:name>../../ipshared/8c68/hdl/lib_pkg_v1_0_rfs.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-        <spirit:logicalName>lib_pkg_v1_0_2</spirit:logicalName>
+        <spirit:logicalName>lib_pkg_v1_0_4</spirit:logicalName>
       </spirit:file>
       <spirit:vendorExtensions>
         <xilinx:subCoreRef>
-          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="lib_pkg" xilinx:version="1.0" xilinx:isGenerated="true" xilinx:checksum="7b6d6b71">
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="lib_pkg" xilinx:version="1.0" xilinx:isGenerated="true" xilinx:checksum="35716901">
             <xilinx:mode xilinx:name="copy_mode"/>
           </xilinx:componentRef>
         </xilinx:subCoreRef>
@@ -7674,10 +7441,10 @@ This bit has no significance in dual or quad mode.
     <spirit:fileSet>
       <spirit:name>xilinx_anylanguagebehavioralsimulation_xilinx_com_ip_lib_cdc_1_0__ref_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd</spirit:name>
+        <spirit:name>../../ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-        <spirit:logicalName>lib_cdc_v1_0_2</spirit:logicalName>
+        <spirit:logicalName>lib_cdc_v1_0_3</spirit:logicalName>
       </spirit:file>
       <spirit:vendorExtensions>
         <xilinx:subCoreRef>
@@ -7690,14 +7457,14 @@ This bit has no significance in dual or quad mode.
     <spirit:fileSet>
       <spirit:name>xilinx_anylanguagebehavioralsimulation_xilinx_com_ip_lib_srl_fifo_1_0__ref_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd</spirit:name>
+        <spirit:name>../../ipshared/1e5a/hdl/lib_srl_fifo_v1_0_rfs.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-        <spirit:logicalName>lib_srl_fifo_v1_0_2</spirit:logicalName>
+        <spirit:logicalName>lib_srl_fifo_v1_0_4</spirit:logicalName>
       </spirit:file>
       <spirit:vendorExtensions>
         <xilinx:subCoreRef>
-          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="lib_srl_fifo" xilinx:version="1.0" xilinx:isGenerated="true" xilinx:checksum="4d35e89b">
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="lib_srl_fifo" xilinx:version="1.0" xilinx:isGenerated="true" xilinx:checksum="1f351622">
             <xilinx:mode xilinx:name="copy_mode"/>
           </xilinx:componentRef>
         </xilinx:subCoreRef>
@@ -7706,27 +7473,27 @@ This bit has no significance in dual or quad mode.
     <spirit:fileSet>
       <spirit:name>xilinx_anylanguagebehavioralsimulation_xilinx_com_ip_fifo_generator_13_2__ref_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/8ae1/simulation/fifo_generator_vlog_beh.v</spirit:name>
+        <spirit:name>../../ipshared/6080/simulation/fifo_generator_vlog_beh.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-        <spirit:logicalName>fifo_generator_v13_2_6</spirit:logicalName>
+        <spirit:logicalName>fifo_generator_v13_2_11</spirit:logicalName>
         <spirit:exportedName>fifo_generator_vlog_beh</spirit:exportedName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/8ae1/hdl/fifo_generator_v13_2_rfs.vhd</spirit:name>
+        <spirit:name>../../ipshared/6080/hdl/fifo_generator_v13_2_rfs.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-        <spirit:logicalName>fifo_generator_v13_2_6</spirit:logicalName>
+        <spirit:logicalName>fifo_generator_v13_2_11</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/8ae1/hdl/fifo_generator_v13_2_rfs.v</spirit:name>
+        <spirit:name>../../ipshared/6080/hdl/fifo_generator_v13_2_rfs.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-        <spirit:logicalName>fifo_generator_v13_2_6</spirit:logicalName>
+        <spirit:logicalName>fifo_generator_v13_2_11</spirit:logicalName>
       </spirit:file>
       <spirit:vendorExtensions>
         <xilinx:subCoreRef>
-          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="fifo_generator" xilinx:version="13.2" xilinx:isGenerated="true" xilinx:checksum="14137c35">
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="fifo_generator" xilinx:version="13.2" xilinx:isGenerated="true" xilinx:checksum="2f7dc042">
             <xilinx:mode xilinx:name="copy_mode"/>
           </xilinx:componentRef>
         </xilinx:subCoreRef>
@@ -7735,14 +7502,14 @@ This bit has no significance in dual or quad mode.
     <spirit:fileSet>
       <spirit:name>xilinx_anylanguagebehavioralsimulation_xilinx_com_ip_lib_fifo_1_0__ref_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/a4ed/hdl/lib_fifo_v1_0_rfs.vhd</spirit:name>
+        <spirit:name>../../ipshared/e160/hdl/lib_fifo_v1_0_rfs.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-        <spirit:logicalName>lib_fifo_v1_0_15</spirit:logicalName>
+        <spirit:logicalName>lib_fifo_v1_0_20</spirit:logicalName>
       </spirit:file>
       <spirit:vendorExtensions>
         <xilinx:subCoreRef>
-          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="lib_fifo" xilinx:version="1.0" xilinx:isGenerated="true" xilinx:checksum="4f18359a">
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="lib_fifo" xilinx:version="1.0" xilinx:isGenerated="true" xilinx:checksum="db2580d5">
             <xilinx:mode xilinx:name="copy_mode"/>
           </xilinx:componentRef>
         </xilinx:subCoreRef>
@@ -7767,14 +7534,14 @@ This bit has no significance in dual or quad mode.
     <spirit:fileSet>
       <spirit:name>xilinx_anylanguagebehavioralsimulation_xilinx_com_ip_interrupt_control_3_1__ref_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/a040/hdl/interrupt_control_v3_1_vh_rfs.vhd</spirit:name>
+        <spirit:name>../../ipshared/d8cc/hdl/interrupt_control_v3_1_vh_rfs.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-        <spirit:logicalName>interrupt_control_v3_1_4</spirit:logicalName>
+        <spirit:logicalName>interrupt_control_v3_1_5</spirit:logicalName>
       </spirit:file>
       <spirit:vendorExtensions>
         <xilinx:subCoreRef>
-          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="interrupt_control" xilinx:version="3.1" xilinx:isGenerated="true" xilinx:checksum="40b9039f">
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="interrupt_control" xilinx:version="3.1" xilinx:isGenerated="true" xilinx:checksum="f8eb3d48">
             <xilinx:mode xilinx:name="copy_mode"/>
           </xilinx:componentRef>
         </xilinx:subCoreRef>
@@ -7785,144 +7552,374 @@ This bit has no significance in dual or quad mode.
       <spirit:file>
         <spirit:name>netlist/mode_1_memory_0_mixed.mif</spirit:name>
         <spirit:userFileType>mif</spirit:userFileType>
-        <spirit:logicalName>axi_quad_spi_v3_2_24</spirit:logicalName>
+        <spirit:logicalName>axi_quad_spi_v3_2_32</spirit:logicalName>
       </spirit:file>
       <spirit:file>
         <spirit:name>netlist/mode_1_memory_1_wb.mif</spirit:name>
         <spirit:userFileType>mif</spirit:userFileType>
-        <spirit:logicalName>axi_quad_spi_v3_2_24</spirit:logicalName>
+        <spirit:logicalName>axi_quad_spi_v3_2_32</spirit:logicalName>
       </spirit:file>
       <spirit:file>
         <spirit:name>netlist/mode_1_memory_2_nm.mif</spirit:name>
         <spirit:userFileType>mif</spirit:userFileType>
-        <spirit:logicalName>axi_quad_spi_v3_2_24</spirit:logicalName>
+        <spirit:logicalName>axi_quad_spi_v3_2_32</spirit:logicalName>
       </spirit:file>
       <spirit:file>
         <spirit:name>netlist/mode_1_memory_4_mx.mif</spirit:name>
         <spirit:userFileType>mif</spirit:userFileType>
-        <spirit:logicalName>axi_quad_spi_v3_2_24</spirit:logicalName>
+        <spirit:logicalName>axi_quad_spi_v3_2_32</spirit:logicalName>
       </spirit:file>
       <spirit:file>
         <spirit:name>netlist/mode_2_memory_0_mixed.mif</spirit:name>
         <spirit:userFileType>mif</spirit:userFileType>
-        <spirit:logicalName>axi_quad_spi_v3_2_24</spirit:logicalName>
+        <spirit:logicalName>axi_quad_spi_v3_2_32</spirit:logicalName>
       </spirit:file>
       <spirit:file>
         <spirit:name>netlist/mode_2_memory_1_wb.mif</spirit:name>
         <spirit:userFileType>mif</spirit:userFileType>
-        <spirit:logicalName>axi_quad_spi_v3_2_24</spirit:logicalName>
+        <spirit:logicalName>axi_quad_spi_v3_2_32</spirit:logicalName>
       </spirit:file>
       <spirit:file>
         <spirit:name>netlist/mode_2_memory_2_nm.mif</spirit:name>
         <spirit:userFileType>mif</spirit:userFileType>
-        <spirit:logicalName>axi_quad_spi_v3_2_24</spirit:logicalName>
+        <spirit:logicalName>axi_quad_spi_v3_2_32</spirit:logicalName>
       </spirit:file>
       <spirit:file>
         <spirit:name>netlist/mode_2_memory_4_mx.mif</spirit:name>
         <spirit:userFileType>mif</spirit:userFileType>
-        <spirit:logicalName>axi_quad_spi_v3_2_24</spirit:logicalName>
+        <spirit:logicalName>axi_quad_spi_v3_2_32</spirit:logicalName>
       </spirit:file>
       <spirit:file>
         <spirit:name>netlist/mode_2_memory_3_sp.mif</spirit:name>
         <spirit:userFileType>mif</spirit:userFileType>
-        <spirit:logicalName>axi_quad_spi_v3_2_24</spirit:logicalName>
+        <spirit:logicalName>axi_quad_spi_v3_2_32</spirit:logicalName>
       </spirit:file>
       <spirit:file>
         <spirit:name>netlist/mode_1_memory_3_sp.mif</spirit:name>
         <spirit:userFileType>mif</spirit:userFileType>
-        <spirit:logicalName>axi_quad_spi_v3_2_24</spirit:logicalName>
+        <spirit:logicalName>axi_quad_spi_v3_2_32</spirit:logicalName>
       </spirit:file>
       <spirit:file>
         <spirit:name>netlist/mode_1_memory_0_mixed.mem</spirit:name>
         <spirit:userFileType>mem</spirit:userFileType>
-        <spirit:logicalName>axi_quad_spi_v3_2_24</spirit:logicalName>
+        <spirit:logicalName>axi_quad_spi_v3_2_32</spirit:logicalName>
       </spirit:file>
       <spirit:file>
         <spirit:name>netlist/mode_1_memory_1_wb.mem</spirit:name>
         <spirit:userFileType>mem</spirit:userFileType>
-        <spirit:logicalName>axi_quad_spi_v3_2_24</spirit:logicalName>
+        <spirit:logicalName>axi_quad_spi_v3_2_32</spirit:logicalName>
       </spirit:file>
       <spirit:file>
         <spirit:name>netlist/mode_1_memory_2_nm.mem</spirit:name>
         <spirit:userFileType>mem</spirit:userFileType>
-        <spirit:logicalName>axi_quad_spi_v3_2_24</spirit:logicalName>
+        <spirit:logicalName>axi_quad_spi_v3_2_32</spirit:logicalName>
       </spirit:file>
       <spirit:file>
         <spirit:name>netlist/mode_1_memory_4_mx.mem</spirit:name>
         <spirit:userFileType>mem</spirit:userFileType>
-        <spirit:logicalName>axi_quad_spi_v3_2_24</spirit:logicalName>
+        <spirit:logicalName>axi_quad_spi_v3_2_32</spirit:logicalName>
       </spirit:file>
       <spirit:file>
         <spirit:name>netlist/mode_2_memory_0_mixed.mem</spirit:name>
         <spirit:userFileType>mem</spirit:userFileType>
-        <spirit:logicalName>axi_quad_spi_v3_2_24</spirit:logicalName>
+        <spirit:logicalName>axi_quad_spi_v3_2_32</spirit:logicalName>
       </spirit:file>
       <spirit:file>
         <spirit:name>netlist/mode_2_memory_1_wb.mem</spirit:name>
         <spirit:userFileType>mem</spirit:userFileType>
-        <spirit:logicalName>axi_quad_spi_v3_2_24</spirit:logicalName>
+        <spirit:logicalName>axi_quad_spi_v3_2_32</spirit:logicalName>
       </spirit:file>
       <spirit:file>
         <spirit:name>netlist/mode_2_memory_2_nm.mem</spirit:name>
         <spirit:userFileType>mem</spirit:userFileType>
-        <spirit:logicalName>axi_quad_spi_v3_2_24</spirit:logicalName>
+        <spirit:logicalName>axi_quad_spi_v3_2_32</spirit:logicalName>
       </spirit:file>
       <spirit:file>
         <spirit:name>netlist/mode_2_memory_4_mx.mem</spirit:name>
         <spirit:userFileType>mem</spirit:userFileType>
-        <spirit:logicalName>axi_quad_spi_v3_2_24</spirit:logicalName>
+        <spirit:logicalName>axi_quad_spi_v3_2_32</spirit:logicalName>
       </spirit:file>
       <spirit:file>
         <spirit:name>netlist/mode_2_memory_3_sp.mem</spirit:name>
         <spirit:userFileType>mem</spirit:userFileType>
-        <spirit:logicalName>axi_quad_spi_v3_2_24</spirit:logicalName>
+        <spirit:logicalName>axi_quad_spi_v3_2_32</spirit:logicalName>
       </spirit:file>
       <spirit:file>
         <spirit:name>netlist/mode_1_memory_3_sp.mem</spirit:name>
         <spirit:userFileType>mem</spirit:userFileType>
-        <spirit:logicalName>axi_quad_spi_v3_2_24</spirit:logicalName>
+        <spirit:logicalName>axi_quad_spi_v3_2_32</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/9b93/hdl/axi_quad_spi_v3_2_rfs.vhd</spirit:name>
+        <spirit:name>../../ipshared/7d5e/hdl/axi_quad_spi_v3_2_rfs.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-        <spirit:logicalName>axi_quad_spi_v3_2_24</spirit:logicalName>
+        <spirit:logicalName>axi_quad_spi_v3_2_32</spirit:logicalName>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
-      <spirit:name>xilinx_vhdlsimulationwrapper_view_fileset</spirit:name>
+      <spirit:name>xilinx_anylanguagesynthesis_xilinx_com_ip_dist_mem_gen_8_0__ref_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>sim/top_axi_quad_spi_0_0.vhd</spirit:name>
+        <spirit:name>../../ipshared/fa7e/hdl/dist_mem_gen_v8_0_vhsyn_rfs.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
+        <spirit:logicalName>dist_mem_gen_v8_0_15</spirit:logicalName>
       </spirit:file>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="dist_mem_gen" xilinx:version="8.0" xilinx:isGenerated="true" xilinx:checksum="62503f3b">
+            <xilinx:mode xilinx:name="copy_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
     </spirit:fileSet>
     <spirit:fileSet>
-      <spirit:name>xilinx_implementation_view_fileset</spirit:name>
+      <spirit:name>xilinx_anylanguagesynthesis_xilinx_com_ip_axi_lite_ipif_3_0__ref_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>top_axi_quad_spi_0_0_board.xdc</spirit:name>
+        <spirit:name>../../ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>axi_lite_ipif_v3_0_4</spirit:logicalName>
+      </spirit:file>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="axi_lite_ipif" xilinx:version="3.0" xilinx:isGenerated="true" xilinx:checksum="db189391">
+            <xilinx:mode xilinx:name="copy_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagesynthesis_xilinx_com_ip_lib_pkg_1_0__ref_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>../../ipshared/8c68/hdl/lib_pkg_v1_0_rfs.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>lib_pkg_v1_0_4</spirit:logicalName>
+      </spirit:file>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="lib_pkg" xilinx:version="1.0" xilinx:isGenerated="true" xilinx:checksum="35716901">
+            <xilinx:mode xilinx:name="copy_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagesynthesis_xilinx_com_ip_lib_cdc_1_0__ref_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>../../ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>lib_cdc_v1_0_3</spirit:logicalName>
+      </spirit:file>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="lib_cdc" xilinx:version="1.0" xilinx:isGenerated="true" xilinx:checksum="726cb4eb">
+            <xilinx:mode xilinx:name="copy_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagesynthesis_xilinx_com_ip_blk_mem_gen_8_4__ref_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>../../ipshared/5ec1/hdl/blk_mem_gen_v8_4_vhsyn_rfs.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>blk_mem_gen_v8_4_9</spirit:logicalName>
+      </spirit:file>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="blk_mem_gen" xilinx:version="8.4" xilinx:isGenerated="true" xilinx:checksum="d1874e9b">
+            <xilinx:mode xilinx:name="copy_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagesynthesis_xilinx_com_ip_fifo_generator_13_2__ref_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>../../ipshared/6080/hdl/fifo_generator_v13_2_vhsyn_rfs.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>fifo_generator_v13_2_11</spirit:logicalName>
+      </spirit:file>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="fifo_generator" xilinx:version="13.2" xilinx:isGenerated="true" xilinx:checksum="31291716">
+            <xilinx:mode xilinx:name="copy_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagesynthesis_xilinx_com_ip_lib_fifo_1_0__ref_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>../../ipshared/e160/hdl/lib_fifo_v1_0_rfs.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>lib_fifo_v1_0_20</spirit:logicalName>
+      </spirit:file>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="lib_fifo" xilinx:version="1.0" xilinx:isGenerated="true" xilinx:checksum="db2580d5">
+            <xilinx:mode xilinx:name="copy_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagesynthesis_xilinx_com_ip_lib_srl_fifo_1_0__ref_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>../../ipshared/1e5a/hdl/lib_srl_fifo_v1_0_rfs.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>lib_srl_fifo_v1_0_4</spirit:logicalName>
+      </spirit:file>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="lib_srl_fifo" xilinx:version="1.0" xilinx:isGenerated="true" xilinx:checksum="1f351622">
+            <xilinx:mode xilinx:name="copy_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagesynthesis_xilinx_com_ip_interrupt_control_3_1__ref_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>../../ipshared/d8cc/hdl/interrupt_control_v3_1_vh_rfs.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>interrupt_control_v3_1_5</spirit:logicalName>
+      </spirit:file>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="interrupt_control" xilinx:version="3.1" xilinx:isGenerated="true" xilinx:checksum="f8eb3d48">
+            <xilinx:mode xilinx:name="copy_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagesynthesis_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>top_axi_quad_spi_0_0.xdc</spirit:name>
         <spirit:userFileType>xdc</spirit:userFileType>
-        <spirit:userFileType>USED_IN_board</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>netlist/mode_1_memory_0_mixed.mif</spirit:name>
+        <spirit:userFileType>mif</spirit:userFileType>
+        <spirit:logicalName>axi_quad_spi_v3_2_32</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>netlist/mode_1_memory_1_wb.mif</spirit:name>
+        <spirit:userFileType>mif</spirit:userFileType>
+        <spirit:logicalName>axi_quad_spi_v3_2_32</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>netlist/mode_1_memory_2_nm.mif</spirit:name>
+        <spirit:userFileType>mif</spirit:userFileType>
+        <spirit:logicalName>axi_quad_spi_v3_2_32</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>netlist/mode_1_memory_4_mx.mif</spirit:name>
+        <spirit:userFileType>mif</spirit:userFileType>
+        <spirit:logicalName>axi_quad_spi_v3_2_32</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>netlist/mode_2_memory_0_mixed.mif</spirit:name>
+        <spirit:userFileType>mif</spirit:userFileType>
+        <spirit:logicalName>axi_quad_spi_v3_2_32</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>netlist/mode_2_memory_1_wb.mif</spirit:name>
+        <spirit:userFileType>mif</spirit:userFileType>
+        <spirit:logicalName>axi_quad_spi_v3_2_32</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>netlist/mode_2_memory_2_nm.mif</spirit:name>
+        <spirit:userFileType>mif</spirit:userFileType>
+        <spirit:logicalName>axi_quad_spi_v3_2_32</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>netlist/mode_2_memory_4_mx.mif</spirit:name>
+        <spirit:userFileType>mif</spirit:userFileType>
+        <spirit:logicalName>axi_quad_spi_v3_2_32</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>netlist/mode_2_memory_3_sp.mif</spirit:name>
+        <spirit:userFileType>mif</spirit:userFileType>
+        <spirit:logicalName>axi_quad_spi_v3_2_32</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>netlist/mode_1_memory_3_sp.mif</spirit:name>
+        <spirit:userFileType>mif</spirit:userFileType>
+        <spirit:logicalName>axi_quad_spi_v3_2_32</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>netlist/mode_1_memory_0_mixed.mem</spirit:name>
+        <spirit:userFileType>mem</spirit:userFileType>
+        <spirit:logicalName>axi_quad_spi_v3_2_32</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>netlist/mode_1_memory_1_wb.mem</spirit:name>
+        <spirit:userFileType>mem</spirit:userFileType>
+        <spirit:logicalName>axi_quad_spi_v3_2_32</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>netlist/mode_1_memory_2_nm.mem</spirit:name>
+        <spirit:userFileType>mem</spirit:userFileType>
+        <spirit:logicalName>axi_quad_spi_v3_2_32</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>netlist/mode_1_memory_4_mx.mem</spirit:name>
+        <spirit:userFileType>mem</spirit:userFileType>
+        <spirit:logicalName>axi_quad_spi_v3_2_32</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>netlist/mode_2_memory_0_mixed.mem</spirit:name>
+        <spirit:userFileType>mem</spirit:userFileType>
+        <spirit:logicalName>axi_quad_spi_v3_2_32</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>netlist/mode_2_memory_1_wb.mem</spirit:name>
+        <spirit:userFileType>mem</spirit:userFileType>
+        <spirit:logicalName>axi_quad_spi_v3_2_32</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>netlist/mode_2_memory_2_nm.mem</spirit:name>
+        <spirit:userFileType>mem</spirit:userFileType>
+        <spirit:logicalName>axi_quad_spi_v3_2_32</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>netlist/mode_2_memory_4_mx.mem</spirit:name>
+        <spirit:userFileType>mem</spirit:userFileType>
+        <spirit:logicalName>axi_quad_spi_v3_2_32</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>netlist/mode_2_memory_3_sp.mem</spirit:name>
+        <spirit:userFileType>mem</spirit:userFileType>
+        <spirit:logicalName>axi_quad_spi_v3_2_32</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>netlist/mode_1_memory_3_sp.mem</spirit:name>
+        <spirit:userFileType>mem</spirit:userFileType>
+        <spirit:logicalName>axi_quad_spi_v3_2_32</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>top_axi_quad_spi_0_0_ooc.xdc</spirit:name>
+        <spirit:userFileType>xdc</spirit:userFileType>
         <spirit:userFileType>USED_IN_implementation</spirit:userFileType>
+        <spirit:userFileType>USED_IN_out_of_context</spirit:userFileType>
         <spirit:userFileType>USED_IN_synthesis</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>top_axi_quad_spi_0_0_clocks.xdc</spirit:name>
+        <spirit:userFileType>xdc</spirit:userFileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>late</spirit:value>
+        </spirit:define>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/7d5e/hdl/axi_quad_spi_v3_2_rfs.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>axi_quad_spi_v3_2_32</spirit:logicalName>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
       <spirit:name>xilinx_externalfiles_view_fileset</spirit:name>
-      <spirit:file>
-        <spirit:name>top_axi_quad_spi_0_0_sim_netlist.vhdl</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_simulation</spirit:userFileType>
-        <spirit:userFileType>USED_IN_single_language</spirit:userFileType>
-        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>top_axi_quad_spi_0_0_sim_netlist.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_simulation</spirit:userFileType>
-        <spirit:userFileType>USED_IN_single_language</spirit:userFileType>
-        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
-      </spirit:file>
       <spirit:file>
         <spirit:name>top_axi_quad_spi_0_0.dcp</spirit:name>
         <spirit:userFileType>dcp</spirit:userFileType>
@@ -7942,19 +7939,59 @@ This bit has no significance in dual or quad mode.
         <spirit:userFileType>USED_IN_synth_blackbox_stub</spirit:userFileType>
         <spirit:logicalName>xil_defaultlib</spirit:logicalName>
       </spirit:file>
+      <spirit:file>
+        <spirit:name>top_axi_quad_spi_0_0_sim_netlist.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_simulation</spirit:userFileType>
+        <spirit:userFileType>USED_IN_single_language</spirit:userFileType>
+        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>top_axi_quad_spi_0_0_sim_netlist.vhdl</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_simulation</spirit:userFileType>
+        <spirit:userFileType>USED_IN_single_language</spirit:userFileType>
+        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_implementation_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>top_axi_quad_spi_0_0_board.xdc</spirit:name>
+        <spirit:userFileType>xdc</spirit:userFileType>
+        <spirit:userFileType>USED_IN_board</spirit:userFileType>
+        <spirit:userFileType>USED_IN_implementation</spirit:userFileType>
+        <spirit:userFileType>USED_IN_synthesis</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_vhdlsimulationwrapper_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>sim/top_axi_quad_spi_0_0.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_vhdlsynthesiswrapper_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>synth/top_axi_quad_spi_0_0.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
+      </spirit:file>
     </spirit:fileSet>
   </spirit:fileSets>
-  <spirit:description>SPI Interface for SPI Based Slave</spirit:description>
+  <spirit:description>AXI Quad Serial Peripheral Interface (SPI) core connects the AXI4 interface to those SPI slave devices that support the Standard, Dual, or Quad SPI protocol instruction set. This core provides a serial interface to SPI slave devices</spirit:description>
   <spirit:parameters>
     <spirit:parameter>
       <spirit:name>C_SPI_MEMORY</spirit:name>
       <spirit:displayName>SPI Memory</spirit:displayName>
       <spirit:description>This parameter should be set for tagetting the SPI flash memory. Please refer PG for more reference. Allowed values are 0= Mixed Flash, 1= Winbond SPI Flash, 2= Micron SPI Flash(Numonyx), 3= Spansion SPI Flash, 4= Macronix SPI Flash.</spirit:description>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_SPI_MEMORY" spirit:choiceRef="choice_pairs_b1f7d961" spirit:order="40">1</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_SPI_MEMORY" spirit:choiceRef="choice_pairs_b1f7d961" spirit:order="2">1</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_SPI_MEMORY">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="generated" xilinx:id="PARAM_ENABLEMENT.C_SPI_MEMORY">true</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -7963,11 +8000,11 @@ This bit has no significance in dual or quad mode.
       <spirit:name>C_USE_STARTUP</spirit:name>
       <spirit:displayName>Use STARTUPE2 Primitive</spirit:displayName>
       <spirit:description>This parameter should be set when the targeted FPGA have STARTUPE2 primitive for routing the SPI clock. Please refer PG for more reference. Allowed values are 0= STARTUP is not included, 1= STARTUP is included. Example Design is not supported when STARTUPE2 primitive is chosen in the design.</spirit:description>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_USE_STARTUP" spirit:choiceRef="choice_pairs_4873554b" spirit:order="70">0</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_USE_STARTUP" spirit:choiceRef="choice_pairs_4873554b" spirit:order="3">0</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_USE_STARTUP">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="generated" xilinx:id="PARAM_ENABLEMENT.C_USE_STARTUP">true</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -7976,11 +8013,11 @@ This bit has no significance in dual or quad mode.
       <spirit:name>C_USE_STARTUP_INT</spirit:name>
       <spirit:displayName>STARTUP Primitive Usage</spirit:displayName>
       <spirit:description>This parameter will determine if the STARTUP primitive is instantiated with-in IP or outside</spirit:description>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_USE_STARTUP_INT" spirit:choiceRef="choice_pairs_9f49441c" spirit:order="71" spirit:configGroups="1 UnGrouped">0</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_USE_STARTUP_INT" spirit:choiceRef="choice_pairs_9f49441c" spirit:order="4" spirit:configGroups="1 UnGrouped">0</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_USE_STARTUP_INT">false</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="generated" xilinx:id="PARAM_ENABLEMENT.C_USE_STARTUP_INT">false</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -7989,11 +8026,11 @@ This bit has no significance in dual or quad mode.
       <spirit:name>C_SPI_MODE</spirit:name>
       <spirit:displayName>SPI Mode</spirit:displayName>
       <spirit:description>This parameter should be set while choosing the SPI mode of the core. Please refer PG for more reference. Allowed values are 0= Standard SPI mode, 1= Dual SPI mode, 2= Quad SPI mode.</spirit:description>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_SPI_MODE" spirit:choiceRef="choice_pairs_c8de7e7d" spirit:order="29" spirit:configGroups="0 UnGrouped">0</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_SPI_MODE" spirit:choiceRef="choice_pairs_c8de7e7d" spirit:order="5" spirit:configGroups="0 UnGrouped">0</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_SPI_MODE">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="generated" xilinx:id="PARAM_ENABLEMENT.C_SPI_MODE">true</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -8002,11 +8039,11 @@ This bit has no significance in dual or quad mode.
       <spirit:name>C_NUM_TRANSFER_BITS</spirit:name>
       <spirit:displayName>Num Transfer Bits</spirit:displayName>
       <spirit:description>This parameter should be set while choosing the no. of bits in single SPI transaction. Please refer PG for more reference. Allowed values are 8 or 16 or 32. The Standard SPI mode supports all the three values while Dual and Quad SPI mode supports only the 8-bit transfer mode.</spirit:description>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_NUM_TRANSFER_BITS" spirit:choiceRef="choice_list_8112d406" spirit:order="60">8</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_NUM_TRANSFER_BITS" spirit:choiceRef="choice_list_8112d406" spirit:order="6">8</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_NUM_TRANSFER_BITS">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="generated" xilinx:id="PARAM_ENABLEMENT.C_NUM_TRANSFER_BITS">true</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -8015,11 +8052,11 @@ This bit has no significance in dual or quad mode.
       <spirit:name>C_DUAL_QUAD_MODE</spirit:name>
       <spirit:displayName>Dual Quad Mode</spirit:displayName>
       <spirit:description>This parameter should be set to access two flash in a mux fashion.</spirit:description>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_DUAL_QUAD_MODE" spirit:choiceRef="choice_pairs_4873554b" spirit:order="9">0</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_DUAL_QUAD_MODE" spirit:choiceRef="choice_pairs_4873554b" spirit:order="7">0</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_DUAL_QUAD_MODE">false</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="generated" xilinx:id="PARAM_ENABLEMENT.C_DUAL_QUAD_MODE">false</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -8028,11 +8065,11 @@ This bit has no significance in dual or quad mode.
       <spirit:name>C_NUM_SS_BITS</spirit:name>
       <spirit:displayName>No. of Slave Select Bits</spirit:displayName>
       <spirit:description>This parameter should be set to choose the no. SPI slave memories in design. This parameter decides the length of Slave Select port width of the core.</spirit:description>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_NUM_SS_BITS" spirit:order="80" spirit:minimum="1" spirit:maximum="32" spirit:rangeType="long">1</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_NUM_SS_BITS" spirit:order="8" spirit:minimum="1" spirit:maximum="32" spirit:rangeType="long">1</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_NUM_SS_BITS">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="generated" xilinx:id="PARAM_ENABLEMENT.C_NUM_SS_BITS">true</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -8041,11 +8078,11 @@ This bit has no significance in dual or quad mode.
       <spirit:name>C_SCK_RATIO</spirit:name>
       <spirit:displayName>SCK Ratio</spirit:displayName>
       <spirit:description>This parameter should be set while choosing the division ratio for SPI clock. Please refer PG for more reference. Standard SPI mode has variable values for division ratio for SPI clock, while Dual and Quad mode allows only 2. XIP mode also allows division ratio of 2.</spirit:description>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_SCK_RATIO" spirit:choiceRef="choice_list_552a89ba" spirit:order="90">16</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_SCK_RATIO" spirit:choiceRef="choice_list_552a89ba" spirit:order="9">16</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_SCK_RATIO">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="generated" xilinx:id="PARAM_ENABLEMENT.C_SCK_RATIO">true</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -8054,11 +8091,11 @@ This bit has no significance in dual or quad mode.
       <spirit:name>C_FIFO_DEPTH</spirit:name>
       <spirit:displayName>FIFO Depth</spirit:displayName>
       <spirit:description>This parameter should be set while choosing FIFO depth. Please refer PG for more reference. Standard SPI mode provides the choice 0 or 16 or 256 beat FIFO depth, while Dual and Quad mode provides options of 16 or 256 beat FIFO depth.</spirit:description>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_FIFO_DEPTH" spirit:choiceRef="choice_list_0051c444" spirit:order="100">16</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_FIFO_DEPTH" spirit:choiceRef="choice_list_0051c444" spirit:order="10">16</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_FIFO_DEPTH">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="generated" xilinx:id="PARAM_ENABLEMENT.C_FIFO_DEPTH">true</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -8067,11 +8104,11 @@ This bit has no significance in dual or quad mode.
       <spirit:name>C_XIP_MODE</spirit:name>
       <spirit:displayName>XIP Mode</spirit:displayName>
       <spirit:description>This parameter should be set while choosing the core to operate in eXecute In Place (XIP) mode. Please refer PG for more reference.</spirit:description>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_XIP_MODE" spirit:choiceRef="choice_pairs_4873554b" spirit:order="10">0</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_XIP_MODE" spirit:choiceRef="choice_pairs_4873554b" spirit:order="11">0</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_XIP_MODE">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="generated" xilinx:id="PARAM_ENABLEMENT.C_XIP_MODE">true</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -8080,11 +8117,11 @@ This bit has no significance in dual or quad mode.
       <spirit:name>C_BYTE_LEVEL_INTERRUPT_EN</spirit:name>
       <spirit:displayName>BYTE_LEVEL_INTERRUPT_EN</spirit:displayName>
       <spirit:description>On Enabling this parameter, DRR NOT Empty Interrupt will be triggered on byte level basis instead of transaction level. Please refer PG for more reference.</spirit:description>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_BYTE_LEVEL_INTERRUPT_EN" spirit:choiceRef="choice_pairs_4873554b" spirit:order="10">0</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_BYTE_LEVEL_INTERRUPT_EN" spirit:choiceRef="choice_pairs_4873554b" spirit:order="12">0</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_BYTE_LEVEL_INTERRUPT_EN">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="generated" xilinx:id="PARAM_ENABLEMENT.C_BYTE_LEVEL_INTERRUPT_EN">true</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -8092,11 +8129,11 @@ This bit has no significance in dual or quad mode.
     <spirit:parameter>
       <spirit:name>C_XIP_PERF_MODE</spirit:name>
       <spirit:displayName>XIP Performance Mode</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_XIP_PERF_MODE" spirit:choiceRef="choice_pairs_b207e870" spirit:order="101">1</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_XIP_PERF_MODE" spirit:choiceRef="choice_pairs_b207e870" spirit:order="13">1</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_XIP_PERF_MODE">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="generated" xilinx:id="PARAM_ENABLEMENT.C_XIP_PERF_MODE">true</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -8104,11 +8141,11 @@ This bit has no significance in dual or quad mode.
     <spirit:parameter>
       <spirit:name>C_SPI_MEM_ADDR_BITS</spirit:name>
       <spirit:displayName>XIP Mode Memory Addressing Bits</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_SPI_MEM_ADDR_BITS" spirit:choiceRef="choice_list_83cf9db9" spirit:order="11">24</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_SPI_MEM_ADDR_BITS" spirit:choiceRef="choice_list_83cf9db9" spirit:order="14">24</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_SPI_MEM_ADDR_BITS">false</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="generated" xilinx:id="PARAM_ENABLEMENT.C_SPI_MEM_ADDR_BITS">false</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -8116,11 +8153,11 @@ This bit has no significance in dual or quad mode.
     <spirit:parameter>
       <spirit:name>C_FAMILY</spirit:name>
       <spirit:displayName>Sub Mode</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.C_FAMILY" spirit:order="7">zynq</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.C_FAMILY" spirit:order="15">zynq</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_FAMILY">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="generated" xilinx:id="PARAM_ENABLEMENT.C_FAMILY">true</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -8128,11 +8165,11 @@ This bit has no significance in dual or quad mode.
     <spirit:parameter>
       <spirit:name>UC_FAMILY</spirit:name>
       <spirit:displayName>Sub Mode</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.UC_FAMILY" spirit:choiceRef="choice_list_8af5a703" spirit:order="8">0</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.UC_FAMILY" spirit:choiceRef="choice_list_8af5a703" spirit:order="16">0</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.UC_FAMILY">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="generated" xilinx:id="PARAM_ENABLEMENT.UC_FAMILY">true</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -8140,11 +8177,11 @@ This bit has no significance in dual or quad mode.
     <spirit:parameter>
       <spirit:name>C_SHARED_STARTUP</spirit:name>
       <spirit:displayName>Share the un-used startup ports</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_SHARED_STARTUP" spirit:choiceRef="choice_list_8af5a703" spirit:order="100011">0</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_SHARED_STARTUP" spirit:choiceRef="choice_list_8af5a703" spirit:order="17">0</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_SHARED_STARTUP">false</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="generated" xilinx:id="PARAM_ENABLEMENT.C_SHARED_STARTUP">false</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -8152,11 +8189,11 @@ This bit has no significance in dual or quad mode.
     <spirit:parameter>
       <spirit:name>C_SUB_FAMILY</spirit:name>
       <spirit:displayName>Sub Mode</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.C_SUB_FAMILY" spirit:order="10000">zynq</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.C_SUB_FAMILY" spirit:order="18">zynq</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_SUB_FAMILY">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="generated" xilinx:id="PARAM_ENABLEMENT.C_SUB_FAMILY">true</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -8165,11 +8202,11 @@ This bit has no significance in dual or quad mode.
       <spirit:name>C_TYPE_OF_AXI4_INTERFACE</spirit:name>
       <spirit:displayName>Type Of AXI4 Interface</spirit:displayName>
       <spirit:description>This parameter should be set while choosing the type of AXI bus interface.Please refer PG for more reference. Allowed values are 0= AXI4 Lite Interface, 1= AXI4 Memory Mapped Interface.</spirit:description>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_TYPE_OF_AXI4_INTERFACE" spirit:choiceRef="choice_pairs_4873554b" spirit:order="20">0</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_TYPE_OF_AXI4_INTERFACE" spirit:choiceRef="choice_pairs_4873554b" spirit:order="19">0</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_TYPE_OF_AXI4_INTERFACE">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="generated" xilinx:id="PARAM_ENABLEMENT.C_TYPE_OF_AXI4_INTERFACE">true</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -8177,22 +8214,22 @@ This bit has no significance in dual or quad mode.
     <spirit:parameter>
       <spirit:name>C_INSTANCE</spirit:name>
       <spirit:displayName>C Instance</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.C_INSTANCE" spirit:order="10001">axi_quad_spi_inst</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.C_INSTANCE" spirit:order="20">axi_quad_spi_inst</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_INSTANCE">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="generated" xilinx:id="PARAM_ENABLEMENT.C_INSTANCE">true</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Component_Name</spirit:name>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="1">top_axi_quad_spi_0_0</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="21">top_axi_quad_spi_0_0</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.Component_Name">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="generated" xilinx:id="PARAM_ENABLEMENT.Component_Name">true</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -8201,11 +8238,11 @@ This bit has no significance in dual or quad mode.
       <spirit:name>Master_mode</spirit:name>
       <spirit:displayName>Enable Master Mode</spirit:displayName>
       <spirit:description>This parameter should be set while choosing the core in Standard SPI mode. Please refer PG for more reference. Standard SPI mode can operate in Master SPI or Slave SPI mode, while Dual and Quad mode operates only in Master SPI mode.</spirit:description>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.Master_mode" spirit:choiceRef="choice_pairs_4873554b" spirit:order="200">1</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.Master_mode" spirit:choiceRef="choice_pairs_4873554b" spirit:order="22">1</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.Master_mode">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="generated" xilinx:id="PARAM_ENABLEMENT.Master_mode">true</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -8214,11 +8251,11 @@ This bit has no significance in dual or quad mode.
       <spirit:name>FIFO_INCLUDED</spirit:name>
       <spirit:displayName>Enable FIFO</spirit:displayName>
       <spirit:description>This parameter should be set while choosing to include the FIFO in the design or notPlease refer PG for more reference. This parameter can be set only in Standard SPI mode where choice of FIFO inclusion or exclusion is provided. In case of Dual and Quad SPI modes the FIFO inclusion is mandatory.</spirit:description>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.FIFO_INCLUDED" spirit:choiceRef="choice_pairs_4873554b" spirit:order="30">1</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.FIFO_INCLUDED" spirit:choiceRef="choice_pairs_4873554b" spirit:order="23">1</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.FIFO_INCLUDED">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="generated" xilinx:id="PARAM_ENABLEMENT.FIFO_INCLUDED">true</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -8227,11 +8264,11 @@ This bit has no significance in dual or quad mode.
       <spirit:name>Multiples16</spirit:name>
       <spirit:displayName>Multiples16</spirit:displayName>
       <spirit:description>This parameter should be set while choosing the SPI clock in Standard SPI mode. Please refer PG for more reference.</spirit:description>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.Multiples16" spirit:order="150" spirit:minimum="1" spirit:maximum="128" spirit:rangeType="long">10</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.Multiples16" spirit:order="24" spirit:minimum="1" spirit:maximum="128" spirit:rangeType="long">10</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.Multiples16">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="generated" xilinx:id="PARAM_ENABLEMENT.Multiples16">true</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -8239,11 +8276,11 @@ This bit has no significance in dual or quad mode.
     <spirit:parameter>
       <spirit:name>C_SCK_RATIO1</spirit:name>
       <spirit:displayName>C Sck Ratio1</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_SCK_RATIO1" spirit:order="3000" spirit:minimum="1" spirit:maximum="32" spirit:rangeType="long">1</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_SCK_RATIO1" spirit:order="25" spirit:minimum="1" spirit:maximum="32" spirit:rangeType="long">1</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_SCK_RATIO1">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="generated" xilinx:id="PARAM_ENABLEMENT.C_SCK_RATIO1">true</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -8252,11 +8289,11 @@ This bit has no significance in dual or quad mode.
       <spirit:name>Async_Clk</spirit:name>
       <spirit:displayName>Enable Async Clock Mode</spirit:displayName>
       <spirit:description>This parameter should be set while choosing the core to be used in Standalone mode and if clocks to core are different.</spirit:description>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.Async_Clk" spirit:choiceRef="choice_pairs_4873554b" spirit:order="2000">0</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.Async_Clk" spirit:choiceRef="choice_pairs_4873554b" spirit:order="26">0</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.Async_Clk">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="generated" xilinx:id="PARAM_ENABLEMENT.Async_Clk">true</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -8264,11 +8301,11 @@ This bit has no significance in dual or quad mode.
     <spirit:parameter>
       <spirit:name>C_S_AXI4_BASEADDR</spirit:name>
       <spirit:displayName>C S Axi4 Base Address</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S_AXI4_BASEADDR" spirit:order="30000" spirit:configGroups="1 Addresses" spirit:bitStringLength="32">0xFFFFFFFF</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S_AXI4_BASEADDR" spirit:order="27" spirit:configGroups="1 Addresses" spirit:bitStringLength="32">0xFFFFFFFF</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_S_AXI4_BASEADDR">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="generated" xilinx:id="PARAM_ENABLEMENT.C_S_AXI4_BASEADDR">true</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -8276,11 +8313,11 @@ This bit has no significance in dual or quad mode.
     <spirit:parameter>
       <spirit:name>C_S_AXI4_HIGHADDR</spirit:name>
       <spirit:displayName>C S Axi4 High Address</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S_AXI4_HIGHADDR" spirit:order="40000" spirit:configGroups="1 Addresses" spirit:bitStringLength="32">0x00000000</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S_AXI4_HIGHADDR" spirit:order="28" spirit:configGroups="1 Addresses" spirit:bitStringLength="32">0x00000000</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_S_AXI4_HIGHADDR">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="generated" xilinx:id="PARAM_ENABLEMENT.C_S_AXI4_HIGHADDR">true</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -8288,11 +8325,11 @@ This bit has no significance in dual or quad mode.
     <spirit:parameter>
       <spirit:name>USE_BOARD_FLOW</spirit:name>
       <spirit:displayName>Generate Board based IO Constraints</spirit:displayName>
-      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.USE_BOARD_FLOW" spirit:order="38">false</spirit:value>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.USE_BOARD_FLOW" spirit:order="29">false</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.USE_BOARD_FLOW">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="generated" xilinx:id="PARAM_ENABLEMENT.USE_BOARD_FLOW">true</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -8300,11 +8337,11 @@ This bit has no significance in dual or quad mode.
     <spirit:parameter>
       <spirit:name>QSPI_BOARD_INTERFACE</spirit:name>
       <spirit:displayName>QSPI Board Interface</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.QSPI_BOARD_INTERFACE" spirit:choiceRef="choice_list_ac75ef1e" spirit:order="39">Custom</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.QSPI_BOARD_INTERFACE" spirit:choiceRef="choice_list_ac75ef1e" spirit:order="30">Custom</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.QSPI_BOARD_INTERFACE">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="generated" xilinx:id="PARAM_ENABLEMENT.QSPI_BOARD_INTERFACE">true</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
@@ -8312,18 +8349,18 @@ This bit has no significance in dual or quad mode.
     <spirit:parameter>
       <spirit:name>C_S_AXI4_ID_WIDTH</spirit:name>
       <spirit:displayName>C S Axi4 Id Width</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S_AXI4_ID_WIDTH" spirit:order="40" spirit:minimum="0" spirit:maximum="32" spirit:rangeType="long">0</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S_AXI4_ID_WIDTH" spirit:order="31" spirit:minimum="0" spirit:maximum="32" spirit:rangeType="long">4</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
-            <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PARAM_ENABLEMENT.C_S_AXI4_ID_WIDTH">true</xilinx:isEnabled>
+            <xilinx:isEnabled xilinx:resolve="generated" xilinx:id="PARAM_ENABLEMENT.C_S_AXI4_ID_WIDTH">false</xilinx:isEnabled>
           </xilinx:enablement>
         </xilinx:parameterInfo>
       </spirit:vendorExtensions>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_SELECT_XPM</spirit:name>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_SELECT_XPM" spirit:choiceRef="choice_list_6727dfa6" spirit:order="40">0</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_SELECT_XPM" spirit:choiceRef="choice_list_6727dfa6" spirit:order="32">0</spirit:value>
     </spirit:parameter>
   </spirit:parameters>
   <spirit:vendorExtensions>
@@ -8334,7 +8371,7 @@ This bit has no significance in dual or quad mode.
         <xilinx:xpmLibrary>XPM_MEMORY</xilinx:xpmLibrary>
         <xilinx:xpmLibrary>XPM_CDC</xilinx:xpmLibrary>
       </xilinx:xpmLibraries>
-      <xilinx:coreRevision>24</xilinx:coreRevision>
+      <xilinx:coreRevision>32</xilinx:coreRevision>
       <xilinx:configElementInfos>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AXI_LITE.ADDR_WIDTH" xilinx:valueSource="auto" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AXI_LITE.ARUSER_WIDTH" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
@@ -8343,28 +8380,28 @@ This bit has no significance in dual or quad mode.
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AXI_LITE.CLK_DOMAIN" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AXI_LITE.DATA_WIDTH" xilinx:valueSource="auto" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AXI_LITE.FREQ_HZ" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AXI_LITE.HAS_BRESP" xilinx:valueSource="constant_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AXI_LITE.HAS_BRESP" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AXI_LITE.HAS_BURST" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AXI_LITE.HAS_CACHE" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AXI_LITE.HAS_LOCK" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AXI_LITE.HAS_PROT" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AXI_LITE.HAS_QOS" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AXI_LITE.HAS_REGION" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AXI_LITE.HAS_RRESP" xilinx:valueSource="constant_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AXI_LITE.HAS_WSTRB" xilinx:valueSource="constant_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AXI_LITE.HAS_RRESP" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AXI_LITE.HAS_WSTRB" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AXI_LITE.ID_WIDTH" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AXI_LITE.MAX_BURST_LENGTH" xilinx:valueSource="ip_propagated" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AXI_LITE.NUM_READ_OUTSTANDING" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AXI_LITE.NUM_READ_THREADS" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AXI_LITE.NUM_WRITE_OUTSTANDING" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AXI_LITE.NUM_WRITE_THREADS" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AXI_LITE.MAX_BURST_LENGTH" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AXI_LITE.NUM_READ_OUTSTANDING" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AXI_LITE.NUM_READ_THREADS" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AXI_LITE.NUM_WRITE_OUTSTANDING" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AXI_LITE.NUM_WRITE_THREADS" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AXI_LITE.PHASE" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AXI_LITE.PROTOCOL" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AXI_LITE.READ_WRITE_MODE" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AXI_LITE.RUSER_BITS_PER_BYTE" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AXI_LITE.RUSER_BITS_PER_BYTE" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AXI_LITE.RUSER_WIDTH" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AXI_LITE.SUPPORTS_NARROW_BURST" xilinx:valueSource="ip_propagated" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AXI_LITE.WUSER_BITS_PER_BYTE" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AXI_LITE.SUPPORTS_NARROW_BURST" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AXI_LITE.WUSER_BITS_PER_BYTE" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.AXI_LITE.WUSER_WIDTH" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.INTERRUPT.PortWidth" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.INTERRUPT.SENSITIVITY" xilinx:valuePermission="bd"/>
@@ -8390,19 +8427,18 @@ This bit has no significance in dual or quad mode.
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_S_AXI4_ID_WIDTH" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_TYPE_OF_AXI4_INTERFACE" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_USE_STARTUP" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_USE_STARTUP_INT" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_XIP_MODE" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.Multiples16" xilinx:valueSource="user"/>
       </xilinx:configElementInfos>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
-      <xilinx:xilinxVersion>2021.2</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="d1bcc2b1"/>
+      <xilinx:xilinxVersion>2024.2</xilinx:xilinxVersion>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="2db2e4cb"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="00000000"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="d642462f"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="4eae5198"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="b1ee07ff"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="5b4e6d06"/>
-      <xilinx:checksum xilinx:scope="parameters" xilinx:value="24fbdc2f"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="47c3f832"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>

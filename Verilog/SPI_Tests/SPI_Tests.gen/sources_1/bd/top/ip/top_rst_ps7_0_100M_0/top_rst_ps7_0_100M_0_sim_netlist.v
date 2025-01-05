@@ -1,10 +1,11 @@
-// Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+// Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+// Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-// Date        : Thu Dec 16 11:45:49 2021
-// Host        : benjamin-manjaro running 64-bit Manjaro Linux
-// Command     : write_verilog -force -mode funcsim -rename_top top_rst_ps7_0_100M_0 -prefix
-//               top_rst_ps7_0_100M_0_ top_rst_ps7_0_100M_0_sim_netlist.v
+// Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+// Date        : Thu Nov 28 12:14:48 2024
+// Host        : DESKTOP-DRF538C running 64-bit major release  (build 9200)
+// Command     : write_verilog -force -mode funcsim
+//               c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_rst_ps7_0_100M_0/top_rst_ps7_0_100M_0_sim_netlist.v
 // Design      : top_rst_ps7_0_100M_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -12,6 +13,64 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
+(* CHECK_LICENSE_TYPE = "top_rst_ps7_0_100M_0,proc_sys_reset,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "proc_sys_reset,Vivado 2024.2" *) 
+(* NotValidForBitStream *)
+module top_rst_ps7_0_100M_0
+   (slowest_sync_clk,
+    ext_reset_in,
+    aux_reset_in,
+    mb_debug_sys_rst,
+    dcm_locked,
+    mb_reset,
+    bus_struct_reset,
+    peripheral_reset,
+    interconnect_aresetn,
+    peripheral_aresetn);
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 clock CLK" *) (* x_interface_mode = "slave clock" *) (* x_interface_parameter = "XIL_INTERFACENAME clock, ASSOCIATED_RESET mb_reset:bus_struct_reset:interconnect_aresetn:peripheral_aresetn:peripheral_reset, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN top_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *) input slowest_sync_clk;
+  (* x_interface_info = "xilinx.com:signal:reset:1.0 ext_reset RST" *) (* x_interface_mode = "slave ext_reset" *) (* x_interface_parameter = "XIL_INTERFACENAME ext_reset, BOARD.ASSOCIATED_PARAM RESET_BOARD_INTERFACE, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input ext_reset_in;
+  (* x_interface_info = "xilinx.com:signal:reset:1.0 aux_reset RST" *) (* x_interface_mode = "slave aux_reset" *) (* x_interface_parameter = "XIL_INTERFACENAME aux_reset, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input aux_reset_in;
+  (* x_interface_info = "xilinx.com:signal:reset:1.0 dbg_reset RST" *) (* x_interface_mode = "slave dbg_reset" *) (* x_interface_parameter = "XIL_INTERFACENAME dbg_reset, POLARITY ACTIVE_HIGH, INSERT_VIP 0" *) input mb_debug_sys_rst;
+  input dcm_locked;
+  (* x_interface_info = "xilinx.com:signal:reset:1.0 mb_rst RST" *) (* x_interface_mode = "master mb_rst" *) (* x_interface_parameter = "XIL_INTERFACENAME mb_rst, POLARITY ACTIVE_HIGH, TYPE PROCESSOR, INSERT_VIP 0" *) output mb_reset;
+  (* x_interface_info = "xilinx.com:signal:reset:1.0 bus_struct_reset RST" *) (* x_interface_mode = "master bus_struct_reset" *) (* x_interface_parameter = "XIL_INTERFACENAME bus_struct_reset, POLARITY ACTIVE_HIGH, TYPE INTERCONNECT, INSERT_VIP 0" *) output [0:0]bus_struct_reset;
+  (* x_interface_info = "xilinx.com:signal:reset:1.0 peripheral_high_rst RST" *) (* x_interface_mode = "master peripheral_high_rst" *) (* x_interface_parameter = "XIL_INTERFACENAME peripheral_high_rst, POLARITY ACTIVE_HIGH, TYPE PERIPHERAL, INSERT_VIP 0" *) output [0:0]peripheral_reset;
+  (* x_interface_info = "xilinx.com:signal:reset:1.0 interconnect_low_rst RST" *) (* x_interface_mode = "master interconnect_low_rst" *) (* x_interface_parameter = "XIL_INTERFACENAME interconnect_low_rst, POLARITY ACTIVE_LOW, TYPE INTERCONNECT, INSERT_VIP 0" *) output [0:0]interconnect_aresetn;
+  (* x_interface_info = "xilinx.com:signal:reset:1.0 peripheral_low_rst RST" *) (* x_interface_mode = "master peripheral_low_rst" *) (* x_interface_parameter = "XIL_INTERFACENAME peripheral_low_rst, POLARITY ACTIVE_LOW, TYPE PERIPHERAL, INSERT_VIP 0" *) output [0:0]peripheral_aresetn;
+
+  wire aux_reset_in;
+  wire [0:0]bus_struct_reset;
+  wire dcm_locked;
+  wire ext_reset_in;
+  wire [0:0]interconnect_aresetn;
+  wire mb_debug_sys_rst;
+  wire mb_reset;
+  wire [0:0]peripheral_aresetn;
+  wire [0:0]peripheral_reset;
+  wire slowest_sync_clk;
+
+  (* C_AUX_RESET_HIGH = "1'b0" *) 
+  (* C_AUX_RST_WIDTH = "4" *) 
+  (* C_EXT_RESET_HIGH = "1'b0" *) 
+  (* C_EXT_RST_WIDTH = "4" *) 
+  (* C_FAMILY = "zynq" *) 
+  (* C_NUM_BUS_RST = "1" *) 
+  (* C_NUM_INTERCONNECT_ARESETN = "1" *) 
+  (* C_NUM_PERP_ARESETN = "1" *) 
+  (* C_NUM_PERP_RST = "1" *) 
+  top_rst_ps7_0_100M_0_proc_sys_reset U0
+       (.aux_reset_in(aux_reset_in),
+        .bus_struct_reset(bus_struct_reset),
+        .dcm_locked(dcm_locked),
+        .ext_reset_in(ext_reset_in),
+        .interconnect_aresetn(interconnect_aresetn),
+        .mb_debug_sys_rst(mb_debug_sys_rst),
+        .mb_reset(mb_reset),
+        .peripheral_aresetn(peripheral_aresetn),
+        .peripheral_reset(peripheral_reset),
+        .slowest_sync_clk(slowest_sync_clk));
+endmodule
+
+(* ORIG_REF_NAME = "cdc_sync" *) 
 module top_rst_ps7_0_100M_0_cdc_sync
    (lpf_asr_reg,
     scndry_out,
@@ -30,6 +89,9 @@ module top_rst_ps7_0_100M_0_cdc_sync
   input aux_reset_in;
   input slowest_sync_clk;
 
+  wire \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.s_level_out_d2 ;
+  wire \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.s_level_out_d3 ;
+  wire Q;
   wire asr_d1;
   wire [0:0]asr_lpf;
   wire aux_reset_in;
@@ -37,9 +99,6 @@ module top_rst_ps7_0_100M_0_cdc_sync
   wire lpf_asr_reg;
   wire p_1_in;
   wire p_2_in;
-  wire s_level_out_d1_cdc_to;
-  wire s_level_out_d2;
-  wire s_level_out_d3;
   wire scndry_out;
   wire slowest_sync_clk;
 
@@ -53,7 +112,7 @@ module top_rst_ps7_0_100M_0_cdc_sync
        (.C(slowest_sync_clk),
         .CE(1'b1),
         .D(asr_d1),
-        .Q(s_level_out_d1_cdc_to),
+        .Q(Q),
         .R(1'b0));
   LUT1 #(
     .INIT(2'h1)) 
@@ -69,8 +128,8 @@ module top_rst_ps7_0_100M_0_cdc_sync
     \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2 
        (.C(slowest_sync_clk),
         .CE(1'b1),
-        .D(s_level_out_d1_cdc_to),
-        .Q(s_level_out_d2),
+        .D(Q),
+        .Q(\GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.s_level_out_d2 ),
         .R(1'b0));
   (* ASYNC_REG *) 
   (* XILINX_LEGACY_PRIM = "FDR" *) 
@@ -81,8 +140,8 @@ module top_rst_ps7_0_100M_0_cdc_sync
     \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d3 
        (.C(slowest_sync_clk),
         .CE(1'b1),
-        .D(s_level_out_d2),
-        .Q(s_level_out_d3),
+        .D(\GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.s_level_out_d2 ),
+        .Q(\GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.s_level_out_d3 ),
         .R(1'b0));
   (* ASYNC_REG *) 
   (* XILINX_LEGACY_PRIM = "FDR" *) 
@@ -93,7 +152,7 @@ module top_rst_ps7_0_100M_0_cdc_sync
     \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d4 
        (.C(slowest_sync_clk),
         .CE(1'b1),
-        .D(s_level_out_d3),
+        .D(\GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.s_level_out_d3 ),
         .Q(scndry_out),
         .R(1'b0));
   LUT5 #(
@@ -128,6 +187,9 @@ module top_rst_ps7_0_100M_0_cdc_sync_0
   input ext_reset_in;
   input slowest_sync_clk;
 
+  wire \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.s_level_out_d2 ;
+  wire \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.s_level_out_d3 ;
+  wire Q;
   wire exr_d1;
   wire [0:0]exr_lpf;
   wire ext_reset_in;
@@ -136,9 +198,6 @@ module top_rst_ps7_0_100M_0_cdc_sync_0
   wire mb_debug_sys_rst;
   wire p_1_in4_in;
   wire p_2_in3_in;
-  wire s_level_out_d1_cdc_to;
-  wire s_level_out_d2;
-  wire s_level_out_d3;
   wire scndry_out;
   wire slowest_sync_clk;
 
@@ -152,7 +211,7 @@ module top_rst_ps7_0_100M_0_cdc_sync_0
        (.C(slowest_sync_clk),
         .CE(1'b1),
         .D(exr_d1),
-        .Q(s_level_out_d1_cdc_to),
+        .Q(Q),
         .R(1'b0));
   LUT2 #(
     .INIT(4'hB)) 
@@ -169,8 +228,8 @@ module top_rst_ps7_0_100M_0_cdc_sync_0
     \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2 
        (.C(slowest_sync_clk),
         .CE(1'b1),
-        .D(s_level_out_d1_cdc_to),
-        .Q(s_level_out_d2),
+        .D(Q),
+        .Q(\GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.s_level_out_d2 ),
         .R(1'b0));
   (* ASYNC_REG *) 
   (* XILINX_LEGACY_PRIM = "FDR" *) 
@@ -181,8 +240,8 @@ module top_rst_ps7_0_100M_0_cdc_sync_0
     \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d3 
        (.C(slowest_sync_clk),
         .CE(1'b1),
-        .D(s_level_out_d2),
-        .Q(s_level_out_d3),
+        .D(\GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.s_level_out_d2 ),
+        .Q(\GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.s_level_out_d3 ),
         .R(1'b0));
   (* ASYNC_REG *) 
   (* XILINX_LEGACY_PRIM = "FDR" *) 
@@ -193,7 +252,7 @@ module top_rst_ps7_0_100M_0_cdc_sync_0
     \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d4 
        (.C(slowest_sync_clk),
         .CE(1'b1),
-        .D(s_level_out_d3),
+        .D(\GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.s_level_out_d3 ),
         .Q(scndry_out),
         .R(1'b0));
   LUT5 #(
@@ -207,6 +266,7 @@ module top_rst_ps7_0_100M_0_cdc_sync_0
         .O(lpf_exr_reg));
 endmodule
 
+(* ORIG_REF_NAME = "lpf" *) 
 module top_rst_ps7_0_100M_0_lpf
    (lpf_int,
     slowest_sync_clk,
@@ -312,7 +372,7 @@ module top_rst_ps7_0_100M_0_lpf
   (* XILINX_LEGACY_PRIM = "SRL16" *) 
   (* XILINX_TRANSFORM_PINMAP = "VCC:CE" *) 
   (* box_type = "PRIMITIVE" *) 
-  (* srl_name = "U0/\EXT_LPF/POR_SRL_I " *) 
+  (* srl_name = "U0/\\EXT_LPF/POR_SRL_I " *) 
   SRL16E #(
     .INIT(16'hFFFF)) 
     POR_SRL_I
@@ -361,6 +421,7 @@ endmodule
 (* C_AUX_RESET_HIGH = "1'b0" *) (* C_AUX_RST_WIDTH = "4" *) (* C_EXT_RESET_HIGH = "1'b0" *) 
 (* C_EXT_RST_WIDTH = "4" *) (* C_FAMILY = "zynq" *) (* C_NUM_BUS_RST = "1" *) 
 (* C_NUM_INTERCONNECT_ARESETN = "1" *) (* C_NUM_PERP_ARESETN = "1" *) (* C_NUM_PERP_RST = "1" *) 
+(* ORIG_REF_NAME = "proc_sys_reset" *) 
 module top_rst_ps7_0_100M_0_proc_sys_reset
    (slowest_sync_clk,
     ext_reset_in,
@@ -477,6 +538,7 @@ module top_rst_ps7_0_100M_0_proc_sys_reset
         .slowest_sync_clk(slowest_sync_clk));
 endmodule
 
+(* ORIG_REF_NAME = "sequence_psr" *) 
 module top_rst_ps7_0_100M_0_sequence_psr
    (MB_out,
     Bsr_out,
@@ -717,63 +779,7 @@ module top_rst_ps7_0_100M_0_sequence_psr
         .R(lpf_int));
 endmodule
 
-(* CHECK_LICENSE_TYPE = "top_rst_ps7_0_100M_0,proc_sys_reset,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "proc_sys_reset,Vivado 2021.2" *) 
-(* NotValidForBitStream *)
-module top_rst_ps7_0_100M_0
-   (slowest_sync_clk,
-    ext_reset_in,
-    aux_reset_in,
-    mb_debug_sys_rst,
-    dcm_locked,
-    mb_reset,
-    bus_struct_reset,
-    peripheral_reset,
-    interconnect_aresetn,
-    peripheral_aresetn);
-  (* x_interface_info = "xilinx.com:signal:clock:1.0 clock CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME clock, ASSOCIATED_RESET mb_reset:bus_struct_reset:interconnect_aresetn:peripheral_aresetn:peripheral_reset, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN top_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *) input slowest_sync_clk;
-  (* x_interface_info = "xilinx.com:signal:reset:1.0 ext_reset RST" *) (* x_interface_parameter = "XIL_INTERFACENAME ext_reset, BOARD.ASSOCIATED_PARAM RESET_BOARD_INTERFACE, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input ext_reset_in;
-  (* x_interface_info = "xilinx.com:signal:reset:1.0 aux_reset RST" *) (* x_interface_parameter = "XIL_INTERFACENAME aux_reset, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input aux_reset_in;
-  (* x_interface_info = "xilinx.com:signal:reset:1.0 dbg_reset RST" *) (* x_interface_parameter = "XIL_INTERFACENAME dbg_reset, POLARITY ACTIVE_HIGH, INSERT_VIP 0" *) input mb_debug_sys_rst;
-  input dcm_locked;
-  (* x_interface_info = "xilinx.com:signal:reset:1.0 mb_rst RST" *) (* x_interface_parameter = "XIL_INTERFACENAME mb_rst, POLARITY ACTIVE_HIGH, TYPE PROCESSOR, INSERT_VIP 0" *) output mb_reset;
-  (* x_interface_info = "xilinx.com:signal:reset:1.0 bus_struct_reset RST" *) (* x_interface_parameter = "XIL_INTERFACENAME bus_struct_reset, POLARITY ACTIVE_HIGH, TYPE INTERCONNECT, INSERT_VIP 0" *) output [0:0]bus_struct_reset;
-  (* x_interface_info = "xilinx.com:signal:reset:1.0 peripheral_high_rst RST" *) (* x_interface_parameter = "XIL_INTERFACENAME peripheral_high_rst, POLARITY ACTIVE_HIGH, TYPE PERIPHERAL, INSERT_VIP 0" *) output [0:0]peripheral_reset;
-  (* x_interface_info = "xilinx.com:signal:reset:1.0 interconnect_low_rst RST" *) (* x_interface_parameter = "XIL_INTERFACENAME interconnect_low_rst, POLARITY ACTIVE_LOW, TYPE INTERCONNECT, INSERT_VIP 0" *) output [0:0]interconnect_aresetn;
-  (* x_interface_info = "xilinx.com:signal:reset:1.0 peripheral_low_rst RST" *) (* x_interface_parameter = "XIL_INTERFACENAME peripheral_low_rst, POLARITY ACTIVE_LOW, TYPE PERIPHERAL, INSERT_VIP 0" *) output [0:0]peripheral_aresetn;
-
-  wire aux_reset_in;
-  wire [0:0]bus_struct_reset;
-  wire dcm_locked;
-  wire ext_reset_in;
-  wire [0:0]interconnect_aresetn;
-  wire mb_debug_sys_rst;
-  wire mb_reset;
-  wire [0:0]peripheral_aresetn;
-  wire [0:0]peripheral_reset;
-  wire slowest_sync_clk;
-
-  (* C_AUX_RESET_HIGH = "1'b0" *) 
-  (* C_AUX_RST_WIDTH = "4" *) 
-  (* C_EXT_RESET_HIGH = "1'b0" *) 
-  (* C_EXT_RST_WIDTH = "4" *) 
-  (* C_FAMILY = "zynq" *) 
-  (* C_NUM_BUS_RST = "1" *) 
-  (* C_NUM_INTERCONNECT_ARESETN = "1" *) 
-  (* C_NUM_PERP_ARESETN = "1" *) 
-  (* C_NUM_PERP_RST = "1" *) 
-  top_rst_ps7_0_100M_0_proc_sys_reset U0
-       (.aux_reset_in(aux_reset_in),
-        .bus_struct_reset(bus_struct_reset),
-        .dcm_locked(dcm_locked),
-        .ext_reset_in(ext_reset_in),
-        .interconnect_aresetn(interconnect_aresetn),
-        .mb_debug_sys_rst(mb_debug_sys_rst),
-        .mb_reset(mb_reset),
-        .peripheral_aresetn(peripheral_aresetn),
-        .peripheral_reset(peripheral_reset),
-        .slowest_sync_clk(slowest_sync_clk));
-endmodule
-
+(* ORIG_REF_NAME = "upcnt_n" *) 
 module top_rst_ps7_0_100M_0_upcnt_n
    (Q,
     seq_clr,

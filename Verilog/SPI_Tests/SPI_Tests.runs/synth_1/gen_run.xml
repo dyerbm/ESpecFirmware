@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1641487587" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/top_wrapper.dcp">
-  <File Type="REPORTS-TCL" Name="top_wrapper_reports.tcl"/>
+<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1736061187" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/top_wrapper.dcp">
   <File Type="PA-TCL" Name="top_wrapper.tcl"/>
-  <File Type="RDS-DCP" Name="top_wrapper.dcp"/>
+  <File Type="REPORTS-TCL" Name="top_wrapper_reports.tcl"/>
   <File Type="RDS-RDS" Name="top_wrapper.vds"/>
+  <File Type="RDS-PROPCONSTRS" Name="top_wrapper_drc_synth.rpt"/>
   <File Type="RDS-UTIL" Name="top_wrapper_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="top_wrapper_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="top_wrapper.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="top_wrapper_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="top_wrapper_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/word_inverter.v">
@@ -22,10 +25,8 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/hdl/top_wrapper.v">
+    <File Path="$PGENDIR/sources_1/bd/top/hdl/top_wrapper.v">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PGENDIR/sources_1/bd/top/hdl/top_wrapper.v"/>
-        <Attr Name="ImportTime" Val="1641345697"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -39,21 +40,13 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PGENDIR/sources_1/bd/top/hdl/top_wrapper.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="top_wrapper"/>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
-  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
     <Filter Type="Constrs"/>
     <File Path="$PSRCDIR/constrs_1/new/ADC_FMC_const.xdc">
       <FileInfo>
@@ -66,7 +59,7 @@
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>
-  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
     <Filter Type="Utils"/>
     <File Path="$PSRCDIR/utils_1/imports/synth_1/top_wrapper.dcp">
       <FileInfo>
@@ -84,9 +77,11 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
     <Step Id="synth_design"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="top_selectio_wiz_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="top_axi_gpio_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="top_axi_gpio_1_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="top_axi_quad_spi_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="top_rst_ps7_0_100M_0"/>
   <BlockFileSet Type="BlockSrcs" Name="top_word_inverter_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="top_xbar_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="top_selectio_wiz_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="top_axi_gpio_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="top_processing_system7_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="top_axi_gpio_1_0"/>
 </GenRun>

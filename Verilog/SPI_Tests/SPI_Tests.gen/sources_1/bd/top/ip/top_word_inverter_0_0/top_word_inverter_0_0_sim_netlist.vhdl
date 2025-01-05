@@ -1,10 +1,11 @@
--- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+-- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+-- Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
--- Date        : Thu Jan  6 11:47:06 2022
--- Host        : benjamin-manjaro running 64-bit Manjaro Linux
+-- Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+-- Date        : Sun Jan  5 02:12:01 2025
+-- Host        : DESKTOP-DRF538C running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
---               /home/dyerbm/Documents/Mac-PhD/Verilog-Tests/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_word_inverter_0_0/top_word_inverter_0_0_sim_netlist.vhdl
+--               c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_word_inverter_0_0/top_word_inverter_0_0_sim_netlist.vhdl
 -- Design      : top_word_inverter_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -16,8 +17,9 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity top_word_inverter_0_0 is
   port (
-    data_in : in STD_LOGIC_VECTOR ( 13 downto 0 );
-    data_out : out STD_LOGIC_VECTOR ( 13 downto 0 )
+    data_in : in STD_LOGIC_VECTOR ( 27 downto 0 );
+    data_out_ch1 : out STD_LOGIC_VECTOR ( 13 downto 0 );
+    data_out_ch2 : out STD_LOGIC_VECTOR ( 13 downto 0 )
   );
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of top_word_inverter_0_0 : entity is true;
@@ -28,25 +30,39 @@ entity top_word_inverter_0_0 is
   attribute IP_DEFINITION_SOURCE : string;
   attribute IP_DEFINITION_SOURCE of top_word_inverter_0_0 : entity is "module_ref";
   attribute X_CORE_INFO : string;
-  attribute X_CORE_INFO of top_word_inverter_0_0 : entity is "word_inverter,Vivado 2021.2";
+  attribute X_CORE_INFO of top_word_inverter_0_0 : entity is "word_inverter,Vivado 2024.2";
 end top_word_inverter_0_0;
 
 architecture STRUCTURE of top_word_inverter_0_0 is
-  signal \^data_in\ : STD_LOGIC_VECTOR ( 13 downto 0 );
+  signal \^data_in\ : STD_LOGIC_VECTOR ( 27 downto 0 );
 begin
-  \^data_in\(13 downto 0) <= data_in(13 downto 0);
-  data_out(13) <= \^data_in\(0);
-  data_out(12) <= \^data_in\(1);
-  data_out(11) <= \^data_in\(2);
-  data_out(10) <= \^data_in\(3);
-  data_out(9) <= \^data_in\(4);
-  data_out(8) <= \^data_in\(5);
-  data_out(7) <= \^data_in\(6);
-  data_out(6) <= \^data_in\(7);
-  data_out(5) <= \^data_in\(8);
-  data_out(4) <= \^data_in\(9);
-  data_out(3) <= \^data_in\(10);
-  data_out(2) <= \^data_in\(11);
-  data_out(1) <= \^data_in\(12);
-  data_out(0) <= \^data_in\(13);
+  \^data_in\(27 downto 0) <= data_in(27 downto 0);
+  data_out_ch1(13) <= \^data_in\(0);
+  data_out_ch1(12) <= \^data_in\(1);
+  data_out_ch1(11) <= \^data_in\(2);
+  data_out_ch1(10) <= \^data_in\(3);
+  data_out_ch1(9) <= \^data_in\(4);
+  data_out_ch1(8) <= \^data_in\(5);
+  data_out_ch1(7) <= \^data_in\(6);
+  data_out_ch1(6) <= \^data_in\(7);
+  data_out_ch1(5) <= \^data_in\(8);
+  data_out_ch1(4) <= \^data_in\(9);
+  data_out_ch1(3) <= \^data_in\(10);
+  data_out_ch1(2) <= \^data_in\(11);
+  data_out_ch1(1) <= \^data_in\(12);
+  data_out_ch1(0) <= \^data_in\(13);
+  data_out_ch2(13) <= \^data_in\(14);
+  data_out_ch2(12) <= \^data_in\(15);
+  data_out_ch2(11) <= \^data_in\(16);
+  data_out_ch2(10) <= \^data_in\(17);
+  data_out_ch2(9) <= \^data_in\(18);
+  data_out_ch2(8) <= \^data_in\(19);
+  data_out_ch2(7) <= \^data_in\(20);
+  data_out_ch2(6) <= \^data_in\(21);
+  data_out_ch2(5) <= \^data_in\(22);
+  data_out_ch2(4) <= \^data_in\(23);
+  data_out_ch2(3) <= \^data_in\(24);
+  data_out_ch2(2) <= \^data_in\(25);
+  data_out_ch2(1) <= \^data_in\(26);
+  data_out_ch2(0) <= \^data_in\(27);
 end STRUCTURE;

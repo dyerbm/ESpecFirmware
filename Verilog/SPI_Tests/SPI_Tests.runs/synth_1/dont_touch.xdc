@@ -12,17 +12,8 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==top_process
 # IP: bd/top/ip/top_axi_quad_spi_0_0/top_axi_quad_spi_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==top_axi_quad_spi_0_0 || ORIG_REF_NAME==top_axi_quad_spi_0_0} -quiet] -quiet
 
-# IP: bd/top/ip/top_ps7_0_axi_periph_0/top_ps7_0_axi_periph_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==top_ps7_0_axi_periph_0 || ORIG_REF_NAME==top_ps7_0_axi_periph_0} -quiet] -quiet
-
 # IP: bd/top/ip/top_rst_ps7_0_100M_0/top_rst_ps7_0_100M_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==top_rst_ps7_0_100M_0 || ORIG_REF_NAME==top_rst_ps7_0_100M_0} -quiet] -quiet
-
-# IP: bd/top/ip/top_xbar_0/top_xbar_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==top_xbar_0 || ORIG_REF_NAME==top_xbar_0} -quiet] -quiet
-
-# IP: bd/top/ip/top_selectio_wiz_0_0/top_selectio_wiz_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==top_selectio_wiz_0_0 || ORIG_REF_NAME==top_selectio_wiz_0_0} -quiet] -quiet
 
 # IP: bd/top/ip/top_axi_gpio_0_0/top_axi_gpio_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==top_axi_gpio_0_0 || ORIG_REF_NAME==top_axi_gpio_0_0} -quiet] -quiet
@@ -33,7 +24,10 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==top_axi_gpi
 # IP: bd/top/ip/top_word_inverter_0_0/top_word_inverter_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==top_word_inverter_0_0 || ORIG_REF_NAME==top_word_inverter_0_0} -quiet] -quiet
 
-# IP: bd/top/ip/top_auto_pc_0/top_auto_pc_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==top_auto_pc_0 || ORIG_REF_NAME==top_auto_pc_0} -quiet] -quiet
+# IP: bd/top/ip/top_axi_smc_0/top_axi_smc_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==top_axi_smc_0 || ORIG_REF_NAME==top_axi_smc_0} -quiet] -quiet
 
-# XDC: /home/dyerbm/Documents/Mac-PhD/Verilog-Tests/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/top_ooc.xdc
+# IP: bd/top/ip/top_selectio_wiz_0_1/top_selectio_wiz_0_1.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==top_selectio_wiz_0_1 || ORIG_REF_NAME==top_selectio_wiz_0_1} -quiet] -quiet
+
+# XDC: c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/top_ooc.xdc
