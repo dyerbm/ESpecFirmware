@@ -13,3 +13,33 @@
     <Process Command="vivado.bat" Owner="soup" Host="DESKTOP-DRF538C" Pid="18500" HostCore="24" HostMemory="034240372736">
     </Process>
 </ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="soup" Host="DESKTOP-DRF538C" Pid="29608" HostCore="24" HostMemory="034240372736">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="soup" Host="DESKTOP-DRF538C" Pid="27116" HostCore="24" HostMemory="034240372736">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="soup" Host="DESKTOP-DRF538C" Pid="21992" HostCore="24" HostMemory="034240372736">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="soup" Host="DESKTOP-DRF538C" Pid="15944" HostCore="24" HostMemory="034240372736">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="soup" Host="DESKTOP-DRF538C" Pid="26336" HostCore="24" HostMemory="034240372736">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="soup" Host="DESKTOP-DRF538C" Pid="34812" HostCore="24" HostMemory="034240372736">
+    </Process>
+</ProcessHandle>

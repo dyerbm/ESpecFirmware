@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-| Date         : Sun Jan  5 02:14:53 2025
+| Date         : Sun Jan  5 13:09:43 2025
 | Host         : DESKTOP-DRF538C running 64-bit major release  (build 9200)
 | Command      : report_drc -file top_wrapper_drc_opted.rpt -pb top_wrapper_drc_opted.pb -rpx top_wrapper_drc_opted.rpx
 | Design       : top_wrapper
@@ -24,13 +24,12 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max checks: <unlimited>
-             Checks found: 4
-+----------+----------+-----------------------------------+--------+
-| Rule     | Severity | Description                       | Checks |
-+----------+----------+-----------------------------------+--------+
-| BUFC-1   | Warning  | Input Buffer Connections          | 2      |
-| REQP-104 | Warning  | enum_DATA_RATE_DDR_connects_Q1_Q6 | 2      |
-+----------+----------+-----------------------------------+--------+
+             Checks found: 2
++--------+----------+--------------------------+--------+
+| Rule   | Severity | Description              | Checks |
++--------+----------+--------------------------+--------+
+| BUFC-1 | Warning  | Input Buffer Connections | 2      |
++--------+----------+--------------------------+--------+
 
 2. REPORT DETAILS
 -----------------
@@ -42,16 +41,6 @@ Related violations: <none>
 BUFC-1#2 Warning
 Input Buffer Connections  
 Input buffer spi_rtl_ss_iobuf_0/IBUF (in spi_rtl_ss_iobuf_0 macro) has no loads. It is recommended to have an input buffer drive an internal load.
-Related violations: <none>
-
-REQP-104#1 Warning
-enum_DATA_RATE_DDR_connects_Q1_Q6  
-top_i/selectio_wiz_0/inst/pins[0].iserdese2_master: At least one of the Q1-Q6 output pins is required for DATA_RATE set DDR.
-Related violations: <none>
-
-REQP-104#2 Warning
-enum_DATA_RATE_DDR_connects_Q1_Q6  
-top_i/selectio_wiz_0/inst/pins[1].iserdese2_master: At least one of the Q1-Q6 output pins is required for DATA_RATE set DDR.
 Related violations: <none>
 
 

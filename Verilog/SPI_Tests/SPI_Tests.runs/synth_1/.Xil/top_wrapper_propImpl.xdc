@@ -9,7 +9,11 @@ set_property src_info {type:XDC file:1 line:5 export:INPUT save:INPUT read:READ}
 set_property PACKAGE_PIN E21 [get_ports spi_rtl_io0_io];
 set_property src_info {type:XDC file:1 line:10 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict {IOSTANDARD LVDS_25 DIFF_TERM TRUE PACKAGE_PIN B19} [get_ports diff_clk_in_0_clk_p];
+set_property src_info {type:XDC file:1 line:12 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict {IOSTANDARD LVDS_25 PACKAGE_PIN N22 DIFF_TERM TRUE} [get_ports {data_in_from_pins_p_0[0]}];
+set_property src_info {type:XDC file:1 line:13 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict {IOSTANDARD LVDS_25 PACKAGE_PIN P20 DIFF_TERM TRUE} [get_ports {data_in_from_pins_p_0[1]}];
 set_property src_info {type:XDC file:1 line:14 export:INPUT save:INPUT read:READ} [current_design]
-set_property -dict {IOSTANDARD LVDS_25 PACKAGE_PIN G19 DIFF_TERM TRUE} [get_ports {data_in_from_pins_p_0[0]}];
+set_property -dict {IOSTANDARD LVDS_25 PACKAGE_PIN G19 DIFF_TERM TRUE} [get_ports {data_in_from_pins_p_0[2]}];
 set_property src_info {type:XDC file:1 line:15 export:INPUT save:INPUT read:READ} [current_design]
-set_property -dict {IOSTANDARD LVDS_25 PACKAGE_PIN C17 DIFF_TERM TRUE} [get_ports {data_in_from_pins_p_0[1]}];
+set_property -dict {IOSTANDARD LVDS_25 PACKAGE_PIN C17 DIFF_TERM TRUE} [get_ports {data_in_from_pins_p_0[3]}];

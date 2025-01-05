@@ -56,6 +56,8 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "top_axi_gpio_0_0_synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 6
+set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {HDL-1065} -limit 10000
 set_param project.vivado.isBlockSynthRun true
 set_msg_config -msgmgr_mode ooc_run

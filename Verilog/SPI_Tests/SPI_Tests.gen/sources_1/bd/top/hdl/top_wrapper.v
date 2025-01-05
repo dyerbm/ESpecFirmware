@@ -2,7 +2,7 @@
 //Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-//Date        : Sun Jan  5 02:12:56 2025
+//Date        : Sun Jan  5 13:07:45 2025
 //Host        : DESKTOP-DRF538C running 64-bit major release  (build 9200)
 //Command     : generate_target top_wrapper.bd
 //Design      : top_wrapper
@@ -61,8 +61,8 @@ module top_wrapper
   inout FIXED_IO_ps_clk;
   inout FIXED_IO_ps_porb;
   inout FIXED_IO_ps_srstb;
-  input [1:0]data_in_from_pins_n_0;
-  input [1:0]data_in_from_pins_p_0;
+  input [3:0]data_in_from_pins_n_0;
+  input [3:0]data_in_from_pins_p_0;
   input diff_clk_in_0_clk_n;
   input diff_clk_in_0_clk_p;
   inout spi_rtl_io0_io;
@@ -91,8 +91,8 @@ module top_wrapper
   wire FIXED_IO_ps_clk;
   wire FIXED_IO_ps_porb;
   wire FIXED_IO_ps_srstb;
-  wire [1:0]data_in_from_pins_n_0;
-  wire [1:0]data_in_from_pins_p_0;
+  wire [3:0]data_in_from_pins_n_0;
+  wire [3:0]data_in_from_pins_p_0;
   wire diff_clk_in_0_clk_n;
   wire diff_clk_in_0_clk_p;
   wire spi_rtl_io0_i;

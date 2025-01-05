@@ -58,16 +58,22 @@
 module top_word_inverter_0_0 (
   data_in,
   data_out_ch1,
-  data_out_ch2
+  data_out_ch2,
+  data_out_ch3,
+  data_out_ch4
 );
 
-input wire [27 : 0] data_in;
+input wire [55 : 0] data_in;
 output wire [13 : 0] data_out_ch1;
 output wire [13 : 0] data_out_ch2;
+output wire [13 : 0] data_out_ch3;
+output wire [13 : 0] data_out_ch4;
 
   word_inverter inst (
     .data_in(data_in),
     .data_out_ch1(data_out_ch1),
-    .data_out_ch2(data_out_ch2)
+    .data_out_ch2(data_out_ch2),
+    .data_out_ch3(data_out_ch3),
+    .data_out_ch4(data_out_ch4)
   );
 endmodule

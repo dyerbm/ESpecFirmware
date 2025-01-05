@@ -2,7 +2,7 @@
 // Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-// Date        : Sun Jan  5 02:12:01 2025
+// Date        : Sun Jan  5 12:54:31 2025
 // Host        : DESKTOP-DRF538C running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_word_inverter_0_0/top_word_inverter_0_0_sim_netlist.v
@@ -19,12 +19,16 @@
 module top_word_inverter_0_0
    (data_in,
     data_out_ch1,
-    data_out_ch2);
-  input [27:0]data_in;
+    data_out_ch2,
+    data_out_ch3,
+    data_out_ch4);
+  input [55:0]data_in;
   output [13:0]data_out_ch1;
   output [13:0]data_out_ch2;
+  output [13:0]data_out_ch3;
+  output [13:0]data_out_ch4;
 
-  wire [27:0]data_in;
+  wire [55:0]data_in;
 
   assign data_out_ch1[13] = data_in[0];
   assign data_out_ch1[12] = data_in[1];
@@ -54,6 +58,34 @@ module top_word_inverter_0_0
   assign data_out_ch2[2] = data_in[25];
   assign data_out_ch2[1] = data_in[26];
   assign data_out_ch2[0] = data_in[27];
+  assign data_out_ch3[13] = data_in[28];
+  assign data_out_ch3[12] = data_in[29];
+  assign data_out_ch3[11] = data_in[30];
+  assign data_out_ch3[10] = data_in[31];
+  assign data_out_ch3[9] = data_in[32];
+  assign data_out_ch3[8] = data_in[33];
+  assign data_out_ch3[7] = data_in[34];
+  assign data_out_ch3[6] = data_in[35];
+  assign data_out_ch3[5] = data_in[36];
+  assign data_out_ch3[4] = data_in[37];
+  assign data_out_ch3[3] = data_in[38];
+  assign data_out_ch3[2] = data_in[39];
+  assign data_out_ch3[1] = data_in[40];
+  assign data_out_ch3[0] = data_in[41];
+  assign data_out_ch4[13] = data_in[42];
+  assign data_out_ch4[12] = data_in[43];
+  assign data_out_ch4[11] = data_in[44];
+  assign data_out_ch4[10] = data_in[45];
+  assign data_out_ch4[9] = data_in[46];
+  assign data_out_ch4[8] = data_in[47];
+  assign data_out_ch4[7] = data_in[48];
+  assign data_out_ch4[6] = data_in[49];
+  assign data_out_ch4[5] = data_in[50];
+  assign data_out_ch4[4] = data_in[51];
+  assign data_out_ch4[3] = data_in[52];
+  assign data_out_ch4[2] = data_in[53];
+  assign data_out_ch4[1] = data_in[54];
+  assign data_out_ch4[0] = data_in[55];
 endmodule
 `ifndef GLBL
 `define GLBL

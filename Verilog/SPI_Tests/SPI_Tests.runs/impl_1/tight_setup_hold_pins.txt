@@ -1,8 +1,0 @@
-+====================+===================+============================================================+
-| Launch Setup Clock | Launch Hold Clock | Pin                                                        |
-+====================+===================+============================================================+
-| clk_fpga_0         | clk_fpga_0        | top_i/selectio_wiz_0/inst/pins[0].iserdese2_master/BITSLIP |
-| clk_fpga_0         | clk_fpga_0        | top_i/selectio_wiz_0/inst/pins[0].iserdese2_slave/BITSLIP  |
-| clk_fpga_0         | clk_fpga_0        | top_i/selectio_wiz_0/inst/pins[1].iserdese2_master/BITSLIP |
-| clk_fpga_0         | clk_fpga_0        | top_i/selectio_wiz_0/inst/pins[1].iserdese2_slave/BITSLIP  |
-+--------------------+-------------------+------------------------------------------------------------+

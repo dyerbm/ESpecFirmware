@@ -2,7 +2,7 @@
 -- Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
--- Date        : Sun Jan  5 02:12:01 2025
+-- Date        : Sun Jan  5 12:54:31 2025
 -- Host        : DESKTOP-DRF538C running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_word_inverter_0_0/top_word_inverter_0_0_sim_netlist.vhdl
@@ -17,9 +17,11 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity top_word_inverter_0_0 is
   port (
-    data_in : in STD_LOGIC_VECTOR ( 27 downto 0 );
+    data_in : in STD_LOGIC_VECTOR ( 55 downto 0 );
     data_out_ch1 : out STD_LOGIC_VECTOR ( 13 downto 0 );
-    data_out_ch2 : out STD_LOGIC_VECTOR ( 13 downto 0 )
+    data_out_ch2 : out STD_LOGIC_VECTOR ( 13 downto 0 );
+    data_out_ch3 : out STD_LOGIC_VECTOR ( 13 downto 0 );
+    data_out_ch4 : out STD_LOGIC_VECTOR ( 13 downto 0 )
   );
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of top_word_inverter_0_0 : entity is true;
@@ -34,9 +36,9 @@ entity top_word_inverter_0_0 is
 end top_word_inverter_0_0;
 
 architecture STRUCTURE of top_word_inverter_0_0 is
-  signal \^data_in\ : STD_LOGIC_VECTOR ( 27 downto 0 );
+  signal \^data_in\ : STD_LOGIC_VECTOR ( 55 downto 0 );
 begin
-  \^data_in\(27 downto 0) <= data_in(27 downto 0);
+  \^data_in\(55 downto 0) <= data_in(55 downto 0);
   data_out_ch1(13) <= \^data_in\(0);
   data_out_ch1(12) <= \^data_in\(1);
   data_out_ch1(11) <= \^data_in\(2);
@@ -65,4 +67,32 @@ begin
   data_out_ch2(2) <= \^data_in\(25);
   data_out_ch2(1) <= \^data_in\(26);
   data_out_ch2(0) <= \^data_in\(27);
+  data_out_ch3(13) <= \^data_in\(28);
+  data_out_ch3(12) <= \^data_in\(29);
+  data_out_ch3(11) <= \^data_in\(30);
+  data_out_ch3(10) <= \^data_in\(31);
+  data_out_ch3(9) <= \^data_in\(32);
+  data_out_ch3(8) <= \^data_in\(33);
+  data_out_ch3(7) <= \^data_in\(34);
+  data_out_ch3(6) <= \^data_in\(35);
+  data_out_ch3(5) <= \^data_in\(36);
+  data_out_ch3(4) <= \^data_in\(37);
+  data_out_ch3(3) <= \^data_in\(38);
+  data_out_ch3(2) <= \^data_in\(39);
+  data_out_ch3(1) <= \^data_in\(40);
+  data_out_ch3(0) <= \^data_in\(41);
+  data_out_ch4(13) <= \^data_in\(42);
+  data_out_ch4(12) <= \^data_in\(43);
+  data_out_ch4(11) <= \^data_in\(44);
+  data_out_ch4(10) <= \^data_in\(45);
+  data_out_ch4(9) <= \^data_in\(46);
+  data_out_ch4(8) <= \^data_in\(47);
+  data_out_ch4(7) <= \^data_in\(48);
+  data_out_ch4(6) <= \^data_in\(49);
+  data_out_ch4(5) <= \^data_in\(50);
+  data_out_ch4(4) <= \^data_in\(51);
+  data_out_ch4(3) <= \^data_in\(52);
+  data_out_ch4(2) <= \^data_in\(53);
+  data_out_ch4(1) <= \^data_in\(54);
+  data_out_ch4(0) <= \^data_in\(55);
 end STRUCTURE;
