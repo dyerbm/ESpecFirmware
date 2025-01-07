@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-| Date         : Thu Nov 28 12:15:07 2024
+| Date         : Mon Jan  6 20:40:28 2025
 | Host         : DESKTOP-DRF538C running 64-bit major release  (build 9200)
 | Command      : report_utilization -file top_axi_quad_spi_0_0_utilization_synth.rpt -pb top_axi_quad_spi_0_0_utilization_synth.pb
 | Design       : top_axi_quad_spi_0_0
@@ -31,13 +31,13 @@ Table of Contents
 +----------------------------+------+-------+------------+-----------+-------+
 |          Site Type         | Used | Fixed | Prohibited | Available | Util% |
 +----------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*                |  464 |     0 |          0 |     53200 |  0.87 |
-|   LUT as Logic             |  448 |     0 |          0 |     53200 |  0.84 |
+| Slice LUTs*                |  523 |     0 |          0 |     53200 |  0.98 |
+|   LUT as Logic             |  507 |     0 |          0 |     53200 |  0.95 |
 |   LUT as Memory            |   16 |     0 |          0 |     17400 |  0.09 |
 |     LUT as Distributed RAM |   16 |     0 |            |           |       |
 |     LUT as Shift Register  |    0 |     0 |            |           |       |
-| Slice Registers            |  672 |     1 |          0 |    106400 |  0.63 |
-|   Register as Flip Flop    |  672 |     1 |          0 |    106400 |  0.63 |
+| Slice Registers            |  663 |     1 |          0 |    106400 |  0.62 |
+|   Register as Flip Flop    |  663 |     1 |          0 |    106400 |  0.62 |
 |   Register as Latch        |    0 |     0 |          0 |    106400 |  0.00 |
 | F7 Muxes                   |    0 |     0 |          0 |     26600 |  0.00 |
 | F8 Muxes                   |    0 |     0 |          0 |     13300 |  0.00 |
@@ -62,7 +62,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
 | 38    |          Yes |         Set |            - |
-| 634   |          Yes |       Reset |            - |
+| 625   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -151,15 +151,15 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     |  634 |        Flop & Latch |
-| LUT6     |  135 |                 LUT |
-| LUT5     |  130 |                 LUT |
+| FDRE     |  625 |        Flop & Latch |
+| LUT6     |  189 |                 LUT |
+| LUT5     |  126 |                 LUT |
 | LUT2     |  110 |                 LUT |
-| LUT4     |   81 |                 LUT |
-| LUT3     |   76 |                 LUT |
+| LUT4     |  105 |                 LUT |
+| LUT3     |   71 |                 LUT |
 | FDSE     |   38 |        Flop & Latch |
 | RAMD32   |   20 |  Distributed Memory |
-| LUT1     |   16 |                 LUT |
+| LUT1     |   15 |                 LUT |
 | RAMS32   |    4 |  Distributed Memory |
 +----------+------+---------------------+
 

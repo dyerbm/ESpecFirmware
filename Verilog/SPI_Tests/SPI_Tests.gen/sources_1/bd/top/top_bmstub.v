@@ -118,7 +118,7 @@ module top (
   output spi_rtl_ss_t;
   (* X_INTERFACE_INFO = "xilinx.com:interface:diff_clock:1.0 diff_clk_in_0 CLK_N" *)
   (* X_INTERFACE_MODE = "slave diff_clk_in_0" *)
-  (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME diff_clk_in_0, CAN_DEBUG false, FREQ_HZ 280000000" *)
+  (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME diff_clk_in_0, CAN_DEBUG false, FREQ_HZ 140000000" *)
   input diff_clk_in_0_clk_n;
   (* X_INTERFACE_INFO = "xilinx.com:interface:diff_clock:1.0 diff_clk_in_0 CLK_P" *)
   input diff_clk_in_0_clk_p;

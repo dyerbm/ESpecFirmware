@@ -2,7 +2,7 @@
 -- Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
--- Date        : Sun Jan  5 13:08:33 2025
+-- Date        : Mon Jan  6 20:40:09 2025
 -- Host        : DESKTOP-DRF538C running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_clk_wiz_0_0/top_clk_wiz_0_0_sim_netlist.vhdl
@@ -18,7 +18,7 @@ use UNISIM.VCOMPONENTS.ALL;
 entity top_clk_wiz_0_0_clk_wiz is
   port (
     clk_out1 : out STD_LOGIC;
-    locked : out STD_LOGIC;
+    clk_out2 : out STD_LOGIC;
     clk_in1_p : in STD_LOGIC;
     clk_in1_n : in STD_LOGIC
   );
@@ -27,13 +27,13 @@ end top_clk_wiz_0_0_clk_wiz;
 architecture STRUCTURE of top_clk_wiz_0_0_clk_wiz is
   signal clk_in1_top_clk_wiz_0_0 : STD_LOGIC;
   signal clk_out1_top_clk_wiz_0_0 : STD_LOGIC;
+  signal clk_out2_top_clk_wiz_0_0 : STD_LOGIC;
   signal clkfbout_buf_top_clk_wiz_0_0 : STD_LOGIC;
   signal clkfbout_top_clk_wiz_0_0 : STD_LOGIC;
   signal NLW_mmcm_adv_inst_CLKFBOUTB_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_CLKFBSTOPPED_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_CLKINSTOPPED_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_CLKOUT0B_UNCONNECTED : STD_LOGIC;
-  signal NLW_mmcm_adv_inst_CLKOUT1_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_CLKOUT1B_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_CLKOUT2_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_CLKOUT2B_UNCONNECTED : STD_LOGIC;
@@ -43,6 +43,7 @@ architecture STRUCTURE of top_clk_wiz_0_0_clk_wiz is
   signal NLW_mmcm_adv_inst_CLKOUT5_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_CLKOUT6_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_DRDY_UNCONNECTED : STD_LOGIC;
+  signal NLW_mmcm_adv_inst_LOCKED_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_PSDONE_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_DO_UNCONNECTED : STD_LOGIC_VECTOR ( 15 downto 0 );
   attribute BOX_TYPE : string;
@@ -55,6 +56,7 @@ architecture STRUCTURE of top_clk_wiz_0_0_clk_wiz is
   attribute IFD_DELAY_VALUE : string;
   attribute IFD_DELAY_VALUE of clkin1_ibufgds : label is "AUTO";
   attribute BOX_TYPE of clkout1_buf : label is "PRIMITIVE";
+  attribute BOX_TYPE of clkout2_buf : label is "PRIMITIVE";
   attribute BOX_TYPE of mmcm_adv_inst : label is "PRIMITIVE";
 begin
 clkf_buf: unisim.vcomponents.BUFG
@@ -76,19 +78,24 @@ clkout1_buf: unisim.vcomponents.BUFG
       I => clk_out1_top_clk_wiz_0_0,
       O => clk_out1
     );
+clkout2_buf: unisim.vcomponents.BUFG
+     port map (
+      I => clk_out2_top_clk_wiz_0_0,
+      O => clk_out2
+    );
 mmcm_adv_inst: unisim.vcomponents.MMCME2_ADV
     generic map(
       BANDWIDTH => "HIGH",
-      CLKFBOUT_MULT_F => 3.875000,
+      CLKFBOUT_MULT_F => 8.000000,
       CLKFBOUT_PHASE => 0.000000,
       CLKFBOUT_USE_FINE_PS => false,
-      CLKIN1_PERIOD => 3.571000,
+      CLKIN1_PERIOD => 7.143000,
       CLKIN2_PERIOD => 0.000000,
-      CLKOUT0_DIVIDE_F => 3.875000,
+      CLKOUT0_DIVIDE_F => 8.000000,
       CLKOUT0_DUTY_CYCLE => 0.500000,
       CLKOUT0_PHASE => 0.000000,
       CLKOUT0_USE_FINE_PS => false,
-      CLKOUT1_DIVIDE => 1,
+      CLKOUT1_DIVIDE => 56,
       CLKOUT1_DUTY_CYCLE => 0.500000,
       CLKOUT1_PHASE => 0.000000,
       CLKOUT1_USE_FINE_PS => false,
@@ -138,7 +145,7 @@ mmcm_adv_inst: unisim.vcomponents.MMCME2_ADV
       CLKINSTOPPED => NLW_mmcm_adv_inst_CLKINSTOPPED_UNCONNECTED,
       CLKOUT0 => clk_out1_top_clk_wiz_0_0,
       CLKOUT0B => NLW_mmcm_adv_inst_CLKOUT0B_UNCONNECTED,
-      CLKOUT1 => NLW_mmcm_adv_inst_CLKOUT1_UNCONNECTED,
+      CLKOUT1 => clk_out2_top_clk_wiz_0_0,
       CLKOUT1B => NLW_mmcm_adv_inst_CLKOUT1B_UNCONNECTED,
       CLKOUT2 => NLW_mmcm_adv_inst_CLKOUT2_UNCONNECTED,
       CLKOUT2B => NLW_mmcm_adv_inst_CLKOUT2B_UNCONNECTED,
@@ -154,7 +161,7 @@ mmcm_adv_inst: unisim.vcomponents.MMCME2_ADV
       DO(15 downto 0) => NLW_mmcm_adv_inst_DO_UNCONNECTED(15 downto 0),
       DRDY => NLW_mmcm_adv_inst_DRDY_UNCONNECTED,
       DWE => '0',
-      LOCKED => locked,
+      LOCKED => NLW_mmcm_adv_inst_LOCKED_UNCONNECTED,
       PSCLK => '0',
       PSDONE => NLW_mmcm_adv_inst_PSDONE_UNCONNECTED,
       PSEN => '0',
@@ -170,7 +177,7 @@ use UNISIM.VCOMPONENTS.ALL;
 entity top_clk_wiz_0_0 is
   port (
     clk_out1 : out STD_LOGIC;
-    locked : out STD_LOGIC;
+    clk_out2 : out STD_LOGIC;
     clk_in1_p : in STD_LOGIC;
     clk_in1_n : in STD_LOGIC
   );
@@ -185,6 +192,6 @@ inst: entity work.top_clk_wiz_0_0_clk_wiz
       clk_in1_n => clk_in1_n,
       clk_in1_p => clk_in1_p,
       clk_out1 => clk_out1,
-      locked => locked
+      clk_out2 => clk_out2
     );
 end STRUCTURE;

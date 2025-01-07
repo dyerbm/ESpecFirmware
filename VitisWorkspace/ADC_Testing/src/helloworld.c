@@ -24,6 +24,8 @@
 #include "xspi.h"
 #include <xgpio.h>
 
+#include "sleep.h"
+
 /************************** Constant Definitions *****************************/
 
 /*
@@ -179,22 +181,25 @@ int Bit_Slip_Adjust(XSpi *SpiInstancePtr, XGpio *AdcGpioPtr, int AdcGpioChannel,
     //check the data was written correctly
     if (Spi_Read(SpiInstancePtr, 1, 0b00000011)!=0b10000011 ||
         Spi_Read(SpiInstancePtr, 1, 0b00000100)!=0b01111101) { //sanity check the SPI is working
-        return 1; //return an error if this did not pass
+        xil_printf("SPI is not working, read %i and %i", Spi_Read(SpiInstancePtr, 1, 0b00000011), Spi_Read(SpiInstancePtr, 1, 0b00000100));
+        //return 1; //return an error if this did not pass
     }
+
 
     int adc_data = 0;
     int lvds_aligned = 0;
     int attempt_counter = 0;
     while (lvds_aligned == 0) { //run until the data is aligned
         adc_data = XGpio_DiscreteRead(AdcGpioPtr, AdcGpioChannel); //get the data
+        xil_printf("%i\r\n", adc_data);
         if (adc_data == 0b00001101111101) {
                 lvds_aligned = 1;
 
             }
         else { //turn bitslip on and off to increment the bit slip once
-            XGpio_DiscreteWrite(BitslipGpioPtr, BitslipGpioChannel, 1); //write a 1 to bitslip
+            XGpio_DiscreteWrite(BitslipGpioPtr, BitslipGpioChannel, 0b1111); //write a 1 to bitslip (all channels)
             usleep(100);
-            XGpio_DiscreteWrite(BitslipGpioPtr, BitslipGpioChannel, 0); //write a 0 to bitslip
+            XGpio_DiscreteWrite(BitslipGpioPtr, BitslipGpioChannel, 0); //write a 0 to bitslip (all channels)
 
             attempt_counter++;
         }
@@ -249,7 +254,7 @@ int ADC_Check_Alignment(XSpi *SpiInstancePtr, XGpio *AdcGpioPtr, int AdcGpioChan
 int Spi_Init(XSpi *SpiInstancePtr, int SpiDeviceID) {
     int Status;
 
-/*	u32 Count;
+    /*	u32 Count;
         u8 Test;
     */
 	XSpi_Config *ConfigPtr;	/* Pointer to Configuration data */
@@ -305,10 +310,14 @@ int Spi_Init(XSpi *SpiInstancePtr, int SpiDeviceID) {
 
 int main()
 {
-    XGpio input, bitslip;
-    XGpio_Initialize(&input, XPAR_AXI_GPIO_0_BASEADDR); //initialize input XGpio variable for data input
+    XGpio ADCch12, ADCch34, bitslip;
+    XGpio_Initialize(&ADCch12, XPAR_AXI_GPIO_0_BASEADDR); //initialize input XGpio variable for data input
     XGpio_Initialize(&bitslip, XPAR_AXI_GPIO_1_BASEADDR);
-    XGpio_SetDataDirection(&input, 1, 0xF); //set first channel to input
+    XGpio_Initialize(&ADCch34, XPAR_AXI_GPIO_2_BASEADDR);
+    XGpio_SetDataDirection(&ADCch12, 1, 0xF); //set first channel to input
+    XGpio_SetDataDirection(&ADCch12, 2, 0xF); //set second channel to input
+    XGpio_SetDataDirection(&ADCch34, 1, 0xF);
+    XGpio_SetDataDirection(&ADCch34, 2, 0xF);
     XGpio_SetDataDirection(&bitslip, 1, 0x0); //set first channel to output
 
 
@@ -322,28 +331,27 @@ int main()
     int Status;
 
     Status = Spi_Init(&SpiInstance, SPI_BASEADDR);
-    if (Status==1) { xil_printf("Failed SPI init"); }
+    if (Status==1) { xil_printf("Failed SPI init \r\n"); }
 
     int adc_data = 0;
-
-    //while(1){
-    xil_printf("Hello world \r\n");
-    usleep(200000);
-    //}
-
+    
+    
     Spi_Write(&SpiInstance, 1, 0b00000010, 0b00000101); //set 14-bit single land serialization
+    
+    //    adc_data = Spi_Read(&SpiInstance, 1, 0b00000010);
+    //    xil_printf("%i\n\r",adc_data);
+    
 
-
-    Status = Bit_Slip_Adjust(&SpiInstance, &input, 1, &bitslip, 1);
+    Status = Bit_Slip_Adjust(&SpiInstance, &ADCch34, 1, &bitslip, 1);
     if (Status==0){
-    xil_printf("Bitslip alignment successful");
+    xil_printf("Bitslip alignment successful \r\n");
     }
-    else if (Status==1) { xil_printf("Failed SPI init"); }
+    else if (Status==1) { xil_printf("Failed bitslip adjustment \r\n"); }
     //----------- End of Bit Slip Alignment ----------//
 
 
     for (int i=0;i<16383;i+=100){
-        Status = ADC_Check_Alignment(&SpiInstance, &input, 1, i);
+        Status = ADC_Check_Alignment(&SpiInstance, &ADCch34, 1, i);
         xil_printf("Alignment Check Value = %i\r\n", i);
         if (Status==1) {
             xil_printf("failed at %i\r\n", i);
@@ -355,7 +363,7 @@ int main()
     //xil_printf("%i\r\n", XGpio_DiscreteRead(&input, 1));
 
     while(1){
-        adc_data = XGpio_DiscreteRead(&input, 1);
+        adc_data = XGpio_DiscreteRead(&ADCch34, 1);
         xil_printf("%i\r\n", adc_data);
         usleep(200000);
     }

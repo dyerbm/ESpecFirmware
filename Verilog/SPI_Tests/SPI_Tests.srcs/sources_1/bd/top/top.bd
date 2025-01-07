@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xDE99963F08F83926",
+      "boundary_crc": "0xDE99963FAE111C8F",
       "device": "xc7z020clg484-1",
       "gen_directory": "../../../../SPI_Tests.gen/sources_1/bd/top",
       "name": "top",
@@ -260,7 +260,7 @@
             "value_src": "default"
           },
           "FREQ_HZ": {
-            "value": "280000000"
+            "value": "140000000"
           }
         },
         "port_maps": {
@@ -1247,11 +1247,14 @@
           "C_BYTE_LEVEL_INTERRUPT_EN": {
             "value": "0"
           },
+          "C_FIFO_DEPTH": {
+            "value": "16"
+          },
           "C_SCK_RATIO": {
             "value": "16"
           },
           "C_TYPE_OF_AXI4_INTERFACE": {
-            "value": "0"
+            "value": "1"
           },
           "C_USE_STARTUP": {
             "value": "0"
@@ -1394,6 +1397,9 @@
             "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
             "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
             "parameters": {
+              "MAX_BURST_LENGTH": {
+                "value": "1"
+              },
               "NUM_READ_OUTSTANDING": {
                 "value": "8"
               },
@@ -1407,6 +1413,9 @@
                 "value": "1"
               },
               "RUSER_BITS_PER_BYTE": {
+                "value": "0"
+              },
+              "SUPPORTS_NARROW_BURST": {
                 "value": "0"
               },
               "WUSER_BITS_PER_BYTE": {
@@ -1419,6 +1428,9 @@
             "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
             "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
             "parameters": {
+              "MAX_BURST_LENGTH": {
+                "value": "1"
+              },
               "NUM_READ_OUTSTANDING": {
                 "value": "8"
               },
@@ -1432,6 +1444,9 @@
                 "value": "1"
               },
               "RUSER_BITS_PER_BYTE": {
+                "value": "0"
+              },
+              "SUPPORTS_NARROW_BURST": {
                 "value": "0"
               },
               "WUSER_BITS_PER_BYTE": {
@@ -1444,6 +1459,9 @@
             "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
             "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
             "parameters": {
+              "MAX_BURST_LENGTH": {
+                "value": "16"
+              },
               "NUM_READ_OUTSTANDING": {
                 "value": "8"
               },
@@ -1457,6 +1475,9 @@
                 "value": "1"
               },
               "RUSER_BITS_PER_BYTE": {
+                "value": "0"
+              },
+              "SUPPORTS_NARROW_BURST": {
                 "value": "0"
               },
               "WUSER_BITS_PER_BYTE": {
@@ -1469,6 +1490,9 @@
             "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
             "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
             "parameters": {
+              "MAX_BURST_LENGTH": {
+                "value": "1"
+              },
               "NUM_READ_OUTSTANDING": {
                 "value": "8"
               },
@@ -1482,6 +1506,9 @@
                 "value": "1"
               },
               "RUSER_BITS_PER_BYTE": {
+                "value": "0"
+              },
+              "SUPPORTS_NARROW_BURST": {
                 "value": "0"
               },
               "WUSER_BITS_PER_BYTE": {
@@ -1550,16 +1577,31 @@
         "inst_hier_path": "clk_wiz_0",
         "parameters": {
           "CLKIN1_JITTER_PS": {
-            "value": "35.71000000000001"
+            "value": "71.42000000000002"
+          },
+          "CLKIN2_JITTER_PS": {
+            "value": "100.0"
           },
           "CLKOUT1_JITTER": {
-            "value": "80.684"
+            "value": "108.510"
           },
           "CLKOUT1_PHASE_ERROR": {
-            "value": "76.707"
+            "value": "89.570"
           },
           "CLKOUT1_REQUESTED_OUT_FREQ": {
-            "value": "280"
+            "value": "140"
+          },
+          "CLKOUT2_JITTER": {
+            "value": "160.340"
+          },
+          "CLKOUT2_PHASE_ERROR": {
+            "value": "89.570"
+          },
+          "CLKOUT2_REQUESTED_OUT_FREQ": {
+            "value": "20"
+          },
+          "CLKOUT2_USED": {
+            "value": "true"
           },
           "JITTER_SEL": {
             "value": "Min_O_Jitter"
@@ -1568,25 +1610,43 @@
             "value": "HIGH"
           },
           "MMCM_CLKFBOUT_MULT_F": {
-            "value": "3.875"
+            "value": "8.000"
           },
           "MMCM_CLKIN1_PERIOD": {
-            "value": "3.571"
+            "value": "7.143"
           },
           "MMCM_CLKIN2_PERIOD": {
-            "value": "10.0"
+            "value": "10.000"
           },
           "MMCM_CLKOUT0_DIVIDE_F": {
-            "value": "3.875"
+            "value": "8.000"
+          },
+          "MMCM_CLKOUT1_DIVIDE": {
+            "value": "56"
           },
           "MMCM_DIVCLK_DIVIDE": {
             "value": "1"
           },
+          "NUM_OUT_CLKS": {
+            "value": "2"
+          },
           "PRIM_IN_FREQ": {
-            "value": "280"
+            "value": "140"
           },
           "PRIM_SOURCE": {
             "value": "Differential_clock_capable_pin"
+          },
+          "SECONDARY_IN_FREQ": {
+            "value": "100.000"
+          },
+          "SECONDARY_SOURCE": {
+            "value": "Single_ended_clock_capable_pin"
+          },
+          "USE_INCLK_SWITCHOVER": {
+            "value": "false"
+          },
+          "USE_LOCKED": {
+            "value": "false"
           },
           "USE_RESET": {
             "value": "false"
@@ -1640,7 +1700,7 @@
       "axi_smc_M02_AXI": {
         "interface_ports": [
           "axi_smc/M02_AXI",
-          "axi_quad_spi_0/AXI_LITE"
+          "axi_quad_spi_0/AXI_FULL"
         ]
       },
       "axi_smc_M03_AXI": {
@@ -1687,6 +1747,12 @@
           "selectio_wiz_0/clk_in"
         ]
       },
+      "clk_wiz_0_clk_out2": {
+        "ports": [
+          "clk_wiz_0/clk_out2",
+          "selectio_wiz_0/clk_div_in"
+        ]
+      },
       "data_in_from_pins_n_0_1": {
         "ports": [
           "data_in_from_pins_n_0",
@@ -1705,12 +1771,12 @@
           "axi_gpio_0/s_axi_aclk",
           "axi_gpio_1/s_axi_aclk",
           "axi_quad_spi_0/ext_spi_clk",
-          "axi_quad_spi_0/s_axi_aclk",
           "processing_system7_0/M_AXI_GP0_ACLK",
           "processing_system7_0/S_AXI_HP0_ACLK",
           "rst_ps7_0_100M/slowest_sync_clk",
           "axi_smc/aclk",
-          "axi_gpio_2/s_axi_aclk"
+          "axi_gpio_2/s_axi_aclk",
+          "axi_quad_spi_0/s_axi4_aclk"
         ]
       },
       "processing_system7_0_FCLK_RESET0_N": {
@@ -1724,9 +1790,9 @@
           "rst_ps7_0_100M/peripheral_aresetn",
           "axi_gpio_0/s_axi_aresetn",
           "axi_gpio_1/s_axi_aresetn",
-          "axi_quad_spi_0/s_axi_aresetn",
           "axi_smc/aresetn",
-          "axi_gpio_2/s_axi_aresetn"
+          "axi_gpio_2/s_axi_aresetn",
+          "axi_quad_spi_0/s_axi4_aresetn"
         ]
       },
       "selectio_wiz_0_data_in_to_device": {
@@ -1780,11 +1846,12 @@
                 "offset": "0x41220000",
                 "range": "64K"
               },
-              "SEG_axi_quad_spi_0_Reg": {
-                "address_block": "/axi_quad_spi_0/AXI_LITE/Reg",
-                "offset": "0x41E00000",
+              "SEG_axi_quad_spi_0_MEM0": {
+                "address_block": "/axi_quad_spi_0/aximm/MEM0",
+                "offset": "0x43C00000",
                 "range": "64K",
-                "offset_high_param": "C_HIGHADDR"
+                "offset_base_param": "C_S_AXI4_BASEADDR",
+                "offset_high_param": "C_S_AXI4_HIGHADDR"
               }
             }
           }
