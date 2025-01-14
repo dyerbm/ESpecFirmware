@@ -59,76 +59,9 @@ typedef u8 DataBuffer[BUFFER_SIZE];
 
 /************************** Function Prototypes ******************************/
 
-int Spi(XSpi *SpiInstancePtr, u16 SpiDeviceId, u8 Register);
 
 /************************** Variable Definitions *****************************/
 static XSpi  SpiInstance;
-
-int Spi(XSpi *SpiInstancePtr, u16 SpiDeviceId, u8 Register)
-{
-	int Status;
-    	/*
-	 * Initialize the write buffer with pattern to write, initialize the
-	 * read buffer to zero so it can be verified after the read, the
-	 * Test value that is added to the unique value allows the value to be
-	 * changed in a debug environment.
-	 */
-
-
-	u8 WriteBuffer[BUFFER_SIZE];
-	u8 ReadBuffer[BUFFER_SIZE];
-
-    WriteBuffer[0] = 0b00000010; //set the ADC to 14 bit single lane output
-    WriteBuffer[1] = 0b00000101;
-    ReadBuffer[0] = 0b00000000;
-    ReadBuffer[1] = 0b00000000;
-
-    XSpi_Transfer(SpiInstancePtr, WriteBuffer, ReadBuffer, BUFFER_SIZE);
-
-	WriteBuffer[0] = 0b00000100; //set test pattern
-	WriteBuffer[1] = 0b01111111;
-	ReadBuffer[0] = 0b00000000;
-	ReadBuffer[1] = 0b00000000;
-
-	//while (1){
-	  XSpi_Transfer(SpiInstancePtr, WriteBuffer,ReadBuffer, BUFFER_SIZE);
-	//}
-
-
-
-	xil_printf("%i\r\n", ReadBuffer[0]);
-    xil_printf("%i\r\n", ReadBuffer[1]);
-	/*
-	 * Transmit the data.
-	 */
-
-	WriteBuffer[0] = 0b00000011;
-	WriteBuffer[1] = 0b10000000; //finish setting test pattern and turn it on
-
-    //while (1){
-	XSpi_Transfer(SpiInstancePtr, WriteBuffer, ReadBuffer, BUFFER_SIZE);
-    //}
-
-	xil_printf("%i\r\n", ReadBuffer[0]);
-	xil_printf("%i\r\n", ReadBuffer[1]);
-
-	//for (int i=0;i<=BUFFER_SIZE-1;i++){
-	//	xil_printf("%i:%i\r\n", i,ReadBuffer[i]);
-	//}
-
-
-	/*
-	 * Compare the data received with the data that was transmitted.
-
-	for (Count = 0; Count < BUFFER_SIZE; Count++) {
-    if (WriteBuffer[Count] != ReadBuffer[Count]) {
-			return XST_FAILURE;
-		}
-	}
-   */
-	return XST_SUCCESS;
-}
-
 
 
 u8 Spi_Read(XSpi *SpiInstancePtr, int SSelect, u8 Register)
@@ -159,13 +92,13 @@ int Spi_Write(XSpi *SpiInstancePtr, int SSelect, u8 Register, u8 Data){
     WriteBuffer[0] = (u8) Register; //cast the register to 8 bit
     WriteBuffer[1] = (u8) Data; //assign Data to the write buffer
     ReadBuffer[0] = 0b00000000; //read buffers don't matter when writing
-    ReadBuffer[0] = 0b00000000;
+    ReadBuffer[1] = 0b00000000;
 
     XSpi_Transfer(SpiInstancePtr, WriteBuffer, ReadBuffer, BUFFER_SIZE); //transfer
 
     XSpi_SetSlaveSelect(SpiInstancePtr, 0);
 
-    return 0; //it worked
+    return ReadBuffer[1]; //it worked, not anymore
 }
 
 int Bit_Slip_Adjust(XSpi *SpiInstancePtr, XGpio *AdcGpioPtr, int AdcGpioChannel, XGpio *BitslipGpioPtr, int BitslipGpioChannel)
@@ -181,25 +114,23 @@ int Bit_Slip_Adjust(XSpi *SpiInstancePtr, XGpio *AdcGpioPtr, int AdcGpioChannel,
     //check the data was written correctly
     if (Spi_Read(SpiInstancePtr, 1, 0b00000011)!=0b10000011 ||
         Spi_Read(SpiInstancePtr, 1, 0b00000100)!=0b01111101) { //sanity check the SPI is working
-        xil_printf("SPI is not working, read %i and %i", Spi_Read(SpiInstancePtr, 1, 0b00000011), Spi_Read(SpiInstancePtr, 1, 0b00000100));
-        //return 1; //return an error if this did not pass
+        xil_printf("%i,%i\r\n", Spi_Read(SpiInstancePtr, 1, 0b00000011), Spi_Read(SpiInstancePtr, 1, 0b00000100));
+        return 1; //return an error if this did not pass
     }
-
 
     int adc_data = 0;
     int lvds_aligned = 0;
     int attempt_counter = 0;
     while (lvds_aligned == 0) { //run until the data is aligned
         adc_data = XGpio_DiscreteRead(AdcGpioPtr, AdcGpioChannel); //get the data
-        xil_printf("%i\r\n", adc_data);
         if (adc_data == 0b00001101111101) {
                 lvds_aligned = 1;
 
             }
         else { //turn bitslip on and off to increment the bit slip once
-            XGpio_DiscreteWrite(BitslipGpioPtr, BitslipGpioChannel, 0b1111); //write a 1 to bitslip (all channels)
+            XGpio_DiscreteWrite(BitslipGpioPtr, BitslipGpioChannel, 1); //write a 1 to bitslip
             usleep(100);
-            XGpio_DiscreteWrite(BitslipGpioPtr, BitslipGpioChannel, 0); //write a 0 to bitslip (all channels)
+            XGpio_DiscreteWrite(BitslipGpioPtr, BitslipGpioChannel, 0); //write a 0 to bitslip
 
             attempt_counter++;
         }
@@ -310,6 +241,8 @@ int Spi_Init(XSpi *SpiInstancePtr, int SpiDeviceID) {
 
 int main()
 {
+    init_platform();
+
     XGpio ADCch12, ADCch34, bitslip;
     XGpio_Initialize(&ADCch12, XPAR_AXI_GPIO_0_BASEADDR); //initialize input XGpio variable for data input
     XGpio_Initialize(&bitslip, XPAR_AXI_GPIO_1_BASEADDR);
@@ -321,25 +254,30 @@ int main()
     XGpio_SetDataDirection(&bitslip, 1, 0x0); //set first channel to output
 
 
-    init_platform();
-    //while(1){
+    
+
     xil_printf("New run\r\n");
     usleep(200000);
-    //}
     //--------SPI SETUP----------//
 
     int Status;
 
     Status = Spi_Init(&SpiInstance, SPI_BASEADDR);
     if (Status==1) { xil_printf("Failed SPI init \r\n"); }
+    //-------END OF SPI SETUP----------//
 
+//---------ADC SETUP----------//
     int adc_data = 0;
-    
-    
+    Spi_Write(&SpiInstance, 1, 0b00000000, 0b10000000); // reset the ADC to start
+    usleep(100); //wait a moment to ensure the ADC resets
+
     Spi_Write(&SpiInstance, 1, 0b00000010, 0b00000101); //set 14-bit single land serialization
-    
-    //    adc_data = Spi_Read(&SpiInstance, 1, 0b00000010);
-    //    xil_printf("%i\n\r",adc_data);
+
+    for (int i=0;i<10;i++) {
+        xil_printf("Value:");
+        xil_printf("%i\r\n", Spi_Read(&SpiInstance, 1, 0b00000010));
+        usleep(1000000);
+    }
     
 
     Status = Bit_Slip_Adjust(&SpiInstance, &ADCch34, 1, &bitslip, 1);
@@ -347,7 +285,7 @@ int main()
     xil_printf("Bitslip alignment successful \r\n");
     }
     else if (Status==1) { xil_printf("Failed bitslip adjustment \r\n"); }
-    //----------- End of Bit Slip Alignment ----------//
+    //----------- End of ADC SETUP ----------//
 
 
     for (int i=0;i<16383;i+=100){

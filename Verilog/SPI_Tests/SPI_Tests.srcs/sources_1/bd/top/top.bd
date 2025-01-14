@@ -1254,7 +1254,7 @@
             "value": "16"
           },
           "C_TYPE_OF_AXI4_INTERFACE": {
-            "value": "1"
+            "value": "0"
           },
           "C_USE_STARTUP": {
             "value": "0"
@@ -1700,7 +1700,7 @@
       "axi_smc_M02_AXI": {
         "interface_ports": [
           "axi_smc/M02_AXI",
-          "axi_quad_spi_0/AXI_FULL"
+          "axi_quad_spi_0/AXI_LITE"
         ]
       },
       "axi_smc_M03_AXI": {
@@ -1776,7 +1776,7 @@
           "rst_ps7_0_100M/slowest_sync_clk",
           "axi_smc/aclk",
           "axi_gpio_2/s_axi_aclk",
-          "axi_quad_spi_0/s_axi4_aclk"
+          "axi_quad_spi_0/s_axi_aclk"
         ]
       },
       "processing_system7_0_FCLK_RESET0_N": {
@@ -1792,7 +1792,7 @@
           "axi_gpio_1/s_axi_aresetn",
           "axi_smc/aresetn",
           "axi_gpio_2/s_axi_aresetn",
-          "axi_quad_spi_0/s_axi4_aresetn"
+          "axi_quad_spi_0/s_axi_aresetn"
         ]
       },
       "selectio_wiz_0_data_in_to_device": {
@@ -1846,12 +1846,11 @@
                 "offset": "0x41220000",
                 "range": "64K"
               },
-              "SEG_axi_quad_spi_0_MEM0": {
-                "address_block": "/axi_quad_spi_0/aximm/MEM0",
-                "offset": "0x43C00000",
+              "SEG_axi_quad_spi_0_Reg": {
+                "address_block": "/axi_quad_spi_0/AXI_LITE/Reg",
+                "offset": "0x41E00000",
                 "range": "64K",
-                "offset_base_param": "C_S_AXI4_BASEADDR",
-                "offset_high_param": "C_S_AXI4_HIGHADDR"
+                "offset_high_param": "C_HIGHADDR"
               }
             }
           }
