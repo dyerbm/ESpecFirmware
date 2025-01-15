@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-| Date             : Tue Jan 14 15:44:55 2025
+| Date             : Tue Jan 14 22:50:35 2025
 | Host             : DESKTOP-DRF538C running 64-bit major release  (build 9200)
 | Command          : report_power -file top_wrapper_power_routed.rpt -pb top_wrapper_power_summary_routed.pb -rpx top_wrapper_power_routed.rpx
 | Design           : top_wrapper
@@ -33,7 +33,7 @@ Table of Contents
 | Total On-Chip Power (W)  | 1.840        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.692        |
+| Dynamic (W)              | 1.693        |
 | Device Static (W)        | 0.148        |
 | Effective TJA (C/W)      | 11.5         |
 | Max Ambient (C)          | 63.8         |
@@ -52,15 +52,15 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.012 |        7 |       --- |             --- |
+| Clocks                   |     0.013 |        7 |       --- |             --- |
 | Slice Logic              |     0.003 |     3941 |       --- |             --- |
-|   LUT as Logic           |     0.003 |     1208 |     53200 |            2.27 |
+|   LUT as Logic           |     0.003 |     1206 |     53200 |            2.27 |
 |   Register               |    <0.001 |     1884 |    106400 |            1.77 |
 |   CARRY4                 |    <0.001 |        5 |     13300 |            0.04 |
 |   LUT as Distributed RAM |    <0.001 |       12 |     17400 |            0.07 |
 |   Others                 |    <0.001 |      493 |       --- |             --- |
 |   LUT as Shift Register  |     0.000 |        2 |     17400 |            0.01 |
-| Signals                  |     0.003 |     2766 |       --- |             --- |
+| Signals                  |     0.003 |     2763 |       --- |             --- |
 | MMCM                     |     0.113 |        1 |         4 |           25.00 |
 | I/O                      |     0.027 |       14 |       200 |            7.00 |
 | PS7                      |     1.533 |        1 |       --- |             --- |
@@ -155,7 +155,7 @@ Table of Contents
 +--------------------------+-----------+
 | Name                     | Power (W) |
 +--------------------------+-----------+
-| top_wrapper              |     1.692 |
+| top_wrapper              |     1.693 |
 |   top_i                  |     1.692 |
 |     axi_gpio_0           |     0.002 |
 |       U0                 |     0.002 |
@@ -163,8 +163,8 @@ Table of Contents
 |       U0                 |     0.001 |
 |     axi_quad_spi_0       |     0.005 |
 |       U0                 |     0.005 |
-|     axi_smc              |     0.007 |
-|       inst               |     0.007 |
+|     axi_smc              |     0.008 |
+|       inst               |     0.008 |
 |     clk_wiz_0            |     0.120 |
 |       inst               |     0.120 |
 |     processing_system7_0 |     1.534 |

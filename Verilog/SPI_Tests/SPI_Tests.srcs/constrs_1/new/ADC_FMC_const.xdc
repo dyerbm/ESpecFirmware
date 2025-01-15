@@ -1,10 +1,10 @@
 #FMC
 set_property PACKAGE_PIN K20 [get_ports spi_rtl_io1_io]; #K20
-set_property PACKAGE_PIN W11 [get_ports spi_rtl_io1_io]; #D21
+#set_property PACKAGE_PIN W11 [get_ports spi_rtl_io1_io]; #D21
 set_property PACKAGE_PIN K19 [get_ports {spi_rtl_ss_io[0]}]; #k19
 set_property PACKAGE_PIN D21 [get_ports spi_rtl_sck_io]; #D21
 set_property PACKAGE_PIN E21 [get_ports spi_rtl_io0_io]; #E21
-set_property PACKAGE_PIN W12 [get_ports spi_rtl_io0_io]; #D21
+#set_property PACKAGE_PIN W12 [get_ports spi_rtl_io0_io]; #D21
 
 set_property IOSTANDARD LVCMOS25 [get_ports spi_rtl_*]; #TODO CHANGE BACK TO 2.5V
 
