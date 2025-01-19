@@ -4,8 +4,8 @@
 // Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
 // Date        : Thu Nov 28 12:14:48 2024
 // Host        : DESKTOP-DRF538C running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim -rename_top top_rst_ps7_0_100M_0 -prefix
-//               top_rst_ps7_0_100M_0_ top_rst_ps7_0_100M_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top top_proc_sys_reset_0_0 -prefix
+//               top_proc_sys_reset_0_0_ top_rst_ps7_0_100M_0_sim_netlist.v
 // Design      : top_rst_ps7_0_100M_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -13,7 +13,7 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-module top_rst_ps7_0_100M_0_cdc_sync
+module top_proc_sys_reset_0_0_cdc_sync
    (lpf_asr_reg,
     scndry_out,
     lpf_asr,
@@ -109,7 +109,7 @@ module top_rst_ps7_0_100M_0_cdc_sync
 endmodule
 
 (* ORIG_REF_NAME = "cdc_sync" *) 
-module top_rst_ps7_0_100M_0_cdc_sync_0
+module top_proc_sys_reset_0_0_cdc_sync_0
    (lpf_exr_reg,
     scndry_out,
     lpf_exr,
@@ -208,7 +208,7 @@ module top_rst_ps7_0_100M_0_cdc_sync_0
         .O(lpf_exr_reg));
 endmodule
 
-module top_rst_ps7_0_100M_0_lpf
+module top_proc_sys_reset_0_0_lpf
    (lpf_int,
     slowest_sync_clk,
     dcm_locked,
@@ -243,7 +243,7 @@ module top_rst_ps7_0_100M_0_lpf
   wire p_3_in6_in;
   wire slowest_sync_clk;
 
-  top_rst_ps7_0_100M_0_cdc_sync \ACTIVE_LOW_AUX.ACT_LO_AUX 
+  top_proc_sys_reset_0_0_cdc_sync \ACTIVE_LOW_AUX.ACT_LO_AUX 
        (.asr_lpf(asr_lpf),
         .aux_reset_in(aux_reset_in),
         .lpf_asr(lpf_asr),
@@ -252,7 +252,7 @@ module top_rst_ps7_0_100M_0_lpf
         .p_2_in(p_2_in),
         .scndry_out(p_3_in1_in),
         .slowest_sync_clk(slowest_sync_clk));
-  top_rst_ps7_0_100M_0_cdc_sync_0 \ACTIVE_LOW_EXT.ACT_LO_EXT 
+  top_proc_sys_reset_0_0_cdc_sync_0 \ACTIVE_LOW_EXT.ACT_LO_EXT 
        (.exr_lpf(exr_lpf),
         .ext_reset_in(ext_reset_in),
         .lpf_exr(lpf_exr),
@@ -362,7 +362,7 @@ endmodule
 (* C_AUX_RESET_HIGH = "1'b0" *) (* C_AUX_RST_WIDTH = "4" *) (* C_EXT_RESET_HIGH = "1'b0" *) 
 (* C_EXT_RST_WIDTH = "4" *) (* C_FAMILY = "zynq" *) (* C_NUM_BUS_RST = "1" *) 
 (* C_NUM_INTERCONNECT_ARESETN = "1" *) (* C_NUM_PERP_ARESETN = "1" *) (* C_NUM_PERP_RST = "1" *) 
-module top_rst_ps7_0_100M_0_proc_sys_reset
+module top_proc_sys_reset_0_0_proc_sys_reset
    (slowest_sync_clk,
     ext_reset_in,
     aux_reset_in,
@@ -437,7 +437,7 @@ module top_rst_ps7_0_100M_0_proc_sys_reset
         .D(Bsr_out),
         .Q(bus_struct_reset),
         .R(1'b0));
-  top_rst_ps7_0_100M_0_lpf EXT_LPF
+  top_proc_sys_reset_0_0_lpf EXT_LPF
        (.aux_reset_in(aux_reset_in),
         .dcm_locked(dcm_locked),
         .ext_reset_in(ext_reset_in),
@@ -468,7 +468,7 @@ module top_rst_ps7_0_100M_0_proc_sys_reset
         .D(Pr_out),
         .Q(peripheral_reset),
         .R(1'b0));
-  top_rst_ps7_0_100M_0_sequence_psr SEQ
+  top_proc_sys_reset_0_0_sequence_psr SEQ
        (.Bsr_out(Bsr_out),
         .MB_out(MB_out),
         .Pr_out(Pr_out),
@@ -478,7 +478,7 @@ module top_rst_ps7_0_100M_0_proc_sys_reset
         .slowest_sync_clk(slowest_sync_clk));
 endmodule
 
-module top_rst_ps7_0_100M_0_sequence_psr
+module top_proc_sys_reset_0_0_sequence_psr
    (MB_out,
     Bsr_out,
     Pr_out,
@@ -548,7 +548,7 @@ module top_rst_ps7_0_100M_0_sequence_psr
         .D(Core_i_1_n_0),
         .Q(MB_out),
         .S(lpf_int));
-  top_rst_ps7_0_100M_0_upcnt_n SEQ_COUNTER
+  top_proc_sys_reset_0_0_upcnt_n SEQ_COUNTER
        (.Q(seq_cnt),
         .seq_clr(seq_clr),
         .seq_cnt_en(seq_cnt_en),
@@ -720,7 +720,7 @@ endmodule
 
 (* CHECK_LICENSE_TYPE = "top_rst_ps7_0_100M_0,proc_sys_reset,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "proc_sys_reset,Vivado 2024.2" *) 
 (* NotValidForBitStream *)
-module top_rst_ps7_0_100M_0
+module top_proc_sys_reset_0_0
    (slowest_sync_clk,
     ext_reset_in,
     aux_reset_in,
@@ -762,7 +762,7 @@ module top_rst_ps7_0_100M_0
   (* C_NUM_INTERCONNECT_ARESETN = "1" *) 
   (* C_NUM_PERP_ARESETN = "1" *) 
   (* C_NUM_PERP_RST = "1" *) 
-  top_rst_ps7_0_100M_0_proc_sys_reset U0
+  top_proc_sys_reset_0_0_proc_sys_reset U0
        (.aux_reset_in(aux_reset_in),
         .bus_struct_reset(bus_struct_reset),
         .dcm_locked(dcm_locked),
@@ -775,7 +775,7 @@ module top_rst_ps7_0_100M_0
         .slowest_sync_clk(slowest_sync_clk));
 endmodule
 
-module top_rst_ps7_0_100M_0_upcnt_n
+module top_proc_sys_reset_0_0_upcnt_n
    (Q,
     seq_clr,
     seq_cnt_en,

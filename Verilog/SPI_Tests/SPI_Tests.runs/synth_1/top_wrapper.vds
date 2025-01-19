@@ -3,8 +3,8 @@
 # SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Sun Jan 19 12:23:15 2025
-# Process ID         : 2596
+# Start of session at: Sun Jan 19 17:27:01 2025
+# Process ID         : 16872
 # Current directory  : C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.runs/synth_1
 # Command line       : vivado.exe -log top_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_wrapper.tcl
 # Log file           : C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.runs/synth_1/top_wrapper.vds
@@ -19,7 +19,7 @@
 # Host memory        : 34240 MB
 # Swap memory        : 42949 MB
 # Total Virtual      : 77190 MB
-# Available Virtual  : 33851 MB
+# Available Virtual  : 30261 MB
 #-----------------------------------------------------------
 source top_wrapper.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
@@ -37,93 +37,97 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 3200
+INFO: [Synth 8-7075] Helper process launched with PID 10728
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1145.027 ; gain = 469.039
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1147.480 ; gain = 469.223
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'top_wrapper' [C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/hdl/top_wrapper.v:13]
 INFO: [Synth 8-6157] synthesizing module 'IOBUF' [C:/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:80391]
 INFO: [Synth 8-6155] done synthesizing module 'IOBUF' (0#1) [C:/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:80391]
 INFO: [Synth 8-6157] synthesizing module 'top' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:13]
-INFO: [Synth 8-6157] synthesizing module 'top_LED_Visualizer_0_0' [C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.runs/synth_1/.Xil/Vivado-2596-DESKTOP-DRF538C/realtime/top_LED_Visualizer_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'top_LED_Visualizer_0_0' (0#1) [C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.runs/synth_1/.Xil/Vivado-2596-DESKTOP-DRF538C/realtime/top_LED_Visualizer_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'top_axi_gpio_0_0' [C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.runs/synth_1/.Xil/Vivado-2596-DESKTOP-DRF538C/realtime/top_axi_gpio_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'top_axi_gpio_0_0' (0#1) [C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.runs/synth_1/.Xil/Vivado-2596-DESKTOP-DRF538C/realtime/top_axi_gpio_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'top_axi_gpio_1_0' [C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.runs/synth_1/.Xil/Vivado-2596-DESKTOP-DRF538C/realtime/top_axi_gpio_1_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'top_axi_gpio_1_0' (0#1) [C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.runs/synth_1/.Xil/Vivado-2596-DESKTOP-DRF538C/realtime/top_axi_gpio_1_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'top_axi_quad_spi_0_0' [C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.runs/synth_1/.Xil/Vivado-2596-DESKTOP-DRF538C/realtime/top_axi_quad_spi_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'top_axi_quad_spi_0_0' (0#1) [C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.runs/synth_1/.Xil/Vivado-2596-DESKTOP-DRF538C/realtime/top_axi_quad_spi_0_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'ip2intc_irpt' of module 'top_axi_quad_spi_0_0' is unconnected for instance 'axi_quad_spi_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:300]
-WARNING: [Synth 8-7023] instance 'axi_quad_spi_0' of module 'top_axi_quad_spi_0_0' has 33 connections declared, but only 32 given [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:300]
-INFO: [Synth 8-6157] synthesizing module 'top_axi_smc_0' [C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.runs/synth_1/.Xil/Vivado-2596-DESKTOP-DRF538C/realtime/top_axi_smc_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'top_axi_smc_0' (0#1) [C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.runs/synth_1/.Xil/Vivado-2596-DESKTOP-DRF538C/realtime/top_axi_smc_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'M00_AXI_awprot' of module 'top_axi_smc_0' is unconnected for instance 'axi_smc' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:333]
-WARNING: [Synth 8-7071] port 'M00_AXI_arprot' of module 'top_axi_smc_0' is unconnected for instance 'axi_smc' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:333]
-WARNING: [Synth 8-7071] port 'M01_AXI_awprot' of module 'top_axi_smc_0' is unconnected for instance 'axi_smc' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:333]
-WARNING: [Synth 8-7071] port 'M01_AXI_arprot' of module 'top_axi_smc_0' is unconnected for instance 'axi_smc' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:333]
-WARNING: [Synth 8-7071] port 'M02_AXI_awprot' of module 'top_axi_smc_0' is unconnected for instance 'axi_smc' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:333]
-WARNING: [Synth 8-7071] port 'M02_AXI_arprot' of module 'top_axi_smc_0' is unconnected for instance 'axi_smc' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:333]
-WARNING: [Synth 8-7071] port 'M03_AXI_awaddr' of module 'top_axi_smc_0' is unconnected for instance 'axi_smc' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:333]
-WARNING: [Synth 8-7071] port 'M03_AXI_awprot' of module 'top_axi_smc_0' is unconnected for instance 'axi_smc' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:333]
-WARNING: [Synth 8-7071] port 'M03_AXI_awvalid' of module 'top_axi_smc_0' is unconnected for instance 'axi_smc' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:333]
-WARNING: [Synth 8-7071] port 'M03_AXI_wdata' of module 'top_axi_smc_0' is unconnected for instance 'axi_smc' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:333]
-WARNING: [Synth 8-7071] port 'M03_AXI_wstrb' of module 'top_axi_smc_0' is unconnected for instance 'axi_smc' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:333]
-WARNING: [Synth 8-7071] port 'M03_AXI_wvalid' of module 'top_axi_smc_0' is unconnected for instance 'axi_smc' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:333]
-WARNING: [Synth 8-7071] port 'M03_AXI_bready' of module 'top_axi_smc_0' is unconnected for instance 'axi_smc' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:333]
-WARNING: [Synth 8-7071] port 'M03_AXI_araddr' of module 'top_axi_smc_0' is unconnected for instance 'axi_smc' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:333]
-WARNING: [Synth 8-7071] port 'M03_AXI_arprot' of module 'top_axi_smc_0' is unconnected for instance 'axi_smc' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:333]
-WARNING: [Synth 8-7071] port 'M03_AXI_arvalid' of module 'top_axi_smc_0' is unconnected for instance 'axi_smc' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:333]
-WARNING: [Synth 8-7071] port 'M03_AXI_rready' of module 'top_axi_smc_0' is unconnected for instance 'axi_smc' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:333]
-WARNING: [Synth 8-7023] instance 'axi_smc' of module 'top_axi_smc_0' has 116 connections declared, but only 99 given [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:333]
-INFO: [Synth 8-6157] synthesizing module 'top_proc_sys_reset_0_0' [C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.runs/synth_1/.Xil/Vivado-2596-DESKTOP-DRF538C/realtime/top_proc_sys_reset_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'top_proc_sys_reset_0_0' (0#1) [C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.runs/synth_1/.Xil/Vivado-2596-DESKTOP-DRF538C/realtime/top_proc_sys_reset_0_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'mb_reset' of module 'top_proc_sys_reset_0_0' is unconnected for instance 'proc_sys_reset_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:433]
-WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'top_proc_sys_reset_0_0' is unconnected for instance 'proc_sys_reset_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:433]
-WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'top_proc_sys_reset_0_0' is unconnected for instance 'proc_sys_reset_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:433]
-WARNING: [Synth 8-7023] instance 'proc_sys_reset_0' of module 'top_proc_sys_reset_0_0' has 10 connections declared, but only 7 given [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:433]
-INFO: [Synth 8-6157] synthesizing module 'top_processing_system7_0_0' [C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.runs/synth_1/.Xil/Vivado-2596-DESKTOP-DRF538C/realtime/top_processing_system7_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'top_processing_system7_0_0' (0#1) [C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.runs/synth_1/.Xil/Vivado-2596-DESKTOP-DRF538C/realtime/top_processing_system7_0_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'TTC0_WAVE0_OUT' of module 'top_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:443]
-WARNING: [Synth 8-7071] port 'TTC0_WAVE1_OUT' of module 'top_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:443]
-WARNING: [Synth 8-7071] port 'TTC0_WAVE2_OUT' of module 'top_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:443]
-WARNING: [Synth 8-7071] port 'USB0_PORT_INDCTL' of module 'top_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:443]
-WARNING: [Synth 8-7071] port 'USB0_VBUS_PWRSELECT' of module 'top_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:443]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_ARREADY' of module 'top_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:443]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_AWREADY' of module 'top_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:443]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_BVALID' of module 'top_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:443]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_RLAST' of module 'top_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:443]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_RVALID' of module 'top_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:443]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_WREADY' of module 'top_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:443]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_BRESP' of module 'top_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:443]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_RRESP' of module 'top_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:443]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_BID' of module 'top_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:443]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_RID' of module 'top_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:443]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_RDATA' of module 'top_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:443]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_RCOUNT' of module 'top_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:443]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_WCOUNT' of module 'top_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:443]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_RACOUNT' of module 'top_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:443]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_WACOUNT' of module 'top_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:443]
-WARNING: [Synth 8-7023] instance 'processing_system7_0' of module 'top_processing_system7_0_0' has 114 connections declared, but only 94 given [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:443]
-INFO: [Synth 8-6157] synthesizing module 'top_selectio_wiz_0_1' [C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.runs/synth_1/.Xil/Vivado-2596-DESKTOP-DRF538C/realtime/top_selectio_wiz_0_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'top_selectio_wiz_0_1' (0#1) [C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.runs/synth_1/.Xil/Vivado-2596-DESKTOP-DRF538C/realtime/top_selectio_wiz_0_1_stub.v:6]
-WARNING: [Synth 8-7071] port 'delay_locked' of module 'top_selectio_wiz_0_1' is unconnected for instance 'selectio_wiz_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:538]
-WARNING: [Synth 8-7071] port 'clk_div_out' of module 'top_selectio_wiz_0_1' is unconnected for instance 'selectio_wiz_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:538]
-WARNING: [Synth 8-7023] instance 'selectio_wiz_0' of module 'top_selectio_wiz_0_1' has 11 connections declared, but only 9 given [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:538]
+INFO: [Synth 8-6157] synthesizing module 'top_LED_Visualizer_0_0' [C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.runs/synth_1/.Xil/Vivado-16872-DESKTOP-DRF538C/realtime/top_LED_Visualizer_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'top_LED_Visualizer_0_0' (0#1) [C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.runs/synth_1/.Xil/Vivado-16872-DESKTOP-DRF538C/realtime/top_LED_Visualizer_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'top_axi_gpio_0_0' [C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.runs/synth_1/.Xil/Vivado-16872-DESKTOP-DRF538C/realtime/top_axi_gpio_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'top_axi_gpio_0_0' (0#1) [C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.runs/synth_1/.Xil/Vivado-16872-DESKTOP-DRF538C/realtime/top_axi_gpio_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'top_axi_gpio_1_0' [C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.runs/synth_1/.Xil/Vivado-16872-DESKTOP-DRF538C/realtime/top_axi_gpio_1_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'top_axi_gpio_1_0' (0#1) [C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.runs/synth_1/.Xil/Vivado-16872-DESKTOP-DRF538C/realtime/top_axi_gpio_1_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'top_axi_quad_spi_0_0' [C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.runs/synth_1/.Xil/Vivado-16872-DESKTOP-DRF538C/realtime/top_axi_quad_spi_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'top_axi_quad_spi_0_0' (0#1) [C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.runs/synth_1/.Xil/Vivado-16872-DESKTOP-DRF538C/realtime/top_axi_quad_spi_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'ip2intc_irpt' of module 'top_axi_quad_spi_0_0' is unconnected for instance 'axi_quad_spi_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:301]
+WARNING: [Synth 8-7023] instance 'axi_quad_spi_0' of module 'top_axi_quad_spi_0_0' has 33 connections declared, but only 32 given [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:301]
+INFO: [Synth 8-6157] synthesizing module 'top_axi_smc_0' [C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.runs/synth_1/.Xil/Vivado-16872-DESKTOP-DRF538C/realtime/top_axi_smc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'top_axi_smc_0' (0#1) [C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.runs/synth_1/.Xil/Vivado-16872-DESKTOP-DRF538C/realtime/top_axi_smc_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'M00_AXI_awprot' of module 'top_axi_smc_0' is unconnected for instance 'axi_smc' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:334]
+WARNING: [Synth 8-7071] port 'M00_AXI_arprot' of module 'top_axi_smc_0' is unconnected for instance 'axi_smc' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:334]
+WARNING: [Synth 8-7071] port 'M01_AXI_awprot' of module 'top_axi_smc_0' is unconnected for instance 'axi_smc' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:334]
+WARNING: [Synth 8-7071] port 'M01_AXI_arprot' of module 'top_axi_smc_0' is unconnected for instance 'axi_smc' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:334]
+WARNING: [Synth 8-7071] port 'M02_AXI_awprot' of module 'top_axi_smc_0' is unconnected for instance 'axi_smc' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:334]
+WARNING: [Synth 8-7071] port 'M02_AXI_arprot' of module 'top_axi_smc_0' is unconnected for instance 'axi_smc' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:334]
+WARNING: [Synth 8-7071] port 'M03_AXI_awaddr' of module 'top_axi_smc_0' is unconnected for instance 'axi_smc' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:334]
+WARNING: [Synth 8-7071] port 'M03_AXI_awprot' of module 'top_axi_smc_0' is unconnected for instance 'axi_smc' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:334]
+WARNING: [Synth 8-7071] port 'M03_AXI_awvalid' of module 'top_axi_smc_0' is unconnected for instance 'axi_smc' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:334]
+WARNING: [Synth 8-7071] port 'M03_AXI_wdata' of module 'top_axi_smc_0' is unconnected for instance 'axi_smc' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:334]
+WARNING: [Synth 8-7071] port 'M03_AXI_wstrb' of module 'top_axi_smc_0' is unconnected for instance 'axi_smc' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:334]
+WARNING: [Synth 8-7071] port 'M03_AXI_wvalid' of module 'top_axi_smc_0' is unconnected for instance 'axi_smc' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:334]
+WARNING: [Synth 8-7071] port 'M03_AXI_bready' of module 'top_axi_smc_0' is unconnected for instance 'axi_smc' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:334]
+WARNING: [Synth 8-7071] port 'M03_AXI_araddr' of module 'top_axi_smc_0' is unconnected for instance 'axi_smc' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:334]
+WARNING: [Synth 8-7071] port 'M03_AXI_arprot' of module 'top_axi_smc_0' is unconnected for instance 'axi_smc' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:334]
+WARNING: [Synth 8-7071] port 'M03_AXI_arvalid' of module 'top_axi_smc_0' is unconnected for instance 'axi_smc' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:334]
+WARNING: [Synth 8-7071] port 'M03_AXI_rready' of module 'top_axi_smc_0' is unconnected for instance 'axi_smc' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:334]
+WARNING: [Synth 8-7023] instance 'axi_smc' of module 'top_axi_smc_0' has 116 connections declared, but only 99 given [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:334]
+INFO: [Synth 8-6157] synthesizing module 'top_proc_sys_reset_0_0' [C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.runs/synth_1/.Xil/Vivado-16872-DESKTOP-DRF538C/realtime/top_proc_sys_reset_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'top_proc_sys_reset_0_0' (0#1) [C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.runs/synth_1/.Xil/Vivado-16872-DESKTOP-DRF538C/realtime/top_proc_sys_reset_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'mb_reset' of module 'top_proc_sys_reset_0_0' is unconnected for instance 'proc_sys_reset_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:434]
+WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'top_proc_sys_reset_0_0' is unconnected for instance 'proc_sys_reset_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:434]
+WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'top_proc_sys_reset_0_0' is unconnected for instance 'proc_sys_reset_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:434]
+WARNING: [Synth 8-7023] instance 'proc_sys_reset_0' of module 'top_proc_sys_reset_0_0' has 10 connections declared, but only 7 given [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:434]
+INFO: [Synth 8-6157] synthesizing module 'top_processing_system7_0_0' [C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.runs/synth_1/.Xil/Vivado-16872-DESKTOP-DRF538C/realtime/top_processing_system7_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'top_processing_system7_0_0' (0#1) [C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.runs/synth_1/.Xil/Vivado-16872-DESKTOP-DRF538C/realtime/top_processing_system7_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'TTC0_WAVE0_OUT' of module 'top_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:444]
+WARNING: [Synth 8-7071] port 'TTC0_WAVE1_OUT' of module 'top_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:444]
+WARNING: [Synth 8-7071] port 'TTC0_WAVE2_OUT' of module 'top_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:444]
+WARNING: [Synth 8-7071] port 'USB0_PORT_INDCTL' of module 'top_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:444]
+WARNING: [Synth 8-7071] port 'USB0_VBUS_PWRSELECT' of module 'top_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:444]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_ARREADY' of module 'top_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:444]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_AWREADY' of module 'top_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:444]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_BVALID' of module 'top_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:444]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_RLAST' of module 'top_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:444]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_RVALID' of module 'top_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:444]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_WREADY' of module 'top_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:444]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_BRESP' of module 'top_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:444]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_RRESP' of module 'top_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:444]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_BID' of module 'top_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:444]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_RID' of module 'top_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:444]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_RDATA' of module 'top_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:444]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_RCOUNT' of module 'top_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:444]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_WCOUNT' of module 'top_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:444]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_RACOUNT' of module 'top_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:444]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_WACOUNT' of module 'top_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:444]
+WARNING: [Synth 8-7023] instance 'processing_system7_0' of module 'top_processing_system7_0_0' has 114 connections declared, but only 94 given [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:444]
+INFO: [Synth 8-6157] synthesizing module 'top_selectio_wiz_0_1' [C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.runs/synth_1/.Xil/Vivado-16872-DESKTOP-DRF538C/realtime/top_selectio_wiz_0_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'top_selectio_wiz_0_1' (0#1) [C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.runs/synth_1/.Xil/Vivado-16872-DESKTOP-DRF538C/realtime/top_selectio_wiz_0_1_stub.v:6]
+WARNING: [Synth 8-7071] port 'delay_locked' of module 'top_selectio_wiz_0_1' is unconnected for instance 'selectio_wiz_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:539]
+WARNING: [Synth 8-7071] port 'clk_div_out' of module 'top_selectio_wiz_0_1' is unconnected for instance 'selectio_wiz_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:539]
+WARNING: [Synth 8-7023] instance 'selectio_wiz_0' of module 'top_selectio_wiz_0_1' has 11 connections declared, but only 9 given [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:539]
+INFO: [Synth 8-6157] synthesizing module 'top_word_inverter_0_0' [C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.runs/synth_1/.Xil/Vivado-16872-DESKTOP-DRF538C/realtime/top_word_inverter_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'top_word_inverter_0_0' (0#1) [C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.runs/synth_1/.Xil/Vivado-16872-DESKTOP-DRF538C/realtime/top_word_inverter_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'data_out_ch2' of module 'top_word_inverter_0_0' is unconnected for instance 'word_inverter_0' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:549]
+WARNING: [Synth 8-7023] instance 'word_inverter_0' of module 'top_word_inverter_0_0' has 3 connections declared, but only 2 given [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:549]
 INFO: [Synth 8-6155] done synthesizing module 'top' (0#1) [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/synth/top.v:13]
 INFO: [Synth 8-6155] done synthesizing module 'top_wrapper' (0#1) [C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/hdl/top_wrapper.v:13]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1258.562 ; gain = 582.574
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1260.945 ; gain = 582.688
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1258.562 ; gain = 582.574
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1260.945 ; gain = 582.688
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1258.562 ; gain = 582.574
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1260.945 ; gain = 582.688
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1258.562 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1260.945 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -146,6 +150,8 @@ Parsing XDC File [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Te
 Finished Parsing XDC File [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_proc_sys_reset_0_0/top_proc_sys_reset_0_0/top_rst_ps7_0_100M_0_in_context.xdc] for cell 'top_i/proc_sys_reset_0'
 Parsing XDC File [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_LED_Visualizer_0_0/top_LED_Visualizer_0_0/top_LED_Visualizer_0_0_in_context.xdc] for cell 'top_i/LED_Visualizer_0'
 Finished Parsing XDC File [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_LED_Visualizer_0_0/top_LED_Visualizer_0_0/top_LED_Visualizer_0_0_in_context.xdc] for cell 'top_i/LED_Visualizer_0'
+Parsing XDC File [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_word_inverter_0_0/top_word_inverter_0_0/top_word_inverter_0_0_in_context.xdc] for cell 'top_i/word_inverter_0'
+Finished Parsing XDC File [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_word_inverter_0_0/top_word_inverter_0_0/top_word_inverter_0_0_in_context.xdc] for cell 'top_i/word_inverter_0'
 Parsing XDC File [C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.srcs/constrs_1/new/ADC_FMC_const.xdc]
 WARNING: [Vivado 12-2489] -period contains time 7.142800 which will be rounded to 7.143 to ensure it is an integer multiple of 1 picosecond [C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.srcs/constrs_1/new/ADC_FMC_const.xdc:36]
 WARNING: [Vivado 12-2489] -waveform contains time 3.571400 which will be rounded to 3.571 to ensure it is an integer multiple of 1 picosecond [C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.srcs/constrs_1/new/ADC_FMC_const.xdc:36]
@@ -156,25 +162,25 @@ Parsing XDC File [C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Te
 Finished Parsing XDC File [C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1282.484 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1278.648 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 4 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 4 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1282.484 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1278.648 ; gain = 0.000
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'top_i/axi_quad_spi_0' at clock pin 'ext_spi_clk' is different from the actual clock period '10.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'top_i/selectio_wiz_0' at clock pin 'clk_in_p' is different from the actual clock period '7.143', this can lead to different synthesis results.
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1285.047 ; gain = 609.059
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1282.078 ; gain = 603.820
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1285.047 ; gain = 609.059
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1282.078 ; gain = 603.820
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -460,11 +466,12 @@ Applied set_property KEEP_HIERARCHY = SOFT for top_i/axi_smc. (constraint file  
 Applied set_property KEEP_HIERARCHY = SOFT for top_i/selectio_wiz_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for top_i/proc_sys_reset_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for top_i/LED_Visualizer_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for top_i/word_inverter_0. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1285.047 ; gain = 609.059
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1282.078 ; gain = 603.820
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1285.047 ; gain = 609.059
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1282.078 ; gain = 603.820
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -487,25 +494,25 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1285.047 ; gain = 609.059
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1282.078 ; gain = 603.820
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1429.672 ; gain = 753.684
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1432.793 ; gain = 754.535
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1429.898 ; gain = 753.910
+Finished Timing Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1432.941 ; gain = 754.684
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1439.789 ; gain = 763.801
+Finished Technology Mapping : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1443.043 ; gain = 764.785
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -523,37 +530,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1656.309 ; gain = 980.320
+Finished IO Insertion : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1659.133 ; gain = 980.875
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1656.309 ; gain = 980.320
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1659.133 ; gain = 980.875
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1656.309 ; gain = 980.320
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1659.133 ; gain = 980.875
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1656.309 ; gain = 980.320
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1659.133 ; gain = 980.875
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1656.309 ; gain = 980.320
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1659.133 ; gain = 980.875
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1656.309 ; gain = 980.320
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1659.133 ; gain = 980.875
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -571,6 +578,7 @@ Report BlackBoxes:
 |6     |top_proc_sys_reset_0_0     |         1|
 |7     |top_processing_system7_0_0 |         1|
 |8     |top_selectio_wiz_0_1       |         1|
+|9     |top_word_inverter_0_0      |         1|
 +------+---------------------------+----------+
 
 Report Cell Usage: 
@@ -585,32 +593,33 @@ Report Cell Usage:
 |6     |top_proc_sys_reset_0     |     1|
 |7     |top_processing_system7_0 |     1|
 |8     |top_selectio_wiz_0       |     1|
-|9     |IOBUF                    |     4|
-|10    |OBUF                     |     8|
+|9     |top_word_inverter_0      |     1|
+|10    |IOBUF                    |     4|
+|11    |OBUF                     |     8|
 +------+-------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1656.309 ; gain = 980.320
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1659.133 ; gain = 980.875
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:20 . Memory (MB): peak = 1656.309 ; gain = 953.836
-Synthesis Optimization Complete : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1656.309 ; gain = 980.320
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:20 . Memory (MB): peak = 1659.133 ; gain = 959.742
+Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1659.133 ; gain = 980.875
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1656.309 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1659.133 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1656.309 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1671.887 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 4 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 4 instances
 
-Synth Design complete | Checksum: c2f0922f
+Synth Design complete | Checksum: f227062f
 INFO: [Common 17-83] Releasing license: Synthesis
-48 Infos, 53 Warnings, 0 Critical Warnings and 0 Errors encountered.
+50 Infos, 55 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 1656.309 ; gain = 1215.016
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1656.309 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 1671.887 ; gain = 1230.328
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1671.887 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.runs/synth_1/top_wrapper.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file top_wrapper_utilization_synth.rpt -pb top_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sun Jan 19 12:23:50 2025...
+INFO: [Common 17-206] Exiting Vivado at Sun Jan 19 17:27:37 2025...

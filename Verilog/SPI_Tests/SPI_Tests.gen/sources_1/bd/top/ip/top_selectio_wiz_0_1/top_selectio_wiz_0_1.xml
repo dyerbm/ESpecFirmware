@@ -722,7 +722,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:db988131</spirit:value>
+            <spirit:value>9:66415b6b</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -736,11 +736,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Jan 19 17:13:27 UTC 2025</spirit:value>
+            <spirit:value>Sun Jan 19 22:26:58 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:db988131</spirit:value>
+            <spirit:value>9:66415b6b</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -751,7 +751,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:db988131</spirit:value>
+            <spirit:value>9:66415b6b</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -767,11 +767,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Jan 19 17:11:10 UTC 2025</spirit:value>
+            <spirit:value>Sun Jan 19 22:26:13 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:93a2245d</spirit:value>
+            <spirit:value>9:b63b2102</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -787,11 +787,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Jan 19 17:11:10 UTC 2025</spirit:value>
+            <spirit:value>Sun Jan 19 22:26:13 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:93a2245d</spirit:value>
+            <spirit:value>9:b63b2102</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -807,11 +807,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Jan 19 17:11:10 UTC 2025</spirit:value>
+            <spirit:value>Sun Jan 19 22:26:13 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:db988131</spirit:value>
+            <spirit:value>9:66415b6b</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -827,11 +827,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Jan 19 17:11:10 UTC 2025</spirit:value>
+            <spirit:value>Sun Jan 19 22:26:13 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:db988131</spirit:value>
+            <spirit:value>9:66415b6b</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2244,7 +2244,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_SELIO_BUS_IN_TAP</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_SELIO_BUS_IN_TAP" spirit:order="59">12</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_SELIO_BUS_IN_TAP" spirit:order="59">0</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="string">
         <spirit:name>C_BUS_TAP_RESET</spirit:name>
@@ -2324,7 +2324,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="string">
         <spirit:name>C_CLK_DELAY</spirit:name>
-        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_CLK_DELAY" spirit:order="79">NONE</spirit:value>
+        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_CLK_DELAY" spirit:order="79">FIXED</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_CLK_TAP</spirit:name>
@@ -2697,7 +2697,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>SELIO_BUS_IN_TAP</spirit:name>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.SELIO_BUS_IN_TAP" spirit:order="20" spirit:minimum="0" spirit:maximum="31" spirit:rangeType="long">12</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.SELIO_BUS_IN_TAP" spirit:order="20" spirit:minimum="0" spirit:maximum="31" spirit:rangeType="long">0</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>BUS_TAP_RESET</spirit:name>
@@ -2765,7 +2765,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>CLK_DELAY</spirit:name>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.CLK_DELAY" spirit:choiceRef="choice_pairs_d0437f92" spirit:order="37">NONE</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.CLK_DELAY" spirit:choiceRef="choice_pairs_d0437f92" spirit:order="37">FIXED</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>CLK_TAP</spirit:name>

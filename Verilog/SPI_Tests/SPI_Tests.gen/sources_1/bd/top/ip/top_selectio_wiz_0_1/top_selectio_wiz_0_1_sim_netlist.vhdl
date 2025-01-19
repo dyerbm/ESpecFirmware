@@ -2,7 +2,7 @@
 -- Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
--- Date        : Sun Jan 19 12:13:27 2025
+-- Date        : Sun Jan 19 17:26:58 2025
 -- Host        : DESKTOP-DRF538C running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_selectio_wiz_0_1/top_selectio_wiz_0_1_sim_netlist.vhdl
@@ -41,11 +41,13 @@ architecture STRUCTURE of top_selectio_wiz_0_1_selectio_wiz is
   signal \^clk_div_out\ : STD_LOGIC;
   signal clk_in_int : STD_LOGIC;
   signal clk_in_int_buf : STD_LOGIC;
+  signal clk_in_int_delay : STD_LOGIC;
   signal data_in_from_pins_delay_0 : STD_LOGIC;
   signal data_in_from_pins_delay_1 : STD_LOGIC;
   signal data_in_from_pins_int_0 : STD_LOGIC;
   signal data_in_from_pins_int_1 : STD_LOGIC;
   signal ref_clock_bufg : STD_LOGIC;
+  signal NLW_idelaye2_clk_CNTVALUEOUT_UNCONNECTED : STD_LOGIC_VECTOR ( 4 downto 0 );
   signal \NLW_pins[0].idelaye2_bus_CNTVALUEOUT_UNCONNECTED\ : STD_LOGIC_VECTOR ( 4 downto 0 );
   signal \NLW_pins[0].iserdese2_master_O_UNCONNECTED\ : STD_LOGIC;
   signal \NLW_pins[0].iserdese2_master_SHIFTOUT1_UNCONNECTED\ : STD_LOGIC;
@@ -67,13 +69,16 @@ architecture STRUCTURE of top_selectio_wiz_0_1_selectio_wiz is
   attribute IBUF_DELAY_VALUE of ibufds_clk_inst : label is "0";
   attribute IFD_DELAY_VALUE : string;
   attribute IFD_DELAY_VALUE of ibufds_clk_inst : label is "AUTO";
+  attribute BOX_TYPE of idelaye2_clk : label is "PRIMITIVE";
+  attribute IODELAY_GROUP of idelaye2_clk : label is "top_selectio_wiz_0_1_group";
+  attribute SIM_DELAY_D : integer;
+  attribute SIM_DELAY_D of idelaye2_clk : label is 0;
   attribute BOX_TYPE of \pins[0].ibufds_inst\ : label is "PRIMITIVE";
   attribute CAPACITANCE of \pins[0].ibufds_inst\ : label is "DONT_CARE";
   attribute IBUF_DELAY_VALUE of \pins[0].ibufds_inst\ : label is "0";
   attribute IFD_DELAY_VALUE of \pins[0].ibufds_inst\ : label is "AUTO";
   attribute BOX_TYPE of \pins[0].idelaye2_bus\ : label is "PRIMITIVE";
   attribute IODELAY_GROUP of \pins[0].idelaye2_bus\ : label is "top_selectio_wiz_0_1_group";
-  attribute SIM_DELAY_D : integer;
   attribute SIM_DELAY_D of \pins[0].idelaye2_bus\ : label is 0;
   attribute BOX_TYPE of \pins[0].iserdese2_master\ : label is "PRIMITIVE";
   attribute OPT_MODIFIED : string;
@@ -92,7 +97,7 @@ begin
   clk_div_out <= \^clk_div_out\;
 bufio_inst: unisim.vcomponents.BUFIO
      port map (
-      I => clk_in_int,
+      I => clk_in_int_delay,
       O => clk_in_int_buf
     );
 clkout_buf_inst: unisim.vcomponents.BUFR
@@ -103,7 +108,7 @@ clkout_buf_inst: unisim.vcomponents.BUFR
         port map (
       CE => '1',
       CLR => clk_reset,
-      I => clk_in_int,
+      I => clk_in_int_delay,
       O => \^clk_div_out\
     );
 delayctrl: unisim.vcomponents.IDELAYCTRL
@@ -121,6 +126,34 @@ ibufds_clk_inst: unisim.vcomponents.IBUFDS
       IB => clk_in_n,
       O => clk_in_int
     );
+idelaye2_clk: unisim.vcomponents.IDELAYE2
+    generic map(
+      CINVCTRL_SEL => "FALSE",
+      DELAY_SRC => "IDATAIN",
+      HIGH_PERFORMANCE_MODE => "FALSE",
+      IDELAY_TYPE => "FIXED",
+      IDELAY_VALUE => 12,
+      IS_C_INVERTED => '0',
+      IS_DATAIN_INVERTED => '0',
+      IS_IDATAIN_INVERTED => '0',
+      PIPE_SEL => "FALSE",
+      REFCLK_FREQUENCY => 200.000000,
+      SIGNAL_PATTERN => "CLOCK"
+    )
+        port map (
+      C => '0',
+      CE => '0',
+      CINVCTRL => '0',
+      CNTVALUEIN(4 downto 0) => B"00000",
+      CNTVALUEOUT(4 downto 0) => NLW_idelaye2_clk_CNTVALUEOUT_UNCONNECTED(4 downto 0),
+      DATAIN => '0',
+      DATAOUT => clk_in_int_delay,
+      IDATAIN => clk_in_int,
+      INC => '0',
+      LD => io_reset,
+      LDPIPEEN => '0',
+      REGRST => '0'
+    );
 \pins[0].ibufds_inst\: unisim.vcomponents.IBUFDS
      port map (
       I => data_in_from_pins_p(0),
@@ -133,7 +166,7 @@ ibufds_clk_inst: unisim.vcomponents.IBUFDS
       DELAY_SRC => "IDATAIN",
       HIGH_PERFORMANCE_MODE => "FALSE",
       IDELAY_TYPE => "FIXED",
-      IDELAY_VALUE => 12,
+      IDELAY_VALUE => 0,
       IS_C_INVERTED => '0',
       IS_DATAIN_INVERTED => '0',
       IS_IDATAIN_INVERTED => '0',
@@ -224,7 +257,7 @@ ibufds_clk_inst: unisim.vcomponents.IBUFDS
       DELAY_SRC => "IDATAIN",
       HIGH_PERFORMANCE_MODE => "FALSE",
       IDELAY_TYPE => "FIXED",
-      IDELAY_VALUE => 12,
+      IDELAY_VALUE => 0,
       IS_C_INVERTED => '0',
       IS_DATAIN_INVERTED => '0',
       IS_IDATAIN_INVERTED => '0',

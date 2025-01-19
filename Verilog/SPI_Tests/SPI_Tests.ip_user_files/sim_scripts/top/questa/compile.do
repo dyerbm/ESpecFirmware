@@ -16,9 +16,9 @@ vlib questa_lib/msim/lib_fifo_v1_0_20
 vlib questa_lib/msim/axi_lite_ipif_v3_0_4
 vlib questa_lib/msim/interrupt_control_v3_1_5
 vlib questa_lib/msim/axi_quad_spi_v3_2_32
-vlib questa_lib/msim/proc_sys_reset_v5_0_16
 vlib questa_lib/msim/axi_gpio_v2_0_35
 vlib questa_lib/msim/xlconstant_v1_1_9
+vlib questa_lib/msim/proc_sys_reset_v5_0_16
 vlib questa_lib/msim/smartconnect_v1_0
 vlib questa_lib/msim/axi_register_slice_v2_1_33
 
@@ -37,9 +37,9 @@ vmap lib_fifo_v1_0_20 questa_lib/msim/lib_fifo_v1_0_20
 vmap axi_lite_ipif_v3_0_4 questa_lib/msim/axi_lite_ipif_v3_0_4
 vmap interrupt_control_v3_1_5 questa_lib/msim/interrupt_control_v3_1_5
 vmap axi_quad_spi_v3_2_32 questa_lib/msim/axi_quad_spi_v3_2_32
-vmap proc_sys_reset_v5_0_16 questa_lib/msim/proc_sys_reset_v5_0_16
 vmap axi_gpio_v2_0_35 questa_lib/msim/axi_gpio_v2_0_35
 vmap xlconstant_v1_1_9 questa_lib/msim/xlconstant_v1_1_9
+vmap proc_sys_reset_v5_0_16 questa_lib/msim/proc_sys_reset_v5_0_16
 vmap smartconnect_v1_0 questa_lib/msim/smartconnect_v1_0
 vmap axi_register_slice_v2_1_33 questa_lib/msim/axi_register_slice_v2_1_33
 
@@ -110,12 +110,6 @@ vcom -work axi_quad_spi_v3_2_32  -93  \
 vcom -work xil_defaultlib  -93  \
 "../../../bd/top/ip/top_axi_quad_spi_0_0/sim/top_axi_quad_spi_0_0.vhd" \
 
-vcom -work proc_sys_reset_v5_0_16  -93  \
-"../../../../SPI_Tests.gen/sources_1/bd/top/ipshared/0831/hdl/proc_sys_reset_v5_0_vh_rfs.vhd" \
-
-vcom -work xil_defaultlib  -93  \
-"../../../bd/top/ip/top_rst_ps7_0_100M_0/sim/top_rst_ps7_0_100M_0.vhd" \
-
 vcom -work axi_gpio_v2_0_35  -93  \
 "../../../../SPI_Tests.gen/sources_1/bd/top/ipshared/6718/hdl/axi_gpio_v2_0_vh_rfs.vhd" \
 
@@ -124,7 +118,6 @@ vcom -work xil_defaultlib  -93  \
 "../../../bd/top/ip/top_axi_gpio_1_0/sim/top_axi_gpio_1_0.vhd" \
 
 vlog -work xil_defaultlib  -incr -mfcu  "+incdir+../../../../SPI_Tests.gen/sources_1/bd/top/ipshared/ec67/hdl" "+incdir+../../../../SPI_Tests.gen/sources_1/bd/top/ipshared/86fe/hdl" "+incdir+../../../../SPI_Tests.gen/sources_1/bd/top/ipshared/f0b6/hdl/verilog" "+incdir+../../../../SPI_Tests.gen/sources_1/bd/top/ipshared/0127/hdl/verilog" "+incdir+C:/Xilinx/Vivado/2024.2/data/xilinx_vip/include" \
-"../../../bd/top/ip/top_word_inverter_0_0/sim/top_word_inverter_0_0.v" \
 "../../../bd/top/ip/top_axi_smc_0/bd_0/sim/bd_b43a.v" \
 
 vlog -work xlconstant_v1_1_9  -incr -mfcu  "+incdir+../../../../SPI_Tests.gen/sources_1/bd/top/ipshared/ec67/hdl" "+incdir+../../../../SPI_Tests.gen/sources_1/bd/top/ipshared/86fe/hdl" "+incdir+../../../../SPI_Tests.gen/sources_1/bd/top/ipshared/f0b6/hdl/verilog" "+incdir+../../../../SPI_Tests.gen/sources_1/bd/top/ipshared/0127/hdl/verilog" "+incdir+C:/Xilinx/Vivado/2024.2/data/xilinx_vip/include" \
@@ -132,6 +125,9 @@ vlog -work xlconstant_v1_1_9  -incr -mfcu  "+incdir+../../../../SPI_Tests.gen/so
 
 vlog -work xil_defaultlib  -incr -mfcu  "+incdir+../../../../SPI_Tests.gen/sources_1/bd/top/ipshared/ec67/hdl" "+incdir+../../../../SPI_Tests.gen/sources_1/bd/top/ipshared/86fe/hdl" "+incdir+../../../../SPI_Tests.gen/sources_1/bd/top/ipshared/f0b6/hdl/verilog" "+incdir+../../../../SPI_Tests.gen/sources_1/bd/top/ipshared/0127/hdl/verilog" "+incdir+C:/Xilinx/Vivado/2024.2/data/xilinx_vip/include" \
 "../../../bd/top/ip/top_axi_smc_0/bd_0/ip/ip_0/sim/bd_b43a_one_0.v" \
+
+vcom -work proc_sys_reset_v5_0_16  -93  \
+"../../../../SPI_Tests.gen/sources_1/bd/top/ipshared/0831/hdl/proc_sys_reset_v5_0_vh_rfs.vhd" \
 
 vcom -work xil_defaultlib  -93  \
 "../../../bd/top/ip/top_axi_smc_0/bd_0/ip/ip_1/sim/bd_b43a_psr_aclk_0.vhd" \
@@ -229,6 +225,13 @@ vlog -work xil_defaultlib  -incr -mfcu  "+incdir+../../../../SPI_Tests.gen/sourc
 "../../../bd/top/ip/top_axi_smc_0/sim/top_axi_smc_0.v" \
 "../../../bd/top/ip/top_selectio_wiz_0_1/top_selectio_wiz_0_1_selectio_wiz.v" \
 "../../../bd/top/ip/top_selectio_wiz_0_1/top_selectio_wiz_0_1.v" \
+
+vcom -work xil_defaultlib  -93  \
+"../../../bd/top/ip/top_proc_sys_reset_0_0/sim/top_proc_sys_reset_0_0.vhd" \
+
+vlog -work xil_defaultlib  -incr -mfcu  "+incdir+../../../../SPI_Tests.gen/sources_1/bd/top/ipshared/ec67/hdl" "+incdir+../../../../SPI_Tests.gen/sources_1/bd/top/ipshared/86fe/hdl" "+incdir+../../../../SPI_Tests.gen/sources_1/bd/top/ipshared/f0b6/hdl/verilog" "+incdir+../../../../SPI_Tests.gen/sources_1/bd/top/ipshared/0127/hdl/verilog" "+incdir+C:/Xilinx/Vivado/2024.2/data/xilinx_vip/include" \
+"../../../bd/top/ip/top_LED_Visualizer_0_0/sim/top_LED_Visualizer_0_0.v" \
+"../../../bd/top/ip/top_word_inverter_0_0/sim/top_word_inverter_0_0.v" \
 "../../../bd/top/sim/top.v" \
 
 vlog -work xil_defaultlib \

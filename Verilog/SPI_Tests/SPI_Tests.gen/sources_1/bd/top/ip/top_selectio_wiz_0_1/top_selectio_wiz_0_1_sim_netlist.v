@@ -2,7 +2,7 @@
 // Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-// Date        : Sun Jan 19 12:13:27 2025
+// Date        : Sun Jan 19 17:26:58 2025
 // Host        : DESKTOP-DRF538C running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_selectio_wiz_0_1/top_selectio_wiz_0_1_sim_netlist.v
@@ -97,6 +97,7 @@ module top_selectio_wiz_0_1_selectio_wiz
   wire clk_div_out;
   wire clk_in_int;
   wire clk_in_int_buf;
+  wire clk_in_int_delay;
   wire clk_in_n;
   wire clk_in_p;
   wire clk_reset;
@@ -111,6 +112,7 @@ module top_selectio_wiz_0_1_selectio_wiz
   wire io_reset;
   wire ref_clock;
   wire ref_clock_bufg;
+  wire [4:0]NLW_idelaye2_clk_CNTVALUEOUT_UNCONNECTED;
   wire [4:0]\NLW_pins[0].idelaye2_bus_CNTVALUEOUT_UNCONNECTED ;
   wire \NLW_pins[0].iserdese2_master_O_UNCONNECTED ;
   wire \NLW_pins[0].iserdese2_master_SHIFTOUT1_UNCONNECTED ;
@@ -122,7 +124,7 @@ module top_selectio_wiz_0_1_selectio_wiz
 
   (* BOX_TYPE = "PRIMITIVE" *) 
   BUFIO bufio_inst
-       (.I(clk_in_int),
+       (.I(clk_in_int_delay),
         .O(clk_in_int_buf));
   (* BOX_TYPE = "PRIMITIVE" *) 
   BUFR #(
@@ -131,7 +133,7 @@ module top_selectio_wiz_0_1_selectio_wiz
     clkout_buf_inst
        (.CE(1'b1),
         .CLR(clk_reset),
-        .I(clk_in_int),
+        .I(clk_in_int_delay),
         .O(clk_div_out));
   (* BOX_TYPE = "PRIMITIVE" *) 
   (* IODELAY_GROUP = "top_selectio_wiz_0_1_group" *) 
@@ -150,6 +152,34 @@ module top_selectio_wiz_0_1_selectio_wiz
         .IB(clk_in_n),
         .O(clk_in_int));
   (* BOX_TYPE = "PRIMITIVE" *) 
+  (* IODELAY_GROUP = "top_selectio_wiz_0_1_group" *) 
+  (* SIM_DELAY_D = "0" *) 
+  IDELAYE2 #(
+    .CINVCTRL_SEL("FALSE"),
+    .DELAY_SRC("IDATAIN"),
+    .HIGH_PERFORMANCE_MODE("FALSE"),
+    .IDELAY_TYPE("FIXED"),
+    .IDELAY_VALUE(12),
+    .IS_C_INVERTED(1'b0),
+    .IS_DATAIN_INVERTED(1'b0),
+    .IS_IDATAIN_INVERTED(1'b0),
+    .PIPE_SEL("FALSE"),
+    .REFCLK_FREQUENCY(200.000000),
+    .SIGNAL_PATTERN("CLOCK")) 
+    idelaye2_clk
+       (.C(1'b0),
+        .CE(1'b0),
+        .CINVCTRL(1'b0),
+        .CNTVALUEIN({1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .CNTVALUEOUT(NLW_idelaye2_clk_CNTVALUEOUT_UNCONNECTED[4:0]),
+        .DATAIN(1'b0),
+        .DATAOUT(clk_in_int_delay),
+        .IDATAIN(clk_in_int),
+        .INC(1'b0),
+        .LD(io_reset),
+        .LDPIPEEN(1'b0),
+        .REGRST(1'b0));
+  (* BOX_TYPE = "PRIMITIVE" *) 
   (* CAPACITANCE = "DONT_CARE" *) 
   (* IBUF_DELAY_VALUE = "0" *) 
   (* IFD_DELAY_VALUE = "AUTO" *) 
@@ -165,7 +195,7 @@ module top_selectio_wiz_0_1_selectio_wiz
     .DELAY_SRC("IDATAIN"),
     .HIGH_PERFORMANCE_MODE("FALSE"),
     .IDELAY_TYPE("FIXED"),
-    .IDELAY_VALUE(12),
+    .IDELAY_VALUE(0),
     .IS_C_INVERTED(1'b0),
     .IS_DATAIN_INVERTED(1'b0),
     .IS_IDATAIN_INVERTED(1'b0),
@@ -257,7 +287,7 @@ module top_selectio_wiz_0_1_selectio_wiz
     .DELAY_SRC("IDATAIN"),
     .HIGH_PERFORMANCE_MODE("FALSE"),
     .IDELAY_TYPE("FIXED"),
-    .IDELAY_VALUE(12),
+    .IDELAY_VALUE(0),
     .IS_C_INVERTED(1'b0),
     .IS_DATAIN_INVERTED(1'b0),
     .IS_IDATAIN_INVERTED(1'b0),

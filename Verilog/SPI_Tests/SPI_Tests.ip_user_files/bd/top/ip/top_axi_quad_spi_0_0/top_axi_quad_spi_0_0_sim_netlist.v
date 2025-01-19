@@ -2,7 +2,7 @@
 // Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-// Date        : Fri Jan 17 12:34:29 2025
+// Date        : Fri Jan 17 19:44:55 2025
 // Host        : DESKTOP-DRF538C running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_axi_quad_spi_0_0/top_axi_quad_spi_0_0_sim_netlist.v
@@ -156,7 +156,7 @@ module top_axi_quad_spi_0_0
   (* C_NEW_SEQ_EN = "1" *) 
   (* C_NUM_SS_BITS = "1" *) 
   (* C_NUM_TRANSFER_BITS = "8" *) 
-  (* C_SCK_RATIO = "16" *) 
+  (* C_SCK_RATIO = "160" *) 
   (* C_SELECT_XPM = "0" *) 
   (* C_SHARED_STARTUP = "0" *) 
   (* C_SPI_MEMORY = "1" *) 
@@ -2598,7 +2598,7 @@ endmodule
 (* Async_Clk = "0" *) (* C_BYTE_LEVEL_INTERRUPT_EN = "0" *) (* C_DUAL_QUAD_MODE = "0" *) 
 (* C_FAMILY = "zynq" *) (* C_FIFO_DEPTH = "16" *) (* C_INSTANCE = "axi_quad_spi_inst" *) 
 (* C_LSB_STUP = "0" *) (* C_NEW_SEQ_EN = "1" *) (* C_NUM_SS_BITS = "1" *) 
-(* C_NUM_TRANSFER_BITS = "8" *) (* C_SCK_RATIO = "16" *) (* C_SELECT_XPM = "0" *) 
+(* C_NUM_TRANSFER_BITS = "8" *) (* C_SCK_RATIO = "160" *) (* C_SELECT_XPM = "0" *) 
 (* C_SHARED_STARTUP = "0" *) (* C_SPI_MEMORY = "1" *) (* C_SPI_MEM_ADDR_BITS = "24" *) 
 (* C_SPI_MODE = "0" *) (* C_SUB_FAMILY = "zynq" *) (* C_S_AXI4_ADDR_WIDTH = "24" *) 
 (* C_S_AXI4_BASEADDR = "32'b10100000000000000000000000000000" *) (* C_S_AXI4_DATA_WIDTH = "32" *) (* C_S_AXI4_HIGHADDR = "32'b10101111111111111111111111111111" *) 
@@ -3660,10 +3660,9 @@ module top_axi_quad_spi_0_0_cross_clk_sync_fifo_1
     \LOGIC_GENERATION_FDR.SPICR_2_MST_N_SLV_AX2S_2_1 ,
     Slave_MODF_strobe0,
     MODF_strobe0,
-    \LOGIC_GENERATION_FDR.SPICR_3_CPOL_AX2S_2_0 ,
     D,
     \OTHER_RATIO_GENERATE.serial_dout_int_reg ,
-    \LOGIC_GENERATION_FDR.SPICR_3_CPOL_AX2S_2_1 ,
+    \LOGIC_GENERATION_FDR.SPICR_3_CPOL_AX2S_2_0 ,
     rst,
     \LOGIC_GENERATION_FDR.SPICR_7_SS_AX2S_2_0 ,
     D_0,
@@ -3717,9 +3716,6 @@ module top_axi_quad_spi_0_0_cross_clk_sync_fifo_1
     slave_MODF_strobe_int,
     transfer_start_reg,
     Allow_MODF_Strobe,
-    Count_trigger,
-    \RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_reg ,
-    \RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_reg_0 ,
     \OTHER_RATIO_GENERATE.Shift_Reg_reg[7] ,
     dout,
     transfer_start_d1,
@@ -3760,10 +3756,9 @@ module top_axi_quad_spi_0_0_cross_clk_sync_fifo_1
   output \LOGIC_GENERATION_FDR.SPICR_2_MST_N_SLV_AX2S_2_1 ;
   output Slave_MODF_strobe0;
   output MODF_strobe0;
-  output \LOGIC_GENERATION_FDR.SPICR_3_CPOL_AX2S_2_0 ;
   output [0:0]D;
   output [0:0]\OTHER_RATIO_GENERATE.serial_dout_int_reg ;
-  output \LOGIC_GENERATION_FDR.SPICR_3_CPOL_AX2S_2_1 ;
+  output \LOGIC_GENERATION_FDR.SPICR_3_CPOL_AX2S_2_0 ;
   output rst;
   output \LOGIC_GENERATION_FDR.SPICR_7_SS_AX2S_2_0 ;
   output D_0;
@@ -3817,9 +3812,6 @@ module top_axi_quad_spi_0_0_cross_clk_sync_fifo_1
   input slave_MODF_strobe_int;
   input transfer_start_reg;
   input Allow_MODF_Strobe;
-  input Count_trigger;
-  input \RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_reg ;
-  input \RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_reg_0 ;
   input \OTHER_RATIO_GENERATE.Shift_Reg_reg[7] ;
   input [1:0]dout;
   input transfer_start_d1;
@@ -3833,7 +3825,6 @@ module top_axi_quad_spi_0_0_cross_clk_sync_fifo_1
   wire Allow_MODF_Strobe;
   wire Allow_Slave_MODF_Strobe;
   wire Bus_RNW_reg;
-  wire Count_trigger;
   wire [0:0]D;
   wire D0;
   wire D01_out;
@@ -3853,7 +3844,6 @@ module top_axi_quad_spi_0_0_cross_clk_sync_fifo_1
   wire \LOGIC_GENERATION_FDR.SPICR_2_MST_N_SLV_AX2S_2_0 ;
   wire \LOGIC_GENERATION_FDR.SPICR_2_MST_N_SLV_AX2S_2_1 ;
   wire \LOGIC_GENERATION_FDR.SPICR_3_CPOL_AX2S_2_0 ;
-  wire \LOGIC_GENERATION_FDR.SPICR_3_CPOL_AX2S_2_1 ;
   wire \LOGIC_GENERATION_FDR.SPICR_7_SS_AX2S_2_0 ;
   wire \LOGIC_GENERATION_FDR.SPICR_BITS_7_8_SYNC_GEN[0].SPICR_BITS_7_8_AX2S_2_0 ;
   wire \LOGIC_GENERATION_FDR.SPICR_RX_FIFO_Rst_en_d1_i_1_n_0 ;
@@ -3872,8 +3862,6 @@ module top_axi_quad_spi_0_0_cross_clk_sync_fifo_1
   wire \OTHER_RATIO_GENERATE.Shift_Reg_reg[7] ;
   wire [0:0]\OTHER_RATIO_GENERATE.serial_dout_int_reg ;
   wire R;
-  wire \RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_reg ;
-  wire \RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_reg_0 ;
   wire Rst_to_spi;
   wire SPICR_0_LOOP_cdc_from_axi_d1;
   wire SPICR_1_SPE_cdc_from_axi_d1;
@@ -4647,22 +4635,12 @@ module top_axi_quad_spi_0_0_cross_clk_sync_fifo_1
     \OTHER_RATIO_GENERATE.sck_o_int_i_2 
        (.I0(spicr_3_cpol_to_spi_clk),
         .I1(spicr_4_cpha_to_spi_clk),
-        .O(\LOGIC_GENERATION_FDR.SPICR_3_CPOL_AX2S_2_1 ));
+        .O(\LOGIC_GENERATION_FDR.SPICR_3_CPOL_AX2S_2_0 ));
   LUT1 #(
     .INIT(2'h1)) 
     \RATIO_NOT_EQUAL_4_GENERATE.SCK_O_NQ_4_NO_STARTUP_USED.SCK_O_NE_4_FDRE_INST_i_1 
        (.I0(SPICR_2_MST_N_SLV_to_spi_clk),
         .O(R));
-  LUT6 #(
-    .INIT(64'h0000000000F60000)) 
-    \RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_i_2 
-       (.I0(spicr_3_cpol_to_spi_clk),
-        .I1(spicr_4_cpha_to_spi_clk),
-        .I2(Count_trigger),
-        .I3(\RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_reg ),
-        .I4(SPICR_2_MST_N_SLV_to_spi_clk),
-        .I5(\RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_reg_0 ),
-        .O(\LOGIC_GENERATION_FDR.SPICR_3_CPOL_AX2S_2_0 ));
   LUT5 #(
     .INIT(32'hFFFFFDFF)) 
     SPI_TRISTATE_CONTROL_III_i_1
@@ -5551,7 +5529,6 @@ module top_axi_quad_spi_0_0_qspi_core_interface
   wire \CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4] ;
   wire CONTROL_REG_I_n_12;
   wire CONTROL_REG_I_n_13;
-  wire Count_trigger;
   wire [6:0]D;
   wire D0;
   wire D01_out;
@@ -5573,10 +5550,9 @@ module top_axi_quad_spi_0_0_qspi_core_interface
   wire \FIFO_EXISTS.CLK_CROSS_I_n_26 ;
   wire \FIFO_EXISTS.CLK_CROSS_I_n_28 ;
   wire \FIFO_EXISTS.CLK_CROSS_I_n_31 ;
-  wire \FIFO_EXISTS.CLK_CROSS_I_n_32 ;
-  wire \FIFO_EXISTS.CLK_CROSS_I_n_34 ;
-  wire \FIFO_EXISTS.CLK_CROSS_I_n_36 ;
-  wire \FIFO_EXISTS.CLK_CROSS_I_n_38 ;
+  wire \FIFO_EXISTS.CLK_CROSS_I_n_33 ;
+  wire \FIFO_EXISTS.CLK_CROSS_I_n_35 ;
+  wire \FIFO_EXISTS.CLK_CROSS_I_n_37 ;
   wire \FIFO_EXISTS.CLK_CROSS_I_n_4 ;
   wire \FIFO_EXISTS.IP2Bus_WrAck_transmit_enable ;
   wire \FIFO_EXISTS.RX_FIFO_II_i_2_n_0 ;
@@ -5616,10 +5592,8 @@ module top_axi_quad_spi_0_0_qspi_core_interface
   wire \LEGACY_MD_WR_RD_ACK_GEN.IP2Bus_WrAck_reg_0 ;
   wire \LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_10 ;
   wire \LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_11 ;
-  wire \LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_20 ;
-  wire \LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_26 ;
-  wire \LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_27 ;
-  wire \LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_28 ;
+  wire \LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_19 ;
+  wire \LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_25 ;
   wire MODF_strobe0;
   wire [8:0]Q;
   wire R;
@@ -5806,8 +5780,7 @@ module top_axi_quad_spi_0_0_qspi_core_interface
        (.Allow_MODF_Strobe(Allow_MODF_Strobe),
         .Allow_Slave_MODF_Strobe(Allow_Slave_MODF_Strobe),
         .Bus_RNW_reg(Bus_RNW_reg),
-        .Count_trigger(Count_trigger),
-        .D(\FIFO_EXISTS.CLK_CROSS_I_n_32 ),
+        .D(\FIFO_EXISTS.CLK_CROSS_I_n_31 ),
         .D0(D0),
         .D01_out(D01_out),
         .D04_out(D04_out),
@@ -5824,10 +5797,9 @@ module top_axi_quad_spi_0_0_qspi_core_interface
         .\LOGIC_GENERATION_FDR.MODF_STROBE_S2AX_3_0 (\FIFO_EXISTS.CLK_CROSS_I_n_16 ),
         .\LOGIC_GENERATION_FDR.SPICR_2_MST_N_SLV_AX2S_2_0 (\FIFO_EXISTS.CLK_CROSS_I_n_15 ),
         .\LOGIC_GENERATION_FDR.SPICR_2_MST_N_SLV_AX2S_2_1 (\FIFO_EXISTS.CLK_CROSS_I_n_28 ),
-        .\LOGIC_GENERATION_FDR.SPICR_3_CPOL_AX2S_2_0 (\FIFO_EXISTS.CLK_CROSS_I_n_31 ),
-        .\LOGIC_GENERATION_FDR.SPICR_3_CPOL_AX2S_2_1 (\FIFO_EXISTS.CLK_CROSS_I_n_34 ),
-        .\LOGIC_GENERATION_FDR.SPICR_7_SS_AX2S_2_0 (\FIFO_EXISTS.CLK_CROSS_I_n_36 ),
-        .\LOGIC_GENERATION_FDR.SPICR_BITS_7_8_SYNC_GEN[0].SPICR_BITS_7_8_AX2S_2_0 (\FIFO_EXISTS.CLK_CROSS_I_n_38 ),
+        .\LOGIC_GENERATION_FDR.SPICR_3_CPOL_AX2S_2_0 (\FIFO_EXISTS.CLK_CROSS_I_n_33 ),
+        .\LOGIC_GENERATION_FDR.SPICR_7_SS_AX2S_2_0 (\FIFO_EXISTS.CLK_CROSS_I_n_35 ),
+        .\LOGIC_GENERATION_FDR.SPICR_BITS_7_8_SYNC_GEN[0].SPICR_BITS_7_8_AX2S_2_0 (\FIFO_EXISTS.CLK_CROSS_I_n_37 ),
         .\LOGIC_GENERATION_FDR.SYNC_SPIXFER_DONE_S2AX_2_0 (\FIFO_EXISTS.CLK_CROSS_I_n_20 ),
         .\LOGIC_GENERATION_FDR.SYNC_SPIXFER_DONE_S2AX_3_0 (\FIFO_EXISTS.CLK_CROSS_I_n_14 ),
         .\LOGIC_GENERATION_FDR.SYNC_SPIXFER_DONE_S2AX_3_1 (\FIFO_EXISTS.CLK_CROSS_I_n_18 ),
@@ -5838,11 +5810,9 @@ module top_axi_quad_spi_0_0_qspi_core_interface
         .\LOGIC_GENERATION_FDR.spiXfer_done_cdc_from_spi_int_2_reg_0 (\FIFO_EXISTS.CLK_CROSS_I_n_4 ),
         .\LOGIC_GENERATION_FDR.spisel_pulse_cdc_from_spi_int_2_reg_0 (\FIFO_EXISTS.CLK_CROSS_I_n_1 ),
         .MODF_strobe0(MODF_strobe0),
-        .\OTHER_RATIO_GENERATE.Shift_Reg_reg[7] (\LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_20 ),
+        .\OTHER_RATIO_GENERATE.Shift_Reg_reg[7] (\LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_19 ),
         .\OTHER_RATIO_GENERATE.serial_dout_int_reg (p_2_in_1),
         .R(R),
-        .\RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_reg (\LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_26 ),
-        .\RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_reg_0 (\LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_27 ),
         .Rst_to_spi(rst_to_spi_int),
         .SPICR_2_MST_N_SLV_to_spi_clk(SPICR_2_MST_N_SLV_to_spi_clk),
         .SPISEL_sync(SPISEL_sync),
@@ -5898,7 +5868,7 @@ module top_axi_quad_spi_0_0_qspi_core_interface
         .spisel_d1_reg_to_axi_clk(spisel_d1_reg_to_axi_clk),
         .sr_3_MODF_int(sr_3_MODF_int),
         .transfer_start_d1(transfer_start_d1),
-        .transfer_start_reg(\LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_28 ),
+        .transfer_start_reg(\LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_25 ),
         .transfer_start_reg_0(\LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_11 ),
         .tx_occ_msb(tx_occ_msb),
         .tx_occ_msb_4(tx_occ_msb_4),
@@ -6389,35 +6359,31 @@ module top_axi_quad_spi_0_0_qspi_core_interface
         .Allow_MODF_Strobe_reg_0(RESET_SYNC_AXI_SPI_CLK_INST_n_0),
         .Allow_Slave_MODF_Strobe(Allow_Slave_MODF_Strobe),
         .Allow_Slave_MODF_Strobe_reg_0(\FIFO_EXISTS.CLK_CROSS_I_n_15 ),
-        .Count_trigger(Count_trigger),
-        .D(\FIFO_EXISTS.CLK_CROSS_I_n_32 ),
+        .D(\FIFO_EXISTS.CLK_CROSS_I_n_31 ),
         .D0(D0),
         .D01_out(D01_out),
         .D04_out(D04_out),
         .D08_out(D08_out),
         .D_0(D_0),
-        .\LOGIC_GENERATION_FDR.SPICR_0_LOOP_AX2S_2 (\LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_28 ),
+        .\LOGIC_GENERATION_FDR.SPICR_0_LOOP_AX2S_2 (\LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_25 ),
         .\LOGIC_GENERATION_FDR.drr_Overrun_int_cdc_from_spi_int_2_reg (\FIFO_EXISTS.CLK_CROSS_I_n_13 ),
         .\LOGIC_GENERATION_FDR.modf_strobe_cdc_from_spi_int_2_reg (\FIFO_EXISTS.CLK_CROSS_I_n_2 ),
         .\LOGIC_GENERATION_FDR.spiXfer_done_cdc_from_spi_int_2_reg (\FIFO_EXISTS.CLK_CROSS_I_n_4 ),
         .\LOGIC_GENERATION_FDR.spisel_pulse_cdc_from_spi_int_2_reg (\FIFO_EXISTS.CLK_CROSS_I_n_1 ),
         .MODF_strobe0(MODF_strobe0),
-        .\OTHER_RATIO_GENERATE.Count_reg[1]_0 (\LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_27 ),
-        .\OTHER_RATIO_GENERATE.Ratio_Count_reg[0]_0 (\LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_26 ),
         .\OTHER_RATIO_GENERATE.Serial_Dout_reg_0 (\FIFO_EXISTS.TX_FIFO_II_n_15 ),
         .\OTHER_RATIO_GENERATE.rx_shft_reg_s_reg[7]_0 (p_2_in_1),
-        .\OTHER_RATIO_GENERATE.sck_o_int_reg_0 (\FIFO_EXISTS.CLK_CROSS_I_n_34 ),
+        .\OTHER_RATIO_GENERATE.sck_o_int_reg_0 (\FIFO_EXISTS.CLK_CROSS_I_n_33 ),
         .Q({data_to_rx_fifo[0],data_to_rx_fifo[1],data_to_rx_fifo[2],data_to_rx_fifo[3],data_to_rx_fifo[4],data_to_rx_fifo[5],data_to_rx_fifo[6],data_to_rx_fifo[7]}),
         .R(R),
         .\RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_reg_0 (\LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_11 ),
-        .\RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_reg_1 (\FIFO_EXISTS.CLK_CROSS_I_n_31 ),
         .Ratio_Count1(Ratio_Count1),
         .Rst_to_spi(rst_to_spi_int),
         .SPICR_2_MST_N_SLV_to_spi_clk(SPICR_2_MST_N_SLV_to_spi_clk),
         .SPISEL_sync(SPISEL_sync),
-        .SPIXfer_done_int_d1_reg_0(\LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_20 ),
-        .SPI_TRISTATE_CONTROL_V_0(\FIFO_EXISTS.CLK_CROSS_I_n_38 ),
-        .\SS_O_reg[0]_0 (\FIFO_EXISTS.CLK_CROSS_I_n_36 ),
+        .SPIXfer_done_int_d1_reg_0(\LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_19 ),
+        .SPI_TRISTATE_CONTROL_V_0(\FIFO_EXISTS.CLK_CROSS_I_n_37 ),
+        .\SS_O_reg[0]_0 (\FIFO_EXISTS.CLK_CROSS_I_n_35 ),
         .Slave_MODF_strobe0(Slave_MODF_strobe0),
         .almost_full(almost_full_0),
         .dout({data_from_txfifo[0],data_from_txfifo[1],data_from_txfifo[2],data_from_txfifo[3],data_from_txfifo[4],data_from_txfifo[5],data_from_txfifo[6],data_from_txfifo[7]}),
@@ -6627,7 +6593,6 @@ module top_axi_quad_spi_0_0_qspi_mode_0_module
     spiXfer_done_int,
     Allow_Slave_MODF_Strobe,
     Allow_MODF_Strobe,
-    Count_trigger,
     io1_o,
     serial_dout_int,
     dtr_underrun_int,
@@ -6638,8 +6603,6 @@ module top_axi_quad_spi_0_0_qspi_mode_0_module
     D04_out,
     D01_out,
     D0,
-    \OTHER_RATIO_GENERATE.Ratio_Count_reg[0]_0 ,
-    \OTHER_RATIO_GENERATE.Count_reg[1]_0 ,
     \LOGIC_GENERATION_FDR.SPICR_0_LOOP_AX2S_2 ,
     Q,
     D_0,
@@ -6665,7 +6628,6 @@ module top_axi_quad_spi_0_0_qspi_mode_0_module
     \LOGIC_GENERATION_FDR.spiXfer_done_cdc_from_spi_int_2_reg ,
     \LOGIC_GENERATION_FDR.drr_Overrun_int_cdc_from_spi_int_2_reg ,
     Ratio_Count1,
-    \RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_reg_1 ,
     spicr_3_cpol_to_spi_clk,
     spicr_4_cpha_to_spi_clk,
     dout,
@@ -6691,7 +6653,6 @@ module top_axi_quad_spi_0_0_qspi_mode_0_module
   output spiXfer_done_int;
   output Allow_Slave_MODF_Strobe;
   output Allow_MODF_Strobe;
-  output Count_trigger;
   output io1_o;
   output serial_dout_int;
   output dtr_underrun_int;
@@ -6702,8 +6663,6 @@ module top_axi_quad_spi_0_0_qspi_mode_0_module
   output D04_out;
   output D01_out;
   output D0;
-  output \OTHER_RATIO_GENERATE.Ratio_Count_reg[0]_0 ;
-  output \OTHER_RATIO_GENERATE.Count_reg[1]_0 ;
   output \LOGIC_GENERATION_FDR.SPICR_0_LOOP_AX2S_2 ;
   output [7:0]Q;
   input D_0;
@@ -6729,7 +6688,6 @@ module top_axi_quad_spi_0_0_qspi_mode_0_module
   input \LOGIC_GENERATION_FDR.spiXfer_done_cdc_from_spi_int_2_reg ;
   input \LOGIC_GENERATION_FDR.drr_Overrun_int_cdc_from_spi_int_2_reg ;
   input Ratio_Count1;
-  input \RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_reg_1 ;
   input spicr_3_cpol_to_spi_clk;
   input spicr_4_cpha_to_spi_clk;
   input [7:0]dout;
@@ -6774,7 +6732,6 @@ module top_axi_quad_spi_0_0_qspi_mode_0_module
   wire \OTHER_RATIO_GENERATE.Count[4]_i_2_n_0 ;
   wire \OTHER_RATIO_GENERATE.Count[4]_i_3_n_0 ;
   wire \OTHER_RATIO_GENERATE.Count[4]_i_4_n_0 ;
-  wire \OTHER_RATIO_GENERATE.Count_reg[1]_0 ;
   wire \OTHER_RATIO_GENERATE.Count_reg_n_0_[0] ;
   wire \OTHER_RATIO_GENERATE.Count_reg_n_0_[1] ;
   wire \OTHER_RATIO_GENERATE.Count_reg_n_0_[2] ;
@@ -6782,9 +6739,10 @@ module top_axi_quad_spi_0_0_qspi_mode_0_module
   wire \OTHER_RATIO_GENERATE.Count_trigger_d1_i_1_n_0 ;
   wire \OTHER_RATIO_GENERATE.Count_trigger_i_1_n_0 ;
   wire \OTHER_RATIO_GENERATE.Ratio_Count[0]_i_1_n_0 ;
-  wire \OTHER_RATIO_GENERATE.Ratio_Count[1]_i_1_n_0 ;
+  wire \OTHER_RATIO_GENERATE.Ratio_Count[0]_i_3_n_0 ;
   wire \OTHER_RATIO_GENERATE.Ratio_Count[2]_i_1_n_0 ;
-  wire \OTHER_RATIO_GENERATE.Ratio_Count_reg[0]_0 ;
+  wire \OTHER_RATIO_GENERATE.Ratio_Count[5]_i_1_n_0 ;
+  wire [0:6]\OTHER_RATIO_GENERATE.Ratio_Count_reg ;
   wire \OTHER_RATIO_GENERATE.Serial_Dout_i_1_n_0 ;
   wire \OTHER_RATIO_GENERATE.Serial_Dout_i_4_n_0 ;
   wire \OTHER_RATIO_GENERATE.Serial_Dout_reg_0 ;
@@ -6810,9 +6768,11 @@ module top_axi_quad_spi_0_0_qspi_mode_0_module
   wire R;
   wire \RATIO_NOT_EQUAL_4_GENERATE.SCK_O_NQ_4_NO_STARTUP_USED.SCK_O_NE_4_FDRE_INST_i_2_n_0 ;
   wire \RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_i_1_n_0 ;
+  wire \RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_i_2_n_0 ;
   wire \RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_i_3_n_0 ;
+  wire \RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_i_4_n_0 ;
+  wire \RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_i_5_n_0 ;
   wire \RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_reg_0 ;
-  wire \RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_reg_1 ;
   wire \RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[0]_i_1_n_0 ;
   wire \RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[0]_i_2_n_0 ;
   wire \RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[0]_i_3_n_0 ;
@@ -6829,7 +6789,6 @@ module top_axi_quad_spi_0_0_qspi_mode_0_module
   wire \RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[5]_i_1_n_0 ;
   wire \RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[6]_i_1_n_0 ;
   wire \RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[7]_i_1_n_0 ;
-  wire [0:2]Ratio_Count;
   wire Ratio_Count1;
   wire Rst_to_spi;
   wire SCK_I_sync;
@@ -6851,11 +6810,13 @@ module top_axi_quad_spi_0_0_qspi_mode_0_module
   wire drr_Overrun_int;
   wire dtr_underrun_int;
   wire empty;
+  wire eqOp;
   wire ext_spi_clk;
   wire io0_t;
   wire io1_o;
   wire io1_t;
   wire load;
+  wire [6:0]minusOp;
   wire modf_strobe_int;
   wire p_19_in;
   wire [7:1]p_2_in__0;
@@ -6925,7 +6886,7 @@ module top_axi_quad_spi_0_0_qspi_mode_0_module
         .I4(dtr_underrun_int),
         .I5(SPICR_2_MST_N_SLV_to_spi_clk),
         .O(\DTR_UNDERRUN_FIFO_EXIST_GEN.DTR_underrun_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair87" *) 
+  (* SOFT_HLUTNM = "soft_lutpair88" *) 
   LUT2 #(
     .INIT(4'h1)) 
     \DTR_UNDERRUN_FIFO_EXIST_GEN.DTR_underrun_i_2 
@@ -6948,14 +6909,14 @@ module top_axi_quad_spi_0_0_qspi_mode_0_module
         .I4(spi_cntrl_ps[0]),
         .I5(SR_5_Tx_comeplete_Empty),
         .O(\FSM_sequential_LOCAL_TX_EMPTY_FIFO_12_GEN.spi_cntrl_ps[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair75" *) 
+  (* SOFT_HLUTNM = "soft_lutpair76" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \FSM_sequential_LOCAL_TX_EMPTY_FIFO_12_GEN.spi_cntrl_ps[0]_i_2 
        (.I0(transfer_start_reg_0),
         .I1(transfer_start_d1),
         .O(\FSM_sequential_LOCAL_TX_EMPTY_FIFO_12_GEN.spi_cntrl_ps[0]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair80" *) 
+  (* SOFT_HLUTNM = "soft_lutpair81" *) 
   LUT4 #(
     .INIT(16'hAA8A)) 
     \FSM_sequential_LOCAL_TX_EMPTY_FIFO_12_GEN.spi_cntrl_ps[1]_i_1 
@@ -6992,7 +6953,7 @@ module top_axi_quad_spi_0_0_qspi_mode_0_module
         .D(\FSM_sequential_LOCAL_TX_EMPTY_FIFO_12_GEN.spi_cntrl_ps[1]_i_1_n_0 ),
         .Q(spi_cntrl_ps[1]),
         .R(Rst_to_spi));
-  (* SOFT_HLUTNM = "soft_lutpair83" *) 
+  (* SOFT_HLUTNM = "soft_lutpair85" *) 
   LUT4 #(
     .INIT(16'h0040)) 
     \LOCAL_TX_EMPTY_FIFO_12_GEN.DRR_Overrun_reg_int_i_1 
@@ -7018,7 +6979,7 @@ module top_axi_quad_spi_0_0_qspi_mode_0_module
         .D(stop_clock),
         .Q(stop_clock_reg),
         .R(Rst_to_spi));
-  (* SOFT_HLUTNM = "soft_lutpair83" *) 
+  (* SOFT_HLUTNM = "soft_lutpair85" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \LOGIC_GENERATION_FDR.drr_Overrun_int_cdc_from_spi_int_2_i_1 
@@ -7031,14 +6992,14 @@ module top_axi_quad_spi_0_0_qspi_mode_0_module
        (.I0(modf_strobe_int),
         .I1(\LOGIC_GENERATION_FDR.modf_strobe_cdc_from_spi_int_2_reg ),
         .O(D04_out));
-  (* SOFT_HLUTNM = "soft_lutpair80" *) 
+  (* SOFT_HLUTNM = "soft_lutpair81" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \LOGIC_GENERATION_FDR.spiXfer_done_cdc_from_spi_int_2_i_1 
        (.I0(spiXfer_done_int),
         .I1(\LOGIC_GENERATION_FDR.spiXfer_done_cdc_from_spi_int_2_reg ),
         .O(D01_out));
-  (* SOFT_HLUTNM = "soft_lutpair85" *) 
+  (* SOFT_HLUTNM = "soft_lutpair87" *) 
   LUT3 #(
     .INIT(8'h9A)) 
     \LOGIC_GENERATION_FDR.spisel_pulse_cdc_from_spi_int_2_i_1 
@@ -7058,7 +7019,7 @@ module top_axi_quad_spi_0_0_qspi_mode_0_module
        (.I0(\OTHER_RATIO_GENERATE.Count_reg_n_0_[0] ),
         .I1(load),
         .O(Count[0]));
-  (* SOFT_HLUTNM = "soft_lutpair81" *) 
+  (* SOFT_HLUTNM = "soft_lutpair82" *) 
   LUT3 #(
     .INIT(8'h06)) 
     \OTHER_RATIO_GENERATE.Count[1]_i_1 
@@ -7066,7 +7027,7 @@ module top_axi_quad_spi_0_0_qspi_mode_0_module
         .I1(\OTHER_RATIO_GENERATE.Count_reg_n_0_[0] ),
         .I2(load),
         .O(Count[1]));
-  (* SOFT_HLUTNM = "soft_lutpair81" *) 
+  (* SOFT_HLUTNM = "soft_lutpair82" *) 
   LUT4 #(
     .INIT(16'h1540)) 
     \OTHER_RATIO_GENERATE.Count[2]_i_1 
@@ -7075,7 +7036,7 @@ module top_axi_quad_spi_0_0_qspi_mode_0_module
         .I2(\OTHER_RATIO_GENERATE.Count_reg_n_0_[1] ),
         .I3(\OTHER_RATIO_GENERATE.Count_reg_n_0_[2] ),
         .O(\OTHER_RATIO_GENERATE.Count[2]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair74" *) 
+  (* SOFT_HLUTNM = "soft_lutpair75" *) 
   LUT5 #(
     .INIT(32'h15554000)) 
     \OTHER_RATIO_GENERATE.Count[3]_i_1 
@@ -7104,7 +7065,7 @@ module top_axi_quad_spi_0_0_qspi_mode_0_module
         .I4(sck_i_d1),
         .I5(SPISEL_sync),
         .O(\OTHER_RATIO_GENERATE.Count[4]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair74" *) 
+  (* SOFT_HLUTNM = "soft_lutpair75" *) 
   LUT5 #(
     .INIT(32'h40000000)) 
     \OTHER_RATIO_GENERATE.Count[4]_i_3 
@@ -7114,7 +7075,6 @@ module top_axi_quad_spi_0_0_qspi_mode_0_module
         .I3(\OTHER_RATIO_GENERATE.Count_reg_n_0_[0] ),
         .I4(\OTHER_RATIO_GENERATE.Count_reg_n_0_[1] ),
         .O(\OTHER_RATIO_GENERATE.Count[4]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair86" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \OTHER_RATIO_GENERATE.Count[4]_i_4 
@@ -7161,7 +7121,7 @@ module top_axi_quad_spi_0_0_qspi_mode_0_module
         .D(\OTHER_RATIO_GENERATE.Count[4]_i_3_n_0 ),
         .Q(load),
         .R(\OTHER_RATIO_GENERATE.Count[4]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair86" *) 
+  (* SOFT_HLUTNM = "soft_lutpair77" *) 
   LUT3 #(
     .INIT(8'h08)) 
     \OTHER_RATIO_GENERATE.Count_trigger_d1_i_1 
@@ -7175,70 +7135,150 @@ module top_axi_quad_spi_0_0_qspi_mode_0_module
         .D(\OTHER_RATIO_GENERATE.Count_trigger_d1_i_1_n_0 ),
         .Q(Count_trigger_d1),
         .R(1'b0));
-  LUT6 #(
-    .INIT(64'h00000000AAA90000)) 
+  (* SOFT_HLUTNM = "soft_lutpair77" *) 
+  LUT4 #(
+    .INIT(16'h0060)) 
     \OTHER_RATIO_GENERATE.Count_trigger_i_1 
        (.I0(Count_trigger),
-        .I1(Ratio_Count[0]),
-        .I2(Ratio_Count[1]),
-        .I3(Ratio_Count[2]),
-        .I4(transfer_start_reg_0),
-        .I5(Rst_to_spi),
+        .I1(eqOp),
+        .I2(transfer_start_reg_0),
+        .I3(Rst_to_spi),
         .O(\OTHER_RATIO_GENERATE.Count_trigger_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair78" *) 
+  LUT4 #(
+    .INIT(16'h0001)) 
+    \OTHER_RATIO_GENERATE.Count_trigger_i_2 
+       (.I0(\OTHER_RATIO_GENERATE.Ratio_Count_reg [1]),
+        .I1(\OTHER_RATIO_GENERATE.Ratio_Count_reg [2]),
+        .I2(\OTHER_RATIO_GENERATE.Ratio_Count[0]_i_3_n_0 ),
+        .I3(\OTHER_RATIO_GENERATE.Ratio_Count_reg [0]),
+        .O(eqOp));
   FDRE \OTHER_RATIO_GENERATE.Count_trigger_reg 
        (.C(ext_spi_clk),
         .CE(1'b1),
         .D(\OTHER_RATIO_GENERATE.Count_trigger_i_1_n_0 ),
         .Q(Count_trigger),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair76" *) 
-  LUT5 #(
-    .INIT(32'hFFA9FFFF)) 
+  LUT6 #(
+    .INIT(64'hDDDDDDDDDDDDDDDF)) 
     \OTHER_RATIO_GENERATE.Ratio_Count[0]_i_1 
-       (.I0(Ratio_Count[0]),
-        .I1(Ratio_Count[1]),
-        .I2(Ratio_Count[2]),
-        .I3(Rst_to_spi),
-        .I4(transfer_start_reg_0),
+       (.I0(transfer_start_reg_0),
+        .I1(Rst_to_spi),
+        .I2(\OTHER_RATIO_GENERATE.Ratio_Count_reg [0]),
+        .I3(\OTHER_RATIO_GENERATE.Ratio_Count[0]_i_3_n_0 ),
+        .I4(\OTHER_RATIO_GENERATE.Ratio_Count_reg [2]),
+        .I5(\OTHER_RATIO_GENERATE.Ratio_Count_reg [1]),
         .O(\OTHER_RATIO_GENERATE.Ratio_Count[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair76" *) 
-  LUT5 #(
-    .INIT(32'hFFC3FFFF)) 
+  (* SOFT_HLUTNM = "soft_lutpair78" *) 
+  LUT4 #(
+    .INIT(16'hAAA9)) 
+    \OTHER_RATIO_GENERATE.Ratio_Count[0]_i_2 
+       (.I0(\OTHER_RATIO_GENERATE.Ratio_Count_reg [0]),
+        .I1(\OTHER_RATIO_GENERATE.Ratio_Count_reg [1]),
+        .I2(\OTHER_RATIO_GENERATE.Ratio_Count_reg [2]),
+        .I3(\OTHER_RATIO_GENERATE.Ratio_Count[0]_i_3_n_0 ),
+        .O(minusOp[6]));
+  (* SOFT_HLUTNM = "soft_lutpair74" *) 
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    \OTHER_RATIO_GENERATE.Ratio_Count[0]_i_3 
+       (.I0(\OTHER_RATIO_GENERATE.Ratio_Count_reg [3]),
+        .I1(\OTHER_RATIO_GENERATE.Ratio_Count_reg [6]),
+        .I2(\OTHER_RATIO_GENERATE.Ratio_Count_reg [5]),
+        .I3(\OTHER_RATIO_GENERATE.Ratio_Count_reg [4]),
+        .O(\OTHER_RATIO_GENERATE.Ratio_Count[0]_i_3_n_0 ));
+  LUT6 #(
+    .INIT(64'hAAAAAAAAAAAAAAA9)) 
     \OTHER_RATIO_GENERATE.Ratio_Count[1]_i_1 
-       (.I0(Ratio_Count[0]),
-        .I1(Ratio_Count[1]),
-        .I2(Ratio_Count[2]),
-        .I3(Rst_to_spi),
-        .I4(transfer_start_reg_0),
-        .O(\OTHER_RATIO_GENERATE.Ratio_Count[1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair77" *) 
+       (.I0(\OTHER_RATIO_GENERATE.Ratio_Count_reg [1]),
+        .I1(\OTHER_RATIO_GENERATE.Ratio_Count_reg [3]),
+        .I2(\OTHER_RATIO_GENERATE.Ratio_Count_reg [6]),
+        .I3(\OTHER_RATIO_GENERATE.Ratio_Count_reg [5]),
+        .I4(\OTHER_RATIO_GENERATE.Ratio_Count_reg [4]),
+        .I5(\OTHER_RATIO_GENERATE.Ratio_Count_reg [2]),
+        .O(minusOp[5]));
+  (* SOFT_HLUTNM = "soft_lutpair74" *) 
   LUT5 #(
-    .INIT(32'hFF0FFFFF)) 
+    .INIT(32'hAAAAAAA9)) 
     \OTHER_RATIO_GENERATE.Ratio_Count[2]_i_1 
-       (.I0(Ratio_Count[0]),
-        .I1(Ratio_Count[1]),
-        .I2(Ratio_Count[2]),
-        .I3(Rst_to_spi),
-        .I4(transfer_start_reg_0),
+       (.I0(\OTHER_RATIO_GENERATE.Ratio_Count_reg [2]),
+        .I1(\OTHER_RATIO_GENERATE.Ratio_Count_reg [4]),
+        .I2(\OTHER_RATIO_GENERATE.Ratio_Count_reg [5]),
+        .I3(\OTHER_RATIO_GENERATE.Ratio_Count_reg [6]),
+        .I4(\OTHER_RATIO_GENERATE.Ratio_Count_reg [3]),
         .O(\OTHER_RATIO_GENERATE.Ratio_Count[2]_i_1_n_0 ));
-  FDRE \OTHER_RATIO_GENERATE.Ratio_Count_reg[0] 
+  (* SOFT_HLUTNM = "soft_lutpair84" *) 
+  LUT4 #(
+    .INIT(16'hFE01)) 
+    \OTHER_RATIO_GENERATE.Ratio_Count[3]_i_1 
+       (.I0(\OTHER_RATIO_GENERATE.Ratio_Count_reg [4]),
+        .I1(\OTHER_RATIO_GENERATE.Ratio_Count_reg [5]),
+        .I2(\OTHER_RATIO_GENERATE.Ratio_Count_reg [6]),
+        .I3(\OTHER_RATIO_GENERATE.Ratio_Count_reg [3]),
+        .O(minusOp[3]));
+  (* SOFT_HLUTNM = "soft_lutpair84" *) 
+  LUT3 #(
+    .INIT(8'hE1)) 
+    \OTHER_RATIO_GENERATE.Ratio_Count[4]_i_1 
+       (.I0(\OTHER_RATIO_GENERATE.Ratio_Count_reg [6]),
+        .I1(\OTHER_RATIO_GENERATE.Ratio_Count_reg [5]),
+        .I2(\OTHER_RATIO_GENERATE.Ratio_Count_reg [4]),
+        .O(minusOp[2]));
+  (* SOFT_HLUTNM = "soft_lutpair89" *) 
+  LUT2 #(
+    .INIT(4'h9)) 
+    \OTHER_RATIO_GENERATE.Ratio_Count[5]_i_1 
+       (.I0(\OTHER_RATIO_GENERATE.Ratio_Count_reg [6]),
+        .I1(\OTHER_RATIO_GENERATE.Ratio_Count_reg [5]),
+        .O(\OTHER_RATIO_GENERATE.Ratio_Count[5]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair89" *) 
+  LUT1 #(
+    .INIT(2'h1)) 
+    \OTHER_RATIO_GENERATE.Ratio_Count[6]_i_1 
+       (.I0(\OTHER_RATIO_GENERATE.Ratio_Count_reg [6]),
+        .O(minusOp[0]));
+  FDSE \OTHER_RATIO_GENERATE.Ratio_Count_reg[0] 
        (.C(ext_spi_clk),
         .CE(1'b1),
-        .D(\OTHER_RATIO_GENERATE.Ratio_Count[0]_i_1_n_0 ),
-        .Q(Ratio_Count[0]),
-        .R(1'b0));
+        .D(minusOp[6]),
+        .Q(\OTHER_RATIO_GENERATE.Ratio_Count_reg [0]),
+        .S(\OTHER_RATIO_GENERATE.Ratio_Count[0]_i_1_n_0 ));
   FDRE \OTHER_RATIO_GENERATE.Ratio_Count_reg[1] 
        (.C(ext_spi_clk),
         .CE(1'b1),
-        .D(\OTHER_RATIO_GENERATE.Ratio_Count[1]_i_1_n_0 ),
-        .Q(Ratio_Count[1]),
-        .R(1'b0));
+        .D(minusOp[5]),
+        .Q(\OTHER_RATIO_GENERATE.Ratio_Count_reg [1]),
+        .R(\OTHER_RATIO_GENERATE.Ratio_Count[0]_i_1_n_0 ));
   FDRE \OTHER_RATIO_GENERATE.Ratio_Count_reg[2] 
        (.C(ext_spi_clk),
         .CE(1'b1),
         .D(\OTHER_RATIO_GENERATE.Ratio_Count[2]_i_1_n_0 ),
-        .Q(Ratio_Count[2]),
-        .R(1'b0));
+        .Q(\OTHER_RATIO_GENERATE.Ratio_Count_reg [2]),
+        .R(\OTHER_RATIO_GENERATE.Ratio_Count[0]_i_1_n_0 ));
+  FDSE \OTHER_RATIO_GENERATE.Ratio_Count_reg[3] 
+       (.C(ext_spi_clk),
+        .CE(1'b1),
+        .D(minusOp[3]),
+        .Q(\OTHER_RATIO_GENERATE.Ratio_Count_reg [3]),
+        .S(\OTHER_RATIO_GENERATE.Ratio_Count[0]_i_1_n_0 ));
+  FDSE \OTHER_RATIO_GENERATE.Ratio_Count_reg[4] 
+       (.C(ext_spi_clk),
+        .CE(1'b1),
+        .D(minusOp[2]),
+        .Q(\OTHER_RATIO_GENERATE.Ratio_Count_reg [4]),
+        .S(\OTHER_RATIO_GENERATE.Ratio_Count[0]_i_1_n_0 ));
+  FDSE \OTHER_RATIO_GENERATE.Ratio_Count_reg[5] 
+       (.C(ext_spi_clk),
+        .CE(1'b1),
+        .D(\OTHER_RATIO_GENERATE.Ratio_Count[5]_i_1_n_0 ),
+        .Q(\OTHER_RATIO_GENERATE.Ratio_Count_reg [5]),
+        .S(\OTHER_RATIO_GENERATE.Ratio_Count[0]_i_1_n_0 ));
+  FDSE \OTHER_RATIO_GENERATE.Ratio_Count_reg[6] 
+       (.C(ext_spi_clk),
+        .CE(1'b1),
+        .D(minusOp[0]),
+        .Q(\OTHER_RATIO_GENERATE.Ratio_Count_reg [6]),
+        .S(\OTHER_RATIO_GENERATE.Ratio_Count[0]_i_1_n_0 ));
   LUT5 #(
     .INIT(32'hB8FFB800)) 
     \OTHER_RATIO_GENERATE.Serial_Dout_i_1 
@@ -7302,7 +7342,7 @@ module top_axi_quad_spi_0_0_qspi_mode_0_module
         .I4(Count_trigger),
         .I5(\OTHER_RATIO_GENERATE.Count_reg_n_0_[0] ),
         .O(\OTHER_RATIO_GENERATE.Shift_Reg[0]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair82" *) 
+  (* SOFT_HLUTNM = "soft_lutpair83" *) 
   LUT3 #(
     .INIT(8'h45)) 
     \OTHER_RATIO_GENERATE.Shift_Reg[0]_i_4 
@@ -7669,7 +7709,7 @@ module top_axi_quad_spi_0_0_qspi_mode_0_module
         .I4(\OTHER_RATIO_GENERATE.sck_o_int_reg_0 ),
         .I5(sck_o_int),
         .O(\OTHER_RATIO_GENERATE.sck_o_int_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair84" *) 
+  (* SOFT_HLUTNM = "soft_lutpair86" *) 
   LUT3 #(
     .INIT(8'h45)) 
     \OTHER_RATIO_GENERATE.sck_o_int_i_4 
@@ -7683,7 +7723,7 @@ module top_axi_quad_spi_0_0_qspi_mode_0_module
         .D(\OTHER_RATIO_GENERATE.sck_o_int_i_1_n_0 ),
         .Q(sck_o_int),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair87" *) 
+  (* SOFT_HLUTNM = "soft_lutpair88" *) 
   LUT3 #(
     .INIT(8'h08)) 
     \OTHER_RATIO_GENERATE.serial_dout_int_i_1 
@@ -7710,7 +7750,7 @@ module top_axi_quad_spi_0_0_qspi_mode_0_module
         .D(\RATIO_NOT_EQUAL_4_GENERATE.SCK_O_NQ_4_NO_STARTUP_USED.SCK_O_NE_4_FDRE_INST_i_2_n_0 ),
         .Q(sck_o),
         .R(R));
-  (* SOFT_HLUTNM = "soft_lutpair75" *) 
+  (* SOFT_HLUTNM = "soft_lutpair76" *) 
   LUT5 #(
     .INIT(32'hBAAA8AAA)) 
     \RATIO_NOT_EQUAL_4_GENERATE.SCK_O_NQ_4_NO_STARTUP_USED.SCK_O_NE_4_FDRE_INST_i_2 
@@ -7725,12 +7765,22 @@ module top_axi_quad_spi_0_0_qspi_mode_0_module
     \RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_i_1 
        (.I0(transfer_start_reg_0),
         .I1(transfer_start_d1),
-        .I2(\RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_reg_1 ),
+        .I2(\RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_i_2_n_0 ),
         .I3(\RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_i_3_n_0 ),
         .I4(\RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_reg_0 ),
         .I5(Rst_to_spi),
         .O(\RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair78" *) 
+  LUT6 #(
+    .INIT(64'h0000000044400000)) 
+    \RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_i_2 
+       (.I0(\OTHER_RATIO_GENERATE.Ratio_Count_reg [0]),
+        .I1(\RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_i_4_n_0 ),
+        .I2(\OTHER_RATIO_GENERATE.sck_o_int_reg_0 ),
+        .I3(Count_trigger),
+        .I4(SPICR_2_MST_N_SLV_to_spi_clk),
+        .I5(\RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_i_5_n_0 ),
+        .O(\RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_i_2_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair79" *) 
   LUT4 #(
     .INIT(16'h8000)) 
     \RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_i_3 
@@ -7739,15 +7789,17 @@ module top_axi_quad_spi_0_0_qspi_mode_0_module
         .I2(\OTHER_RATIO_GENERATE.Count_reg_n_0_[2] ),
         .I3(\OTHER_RATIO_GENERATE.Count_reg_n_0_[3] ),
         .O(\RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair77" *) 
-  LUT3 #(
-    .INIT(8'hFE)) 
+  LUT6 #(
+    .INIT(64'h0000000000000001)) 
     \RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_i_4 
-       (.I0(Ratio_Count[0]),
-        .I1(Ratio_Count[1]),
-        .I2(Ratio_Count[2]),
-        .O(\OTHER_RATIO_GENERATE.Ratio_Count_reg[0]_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair78" *) 
+       (.I0(\OTHER_RATIO_GENERATE.Ratio_Count_reg [3]),
+        .I1(\OTHER_RATIO_GENERATE.Ratio_Count_reg [6]),
+        .I2(\OTHER_RATIO_GENERATE.Ratio_Count_reg [5]),
+        .I3(\OTHER_RATIO_GENERATE.Ratio_Count_reg [4]),
+        .I4(\OTHER_RATIO_GENERATE.Ratio_Count_reg [2]),
+        .I5(\OTHER_RATIO_GENERATE.Ratio_Count_reg [1]),
+        .O(\RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_i_4_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair79" *) 
   LUT4 #(
     .INIT(16'h7FFF)) 
     \RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_i_5 
@@ -7755,7 +7807,7 @@ module top_axi_quad_spi_0_0_qspi_mode_0_module
         .I1(\OTHER_RATIO_GENERATE.Count_reg_n_0_[0] ),
         .I2(\OTHER_RATIO_GENERATE.Count_reg_n_0_[3] ),
         .I3(\OTHER_RATIO_GENERATE.Count_reg_n_0_[2] ),
-        .O(\OTHER_RATIO_GENERATE.Count_reg[1]_0 ));
+        .O(\RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_i_5_n_0 ));
   FDRE \RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_reg 
        (.C(ext_spi_clk),
         .CE(1'b1),
@@ -7763,7 +7815,7 @@ module top_axi_quad_spi_0_0_qspi_mode_0_module
         .Q(\RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_reg_0 ),
         .R(1'b0));
   LUT6 #(
-    .INIT(64'h3F305F5F3F305050)) 
+    .INIT(64'h5F503F3F5F503030)) 
     \RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[0]_i_1 
        (.I0(\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[0]_i_2_n_0 ),
         .I1(\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[0]_i_3_n_0 ),
@@ -7775,21 +7827,21 @@ module top_axi_quad_spi_0_0_qspi_mode_0_module
   LUT4 #(
     .INIT(16'h14D7)) 
     \RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[0]_i_2 
-       (.I0(rx_shft_reg_mode_0110[0]),
-        .I1(spicr_3_cpol_to_spi_clk),
-        .I2(spicr_4_cpha_to_spi_clk),
-        .I3(rx_shft_reg_mode_0011[0]),
-        .O(\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[0]_i_2_n_0 ));
-  LUT4 #(
-    .INIT(16'h14D7)) 
-    \RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[0]_i_3 
        (.I0(rx_shft_reg_mode_0110[7]),
         .I1(spicr_3_cpol_to_spi_clk),
         .I2(spicr_4_cpha_to_spi_clk),
         .I3(rx_shft_reg_mode_0011[7]),
+        .O(\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[0]_i_2_n_0 ));
+  LUT4 #(
+    .INIT(16'h14D7)) 
+    \RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[0]_i_3 
+       (.I0(rx_shft_reg_mode_0110[0]),
+        .I1(spicr_3_cpol_to_spi_clk),
+        .I2(spicr_4_cpha_to_spi_clk),
+        .I3(rx_shft_reg_mode_0011[0]),
         .O(\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[0]_i_3_n_0 ));
   LUT6 #(
-    .INIT(64'h3F305F5F3F305050)) 
+    .INIT(64'h5F503F3F5F503030)) 
     \RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[1]_i_1 
        (.I0(\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[1]_i_2_n_0 ),
         .I1(\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[1]_i_3_n_0 ),
@@ -7801,21 +7853,21 @@ module top_axi_quad_spi_0_0_qspi_mode_0_module
   LUT4 #(
     .INIT(16'h14D7)) 
     \RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[1]_i_2 
-       (.I0(rx_shft_reg_mode_0110[1]),
-        .I1(spicr_3_cpol_to_spi_clk),
-        .I2(spicr_4_cpha_to_spi_clk),
-        .I3(rx_shft_reg_mode_0011[1]),
-        .O(\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[1]_i_2_n_0 ));
-  LUT4 #(
-    .INIT(16'h14D7)) 
-    \RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[1]_i_3 
        (.I0(rx_shft_reg_mode_0110[6]),
         .I1(spicr_3_cpol_to_spi_clk),
         .I2(spicr_4_cpha_to_spi_clk),
         .I3(rx_shft_reg_mode_0011[6]),
+        .O(\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[1]_i_2_n_0 ));
+  LUT4 #(
+    .INIT(16'h14D7)) 
+    \RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[1]_i_3 
+       (.I0(rx_shft_reg_mode_0110[1]),
+        .I1(spicr_3_cpol_to_spi_clk),
+        .I2(spicr_4_cpha_to_spi_clk),
+        .I3(rx_shft_reg_mode_0011[1]),
         .O(\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[1]_i_3_n_0 ));
   LUT6 #(
-    .INIT(64'h3F305F5F3F305050)) 
+    .INIT(64'h5F503F3F5F503030)) 
     \RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[2]_i_1 
        (.I0(\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[2]_i_2_n_0 ),
         .I1(\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[2]_i_3_n_0 ),
@@ -7827,21 +7879,21 @@ module top_axi_quad_spi_0_0_qspi_mode_0_module
   LUT4 #(
     .INIT(16'h14D7)) 
     \RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[2]_i_2 
-       (.I0(rx_shft_reg_mode_0110[2]),
-        .I1(spicr_3_cpol_to_spi_clk),
-        .I2(spicr_4_cpha_to_spi_clk),
-        .I3(rx_shft_reg_mode_0011[2]),
-        .O(\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[2]_i_2_n_0 ));
-  LUT4 #(
-    .INIT(16'h14D7)) 
-    \RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[2]_i_3 
        (.I0(rx_shft_reg_mode_0110[5]),
         .I1(spicr_3_cpol_to_spi_clk),
         .I2(spicr_4_cpha_to_spi_clk),
         .I3(rx_shft_reg_mode_0011[5]),
+        .O(\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[2]_i_2_n_0 ));
+  LUT4 #(
+    .INIT(16'h14D7)) 
+    \RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[2]_i_3 
+       (.I0(rx_shft_reg_mode_0110[2]),
+        .I1(spicr_3_cpol_to_spi_clk),
+        .I2(spicr_4_cpha_to_spi_clk),
+        .I3(rx_shft_reg_mode_0011[2]),
         .O(\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[2]_i_3_n_0 ));
   LUT6 #(
-    .INIT(64'h3F305F5F3F305050)) 
+    .INIT(64'h5F503F3F5F503030)) 
     \RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[3]_i_1 
        (.I0(\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[3]_i_2_n_0 ),
         .I1(\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[3]_i_3_n_0 ),
@@ -7853,21 +7905,21 @@ module top_axi_quad_spi_0_0_qspi_mode_0_module
   LUT4 #(
     .INIT(16'h14D7)) 
     \RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[3]_i_2 
-       (.I0(rx_shft_reg_mode_0110[3]),
-        .I1(spicr_3_cpol_to_spi_clk),
-        .I2(spicr_4_cpha_to_spi_clk),
-        .I3(rx_shft_reg_mode_0011[3]),
-        .O(\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[3]_i_2_n_0 ));
-  LUT4 #(
-    .INIT(16'h14D7)) 
-    \RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[3]_i_3 
        (.I0(rx_shft_reg_mode_0110[4]),
         .I1(spicr_3_cpol_to_spi_clk),
         .I2(spicr_4_cpha_to_spi_clk),
         .I3(rx_shft_reg_mode_0011[4]),
+        .O(\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[3]_i_2_n_0 ));
+  LUT4 #(
+    .INIT(16'h14D7)) 
+    \RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[3]_i_3 
+       (.I0(rx_shft_reg_mode_0110[3]),
+        .I1(spicr_3_cpol_to_spi_clk),
+        .I2(spicr_4_cpha_to_spi_clk),
+        .I3(rx_shft_reg_mode_0011[3]),
         .O(\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[3]_i_3_n_0 ));
   LUT6 #(
-    .INIT(64'h3F305F5F3F305050)) 
+    .INIT(64'h5F503F3F5F503030)) 
     \RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[4]_i_1 
        (.I0(\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[3]_i_3_n_0 ),
         .I1(\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[3]_i_2_n_0 ),
@@ -7879,8 +7931,8 @@ module top_axi_quad_spi_0_0_qspi_mode_0_module
   LUT6 #(
     .INIT(64'h3F305F5F3F305050)) 
     \RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[5]_i_1 
-       (.I0(\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[2]_i_3_n_0 ),
-        .I1(\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[2]_i_2_n_0 ),
+       (.I0(\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[2]_i_2_n_0 ),
+        .I1(\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[2]_i_3_n_0 ),
         .I2(SPICR_2_MST_N_SLV_to_spi_clk),
         .I3(rx_shft_reg_s[2]),
         .I4(spicr_9_lsb_to_spi_clk),
@@ -7889,8 +7941,8 @@ module top_axi_quad_spi_0_0_qspi_mode_0_module
   LUT6 #(
     .INIT(64'h3F305F5F3F305050)) 
     \RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[6]_i_1 
-       (.I0(\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[1]_i_3_n_0 ),
-        .I1(\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[1]_i_2_n_0 ),
+       (.I0(\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[1]_i_2_n_0 ),
+        .I1(\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[1]_i_3_n_0 ),
         .I2(SPICR_2_MST_N_SLV_to_spi_clk),
         .I3(rx_shft_reg_s[1]),
         .I4(spicr_9_lsb_to_spi_clk),
@@ -7899,8 +7951,8 @@ module top_axi_quad_spi_0_0_qspi_mode_0_module
   LUT6 #(
     .INIT(64'h3F305F5F3F305050)) 
     \RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[7]_i_1 
-       (.I0(\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[0]_i_3_n_0 ),
-        .I1(\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[0]_i_2_n_0 ),
+       (.I0(\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[0]_i_2_n_0 ),
+        .I1(\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[0]_i_3_n_0 ),
         .I2(SPICR_2_MST_N_SLV_to_spi_clk),
         .I3(rx_shft_reg_s[0]),
         .I4(spicr_9_lsb_to_spi_clk),
@@ -7998,7 +8050,7 @@ module top_axi_quad_spi_0_0_qspi_mode_0_module
         .D(\RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_reg_0 ),
         .Q(SPIXfer_done_int_d1),
         .R(Rst_to_spi));
-  (* SOFT_HLUTNM = "soft_lutpair84" *) 
+  (* SOFT_HLUTNM = "soft_lutpair86" *) 
   LUT2 #(
     .INIT(4'h2)) 
     SPIXfer_done_int_pulse_d1_i_1
@@ -8068,7 +8120,7 @@ module top_axi_quad_spi_0_0_qspi_mode_0_module
         .D(empty),
         .Q(SR_5_Tx_Empty_d1),
         .R(Rst_to_spi));
-  (* SOFT_HLUTNM = "soft_lutpair82" *) 
+  (* SOFT_HLUTNM = "soft_lutpair83" *) 
   LUT4 #(
     .INIT(16'h88C8)) 
     SR_5_Tx_comeplete_Empty_i_1
@@ -8093,7 +8145,7 @@ module top_axi_quad_spi_0_0_qspi_mode_0_module
         .I4(empty),
         .I5(spi_cntrl_ps[1]),
         .O(\LOGIC_GENERATION_FDR.SPICR_0_LOOP_AX2S_2 ));
-  (* SOFT_HLUTNM = "soft_lutpair79" *) 
+  (* SOFT_HLUTNM = "soft_lutpair80" *) 
   LUT4 #(
     .INIT(16'hFFC8)) 
     \SS_O[0]_i_3 
@@ -8102,7 +8154,7 @@ module top_axi_quad_spi_0_0_qspi_mode_0_module
         .I2(register_Data_slvsel_int),
         .I3(stop_clock_reg),
         .O(\SS_O[0]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair79" *) 
+  (* SOFT_HLUTNM = "soft_lutpair80" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \SS_O[0]_i_4 
@@ -8139,7 +8191,7 @@ module top_axi_quad_spi_0_0_qspi_mode_0_module
         .D(spisel_d1),
         .Q(spisel_d1_reg),
         .S(Rst_to_spi));
-  (* SOFT_HLUTNM = "soft_lutpair85" *) 
+  (* SOFT_HLUTNM = "soft_lutpair87" *) 
   LUT3 #(
     .INIT(8'h8A)) 
     spisel_once_1_i_1
@@ -8258,7 +8310,7 @@ module top_axi_quad_spi_0_0_reset_sync_module
   wire ext_spi_clk;
   wire reset2ip_reset_int;
 
-  (* SOFT_HLUTNM = "soft_lutpair88" *) 
+  (* SOFT_HLUTNM = "soft_lutpair90" *) 
   LUT2 #(
     .INIT(4'hB)) 
     \OTHER_RATIO_GENERATE.rx_shft_reg_s[0]_i_2 
@@ -8289,7 +8341,7 @@ module top_axi_quad_spi_0_0_reset_sync_module
         .D(Soft_Reset_frm_axi_d1),
         .Q(Rst_to_spi),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair88" *) 
+  (* SOFT_HLUTNM = "soft_lutpair90" *) 
   LUT2 #(
     .INIT(4'hE)) 
     Slave_MODF_strobe_i_1
@@ -9352,14 +9404,14 @@ module top_axi_quad_spi_0_0_soft_reset
         .D(FF_WRACK_i_1_n_0),
         .Q(wrack),
         .R(bus2ip_reset_ipif_inverted));
-  (* SOFT_HLUTNM = "soft_lutpair90" *) 
+  (* SOFT_HLUTNM = "soft_lutpair92" *) 
   LUT2 #(
     .INIT(4'h2)) 
     FF_WRACK_i_1
        (.I0(\RESET_FLOPS[15].RST_FLOPS_0 ),
         .I1(flop_q_chain_1),
         .O(FF_WRACK_i_1_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair89" *) 
+  (* SOFT_HLUTNM = "soft_lutpair91" *) 
   LUT5 #(
     .INIT(32'h00000100)) 
     \FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_i_i_1 
@@ -9406,7 +9458,7 @@ module top_axi_quad_spi_0_0_soft_reset
         .D(\RESET_FLOPS[10].RST_FLOPS_i_1_n_0 ),
         .Q(flop_q_chain_5),
         .R(bus2ip_reset_ipif_inverted));
-  (* SOFT_HLUTNM = "soft_lutpair95" *) 
+  (* SOFT_HLUTNM = "soft_lutpair97" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \RESET_FLOPS[10].RST_FLOPS_i_1 
@@ -9427,7 +9479,7 @@ module top_axi_quad_spi_0_0_soft_reset
         .D(\RESET_FLOPS[11].RST_FLOPS_i_1_n_0 ),
         .Q(flop_q_chain_4),
         .R(bus2ip_reset_ipif_inverted));
-  (* SOFT_HLUTNM = "soft_lutpair96" *) 
+  (* SOFT_HLUTNM = "soft_lutpair98" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \RESET_FLOPS[11].RST_FLOPS_i_1 
@@ -9448,7 +9500,7 @@ module top_axi_quad_spi_0_0_soft_reset
         .D(\RESET_FLOPS[12].RST_FLOPS_i_1_n_0 ),
         .Q(flop_q_chain_3),
         .R(bus2ip_reset_ipif_inverted));
-  (* SOFT_HLUTNM = "soft_lutpair96" *) 
+  (* SOFT_HLUTNM = "soft_lutpair98" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \RESET_FLOPS[12].RST_FLOPS_i_1 
@@ -9469,7 +9521,7 @@ module top_axi_quad_spi_0_0_soft_reset
         .D(\RESET_FLOPS[13].RST_FLOPS_i_1_n_0 ),
         .Q(flop_q_chain_2),
         .R(bus2ip_reset_ipif_inverted));
-  (* SOFT_HLUTNM = "soft_lutpair97" *) 
+  (* SOFT_HLUTNM = "soft_lutpair99" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \RESET_FLOPS[13].RST_FLOPS_i_1 
@@ -9490,7 +9542,7 @@ module top_axi_quad_spi_0_0_soft_reset
         .D(\RESET_FLOPS[14].RST_FLOPS_i_1_n_0 ),
         .Q(flop_q_chain_1),
         .R(bus2ip_reset_ipif_inverted));
-  (* SOFT_HLUTNM = "soft_lutpair97" *) 
+  (* SOFT_HLUTNM = "soft_lutpair99" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \RESET_FLOPS[14].RST_FLOPS_i_1 
@@ -9511,7 +9563,7 @@ module top_axi_quad_spi_0_0_soft_reset
         .D(\RESET_FLOPS[15].RST_FLOPS_i_1_n_0 ),
         .Q(\RESET_FLOPS[15].RST_FLOPS_0 ),
         .R(bus2ip_reset_ipif_inverted));
-  (* SOFT_HLUTNM = "soft_lutpair90" *) 
+  (* SOFT_HLUTNM = "soft_lutpair92" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \RESET_FLOPS[15].RST_FLOPS_i_1 
@@ -9532,7 +9584,7 @@ module top_axi_quad_spi_0_0_soft_reset
         .D(\RESET_FLOPS[1].RST_FLOPS_i_1_n_0 ),
         .Q(flop_q_chain_14),
         .R(bus2ip_reset_ipif_inverted));
-  (* SOFT_HLUTNM = "soft_lutpair91" *) 
+  (* SOFT_HLUTNM = "soft_lutpair93" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \RESET_FLOPS[1].RST_FLOPS_i_1 
@@ -9553,7 +9605,7 @@ module top_axi_quad_spi_0_0_soft_reset
         .D(\RESET_FLOPS[2].RST_FLOPS_i_1_n_0 ),
         .Q(flop_q_chain_13),
         .R(bus2ip_reset_ipif_inverted));
-  (* SOFT_HLUTNM = "soft_lutpair91" *) 
+  (* SOFT_HLUTNM = "soft_lutpair93" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \RESET_FLOPS[2].RST_FLOPS_i_1 
@@ -9574,7 +9626,7 @@ module top_axi_quad_spi_0_0_soft_reset
         .D(\RESET_FLOPS[3].RST_FLOPS_i_1_n_0 ),
         .Q(flop_q_chain_12),
         .R(bus2ip_reset_ipif_inverted));
-  (* SOFT_HLUTNM = "soft_lutpair92" *) 
+  (* SOFT_HLUTNM = "soft_lutpair94" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \RESET_FLOPS[3].RST_FLOPS_i_1 
@@ -9595,7 +9647,7 @@ module top_axi_quad_spi_0_0_soft_reset
         .D(\RESET_FLOPS[4].RST_FLOPS_i_1_n_0 ),
         .Q(flop_q_chain_11),
         .R(bus2ip_reset_ipif_inverted));
-  (* SOFT_HLUTNM = "soft_lutpair92" *) 
+  (* SOFT_HLUTNM = "soft_lutpair94" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \RESET_FLOPS[4].RST_FLOPS_i_1 
@@ -9616,7 +9668,7 @@ module top_axi_quad_spi_0_0_soft_reset
         .D(\RESET_FLOPS[5].RST_FLOPS_i_1_n_0 ),
         .Q(flop_q_chain_10),
         .R(bus2ip_reset_ipif_inverted));
-  (* SOFT_HLUTNM = "soft_lutpair93" *) 
+  (* SOFT_HLUTNM = "soft_lutpair95" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \RESET_FLOPS[5].RST_FLOPS_i_1 
@@ -9637,7 +9689,7 @@ module top_axi_quad_spi_0_0_soft_reset
         .D(\RESET_FLOPS[6].RST_FLOPS_i_1_n_0 ),
         .Q(flop_q_chain_9),
         .R(bus2ip_reset_ipif_inverted));
-  (* SOFT_HLUTNM = "soft_lutpair93" *) 
+  (* SOFT_HLUTNM = "soft_lutpair95" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \RESET_FLOPS[6].RST_FLOPS_i_1 
@@ -9658,7 +9710,7 @@ module top_axi_quad_spi_0_0_soft_reset
         .D(\RESET_FLOPS[7].RST_FLOPS_i_1_n_0 ),
         .Q(flop_q_chain_8),
         .R(bus2ip_reset_ipif_inverted));
-  (* SOFT_HLUTNM = "soft_lutpair94" *) 
+  (* SOFT_HLUTNM = "soft_lutpair96" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \RESET_FLOPS[7].RST_FLOPS_i_1 
@@ -9679,7 +9731,7 @@ module top_axi_quad_spi_0_0_soft_reset
         .D(\RESET_FLOPS[8].RST_FLOPS_i_1_n_0 ),
         .Q(flop_q_chain_7),
         .R(bus2ip_reset_ipif_inverted));
-  (* SOFT_HLUTNM = "soft_lutpair94" *) 
+  (* SOFT_HLUTNM = "soft_lutpair96" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \RESET_FLOPS[8].RST_FLOPS_i_1 
@@ -9700,7 +9752,7 @@ module top_axi_quad_spi_0_0_soft_reset
         .D(\RESET_FLOPS[9].RST_FLOPS_i_1_n_0 ),
         .Q(flop_q_chain_6),
         .R(bus2ip_reset_ipif_inverted));
-  (* SOFT_HLUTNM = "soft_lutpair95" *) 
+  (* SOFT_HLUTNM = "soft_lutpair97" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \RESET_FLOPS[9].RST_FLOPS_i_1 
@@ -9719,7 +9771,7 @@ module top_axi_quad_spi_0_0_soft_reset
         .D(sw_rst_cond),
         .Q(sw_rst_cond_d1),
         .R(bus2ip_reset_ipif_inverted));
-  (* SOFT_HLUTNM = "soft_lutpair89" *) 
+  (* SOFT_HLUTNM = "soft_lutpair91" *) 
   LUT3 #(
     .INIT(8'hFE)) 
     \xpm_fifo_instance.xpm_fifo_async_inst_i_1 

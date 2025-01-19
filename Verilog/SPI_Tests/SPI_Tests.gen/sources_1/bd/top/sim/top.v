@@ -2,7 +2,7 @@
 //Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-//Date        : Sun Jan 19 12:12:20 2025
+//Date        : Sun Jan 19 17:26:03 2025
 //Host        : DESKTOP-DRF538C running 64-bit major release  (build 9200)
 //Command     : generate_target top.bd
 //Design      : top
@@ -10,7 +10,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "top,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=top,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=8,numReposBlks=8,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=1,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=18,da_board_cnt=5,da_clkrst_cnt=10,da_ps7_cnt=1,synth_mode=Hierarchical}" *) (* HW_HANDOFF = "top.hwdef" *) 
+(* CORE_GENERATION_INFO = "top,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=top,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=9,numReposBlks=9,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=2,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=18,da_board_cnt=5,da_clkrst_cnt=10,da_ps7_cnt=1,synth_mode=Hierarchical}" *) (* HW_HANDOFF = "top.hwdef" *) 
 module top
    (DDR_addr,
     DDR_ba,
@@ -243,6 +243,7 @@ module top
   wire [0:0]spi_rtl_ss_i;
   wire [0:0]spi_rtl_ss_o;
   wire spi_rtl_ss_t;
+  wire [15:0]word_inverter_0_data_out_ch1;
   wire [15:0]word_inverter_0_data_out_ch2;
 
   top_LED_Visualizer_0_0 LED_Visualizer_0
@@ -254,9 +255,9 @@ module top
         .LED6(LED6_0),
         .LED7(LED7_0),
         .LED8(LED8_0),
-        .data(word_inverter_0_data_out_ch2[13:0]));
+        .data(word_inverter_0_data_out_ch1[13:0]));
   top_axi_gpio_0_0 axi_gpio_0
-       (.gpio_io_i(word_inverter_0_data_out_ch2[13:0]),
+       (.gpio_io_i(word_inverter_0_data_out_ch1),
         .s_axi_aclk(processing_system7_0_FCLK_CLK0),
         .s_axi_araddr(axi_smc_M00_AXI_ARADDR),
         .s_axi_aresetn(proc_sys_reset_0_peripheral_aresetn),
@@ -545,4 +546,7 @@ module top
         .data_in_to_device(word_inverter_0_data_out_ch2),
         .io_reset(proc_sys_reset_0_peripheral_reset),
         .ref_clock(processing_system7_0_FCLK_CLK1));
+  top_word_inverter_0_0 word_inverter_0
+       (.data_in(word_inverter_0_data_out_ch2),
+        .data_out_ch1(word_inverter_0_data_out_ch1));
 endmodule

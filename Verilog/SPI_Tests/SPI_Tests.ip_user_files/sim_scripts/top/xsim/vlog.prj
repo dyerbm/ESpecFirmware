@@ -1,6 +1,5 @@
 verilog xil_defaultlib --include "C:/Xilinx/Vivado/2024.2/data/xilinx_vip/include" --include "../../../../SPI_Tests.gen/sources_1/bd/top/ipshared/ec67/hdl" --include "../../../../SPI_Tests.gen/sources_1/bd/top/ipshared/86fe/hdl" --include "../../../../SPI_Tests.gen/sources_1/bd/top/ipshared/f0b6/hdl/verilog" --include "../../../../SPI_Tests.gen/sources_1/bd/top/ipshared/0127/hdl/verilog" \
 "../../../bd/top/ip/top_processing_system7_0_0/sim/top_processing_system7_0_0.v" \
-"../../../bd/top/ip/top_word_inverter_0_0/sim/top_word_inverter_0_0.v" \
 "../../../bd/top/ip/top_axi_smc_0/bd_0/sim/bd_b43a.v" \
 "../../../bd/top/ip/top_axi_smc_0/bd_0/ip/ip_0/sim/bd_b43a_one_0.v" \
 
@@ -55,6 +54,8 @@ verilog xil_defaultlib --include "C:/Xilinx/Vivado/2024.2/data/xilinx_vip/includ
 "../../../bd/top/ip/top_axi_smc_0/sim/top_axi_smc_0.v" \
 "../../../bd/top/ip/top_selectio_wiz_0_1/top_selectio_wiz_0_1_selectio_wiz.v" \
 "../../../bd/top/ip/top_selectio_wiz_0_1/top_selectio_wiz_0_1.v" \
+"../../../bd/top/ip/top_LED_Visualizer_0_0/sim/top_LED_Visualizer_0_0.v" \
+"../../../bd/top/ip/top_word_inverter_0_0/sim/top_word_inverter_0_0.v" \
 "../../../bd/top/sim/top.v" \
 
 verilog xil_defaultlib "glbl.v"

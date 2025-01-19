@@ -1,9 +1,9 @@
 vhdl xil_defaultlib  \
 "../../../bd/top/ip/top_axi_quad_spi_0_0/sim/top_axi_quad_spi_0_0.vhd" \
-"../../../bd/top/ip/top_rst_ps7_0_100M_0/sim/top_rst_ps7_0_100M_0.vhd" \
 "../../../bd/top/ip/top_axi_gpio_0_0/sim/top_axi_gpio_0_0.vhd" \
 "../../../bd/top/ip/top_axi_gpio_1_0/sim/top_axi_gpio_1_0.vhd" \
 "../../../bd/top/ip/top_axi_smc_0/bd_0/ip/ip_1/sim/bd_b43a_psr_aclk_0.vhd" \
+"../../../bd/top/ip/top_proc_sys_reset_0_0/sim/top_proc_sys_reset_0_0.vhd" \
 
 # Do not sort compile order
 nosort

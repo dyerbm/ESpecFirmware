@@ -30,4 +30,7 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==top_proc_sy
 # IP: bd/top/ip/top_LED_Visualizer_0_0/top_LED_Visualizer_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==top_LED_Visualizer_0_0 || ORIG_REF_NAME==top_LED_Visualizer_0_0} -quiet] -quiet
 
+# IP: bd/top/ip/top_word_inverter_0_0/top_word_inverter_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==top_word_inverter_0_0 || ORIG_REF_NAME==top_word_inverter_0_0} -quiet] -quiet
+
 # XDC: c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/top_ooc.xdc

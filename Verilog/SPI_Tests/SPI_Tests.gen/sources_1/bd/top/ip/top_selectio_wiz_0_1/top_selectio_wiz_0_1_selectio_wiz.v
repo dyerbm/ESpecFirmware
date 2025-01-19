@@ -93,10 +93,38 @@ module top_selectio_wiz_0_1_selectio_wiz
       .IB         (clk_in_n),
       .O          (clk_in_int));
 
+  // delay the input clock
+      (* IODELAY_GROUP = "top_selectio_wiz_0_1_group" *)
+      IDELAYE2
+         # (
+            .CINVCTRL_SEL           ("FALSE"),            // TRUE, FALSE
+            .DELAY_SRC              ("IDATAIN"),        // IDATAIN, DATAIN
+            .HIGH_PERFORMANCE_MODE  ("FALSE"),             // TRUE, FALSE
+            .IDELAY_TYPE            ("FIXED"),          // FIXED, VARIABLE, or VAR_LOADABLE
+            .IDELAY_VALUE           (12),                // 0 to 31
+            .REFCLK_FREQUENCY       (200.0),
+            .PIPE_SEL               ("FALSE"),
+            .SIGNAL_PATTERN         ("CLOCK"))           // CLOCK, DATA
+         idelaye2_clk
+           (
+            .DATAOUT                (clk_in_int_delay),  // Delayed clock
+            .DATAIN                 (1'b0),              // Data from FPGA logic
+            .C                      (1'b0),
+            .CE                     (1'b0),
+            .INC                    (1'b0),
+            .IDATAIN                (clk_in_int),
+            .LD                     (io_reset),
+            .LDPIPEEN               (1'b0),
+            .REGRST                 (1'b0),
+            .CNTVALUEIN             (5'b00000),
+            .CNTVALUEOUT            (),
+            .CINVCTRL               (1'b0)
+         );
+
 // High Speed BUFIO clock buffer
  BUFIO bufio_inst
    (.O(clk_in_int_buf),
-    .I(clk_in_int));
+    .I(clk_in_int_delay));
 
   
    // BUFR generates the slow clock
@@ -107,7 +135,7 @@ module top_selectio_wiz_0_1_selectio_wiz
     (.O (clk_div),
      .CE(1'b1),
      .CLR(clk_reset),
-     .I (clk_in_int));
+     .I (clk_in_int_delay));
 
    assign clk_div_out = clk_div; // This is regional clock
 
@@ -136,7 +164,7 @@ module top_selectio_wiz_0_1_selectio_wiz
          .DELAY_SRC              ("IDATAIN"),                          // IDATAIN, DATAIN
          .HIGH_PERFORMANCE_MODE  ("FALSE"),                            // TRUE, FALSE
          .IDELAY_TYPE            ("FIXED"),              // FIXED, VARIABLE, or VAR_LOADABLE
-         .IDELAY_VALUE           (12),                  // 0 to 31
+         .IDELAY_VALUE           (0),                  // 0 to 31
          .REFCLK_FREQUENCY       (200.0),
          .PIPE_SEL               ("FALSE"),
          .SIGNAL_PATTERN         ("DATA"))                             // CLOCK, DATA

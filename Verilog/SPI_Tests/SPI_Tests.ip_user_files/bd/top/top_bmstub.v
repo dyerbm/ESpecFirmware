@@ -42,7 +42,15 @@ module top (
   diff_clk_in_0_clk_n,
   diff_clk_in_0_clk_p,
   data_in_from_pins_p_0,
-  data_in_from_pins_n_0
+  data_in_from_pins_n_0,
+  LED1_0,
+  LED2_0,
+  LED3_0,
+  LED4_0,
+  LED5_0,
+  LED6_0,
+  LED7_0,
+  LED8_0
 );
 
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR CAS_N" *)
@@ -126,6 +134,22 @@ module top (
   input [1:0]data_in_from_pins_p_0;
   (* X_INTERFACE_IGNORE = "true" *)
   input [1:0]data_in_from_pins_n_0;
+  (* X_INTERFACE_IGNORE = "true" *)
+  output LED1_0;
+  (* X_INTERFACE_IGNORE = "true" *)
+  output LED2_0;
+  (* X_INTERFACE_IGNORE = "true" *)
+  output LED3_0;
+  (* X_INTERFACE_IGNORE = "true" *)
+  output LED4_0;
+  (* X_INTERFACE_IGNORE = "true" *)
+  output LED5_0;
+  (* X_INTERFACE_IGNORE = "true" *)
+  output LED6_0;
+  (* X_INTERFACE_IGNORE = "true" *)
+  output LED7_0;
+  (* X_INTERFACE_IGNORE = "true" *)
+  output LED8_0;
 
   // stub module has no contents
 

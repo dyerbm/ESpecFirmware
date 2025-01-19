@@ -56,7 +56,7 @@ USE ieee.numeric_std.ALL;
 LIBRARY proc_sys_reset_v5_0_16;
 USE proc_sys_reset_v5_0_16.proc_sys_reset;
 
-ENTITY top_rst_ps7_0_100M_0 IS
+ENTITY top_proc_sys_reset_0_0 IS
   PORT (
     slowest_sync_clk : IN STD_LOGIC;
     ext_reset_in : IN STD_LOGIC;
@@ -69,11 +69,11 @@ ENTITY top_rst_ps7_0_100M_0 IS
     interconnect_aresetn : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
     peripheral_aresetn : OUT STD_LOGIC_VECTOR(0 DOWNTO 0)
   );
-END top_rst_ps7_0_100M_0;
+END top_proc_sys_reset_0_0;
 
-ARCHITECTURE top_rst_ps7_0_100M_0_arch OF top_rst_ps7_0_100M_0 IS
+ARCHITECTURE top_proc_sys_reset_0_0_arch OF top_proc_sys_reset_0_0 IS
   ATTRIBUTE DowngradeIPIdentifiedWarnings : STRING;
-  ATTRIBUTE DowngradeIPIdentifiedWarnings OF top_rst_ps7_0_100M_0_arch: ARCHITECTURE IS "yes";
+  ATTRIBUTE DowngradeIPIdentifiedWarnings OF top_proc_sys_reset_0_0_arch: ARCHITECTURE IS "yes";
   COMPONENT proc_sys_reset IS
     GENERIC (
       C_FAMILY : STRING;
@@ -154,4 +154,4 @@ BEGIN
       interconnect_aresetn => interconnect_aresetn,
       peripheral_aresetn => peripheral_aresetn
     );
-END top_rst_ps7_0_100M_0_arch;
+END top_proc_sys_reset_0_0_arch;

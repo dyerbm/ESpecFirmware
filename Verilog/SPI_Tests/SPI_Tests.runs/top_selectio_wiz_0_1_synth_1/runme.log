@@ -8,7 +8,7 @@
   **** SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
   **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
   **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-  **** Start of session at: Sun Jan 19 12:12:39 2025
+  **** Start of session at: Sun Jan 19 17:26:29 2025
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 
@@ -21,13 +21,14 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020
 INFO: [Device 21-403] Loading part xc7z020clg484-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 21916
+INFO: [Synth 8-7075] Helper process launched with PID 39364
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1100.148 ; gain = 466.188
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1099.418 ; gain = 465.691
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-11241] undeclared symbol 'clk_in_int', assumed default net type 'wire' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_selectio_wiz_0_1/top_selectio_wiz_0_1_selectio_wiz.v:94]
-INFO: [Synth 8-11241] undeclared symbol 'clk_in_int_buf', assumed default net type 'wire' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_selectio_wiz_0_1/top_selectio_wiz_0_1_selectio_wiz.v:98]
-INFO: [Synth 8-11241] undeclared symbol 'clk_div', assumed default net type 'wire' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_selectio_wiz_0_1/top_selectio_wiz_0_1_selectio_wiz.v:107]
+INFO: [Synth 8-11241] undeclared symbol 'clk_in_int_delay', assumed default net type 'wire' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_selectio_wiz_0_1/top_selectio_wiz_0_1_selectio_wiz.v:110]
+INFO: [Synth 8-11241] undeclared symbol 'clk_in_int_buf', assumed default net type 'wire' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_selectio_wiz_0_1/top_selectio_wiz_0_1_selectio_wiz.v:126]
+INFO: [Synth 8-11241] undeclared symbol 'clk_div', assumed default net type 'wire' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_selectio_wiz_0_1/top_selectio_wiz_0_1_selectio_wiz.v:135]
 INFO: [Synth 8-6157] synthesizing module 'top_selectio_wiz_0_1' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_selectio_wiz_0_1/top_selectio_wiz_0_1.v:55]
 INFO: [Synth 8-6157] synthesizing module 'top_selectio_wiz_0_1_selectio_wiz' [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_selectio_wiz_0_1/top_selectio_wiz_0_1_selectio_wiz.v:55]
 	Parameter SYS_W bound to: 2 - type: integer 
@@ -41,7 +42,7 @@ INFO: [Synth 8-6157] synthesizing module 'IDELAYE2' [C:/Xilinx/Vivado/2024.2/scr
 	Parameter DELAY_SRC bound to: IDATAIN - type: string 
 	Parameter HIGH_PERFORMANCE_MODE bound to: FALSE - type: string 
 	Parameter IDELAY_TYPE bound to: FIXED - type: string 
-	Parameter IDELAY_VALUE bound to: 12 - type: integer 
+	Parameter IDELAY_VALUE bound to: 0 - type: integer 
 	Parameter PIPE_SEL bound to: FALSE - type: string 
 	Parameter REFCLK_FREQUENCY bound to: 200.000000 - type: double 
 	Parameter SIGNAL_PATTERN bound to: DATA - type: string 
@@ -57,6 +58,16 @@ INFO: [Synth 8-6157] synthesizing module 'ISERDESE2' [C:/Xilinx/Vivado/2024.2/sc
 	Parameter OFB_USED bound to: FALSE - type: string 
 	Parameter SERDES_MODE bound to: MASTER - type: string 
 INFO: [Synth 8-6155] done synthesizing module 'ISERDESE2' (0#1) [C:/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:82955]
+INFO: [Synth 8-6157] synthesizing module 'IDELAYE2__parameterized0' [C:/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:77934]
+	Parameter CINVCTRL_SEL bound to: FALSE - type: string 
+	Parameter DELAY_SRC bound to: IDATAIN - type: string 
+	Parameter HIGH_PERFORMANCE_MODE bound to: FALSE - type: string 
+	Parameter IDELAY_TYPE bound to: FIXED - type: string 
+	Parameter IDELAY_VALUE bound to: 12 - type: integer 
+	Parameter PIPE_SEL bound to: FALSE - type: string 
+	Parameter REFCLK_FREQUENCY bound to: 200.000000 - type: double 
+	Parameter SIGNAL_PATTERN bound to: CLOCK - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'IDELAYE2__parameterized0' (0#1) [C:/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:77934]
 INFO: [Synth 8-6157] synthesizing module 'BUFIO' [C:/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:2949]
 INFO: [Synth 8-6155] done synthesizing module 'BUFIO' (0#1) [C:/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:2949]
 INFO: [Synth 8-6157] synthesizing module 'BUFR' [C:/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:3015]
@@ -70,19 +81,19 @@ INFO: [Synth 8-6155] done synthesizing module 'BUFG' (0#1) [C:/Xilinx/Vivado/202
 INFO: [Synth 8-6155] done synthesizing module 'top_selectio_wiz_0_1_selectio_wiz' (0#1) [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_selectio_wiz_0_1/top_selectio_wiz_0_1_selectio_wiz.v:55]
 INFO: [Synth 8-6155] done synthesizing module 'top_selectio_wiz_0_1' (0#1) [c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_selectio_wiz_0_1/top_selectio_wiz_0_1.v:55]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1211.723 ; gain = 577.762
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1210.586 ; gain = 576.859
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1211.723 ; gain = 577.762
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1210.586 ; gain = 576.859
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1211.723 ; gain = 577.762
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1210.586 ; gain = 576.859
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1211.723 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 8 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1210.586 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 9 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
@@ -99,31 +110,31 @@ Parsing XDC File [C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Te
 Finished Parsing XDC File [C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.runs/top_selectio_wiz_0_1_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1243.836 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1243.586 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 1243.988 ; gain = 0.152
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1243.613 ; gain = 0.027
 INFO: [Designutils 20-5008] Incremental synthesis strategy off
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1243.988 ; gain = 610.027
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1243.613 ; gain = 609.887
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1243.988 ; gain = 610.027
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1243.613 ; gain = 609.887
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 Applied set_property KEEP_HIERARCHY = SOFT for inst. (constraint file  C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.runs/top_selectio_wiz_0_1_synth_1/dont_touch.xdc, line 9).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1243.988 ; gain = 610.027
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1243.613 ; gain = 609.887
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1243.988 ; gain = 610.027
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1243.613 ; gain = 609.887
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -146,25 +157,25 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1243.988 ; gain = 610.027
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1243.613 ; gain = 609.887
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1395.344 ; gain = 761.383
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1393.219 ; gain = 759.492
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1395.344 ; gain = 761.383
+Finished Timing Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1393.297 ; gain = 759.570
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1404.906 ; gain = 770.945
+Finished Technology Mapping : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1402.852 ; gain = 769.125
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -182,37 +193,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 1621.809 ; gain = 987.848
+Finished IO Insertion : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1619.727 ; gain = 986.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 1621.809 ; gain = 987.848
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1619.727 ; gain = 986.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 1621.809 ; gain = 987.848
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1619.727 ; gain = 986.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 1621.809 ; gain = 987.848
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1619.727 ; gain = 986.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 1621.809 ; gain = 987.848
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1619.727 ; gain = 986.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 1621.809 ; gain = 987.848
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1619.727 ; gain = 986.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -232,36 +243,36 @@ Report Cell Usage:
 |2     |BUFIO      |     1|
 |3     |BUFR       |     1|
 |4     |IDELAYCTRL |     1|
-|5     |IDELAYE2   |     2|
-|6     |ISERDESE2  |     2|
-|7     |LUT1       |     1|
-|8     |IBUFDS     |     3|
+|5     |IDELAYE2   |     3|
+|7     |ISERDESE2  |     2|
+|8     |LUT1       |     1|
+|9     |IBUFDS     |     3|
 +------+-----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 1621.809 ; gain = 987.848
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1619.727 ; gain = 986.000
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:23 . Memory (MB): peak = 1621.809 ; gain = 955.582
-Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 1621.809 ; gain = 987.848
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 1619.727 ; gain = 952.973
+Synthesis Optimization Complete : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1619.727 ; gain = 986.000
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1621.809 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 8 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1619.727 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 9 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 1 inverter(s) to 2 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1621.809 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1619.727 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: bb1b3e76
+Synth Design complete | Checksum: a3d77a38
 INFO: [Common 17-83] Releasing license: Synthesis
-41 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+44 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:26 ; elapsed = 00:00:36 . Memory (MB): peak = 1621.809 ; gain = 1222.496
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1621.809 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1619.727 ; gain = 1220.906
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1619.727 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.runs/top_selectio_wiz_0_1_synth_1/top_selectio_wiz_0_1.dcp' has been generated.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP top_selectio_wiz_0_1, cache-ID = e6ed6429bfbcacbe
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1621.809 ; gain = 0.000
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP top_selectio_wiz_0_1, cache-ID = fb90603a12237434
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1619.727 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.runs/top_selectio_wiz_0_1_synth_1/top_selectio_wiz_0_1.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file top_selectio_wiz_0_1_utilization_synth.rpt -pb top_selectio_wiz_0_1_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sun Jan 19 12:13:28 2025...
+INFO: [Common 17-206] Exiting Vivado at Sun Jan 19 17:26:58 2025...

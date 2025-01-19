@@ -18,7 +18,8 @@
       "axi_smc": "",
       "selectio_wiz_0": "",
       "proc_sys_reset_0": "",
-      "LED_Visualizer_0": ""
+      "LED_Visualizer_0": "",
+      "word_inverter_0": ""
     },
     "interface_ports": {
       "DDR": {
@@ -1309,7 +1310,7 @@
             "value": "1"
           },
           "C_GPIO_WIDTH": {
-            "value": "14"
+            "value": "16"
           },
           "C_IS_DUAL": {
             "value": "0"
@@ -1505,7 +1506,7 @@
             "value": "DIFF"
           },
           "CLK_DELAY": {
-            "value": "NONE"
+            "value": "FIXED"
           },
           "CLK_EN": {
             "value": "false"
@@ -1526,7 +1527,7 @@
             "value": "FIXED"
           },
           "SELIO_BUS_IN_TAP": {
-            "value": "12"
+            "value": "0"
           },
           "SELIO_CLK_BUF": {
             "value": "BUFIO"
@@ -1578,6 +1579,18 @@
               "LAYERED_METADATA": {
                 "value": "undef",
                 "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "20000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "default_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "top_selectio_wiz_0_1_clk_div_out",
+                "value_src": "default_prop"
               }
             }
           },
@@ -1604,6 +1617,59 @@
           },
           "LED8": {
             "direction": "O"
+          }
+        }
+      },
+      "word_inverter_0": {
+        "vlnv": "xilinx.com:module_ref:word_inverter:1.0",
+        "ip_revision": "1",
+        "xci_name": "top_word_inverter_0_0",
+        "xci_path": "ip\\top_word_inverter_0_0\\top_word_inverter_0_0.xci",
+        "inst_hier_path": "word_inverter_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "word_inverter",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "data_in": {
+            "direction": "I",
+            "left": "15",
+            "right": "0",
+            "parameters": {
+              "LAYERED_METADATA": {
+                "value": "undef",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "data_out_ch1": {
+            "direction": "O",
+            "left": "15",
+            "right": "0",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "20000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "default_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "top_selectio_wiz_0_1_clk_div_out",
+                "value_src": "default_prop"
+              },
+              "LAYERED_METADATA": {
+                "value": "undef",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "data_out_ch2": {
+            "direction": "O",
+            "left": "15",
+            "right": "0"
           }
         }
       }
@@ -1765,11 +1831,17 @@
           "proc_sys_reset_0/ext_reset_in"
         ]
       },
+      "word_inverter_0_data_out_ch1": {
+        "ports": [
+          "word_inverter_0/data_out_ch1",
+          "axi_gpio_0/gpio_io_i",
+          "LED_Visualizer_0/data"
+        ]
+      },
       "word_inverter_0_data_out_ch2": {
         "ports": [
           "selectio_wiz_0/data_in_to_device",
-          "axi_gpio_0/gpio_io_i",
-          "LED_Visualizer_0/data"
+          "word_inverter_0/data_in"
         ]
       }
     },

@@ -104,9 +104,9 @@ int Spi_Write(XSpi *SpiInstancePtr, int SSelect, u8 Register, u8 Data){
 int Bit_Slip_Adjust(XSpi *SpiInstancePtr, XGpio *AdcGpioPtr, int AdcGpioChannel, XGpio *BitslipGpioPtr, int BitslipGpioChannel)
 {
 
-    int a1 = 0b00000001; //first 8 bits of test sequence
-    int a2 = 0b10000000; //second 6 bits and enable
-    int atot = 0b0000000000000001;
+    int a1 = 0b00010010; //first 8 bits of test sequence
+    int a2 = 0b10000011; //second 6 bits and enable
+    int atot = 0b0000001100010010;
 
     //set a default sequence for the ADC
     Spi_Write(&SpiInstance, 1, 0b00000100, a1); //set first 8 bits of test sequence
@@ -292,7 +292,7 @@ int main()
     else if (Status==1) { xil_printf("Failed bitslip adjustment \r\n"); }
     //----------- End of ADC SETUP ----------//
 
-    while (1) {
+    /*while (1) {
         Status = ADC_Check_Alignment(&SpiInstance, &ADCch12, 1, 0b11001100110011);
         //xil_printf("Alignment Check Value = %i\r\n", i);
         if (Status==1) {
@@ -300,7 +300,7 @@ int main()
             usleep(100000);
             //break;
             }
-    }
+    }*/
 
 
     for (int i=0;i<16383;i+=1){
