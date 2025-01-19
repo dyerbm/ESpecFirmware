@@ -12,17 +12,11 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==top_process
 # IP: bd/top/ip/top_axi_quad_spi_0_0/top_axi_quad_spi_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==top_axi_quad_spi_0_0 || ORIG_REF_NAME==top_axi_quad_spi_0_0} -quiet] -quiet
 
-# IP: bd/top/ip/top_rst_ps7_0_100M_0/top_rst_ps7_0_100M_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==top_rst_ps7_0_100M_0 || ORIG_REF_NAME==top_rst_ps7_0_100M_0} -quiet] -quiet
-
 # IP: bd/top/ip/top_axi_gpio_0_0/top_axi_gpio_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==top_axi_gpio_0_0 || ORIG_REF_NAME==top_axi_gpio_0_0} -quiet] -quiet
 
 # IP: bd/top/ip/top_axi_gpio_1_0/top_axi_gpio_1_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==top_axi_gpio_1_0 || ORIG_REF_NAME==top_axi_gpio_1_0} -quiet] -quiet
-
-# IP: bd/top/ip/top_word_inverter_0_0/top_word_inverter_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==top_word_inverter_0_0 || ORIG_REF_NAME==top_word_inverter_0_0} -quiet] -quiet
 
 # IP: bd/top/ip/top_axi_smc_0/top_axi_smc_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==top_axi_smc_0 || ORIG_REF_NAME==top_axi_smc_0} -quiet] -quiet
@@ -30,10 +24,10 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==top_axi_smc
 # IP: bd/top/ip/top_selectio_wiz_0_1/top_selectio_wiz_0_1.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==top_selectio_wiz_0_1 || ORIG_REF_NAME==top_selectio_wiz_0_1} -quiet] -quiet
 
-# IP: bd/top/ip/top_clk_wiz_0_0/top_clk_wiz_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==top_clk_wiz_0_0 || ORIG_REF_NAME==top_clk_wiz_0_0} -quiet] -quiet
+# IP: bd/top/ip/top_proc_sys_reset_0_0/top_proc_sys_reset_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==top_proc_sys_reset_0_0 || ORIG_REF_NAME==top_proc_sys_reset_0_0} -quiet] -quiet
 
-# IP: bd/top/ip/top_axi_gpio_0_1/top_axi_gpio_0_1.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==top_axi_gpio_0_1 || ORIG_REF_NAME==top_axi_gpio_0_1} -quiet] -quiet
+# IP: bd/top/ip/top_LED_Visualizer_0_0/top_LED_Visualizer_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==top_LED_Visualizer_0_0 || ORIG_REF_NAME==top_LED_Visualizer_0_0} -quiet] -quiet
 
 # XDC: c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/top_ooc.xdc

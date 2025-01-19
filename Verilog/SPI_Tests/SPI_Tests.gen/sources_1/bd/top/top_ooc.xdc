@@ -8,5 +8,6 @@
 ################################################################################
 create_clock -name diff_clk_in_0_clk_p -period 7.143 [get_ports diff_clk_in_0_clk_p]
 create_clock -name processing_system7_0_FCLK_CLK0 -period 10 [get_pins processing_system7_0/FCLK_CLK0]
+create_clock -name processing_system7_0_FCLK_CLK1 -period 5 [get_pins processing_system7_0/FCLK_CLK1]
 
 ################################################################################

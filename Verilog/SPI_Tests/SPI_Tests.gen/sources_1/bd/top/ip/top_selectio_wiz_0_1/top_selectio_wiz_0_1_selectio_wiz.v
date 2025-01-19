@@ -54,18 +54,23 @@
 
 module top_selectio_wiz_0_1_selectio_wiz
    // width of the data for the system
- #(parameter SYS_W = 4,
+ #(parameter SYS_W = 2,
    // width of the data for the device
-   parameter DEV_W = 56)
+   parameter DEV_W = 16)
  (
   // From the system into the device
   input  [SYS_W-1:0] data_in_from_pins_p,
   input  [SYS_W-1:0] data_in_from_pins_n,
   output [DEV_W-1:0] data_in_to_device,
+ 
+  output             delay_locked,   // Locked signal from IDELAYCTRL
+  input              ref_clock,      // Reference clock for IDELAYCTRL. Has to come from BUFG.
   input  [SYS_W-1:0]             bitslip,       // Bitslip module is enabled in NETWORKING mode
                                     // User should tie it to '0' if not needed
-  input              clk_in,        // Fast clock input from PLL/MMCM
-  input              clk_div_in,    // Slow clock input from PLL/MMCM
+  input              clk_in_p,      // Differential clock from IOB
+  input              clk_in_n,
+  output             clk_div_out,   // Slow clock output
+  input              clk_reset,
   input              io_reset);
   localparam         num_serial_bits = DEV_W/SYS_W;
   wire clock_enable = 1'b1;
@@ -75,11 +80,36 @@ module top_selectio_wiz_0_1_selectio_wiz
   wire   [SYS_W-1:0] data_in_from_pins_int;
   // Between the delay and serdes
   wire [SYS_W-1:0]  data_in_from_pins_delay;
+  wire ref_clock_bufg;
   // Array to use intermediately from the serdes to the internal
   //  devices. bus "0" is the leftmost bus
   wire [SYS_W-1:0]  iserdes_q[0:13];   // fills in starting with 0
   // Create the clock logic
 
+  IBUFDS
+    #(.IOSTANDARD ("LVDS_25"))
+   ibufds_clk_inst
+     (.I          (clk_in_p),
+      .IB         (clk_in_n),
+      .O          (clk_in_int));
+
+// High Speed BUFIO clock buffer
+ BUFIO bufio_inst
+   (.O(clk_in_int_buf),
+    .I(clk_in_int));
+
+  
+   // BUFR generates the slow clock
+   BUFR
+    #(.SIM_DEVICE("7SERIES"),
+    .BUFR_DIVIDE("4"))
+    clkout_buf_inst
+    (.O (clk_div),
+     .CE(1'b1),
+     .CLR(clk_reset),
+     .I (clk_in_int));
+
+   assign clk_div_out = clk_div; // This is regional clock
 
   // We have multiple bits- step over every bit, instantiating the required elements
   genvar pin_count;
@@ -96,10 +126,37 @@ module top_selectio_wiz_0_1_selectio_wiz
         .IB         (data_in_from_pins_n  [pin_count]),
         .O          (data_in_from_pins_int[pin_count]));
 
-    // Pass through the delay
+    // Instantiate the delay primitive
     ////-------------------------------
-   assign data_in_from_pins_delay[pin_count] = data_in_from_pins_int[pin_count];
- 
+
+     (* IODELAY_GROUP = "top_selectio_wiz_0_1_group" *)
+     IDELAYE2
+       # (
+         .CINVCTRL_SEL           ("FALSE"),                            // TRUE, FALSE
+         .DELAY_SRC              ("IDATAIN"),                          // IDATAIN, DATAIN
+         .HIGH_PERFORMANCE_MODE  ("FALSE"),                            // TRUE, FALSE
+         .IDELAY_TYPE            ("FIXED"),              // FIXED, VARIABLE, or VAR_LOADABLE
+         .IDELAY_VALUE           (12),                  // 0 to 31
+         .REFCLK_FREQUENCY       (200.0),
+         .PIPE_SEL               ("FALSE"),
+         .SIGNAL_PATTERN         ("DATA"))                             // CLOCK, DATA
+       idelaye2_bus
+           (
+         .DATAOUT                (data_in_from_pins_delay[pin_count]),
+         .DATAIN                 (1'b0),                               // Data from FPGA logic
+         .C                      (clk_div),
+         .CE                     (1'b0),
+         .INC                    (1'b0),
+         .IDATAIN                (data_in_from_pins_int  [pin_count]), // Driven by IOB
+         .LD                     (1'b0),
+         .REGRST                 (1'b0),
+         .LDPIPEEN               (1'b0),
+         .CNTVALUEIN             (5'b00000),
+         .CNTVALUEOUT            (),
+         .CINVCTRL               (1'b0)
+         );
+
+
      // Instantiate the serdes primitive
      ////------------------------------
 
@@ -109,19 +166,19 @@ module top_selectio_wiz_0_1_selectio_wiz
      wire [SYS_W-1:0] icascade2;
      wire clk_in_int_inv;
 
-     assign clk_in_int_inv = ~ clk_in;
+     assign clk_in_int_inv = ~ (clk_in_int_buf);    
 
      // declare the iserdes
      ISERDESE2
        # (
          .DATA_RATE         ("DDR"),
-         .DATA_WIDTH        (14),
+         .DATA_WIDTH        (8),
          .INTERFACE_TYPE    ("NETWORKING"), 
          .DYN_CLKDIV_INV_EN ("FALSE"),
          .DYN_CLK_INV_EN    ("FALSE"),
          .NUM_CE            (2),
          .OFB_USED          ("FALSE"),
-         .IOBDELAY          ("NONE"),                               // Use input at D to output the data on Q
+         .IOBDELAY          ("IFD"),                                // Use input at DDLY to output the data on Q
          .SERDES_MODE       ("MASTER"))
        iserdese2_master (
          .Q1                (iserdes_q[0][pin_count]),
@@ -132,18 +189,18 @@ module top_selectio_wiz_0_1_selectio_wiz
          .Q6                (iserdes_q[5][pin_count]),
          .Q7                (iserdes_q[6][pin_count]),
          .Q8                (iserdes_q[7][pin_count]),
-         .SHIFTOUT1         (icascade1[pin_count]),                 // Cascade connections to Slave ISERDES
-         .SHIFTOUT2         (icascade2[pin_count]),                 // Cascade connections to Slave ISERDES
+         .SHIFTOUT1         (),
+         .SHIFTOUT2         (),
          .BITSLIP           (bitslip[pin_count]),                             // 1-bit Invoke Bitslip. This can be used with any DATA_WIDTH, cascaded or not.
                                                                    // The amount of BITSLIP is fixed by the DATA_WIDTH selection.
          .CE1               (clock_enable),                        // 1-bit Clock enable input
          .CE2               (clock_enable),                        // 1-bit Clock enable input
-         .CLK               (clk_in),                              // Fast clock driven by MMCM
+         .CLK               (clk_in_int_buf),                      // Fast source synchronous clock driven by BUFIO
          .CLKB              (clk_in_int_inv),                      // Locally inverted fast 
-         .CLKDIV            (clk_div_in),                          // Slow clock from MMCM
+         .CLKDIV            (clk_div),                             // Slow clock from BUFR.
          .CLKDIVP           (1'b0),
-         .D                 (data_in_from_pins_delay[pin_count]),  // 1-bit Input signal from IOB 
-         .DDLY              (1'b0),                                // 1-bit Input from Input Delay component 
+         .D                 (1'b0),                                // 1-bit Input signal from IOB
+         .DDLY              (data_in_from_pins_delay[pin_count]),  // 1-bit Input from Input Delay component 
          .RST               (io_reset),                            // 1-bit Asynchronous reset only.
          .SHIFTIN1          (1'b0),
          .SHIFTIN2          (1'b0),
@@ -155,48 +212,6 @@ module top_selectio_wiz_0_1_selectio_wiz
          .OCLKB             (1'b0),
          .O                 ());                                   // unregistered output of ISERDESE1
 
-     ISERDESE2
-       # (
-         .DATA_RATE         ("DDR"),
-         .DATA_WIDTH        (14),
-         .INTERFACE_TYPE    ("NETWORKING"),
-         .DYN_CLKDIV_INV_EN ("FALSE"),
-         .DYN_CLK_INV_EN    ("FALSE"),
-         .NUM_CE            (2),
-         .OFB_USED          ("FALSE"),
-         .IOBDELAY          ("NONE"),               // Use input at D to output the data on Q
-         .SERDES_MODE       ("SLAVE"))
-       iserdese2_slave (
-         .Q1                (),
-         .Q2                (),
-         .Q3                (iserdes_q[8][pin_count]),
-         .Q4                (iserdes_q[9][pin_count]),
-         .Q5                (iserdes_q[10][pin_count]),
-         .Q6                (iserdes_q[11][pin_count]),
-         .Q7                (iserdes_q[12][pin_count]),
-         .Q8                (iserdes_q[13][pin_count]),
-         .SHIFTOUT1         (),
-         .SHIFTOUT2         (),
-         .SHIFTIN1          (icascade1[pin_count]),  // Cascade connection with Master ISERDES
-         .SHIFTIN2          (icascade2[pin_count]),  // Cascade connection with Master ISERDES
-         .BITSLIP           (bitslip[pin_count]),               // 1-bit Invoke Bitslip. This can be used with any DATA_WIDTH, cascaded or not.
-                                                     // The amount of BITSLIP is fixed by the DATA_WIDTH selection .
-         .CE1               (clock_enable),          // 1-bit Clock enable input
-         .CE2               (clock_enable),          // 1-bit Clock enable input 
-         .CLK               (clk_in),                // Fast clock driven by MMCM
-         .CLKB              (clk_in_int_inv),        // Locally inverted fast clock
-         .CLKDIV            (clk_div_in),            // Slow clock driven by MMCM
-         .CLKDIVP           (1'b0),
-         .D                 (1'b0),                  // Slave ISERDES. No need to connect D, DDLY
-         .DDLY              (1'b0),
-         .RST               (io_reset),              // 1-bit Asynchronous reset only.
-   // unused connections
-         .DYNCLKDIVSEL      (1'b0),
-         .DYNCLKSEL         (1'b0),
-         .OFB               (1'b0),
-         .OCLK              (1'b0),
-         .OCLKB             (1'b0),
-         .O                 ());                     // unregistered output of ISERDESE1
      // Concatenate the serdes outputs together. Keep the timesliced
      //   bits together, and placing the earliest bits on the right
      //   ie, if data comes in 0, 1, 2, 3, 4, 5, 6, 7, ...
@@ -216,4 +231,16 @@ module top_selectio_wiz_0_1_selectio_wiz
   
 //// NO ODELAY
 
+// IDELAYCTRL is needed for calibration
+(* IODELAY_GROUP = "top_selectio_wiz_0_1_group" *)
+  IDELAYCTRL
+    delayctrl (
+     .RDY    (delay_locked),
+     .REFCLK (ref_clock_bufg),
+     .RST    (io_reset));
+
+  BUFG
+    ref_clk_bufg (
+     .I (ref_clock),
+     .O (ref_clock_bufg));
 endmodule

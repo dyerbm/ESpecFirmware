@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-| Date         : Tue Jan 14 22:49:20 2025
+| Date         : Sun Jan 19 12:23:50 2025
 | Host         : DESKTOP-DRF538C running 64-bit major release  (build 9200)
 | Command      : report_utilization -file top_wrapper_utilization_synth.rpt -pb top_wrapper_utilization_synth.pb
 | Design       : top_wrapper
@@ -93,7 +93,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +-----------------------------+------+-------+------------+-----------+-------+
 |          Site Type          | Used | Fixed | Prohibited | Available | Util% |
 +-----------------------------+------+-------+------------+-----------+-------+
-| Bonded IOB                  |    4 |     0 |          0 |       200 |  2.00 |
+| Bonded IOB                  |   12 |     0 |          0 |       200 |  6.00 |
 | Bonded IPADs                |    0 |     0 |          0 |         2 |  0.00 |
 | Bonded IOPADs               |    0 |     0 |          0 |       130 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |          0 |         4 |  0.00 |
@@ -149,6 +149,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
+| OBUF     |    8 |                  IO |
 | OBUFT    |    4 |                  IO |
 | IBUF     |    4 |                  IO |
 +----------+------+---------------------+
@@ -160,16 +161,14 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +----------------------------+------+
 |          Ref Name          | Used |
 +----------------------------+------+
-| top_word_inverter_0_0      |    1 |
 | top_selectio_wiz_0_1       |    1 |
-| top_rst_ps7_0_100M_0       |    1 |
 | top_processing_system7_0_0 |    1 |
-| top_clk_wiz_0_0            |    1 |
+| top_proc_sys_reset_0_0     |    1 |
 | top_axi_smc_0              |    1 |
 | top_axi_quad_spi_0_0       |    1 |
 | top_axi_gpio_1_0           |    1 |
-| top_axi_gpio_0_1           |    1 |
 | top_axi_gpio_0_0           |    1 |
+| top_LED_Visualizer_0_0     |    1 |
 +----------------------------+------+
 
 

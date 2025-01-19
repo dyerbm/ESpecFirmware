@@ -2,7 +2,7 @@
 //Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-//Date        : Tue Jan 14 15:06:03 2025
+//Date        : Sun Jan 19 12:12:20 2025
 //Host        : DESKTOP-DRF538C running 64-bit major release  (build 9200)
 //Command     : generate_target top.bd
 //Design      : top
@@ -10,7 +10,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "top,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=top,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=10,numReposBlks=10,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=1,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=18,da_board_cnt=4,da_clkrst_cnt=9,da_ps7_cnt=1,synth_mode=Hierarchical}" *) (* HW_HANDOFF = "top.hwdef" *) 
+(* CORE_GENERATION_INFO = "top,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=top,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=8,numReposBlks=8,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=1,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=18,da_board_cnt=5,da_clkrst_cnt=10,da_ps7_cnt=1,synth_mode=Hierarchical}" *) (* HW_HANDOFF = "top.hwdef" *) 
 module top
    (DDR_addr,
     DDR_ba,
@@ -33,6 +33,14 @@ module top
     FIXED_IO_ps_clk,
     FIXED_IO_ps_porb,
     FIXED_IO_ps_srstb,
+    LED1_0,
+    LED2_0,
+    LED3_0,
+    LED4_0,
+    LED5_0,
+    LED6_0,
+    LED7_0,
+    LED8_0,
     data_in_from_pins_n_0,
     data_in_from_pins_p_0,
     diff_clk_in_0_clk_n,
@@ -70,8 +78,16 @@ module top
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_CLK" *) inout FIXED_IO_ps_clk;
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_PORB" *) inout FIXED_IO_ps_porb;
   (* X_INTERFACE_INFO = "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_SRSTB" *) inout FIXED_IO_ps_srstb;
-  input [3:0]data_in_from_pins_n_0;
-  input [3:0]data_in_from_pins_p_0;
+  output LED1_0;
+  output LED2_0;
+  output LED3_0;
+  output LED4_0;
+  output LED5_0;
+  output LED6_0;
+  output LED7_0;
+  output LED8_0;
+  input [1:0]data_in_from_pins_n_0;
+  input [1:0]data_in_from_pins_p_0;
   (* X_INTERFACE_INFO = "xilinx.com:interface:diff_clock:1.0 diff_clk_in_0 CLK_N" *) (* X_INTERFACE_MODE = "Slave" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME diff_clk_in_0, CAN_DEBUG false, FREQ_HZ 140000000" *) input diff_clk_in_0_clk_n;
   (* X_INTERFACE_INFO = "xilinx.com:interface:diff_clock:1.0 diff_clk_in_0 CLK_P" *) input diff_clk_in_0_clk_p;
   (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 spi_rtl IO0_I" *) (* X_INTERFACE_MODE = "Master" *) input spi_rtl_io0_i;
@@ -108,7 +124,15 @@ module top
   wire FIXED_IO_ps_clk;
   wire FIXED_IO_ps_porb;
   wire FIXED_IO_ps_srstb;
-  wire [3:0]axi_gpio_1_gpio_io_o;
+  wire LED1_0;
+  wire LED2_0;
+  wire LED3_0;
+  wire LED4_0;
+  wire LED5_0;
+  wire LED6_0;
+  wire LED7_0;
+  wire LED8_0;
+  wire [1:0]axi_gpio_1_gpio_io_o;
   wire [8:0]axi_smc_M00_AXI_ARADDR;
   wire axi_smc_M00_AXI_ARREADY;
   wire axi_smc_M00_AXI_ARVALID;
@@ -160,30 +184,14 @@ module top
   wire axi_smc_M02_AXI_WREADY;
   wire [3:0]axi_smc_M02_AXI_WSTRB;
   wire axi_smc_M02_AXI_WVALID;
-  wire [8:0]axi_smc_M03_AXI_ARADDR;
-  wire axi_smc_M03_AXI_ARREADY;
-  wire axi_smc_M03_AXI_ARVALID;
-  wire [8:0]axi_smc_M03_AXI_AWADDR;
-  wire axi_smc_M03_AXI_AWREADY;
-  wire axi_smc_M03_AXI_AWVALID;
-  wire axi_smc_M03_AXI_BREADY;
-  wire [1:0]axi_smc_M03_AXI_BRESP;
-  wire axi_smc_M03_AXI_BVALID;
-  wire [31:0]axi_smc_M03_AXI_RDATA;
-  wire axi_smc_M03_AXI_RREADY;
-  wire [1:0]axi_smc_M03_AXI_RRESP;
-  wire axi_smc_M03_AXI_RVALID;
-  wire [31:0]axi_smc_M03_AXI_WDATA;
-  wire axi_smc_M03_AXI_WREADY;
-  wire [3:0]axi_smc_M03_AXI_WSTRB;
-  wire axi_smc_M03_AXI_WVALID;
-  wire clk_wiz_0_clk_out1;
-  wire clk_wiz_0_clk_out2;
-  wire [3:0]data_in_from_pins_n_0;
-  wire [3:0]data_in_from_pins_p_0;
+  wire [1:0]data_in_from_pins_n_0;
+  wire [1:0]data_in_from_pins_p_0;
   wire diff_clk_in_0_clk_n;
   wire diff_clk_in_0_clk_p;
+  wire [0:0]proc_sys_reset_0_peripheral_aresetn;
+  wire [0:0]proc_sys_reset_0_peripheral_reset;
   wire processing_system7_0_FCLK_CLK0;
+  wire processing_system7_0_FCLK_CLK1;
   wire processing_system7_0_FCLK_RESET0_N;
   wire [31:0]processing_system7_0_M_AXI_GP0_ARADDR;
   wire [1:0]processing_system7_0_M_AXI_GP0_ARBURST;
@@ -223,8 +231,6 @@ module top
   wire processing_system7_0_M_AXI_GP0_WREADY;
   wire [3:0]processing_system7_0_M_AXI_GP0_WSTRB;
   wire processing_system7_0_M_AXI_GP0_WVALID;
-  wire [0:0]rst_ps7_0_100M_peripheral_aresetn;
-  wire [55:0]selectio_wiz_0_data_in_to_device;
   wire spi_rtl_io0_i;
   wire spi_rtl_io0_o;
   wire spi_rtl_io0_t;
@@ -237,17 +243,23 @@ module top
   wire [0:0]spi_rtl_ss_i;
   wire [0:0]spi_rtl_ss_o;
   wire spi_rtl_ss_t;
-  wire [13:0]word_inverter_0_data_out;
-  wire [13:0]word_inverter_0_data_out_ch2;
-  wire [13:0]word_inverter_0_data_out_ch3;
-  wire [13:0]word_inverter_0_data_out_ch4;
+  wire [15:0]word_inverter_0_data_out_ch2;
 
+  top_LED_Visualizer_0_0 LED_Visualizer_0
+       (.LED1(LED1_0),
+        .LED2(LED2_0),
+        .LED3(LED3_0),
+        .LED4(LED4_0),
+        .LED5(LED5_0),
+        .LED6(LED6_0),
+        .LED7(LED7_0),
+        .LED8(LED8_0),
+        .data(word_inverter_0_data_out_ch2[13:0]));
   top_axi_gpio_0_0 axi_gpio_0
-       (.gpio2_io_i(word_inverter_0_data_out_ch2),
-        .gpio_io_i(word_inverter_0_data_out),
+       (.gpio_io_i(word_inverter_0_data_out_ch2[13:0]),
         .s_axi_aclk(processing_system7_0_FCLK_CLK0),
         .s_axi_araddr(axi_smc_M00_AXI_ARADDR),
-        .s_axi_aresetn(rst_ps7_0_100M_peripheral_aresetn),
+        .s_axi_aresetn(proc_sys_reset_0_peripheral_aresetn),
         .s_axi_arready(axi_smc_M00_AXI_ARREADY),
         .s_axi_arvalid(axi_smc_M00_AXI_ARVALID),
         .s_axi_awaddr(axi_smc_M00_AXI_AWADDR),
@@ -268,7 +280,7 @@ module top
        (.gpio_io_o(axi_gpio_1_gpio_io_o),
         .s_axi_aclk(processing_system7_0_FCLK_CLK0),
         .s_axi_araddr(axi_smc_M01_AXI_ARADDR),
-        .s_axi_aresetn(rst_ps7_0_100M_peripheral_aresetn),
+        .s_axi_aresetn(proc_sys_reset_0_peripheral_aresetn),
         .s_axi_arready(axi_smc_M01_AXI_ARREADY),
         .s_axi_arvalid(axi_smc_M01_AXI_ARVALID),
         .s_axi_awaddr(axi_smc_M01_AXI_AWADDR),
@@ -285,28 +297,6 @@ module top
         .s_axi_wready(axi_smc_M01_AXI_WREADY),
         .s_axi_wstrb(axi_smc_M01_AXI_WSTRB),
         .s_axi_wvalid(axi_smc_M01_AXI_WVALID));
-  top_axi_gpio_0_1 axi_gpio_2
-       (.gpio2_io_i(word_inverter_0_data_out_ch4),
-        .gpio_io_i(word_inverter_0_data_out_ch3),
-        .s_axi_aclk(processing_system7_0_FCLK_CLK0),
-        .s_axi_araddr(axi_smc_M03_AXI_ARADDR),
-        .s_axi_aresetn(rst_ps7_0_100M_peripheral_aresetn),
-        .s_axi_arready(axi_smc_M03_AXI_ARREADY),
-        .s_axi_arvalid(axi_smc_M03_AXI_ARVALID),
-        .s_axi_awaddr(axi_smc_M03_AXI_AWADDR),
-        .s_axi_awready(axi_smc_M03_AXI_AWREADY),
-        .s_axi_awvalid(axi_smc_M03_AXI_AWVALID),
-        .s_axi_bready(axi_smc_M03_AXI_BREADY),
-        .s_axi_bresp(axi_smc_M03_AXI_BRESP),
-        .s_axi_bvalid(axi_smc_M03_AXI_BVALID),
-        .s_axi_rdata(axi_smc_M03_AXI_RDATA),
-        .s_axi_rready(axi_smc_M03_AXI_RREADY),
-        .s_axi_rresp(axi_smc_M03_AXI_RRESP),
-        .s_axi_rvalid(axi_smc_M03_AXI_RVALID),
-        .s_axi_wdata(axi_smc_M03_AXI_WDATA),
-        .s_axi_wready(axi_smc_M03_AXI_WREADY),
-        .s_axi_wstrb(axi_smc_M03_AXI_WSTRB),
-        .s_axi_wvalid(axi_smc_M03_AXI_WVALID));
   top_axi_quad_spi_0_0 axi_quad_spi_0
        (.ext_spi_clk(processing_system7_0_FCLK_CLK0),
         .io0_i(spi_rtl_io0_i),
@@ -317,7 +307,7 @@ module top
         .io1_t(spi_rtl_io1_t),
         .s_axi_aclk(processing_system7_0_FCLK_CLK0),
         .s_axi_araddr(axi_smc_M02_AXI_ARADDR),
-        .s_axi_aresetn(rst_ps7_0_100M_peripheral_aresetn),
+        .s_axi_aresetn(proc_sys_reset_0_peripheral_aresetn),
         .s_axi_arready(axi_smc_M02_AXI_ARREADY),
         .s_axi_arvalid(axi_smc_M02_AXI_ARVALID),
         .s_axi_awaddr(axi_smc_M02_AXI_AWADDR),
@@ -392,23 +382,14 @@ module top
         .M02_AXI_wready(axi_smc_M02_AXI_WREADY),
         .M02_AXI_wstrb(axi_smc_M02_AXI_WSTRB),
         .M02_AXI_wvalid(axi_smc_M02_AXI_WVALID),
-        .M03_AXI_araddr(axi_smc_M03_AXI_ARADDR),
-        .M03_AXI_arready(axi_smc_M03_AXI_ARREADY),
-        .M03_AXI_arvalid(axi_smc_M03_AXI_ARVALID),
-        .M03_AXI_awaddr(axi_smc_M03_AXI_AWADDR),
-        .M03_AXI_awready(axi_smc_M03_AXI_AWREADY),
-        .M03_AXI_awvalid(axi_smc_M03_AXI_AWVALID),
-        .M03_AXI_bready(axi_smc_M03_AXI_BREADY),
-        .M03_AXI_bresp(axi_smc_M03_AXI_BRESP),
-        .M03_AXI_bvalid(axi_smc_M03_AXI_BVALID),
-        .M03_AXI_rdata(axi_smc_M03_AXI_RDATA),
-        .M03_AXI_rready(axi_smc_M03_AXI_RREADY),
-        .M03_AXI_rresp(axi_smc_M03_AXI_RRESP),
-        .M03_AXI_rvalid(axi_smc_M03_AXI_RVALID),
-        .M03_AXI_wdata(axi_smc_M03_AXI_WDATA),
-        .M03_AXI_wready(axi_smc_M03_AXI_WREADY),
-        .M03_AXI_wstrb(axi_smc_M03_AXI_WSTRB),
-        .M03_AXI_wvalid(axi_smc_M03_AXI_WVALID),
+        .M03_AXI_arready(1'b0),
+        .M03_AXI_awready(1'b0),
+        .M03_AXI_bresp({1'b0,1'b0}),
+        .M03_AXI_bvalid(1'b0),
+        .M03_AXI_rdata({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .M03_AXI_rresp({1'b0,1'b0}),
+        .M03_AXI_rvalid(1'b0),
+        .M03_AXI_wready(1'b0),
         .S00_AXI_araddr(processing_system7_0_M_AXI_GP0_ARADDR),
         .S00_AXI_arburst(processing_system7_0_M_AXI_GP0_ARBURST),
         .S00_AXI_arcache(processing_system7_0_M_AXI_GP0_ARCACHE),
@@ -448,12 +429,15 @@ module top
         .S00_AXI_wstrb(processing_system7_0_M_AXI_GP0_WSTRB),
         .S00_AXI_wvalid(processing_system7_0_M_AXI_GP0_WVALID),
         .aclk(processing_system7_0_FCLK_CLK0),
-        .aresetn(rst_ps7_0_100M_peripheral_aresetn));
-  top_clk_wiz_0_0 clk_wiz_0
-       (.clk_in1_n(diff_clk_in_0_clk_n),
-        .clk_in1_p(diff_clk_in_0_clk_p),
-        .clk_out1(clk_wiz_0_clk_out1),
-        .clk_out2(clk_wiz_0_clk_out2));
+        .aresetn(1'b1));
+  top_proc_sys_reset_0_0 proc_sys_reset_0
+       (.aux_reset_in(1'b1),
+        .dcm_locked(1'b1),
+        .ext_reset_in(processing_system7_0_FCLK_RESET0_N),
+        .mb_debug_sys_rst(1'b0),
+        .peripheral_aresetn(proc_sys_reset_0_peripheral_aresetn),
+        .peripheral_reset(proc_sys_reset_0_peripheral_reset),
+        .slowest_sync_clk(processing_system7_0_FCLK_CLK0));
   (* BMM_INFO_PROCESSOR = "arm > top axi_bram_ctrl_0" *) 
   (* KEEP_HIERARCHY = "yes" *) 
   top_processing_system7_0_0 processing_system7_0
@@ -475,6 +459,7 @@ module top
         .DDR_VRP(FIXED_IO_ddr_vrp),
         .DDR_WEB(DDR_we_n),
         .FCLK_CLK0(processing_system7_0_FCLK_CLK0),
+        .FCLK_CLK1(processing_system7_0_FCLK_CLK1),
         .FCLK_RESET0_N(processing_system7_0_FCLK_RESET0_N),
         .MIO(FIXED_IO_mio),
         .M_AXI_GP0_ACLK(processing_system7_0_FCLK_CLK0),
@@ -550,25 +535,14 @@ module top
         .S_AXI_HP0_WSTRB({1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1}),
         .S_AXI_HP0_WVALID(1'b0),
         .USB0_VBUS_PWRFAULT(1'b0));
-  top_rst_ps7_0_100M_0 rst_ps7_0_100M
-       (.aux_reset_in(1'b1),
-        .dcm_locked(1'b1),
-        .ext_reset_in(processing_system7_0_FCLK_RESET0_N),
-        .mb_debug_sys_rst(1'b0),
-        .peripheral_aresetn(rst_ps7_0_100M_peripheral_aresetn),
-        .slowest_sync_clk(processing_system7_0_FCLK_CLK0));
   top_selectio_wiz_0_1 selectio_wiz_0
        (.bitslip(axi_gpio_1_gpio_io_o),
-        .clk_div_in(clk_wiz_0_clk_out2),
-        .clk_in(clk_wiz_0_clk_out1),
+        .clk_in_n(diff_clk_in_0_clk_n),
+        .clk_in_p(diff_clk_in_0_clk_p),
+        .clk_reset(proc_sys_reset_0_peripheral_reset),
         .data_in_from_pins_n(data_in_from_pins_n_0),
         .data_in_from_pins_p(data_in_from_pins_p_0),
-        .data_in_to_device(selectio_wiz_0_data_in_to_device),
-        .io_reset(1'b0));
-  top_word_inverter_0_0 word_inverter_0
-       (.data_in(selectio_wiz_0_data_in_to_device),
-        .data_out_ch1(word_inverter_0_data_out),
-        .data_out_ch2(word_inverter_0_data_out_ch2),
-        .data_out_ch3(word_inverter_0_data_out_ch3),
-        .data_out_ch4(word_inverter_0_data_out_ch4));
+        .data_in_to_device(word_inverter_0_data_out_ch2),
+        .io_reset(proc_sys_reset_0_peripheral_reset),
+        .ref_clock(processing_system7_0_FCLK_CLK1));
 endmodule

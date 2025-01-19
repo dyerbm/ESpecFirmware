@@ -2,7 +2,7 @@
 //Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-//Date        : Tue Jan 14 15:06:03 2025
+//Date        : Sun Jan 19 12:12:20 2025
 //Host        : DESKTOP-DRF538C running 64-bit major release  (build 9200)
 //Command     : generate_target top_wrapper.bd
 //Design      : top_wrapper
@@ -32,6 +32,14 @@ module top_wrapper
     FIXED_IO_ps_clk,
     FIXED_IO_ps_porb,
     FIXED_IO_ps_srstb,
+    LED1_0,
+    LED2_0,
+    LED3_0,
+    LED4_0,
+    LED5_0,
+    LED6_0,
+    LED7_0,
+    LED8_0,
     data_in_from_pins_n_0,
     data_in_from_pins_p_0,
     diff_clk_in_0_clk_n,
@@ -61,8 +69,16 @@ module top_wrapper
   inout FIXED_IO_ps_clk;
   inout FIXED_IO_ps_porb;
   inout FIXED_IO_ps_srstb;
-  input [3:0]data_in_from_pins_n_0;
-  input [3:0]data_in_from_pins_p_0;
+  output LED1_0;
+  output LED2_0;
+  output LED3_0;
+  output LED4_0;
+  output LED5_0;
+  output LED6_0;
+  output LED7_0;
+  output LED8_0;
+  input [1:0]data_in_from_pins_n_0;
+  input [1:0]data_in_from_pins_p_0;
   input diff_clk_in_0_clk_n;
   input diff_clk_in_0_clk_p;
   inout spi_rtl_io0_io;
@@ -91,8 +107,16 @@ module top_wrapper
   wire FIXED_IO_ps_clk;
   wire FIXED_IO_ps_porb;
   wire FIXED_IO_ps_srstb;
-  wire [3:0]data_in_from_pins_n_0;
-  wire [3:0]data_in_from_pins_p_0;
+  wire LED1_0;
+  wire LED2_0;
+  wire LED3_0;
+  wire LED4_0;
+  wire LED5_0;
+  wire LED6_0;
+  wire LED7_0;
+  wire LED8_0;
+  wire [1:0]data_in_from_pins_n_0;
+  wire [1:0]data_in_from_pins_p_0;
   wire diff_clk_in_0_clk_n;
   wire diff_clk_in_0_clk_p;
   wire spi_rtl_io0_i;
@@ -154,6 +178,14 @@ module top_wrapper
         .FIXED_IO_ps_clk(FIXED_IO_ps_clk),
         .FIXED_IO_ps_porb(FIXED_IO_ps_porb),
         .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb),
+        .LED1_0(LED1_0),
+        .LED2_0(LED2_0),
+        .LED3_0(LED3_0),
+        .LED4_0(LED4_0),
+        .LED5_0(LED5_0),
+        .LED6_0(LED6_0),
+        .LED7_0(LED7_0),
+        .LED8_0(LED8_0),
         .data_in_from_pins_n_0(data_in_from_pins_n_0),
         .data_in_from_pins_p_0(data_in_from_pins_p_0),
         .diff_clk_in_0_clk_n(diff_clk_in_0_clk_n),

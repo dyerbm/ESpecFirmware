@@ -104,17 +104,20 @@ int Spi_Write(XSpi *SpiInstancePtr, int SSelect, u8 Register, u8 Data){
 int Bit_Slip_Adjust(XSpi *SpiInstancePtr, XGpio *AdcGpioPtr, int AdcGpioChannel, XGpio *BitslipGpioPtr, int BitslipGpioChannel)
 {
 
+    int a1 = 0b00000001; //first 8 bits of test sequence
+    int a2 = 0b10000000; //second 6 bits and enable
+    int atot = 0b0000000000000001;
+
     //set a default sequence for the ADC
-    Spi_Write(&SpiInstance, 1, 0b00000100, 0b01111101); //set first 8 bits of test sequence
-    Spi_Write(&SpiInstance, 1, 0b00000011, 0b10000011); //set last 6 bits of test sequence and enable
+    Spi_Write(&SpiInstance, 1, 0b00000100, a1); //set first 8 bits of test sequence
+    Spi_Write(&SpiInstance, 1, 0b00000011, a2); //set last 6 bits of test sequence and enable
 
 
     usleep(100); //delay to ensure registers are set before read
 
     //check the data was written correctly
-    if (Spi_Read(SpiInstancePtr, 1, 0b00000011)!=0b10000011 ||
-        Spi_Read(SpiInstancePtr, 1, 0b00000100)!=0b01111101) { //sanity check the SPI is working
-        xil_printf("%i,%i\r\n", Spi_Read(SpiInstancePtr, 1, 0b00000011), Spi_Read(SpiInstancePtr, 1, 0b00000100));
+    if (Spi_Read(SpiInstancePtr, 1, 0b00000011)!=a2 ||
+        Spi_Read(SpiInstancePtr, 1, 0b00000100)!=a1) { //sanity check the SPI is working
         return 1; //return an error if this did not pass
     }
 
@@ -122,19 +125,21 @@ int Bit_Slip_Adjust(XSpi *SpiInstancePtr, XGpio *AdcGpioPtr, int AdcGpioChannel,
     int lvds_aligned = 0;
     int attempt_counter = 0;
     while (lvds_aligned == 0) { //run until the data is aligned
+        xil_printf("Data is %i,%i\r\n", Spi_Read(SpiInstancePtr, 1, 0b00000011), Spi_Read(SpiInstancePtr, 1, 0b00000100));
         adc_data = XGpio_DiscreteRead(AdcGpioPtr, AdcGpioChannel); //get the data
-        if (adc_data == 0b00001101111101) {
+        if (adc_data == atot) {
                 lvds_aligned = 1;
 
             }
         else { //turn bitslip on and off to increment the bit slip once
-            XGpio_DiscreteWrite(BitslipGpioPtr, BitslipGpioChannel, 1); //write a 1 to bitslip
+            XGpio_DiscreteWrite(BitslipGpioPtr, BitslipGpioChannel, 0xFF); //write a 1 to bitslip
             usleep(100);
-            XGpio_DiscreteWrite(BitslipGpioPtr, BitslipGpioChannel, 0); //write a 0 to bitslip
+            XGpio_DiscreteWrite(BitslipGpioPtr, BitslipGpioChannel, 0x00); //write a 0 to bitslip
 
             attempt_counter++;
         }
         xil_printf("%i\r\n",adc_data);
+        usleep(10000000);
 
         if (attempt_counter>200){
             Spi_Write(SpiInstancePtr, 1, 0b00000011, 0b00000000); //turn off the self test
@@ -176,7 +181,7 @@ int ADC_Check_Alignment(XSpi *SpiInstancePtr, XGpio *AdcGpioPtr, int AdcGpioChan
         //xil_printf("%i\r\n", TestValue);
         return 1;
     }
-
+    xil_printf("Passed alignment = %i\r\n", XGpio_DiscreteRead(AdcGpioPtr, AdcGpioChannel));
     Spi_Write(SpiInstancePtr, 1, 0b00000011, 0b00000000); //turn off self-test mode
 
     return 0; //success
@@ -246,11 +251,11 @@ int main()
     XGpio ADCch12, ADCch34, bitslip;
     XGpio_Initialize(&ADCch12, XPAR_AXI_GPIO_0_BASEADDR); //initialize input XGpio variable for data input
     XGpio_Initialize(&bitslip, XPAR_AXI_GPIO_1_BASEADDR);
-    XGpio_Initialize(&ADCch34, XPAR_AXI_GPIO_2_BASEADDR);
+    //XGpio_Initialize(&ADCch34, XPAR_AXI_GPIO_2_BASEADDR);
     XGpio_SetDataDirection(&ADCch12, 1, 0xF); //set first channel to input
-    XGpio_SetDataDirection(&ADCch12, 2, 0xF); //set second channel to input
-    XGpio_SetDataDirection(&ADCch34, 1, 0xF);
-    XGpio_SetDataDirection(&ADCch34, 2, 0xF);
+    //XGpio_SetDataDirection(&ADCch12, 2, 0xF); //set second channel to input
+    //XGpio_SetDataDirection(&ADCch34, 1, 0xF);
+    //XGpio_SetDataDirection(&ADCch34, 2, 0xF);
     XGpio_SetDataDirection(&bitslip, 1, 0x0); //set first channel to output
 
 
@@ -271,28 +276,38 @@ int main()
     Spi_Write(&SpiInstance, 1, 0b00000000, 0b10000000); // reset the ADC to start
     usleep(100); //wait a moment to ensure the ADC resets
 
-    Spi_Write(&SpiInstance, 1, 0b00000010, 0b00000101); //set 14-bit single land serialization
+    //Spi_Write(&SpiInstance, 1, 0b00000010, 0b00000101); //set 14-bit single land serialization
 
-    for (int i=0;i<10;i++) {
+    for (int i=0;i<3;i++) {
         xil_printf("Value:");
         xil_printf("%i\r\n", Spi_Read(&SpiInstance, 1, 0b00000010));
         usleep(1000000);
     }
     
 
-    Status = Bit_Slip_Adjust(&SpiInstance, &ADCch34, 1, &bitslip, 1);
+    Status = Bit_Slip_Adjust(&SpiInstance, &ADCch12, 1, &bitslip, 1);
     if (Status==0){
     xil_printf("Bitslip alignment successful \r\n");
     }
     else if (Status==1) { xil_printf("Failed bitslip adjustment \r\n"); }
     //----------- End of ADC SETUP ----------//
 
-
-    for (int i=0;i<16383;i+=100){
-        Status = ADC_Check_Alignment(&SpiInstance, &ADCch34, 1, i);
-        xil_printf("Alignment Check Value = %i\r\n", i);
+    while (1) {
+        Status = ADC_Check_Alignment(&SpiInstance, &ADCch12, 1, 0b11001100110011);
+        //xil_printf("Alignment Check Value = %i\r\n", i);
         if (Status==1) {
-            xil_printf("failed at %i\r\n", i);
+            //xil_printf("failed at %i\r\n", i);
+            usleep(100000);
+            //break;
+            }
+    }
+
+
+    for (int i=0;i<16383;i+=1){
+        Status = ADC_Check_Alignment(&SpiInstance, &ADCch12, 1, i);
+        //xil_printf("Alignment Check Value = %i\r\n", i);
+        if (Status==1) {
+            //xil_printf("failed at %i\r\n", i);
             usleep(200000);
             //break;
             }
@@ -301,7 +316,7 @@ int main()
     //xil_printf("%i\r\n", XGpio_DiscreteRead(&input, 1));
 
     while(1){
-        adc_data = XGpio_DiscreteRead(&ADCch34, 1);
+        adc_data = XGpio_DiscreteRead(&ADCch12, 1);
         xil_printf("%i\r\n", adc_data);
         usleep(200000);
     }

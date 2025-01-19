@@ -5,6 +5,14 @@
 		#address-cells = <1>;
 		#size-cells = <1>;
 		firmware-name = "top_wrapper.bit.bin";
+		clocking1: clocking1 {
+			compatible = "xlnx,fclk";
+			assigned-clocks = <&clkc 16>;
+			assigned-clock-rates = <200000000>;
+			#clock-cells = <0>;
+			clock-output-names = "fabric_clk";
+			clocks = <&clkc 16>;
+		};
 		clocking0: clocking0 {
 			compatible = "xlnx,fclk";
 			assigned-clocks = <&clkc 15>;
@@ -29,7 +37,7 @@
 			xlnx,gpio-width = <14>;
 			xlnx,rable = <0>;
 			xlnx,dout-default = <0x0>;
-			xlnx,is-dual = <1>;
+			xlnx,is-dual = <0>;
 			xlnx,ip-name = "axi_gpio";
 			xlnx,tri-default-2 = <0xffffffff>;
 			reg = <0x41200000 0x10000>;
@@ -53,7 +61,7 @@
 			compatible = "xlnx,axi-gpio-2.0" , "xlnx,xps-gpio-1.00.a";
 			xlnx,all-outputs = <1>;
 			#gpio-cells = <2>;
-			xlnx,gpio-width = <4>;
+			xlnx,gpio-width = <2>;
 			xlnx,rable = <0>;
 			xlnx,dout-default = <0x0>;
 			xlnx,is-dual = <0>;
@@ -74,33 +82,6 @@
 			xlnx,tri-default = <0xffffffff>;
 			xlnx,name = "axi_gpio_1";
 			xlnx,all-inputs = <0>;
-		};
-		axi_gpio_2: gpio@41220000 {
-			xlnx,gpio-board-interface = "Custom";
-			compatible = "xlnx,axi-gpio-2.0" , "xlnx,xps-gpio-1.00.a";
-			xlnx,all-outputs = <0>;
-			#gpio-cells = <2>;
-			xlnx,gpio-width = <14>;
-			xlnx,rable = <0>;
-			xlnx,dout-default = <0x0>;
-			xlnx,is-dual = <1>;
-			xlnx,ip-name = "axi_gpio";
-			xlnx,tri-default-2 = <0xffffffff>;
-			reg = <0x41220000 0x10000>;
-			xlnx,all-inputs-2 = <1>;
-			clocks = <&clkc 15>;
-			xlnx,all-outputs-2 = <0>;
-			gpio-controller;
-			xlnx,interrupt-present = <0>;
-			xlnx,gpio2-board-interface = "Custom";
-			xlnx,edk-iptype = "PERIPHERAL";
-			xlnx,dout-default-2 = <0x0>;
-			status = "okay";
-			xlnx,gpio2-width = <14>;
-			clock-names = "s_axi_aclk";
-			xlnx,tri-default = <0xffffffff>;
-			xlnx,name = "axi_gpio_2";
-			xlnx,all-inputs = <1>;
 		};
 		axi_quad_spi_0: axi_quad_spi@41e00000 {
 			xlnx,select-xpm = <0>;
