@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-| Date         : Sun Jan 19 17:28:49 2025
+| Date         : Mon Jan 20 01:23:37 2025
 | Host         : DESKTOP-DRF538C running 64-bit major release  (build 9200)
 | Command      : report_methodology -file top_wrapper_methodology_drc_routed.rpt -pb top_wrapper_methodology_drc_routed.pb -rpx top_wrapper_methodology_drc_routed.rpx
 | Design       : top_wrapper
@@ -23,15 +23,15 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max checks: <unlimited>
-             Checks found: 15
+             Checks found: 21
 +-----------+------------------+------------------------------------------------+--------+
 | Rule      | Severity         | Description                                    | Checks |
 +-----------+------------------+------------------------------------------------+--------+
 | TIMING-6  | Critical Warning | No common primary clock between related clocks | 1      |
 | TIMING-7  | Critical Warning | No common node between related clocks          | 1      |
 | TIMING-8  | Critical Warning | No common period between related clocks        | 1      |
-| TIMING-15 | Warning          | Large hold violation                           | 2      |
-| TIMING-16 | Warning          | Large setup violation                          | 4      |
+| TIMING-15 | Warning          | Large hold violation                           | 4      |
+| TIMING-16 | Warning          | Large setup violation                          | 8      |
 | TIMING-18 | Warning          | Missing input or output delay                  | 6      |
 +-----------+------------------+------------------------------------------------+--------+
 
@@ -59,27 +59,57 @@ Related violations: <none>
 
 TIMING-15#2 Warning
 Large hold violation  
+There is a large clock skew of 3.912 ns between data_in_from_pins_p_0[3] (clocked by diff_clk_in_0_clk_p) and top_i/selectio_wiz_0/inst/pins[3].iserdese2_master/DDLY (clocked by diff_clk_in_0_clk_p) that results in large hold timing violation(s) of -2.446 ns. Fixing large hold violations during routing might impact setup slack and result in more difficult timing closure
+Related violations: <none>
+
+TIMING-15#3 Warning
+Large hold violation  
 There is a large clock skew of 3.913 ns between data_in_from_pins_p_0[1] (clocked by diff_clk_in_0_clk_p) and top_i/selectio_wiz_0/inst/pins[1].iserdese2_master/DDLY (clocked by diff_clk_in_0_clk_p) that results in large hold timing violation(s) of -2.450 ns. Fixing large hold violations during routing might impact setup slack and result in more difficult timing closure
+Related violations: <none>
+
+TIMING-15#4 Warning
+Large hold violation  
+There is a large clock skew of 3.921 ns between data_in_from_pins_p_0[2] (clocked by diff_clk_in_0_clk_p) and top_i/selectio_wiz_0/inst/pins[2].iserdese2_master/DDLY (clocked by diff_clk_in_0_clk_p) that results in large hold timing violation(s) of -2.496 ns. Fixing large hold violations during routing might impact setup slack and result in more difficult timing closure
 Related violations: <none>
 
 TIMING-16#1 Warning
 Large setup violation  
-There is a large setup violation of -3.463 ns between top_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[1]/C (clocked by clk_fpga_0) and top_i/selectio_wiz_0/inst/pins[0].iserdese2_master/BITSLIP (clocked by clk_div_out). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -3.456 ns between top_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[2]/C (clocked by clk_fpga_0) and top_i/selectio_wiz_0/inst/pins[1].iserdese2_master/BITSLIP (clocked by clk_div_out). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#2 Warning
 Large setup violation  
-There is a large setup violation of -3.541 ns between top_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and top_i/selectio_wiz_0/inst/pins[1].iserdese2_master/BITSLIP (clocked by clk_div_out). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -3.509 ns between top_i/proc_sys_reset_0/U0/PR_OUT_DFF[0].FDRE_PER_replica_2/C (clocked by clk_fpga_0) and top_i/selectio_wiz_0/inst/pins[0].iserdese2_master/RST (clocked by clk_div_out). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#3 Warning
 Large setup violation  
-There is a large setup violation of -3.609 ns between top_i/proc_sys_reset_0/U0/PR_OUT_DFF[0].FDRE_PER_replica/C (clocked by clk_fpga_0) and top_i/selectio_wiz_0/inst/pins[0].iserdese2_master/RST (clocked by clk_div_out). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -3.568 ns between top_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[3]/C (clocked by clk_fpga_0) and top_i/selectio_wiz_0/inst/pins[0].iserdese2_master/BITSLIP (clocked by clk_div_out). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#4 Warning
 Large setup violation  
-There is a large setup violation of -3.925 ns between top_i/proc_sys_reset_0/U0/PR_OUT_DFF[0].FDRE_PER/C (clocked by clk_fpga_0) and top_i/selectio_wiz_0/inst/pins[1].iserdese2_master/RST (clocked by clk_div_out). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -3.606 ns between top_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[1]/C (clocked by clk_fpga_0) and top_i/selectio_wiz_0/inst/pins[2].iserdese2_master/BITSLIP (clocked by clk_div_out). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#5 Warning
+Large setup violation  
+There is a large setup violation of -3.675 ns between top_i/axi_gpio_1/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and top_i/selectio_wiz_0/inst/pins[3].iserdese2_master/BITSLIP (clocked by clk_div_out). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#6 Warning
+Large setup violation  
+There is a large setup violation of -3.749 ns between top_i/proc_sys_reset_0/U0/PR_OUT_DFF[0].FDRE_PER/C (clocked by clk_fpga_0) and top_i/selectio_wiz_0/inst/pins[3].iserdese2_master/RST (clocked by clk_div_out). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#7 Warning
+Large setup violation  
+There is a large setup violation of -3.797 ns between top_i/proc_sys_reset_0/U0/PR_OUT_DFF[0].FDRE_PER_replica/C (clocked by clk_fpga_0) and top_i/selectio_wiz_0/inst/pins[2].iserdese2_master/RST (clocked by clk_div_out). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#8 Warning
+Large setup violation  
+There is a large setup violation of -3.960 ns between top_i/proc_sys_reset_0/U0/PR_OUT_DFF[0].FDRE_PER_replica_1/C (clocked by clk_fpga_0) and top_i/selectio_wiz_0/inst/pins[1].iserdese2_master/RST (clocked by clk_div_out). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-18#1 Warning

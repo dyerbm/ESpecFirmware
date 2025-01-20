@@ -131,9 +131,9 @@ module top (
   (* X_INTERFACE_INFO = "xilinx.com:interface:diff_clock:1.0 diff_clk_in_0 CLK_P" *)
   input diff_clk_in_0_clk_p;
   (* X_INTERFACE_IGNORE = "true" *)
-  input [1:0]data_in_from_pins_p_0;
+  input [3:0]data_in_from_pins_p_0;
   (* X_INTERFACE_IGNORE = "true" *)
-  input [1:0]data_in_from_pins_n_0;
+  input [3:0]data_in_from_pins_n_0;
   (* X_INTERFACE_IGNORE = "true" *)
   output LED1_0;
   (* X_INTERFACE_IGNORE = "true" *)

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sun Jan 19 17:26:13 2025" VIVADOVERSION="2024.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Jan 20 01:20:36 2025" VIVADOVERSION="2024.2">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="top" PACKAGE="clg484" SPEEDGRADE="-1"/>
 
@@ -149,12 +149,12 @@
         <CONNECTION INSTANCE="LED_Visualizer_0" PORT="LED8"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="1" NAME="data_in_from_pins_n_0" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_data_in_from_pins_n_0">
+    <PORT DIR="I" LEFT="3" NAME="data_in_from_pins_n_0" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_data_in_from_pins_n_0">
       <CONNECTIONS>
         <CONNECTION INSTANCE="selectio_wiz_0" PORT="data_in_from_pins_n"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="1" NAME="data_in_from_pins_p_0" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_data_in_from_pins_p_0">
+    <PORT DIR="I" LEFT="3" NAME="data_in_from_pins_p_0" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_data_in_from_pins_p_0">
       <CONNECTIONS>
         <CONNECTION INSTANCE="selectio_wiz_0" PORT="data_in_from_pins_p"/>
       </CONNECTIONS>
@@ -408,7 +408,7 @@
             <REGISTER NAME="GPIO2_DATA">
               <PROPERTY NAME="DESCRIPTION" VALUE="Channel-2 AXI GPIO Data register"/>
               <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0x8"/>
-              <PROPERTY NAME="SIZE" VALUE="14"/>
+              <PROPERTY NAME="SIZE" VALUE="16"/>
               <PROPERTY NAME="ACCESS" VALUE="read-write"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
               <PROPERTY NAME="RESET_VALUE" VALUE="0x0"/>
@@ -421,14 +421,14 @@
                   <PROPERTY NAME="WRITE_CONSTRAINT" VALUE="0"/>
                   <PROPERTY NAME="READ_ACTION" VALUE=""/>
                   <PROPERTY NAME="BIT_OFFSET" VALUE="0"/>
-                  <PROPERTY NAME="BIT_WIDTH" VALUE="14"/>
+                  <PROPERTY NAME="BIT_WIDTH" VALUE="16"/>
                 </FIELD>
               </FIELDS>
             </REGISTER>
             <REGISTER NAME="GPIO2_TRI">
               <PROPERTY NAME="DESCRIPTION" VALUE="Channel-2 AXI GPIO 3-State Control register"/>
               <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0xC"/>
-              <PROPERTY NAME="SIZE" VALUE="14"/>
+              <PROPERTY NAME="SIZE" VALUE="16"/>
               <PROPERTY NAME="ACCESS" VALUE="read-write"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
               <PROPERTY NAME="RESET_VALUE" VALUE="0x0"/>
@@ -441,7 +441,7 @@
                   <PROPERTY NAME="WRITE_CONSTRAINT" VALUE="0"/>
                   <PROPERTY NAME="READ_ACTION" VALUE=""/>
                   <PROPERTY NAME="BIT_OFFSET" VALUE="0"/>
-                  <PROPERTY NAME="BIT_WIDTH" VALUE="14"/>
+                  <PROPERTY NAME="BIT_WIDTH" VALUE="16"/>
                 </FIELD>
               </FIELDS>
             </REGISTER>
@@ -536,10 +536,10 @@
         <PARAMETER NAME="C_DOUT_DEFAULT" VALUE="0x00000000"/>
         <PARAMETER NAME="C_DOUT_DEFAULT_2" VALUE="0x00000000"/>
         <PARAMETER NAME="C_FAMILY" VALUE="zynq"/>
-        <PARAMETER NAME="C_GPIO2_WIDTH" VALUE="14"/>
+        <PARAMETER NAME="C_GPIO2_WIDTH" VALUE="16"/>
         <PARAMETER NAME="C_GPIO_WIDTH" VALUE="16"/>
         <PARAMETER NAME="C_INTERRUPT_PRESENT" VALUE="0"/>
-        <PARAMETER NAME="C_IS_DUAL" VALUE="0"/>
+        <PARAMETER NAME="C_IS_DUAL" VALUE="1"/>
         <PARAMETER NAME="C_S_AXI_ADDR_WIDTH" VALUE="9"/>
         <PARAMETER NAME="C_S_AXI_DATA_WIDTH" VALUE="32"/>
         <PARAMETER NAME="C_TRI_DEFAULT" VALUE="0xFFFFFFFF"/>
@@ -553,6 +553,11 @@
         <PARAMETER NAME="C_HIGHADDR" VALUE="0x4120FFFF"/>
       </PARAMETERS>
       <PORTS>
+        <PORT DIR="I" LEFT="15" NAME="gpio2_io_i" RIGHT="0" SIGIS="undef" SIGNAME="word_inverter_0_data_out_ch2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="word_inverter_0" PORT="data_out_ch2"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="I" LEFT="15" NAME="gpio_io_i" RIGHT="0" SIGIS="undef" SIGNAME="word_inverter_0_data_out_ch1">
           <CONNECTIONS>
             <CONNECTION INSTANCE="word_inverter_0" PORT="data_out_ch1"/>
@@ -712,6 +717,11 @@
             <PORTMAP LOGICAL="TRI_I" PHYSICAL="gpio_io_i"/>
           </PORTMAPS>
         </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="__NOC__" NAME="GPIO2" TYPE="INITIATOR" VLNV="xilinx.com:interface:gpio:1.0">
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TRI_I" PHYSICAL="gpio2_io_i"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
     <MODULE COREREVISION="35" FULLNAME="/axi_gpio_1" HWVERSION="2.0" INSTANCE="axi_gpio_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axi_gpio" VLNV="xilinx.com:ip:axi_gpio:2.0">
@@ -724,7 +734,7 @@
             <REGISTER NAME="GPIO_DATA">
               <PROPERTY NAME="DESCRIPTION" VALUE="Channel-1 AXI GPIO Data register"/>
               <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0x0"/>
-              <PROPERTY NAME="SIZE" VALUE="2"/>
+              <PROPERTY NAME="SIZE" VALUE="4"/>
               <PROPERTY NAME="ACCESS" VALUE="read-write"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
               <PROPERTY NAME="RESET_VALUE" VALUE="0x0"/>
@@ -737,14 +747,14 @@
                   <PROPERTY NAME="WRITE_CONSTRAINT" VALUE="0"/>
                   <PROPERTY NAME="READ_ACTION" VALUE=""/>
                   <PROPERTY NAME="BIT_OFFSET" VALUE="0"/>
-                  <PROPERTY NAME="BIT_WIDTH" VALUE="2"/>
+                  <PROPERTY NAME="BIT_WIDTH" VALUE="4"/>
                 </FIELD>
               </FIELDS>
             </REGISTER>
             <REGISTER NAME="GPIO_TRI">
               <PROPERTY NAME="DESCRIPTION" VALUE="Channel-1 AXI GPIO 3-State Control register"/>
               <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0x4"/>
-              <PROPERTY NAME="SIZE" VALUE="2"/>
+              <PROPERTY NAME="SIZE" VALUE="4"/>
               <PROPERTY NAME="ACCESS" VALUE="read-write"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
               <PROPERTY NAME="RESET_VALUE" VALUE="0x0"/>
@@ -757,7 +767,7 @@
                   <PROPERTY NAME="WRITE_CONSTRAINT" VALUE="0"/>
                   <PROPERTY NAME="READ_ACTION" VALUE=""/>
                   <PROPERTY NAME="BIT_OFFSET" VALUE="0"/>
-                  <PROPERTY NAME="BIT_WIDTH" VALUE="2"/>
+                  <PROPERTY NAME="BIT_WIDTH" VALUE="4"/>
                 </FIELD>
               </FIELDS>
             </REGISTER>
@@ -893,7 +903,7 @@
         <PARAMETER NAME="C_DOUT_DEFAULT_2" VALUE="0x00000000"/>
         <PARAMETER NAME="C_FAMILY" VALUE="zynq"/>
         <PARAMETER NAME="C_GPIO2_WIDTH" VALUE="32"/>
-        <PARAMETER NAME="C_GPIO_WIDTH" VALUE="2"/>
+        <PARAMETER NAME="C_GPIO_WIDTH" VALUE="4"/>
         <PARAMETER NAME="C_INTERRUPT_PRESENT" VALUE="0"/>
         <PARAMETER NAME="C_IS_DUAL" VALUE="0"/>
         <PARAMETER NAME="C_S_AXI_ADDR_WIDTH" VALUE="9"/>
@@ -909,7 +919,7 @@
         <PARAMETER NAME="C_HIGHADDR" VALUE="0x4121FFFF"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="O" LEFT="1" NAME="gpio_io_o" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_1_gpio_io_o">
+        <PORT DIR="O" LEFT="3" NAME="gpio_io_o" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_1_gpio_io_o">
           <CONNECTIONS>
             <CONNECTION INSTANCE="selectio_wiz_0" PORT="bitslip"/>
           </CONNECTIONS>
@@ -4534,7 +4544,7 @@
         <PARAMETER NAME="C_SELIO_INTERFACE_TYPE" VALUE="NETWORKING"/>
         <PARAMETER NAME="C_SELIO_ODDR_ALIGNMENT" VALUE="SAME_EDGE"/>
         <PARAMETER NAME="C_SERIALIZATION_FACTOR" VALUE="8"/>
-        <PARAMETER NAME="C_SYSTEM_DATA_WIDTH" VALUE="2"/>
+        <PARAMETER NAME="C_SYSTEM_DATA_WIDTH" VALUE="4"/>
         <PARAMETER NAME="C_TRAIN_CONSTANT" VALUE="0"/>
         <PARAMETER NAME="C_USE_PHASE_DETECTOR" VALUE="false"/>
         <PARAMETER NAME="C_USE_SERIALIZATION" VALUE="true"/>
@@ -4585,7 +4595,7 @@
         <PARAMETER NAME="SELIO_INTERFACE_TYPE" VALUE="NETWORKING"/>
         <PARAMETER NAME="SELIO_ODDR_ALIGNMENT" VALUE="SAME_EDGE"/>
         <PARAMETER NAME="SERIALIZATION_FACTOR" VALUE="8"/>
-        <PARAMETER NAME="SYSTEM_DATA_WIDTH" VALUE="2"/>
+        <PARAMETER NAME="SYSTEM_DATA_WIDTH" VALUE="4"/>
         <PARAMETER NAME="TRAIN_CONSTANT" VALUE="0"/>
         <PARAMETER NAME="USE_PHASE_DETECTOR" VALUE="false"/>
         <PARAMETER NAME="USE_SERIALIZATION" VALUE="true"/>
@@ -4593,7 +4603,7 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="1" NAME="bitslip" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_1_gpio_io_o">
+        <PORT DIR="I" LEFT="3" NAME="bitslip" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_1_gpio_io_o">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_gpio_1" PORT="gpio_io_o"/>
           </CONNECTIONS>
@@ -4614,17 +4624,17 @@
             <CONNECTION INSTANCE="proc_sys_reset_0" PORT="peripheral_reset"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="data_in_from_pins_n" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_data_in_from_pins_n_0">
+        <PORT DIR="I" LEFT="3" NAME="data_in_from_pins_n" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_data_in_from_pins_n_0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="data_in_from_pins_n_0"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="data_in_from_pins_p" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_data_in_from_pins_p_0">
+        <PORT DIR="I" LEFT="3" NAME="data_in_from_pins_p" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_data_in_from_pins_p_0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="data_in_from_pins_p_0"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="15" NAME="data_in_to_device" RIGHT="0" SIGIS="data" SIGNAME="selectio_wiz_0_data_in_to_device">
+        <PORT DIR="O" LEFT="31" NAME="data_in_to_device" RIGHT="0" SIGIS="data" SIGNAME="selectio_wiz_0_data_in_to_device">
           <CONNECTIONS>
             <CONNECTION INSTANCE="word_inverter_0" PORT="data_in"/>
           </CONNECTIONS>
@@ -4659,7 +4669,7 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="15" NAME="data_in" RIGHT="0" SIGIS="undef" SIGNAME="selectio_wiz_0_data_in_to_device">
+        <PORT DIR="I" LEFT="31" NAME="data_in" RIGHT="0" SIGIS="undef" SIGNAME="selectio_wiz_0_data_in_to_device">
           <CONNECTIONS>
             <CONNECTION INSTANCE="selectio_wiz_0" PORT="data_in_to_device"/>
           </CONNECTIONS>
@@ -4670,7 +4680,11 @@
             <CONNECTION INSTANCE="LED_Visualizer_0" PORT="data"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="15" NAME="data_out_ch2" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="15" NAME="data_out_ch2" RIGHT="0" SIGIS="undef" SIGNAME="word_inverter_0_data_out_ch2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_gpio_0" PORT="gpio2_io_i"/>
+          </CONNECTIONS>
+        </PORT>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>

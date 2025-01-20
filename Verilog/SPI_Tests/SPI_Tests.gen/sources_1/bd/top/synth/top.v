@@ -2,7 +2,7 @@
 //Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-//Date        : Sun Jan 19 17:26:03 2025
+//Date        : Mon Jan 20 01:20:27 2025
 //Host        : DESKTOP-DRF538C running 64-bit major release  (build 9200)
 //Command     : generate_target top.bd
 //Design      : top
@@ -86,8 +86,8 @@ module top
   output LED6_0;
   output LED7_0;
   output LED8_0;
-  input [1:0]data_in_from_pins_n_0;
-  input [1:0]data_in_from_pins_p_0;
+  input [3:0]data_in_from_pins_n_0;
+  input [3:0]data_in_from_pins_p_0;
   (* X_INTERFACE_INFO = "xilinx.com:interface:diff_clock:1.0 diff_clk_in_0 CLK_N" *) (* X_INTERFACE_MODE = "Slave" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME diff_clk_in_0, CAN_DEBUG false, FREQ_HZ 140000000" *) input diff_clk_in_0_clk_n;
   (* X_INTERFACE_INFO = "xilinx.com:interface:diff_clock:1.0 diff_clk_in_0 CLK_P" *) input diff_clk_in_0_clk_p;
   (* X_INTERFACE_INFO = "xilinx.com:interface:spi:1.0 spi_rtl IO0_I" *) (* X_INTERFACE_MODE = "Master" *) input spi_rtl_io0_i;
@@ -132,7 +132,7 @@ module top
   wire LED6_0;
   wire LED7_0;
   wire LED8_0;
-  wire [1:0]axi_gpio_1_gpio_io_o;
+  wire [3:0]axi_gpio_1_gpio_io_o;
   wire [8:0]axi_smc_M00_AXI_ARADDR;
   wire axi_smc_M00_AXI_ARREADY;
   wire axi_smc_M00_AXI_ARVALID;
@@ -184,8 +184,8 @@ module top
   wire axi_smc_M02_AXI_WREADY;
   wire [3:0]axi_smc_M02_AXI_WSTRB;
   wire axi_smc_M02_AXI_WVALID;
-  wire [1:0]data_in_from_pins_n_0;
-  wire [1:0]data_in_from_pins_p_0;
+  wire [3:0]data_in_from_pins_n_0;
+  wire [3:0]data_in_from_pins_p_0;
   wire diff_clk_in_0_clk_n;
   wire diff_clk_in_0_clk_p;
   wire [0:0]proc_sys_reset_0_peripheral_aresetn;
@@ -244,7 +244,8 @@ module top
   wire [0:0]spi_rtl_ss_o;
   wire spi_rtl_ss_t;
   wire [15:0]word_inverter_0_data_out_ch1;
-  wire [15:0]word_inverter_0_data_out_ch2;
+  wire [31:0]word_inverter_0_data_out_ch2;
+  wire [15:0]word_inverter_0_data_out_ch3;
 
   top_LED_Visualizer_0_0 LED_Visualizer_0
        (.LED1(LED1_0),
@@ -257,7 +258,8 @@ module top
         .LED8(LED8_0),
         .data(word_inverter_0_data_out_ch1[13:0]));
   top_axi_gpio_0_0 axi_gpio_0
-       (.gpio_io_i(word_inverter_0_data_out_ch1),
+       (.gpio2_io_i(word_inverter_0_data_out_ch3),
+        .gpio_io_i(word_inverter_0_data_out_ch1),
         .s_axi_aclk(processing_system7_0_FCLK_CLK0),
         .s_axi_araddr(axi_smc_M00_AXI_ARADDR),
         .s_axi_aresetn(proc_sys_reset_0_peripheral_aresetn),
@@ -548,5 +550,6 @@ module top
         .ref_clock(processing_system7_0_FCLK_CLK1));
   top_word_inverter_0_0 word_inverter_0
        (.data_in(word_inverter_0_data_out_ch2),
-        .data_out_ch1(word_inverter_0_data_out_ch1));
+        .data_out_ch1(word_inverter_0_data_out_ch1),
+        .data_out_ch2(word_inverter_0_data_out_ch3));
 endmodule

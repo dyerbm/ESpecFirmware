@@ -61,7 +61,7 @@ module top_word_inverter_0_0 (
   data_out_ch2
 );
 
-input wire [15 : 0] data_in;
+input wire [31 : 0] data_in;
 output wire [15 : 0] data_out_ch1;
 output wire [15 : 0] data_out_ch2;
 

@@ -54,9 +54,9 @@
 
 module top_selectio_wiz_0_1_selectio_wiz
    // width of the data for the system
- #(parameter SYS_W = 2,
+ #(parameter SYS_W = 4,
    // width of the data for the device
-   parameter DEV_W = 16)
+   parameter DEV_W = 32)
  (
   // From the system into the device
   input  [SYS_W-1:0] data_in_from_pins_p,

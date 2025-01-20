@@ -101,7 +101,7 @@ int Spi_Write(XSpi *SpiInstancePtr, int SSelect, u8 Register, u8 Data){
     return ReadBuffer[1]; //it worked, not anymore
 }
 
-int Bit_Slip_Adjust(XSpi *SpiInstancePtr, XGpio *AdcGpioPtr, int AdcGpioChannel, XGpio *BitslipGpioPtr, int BitslipGpioChannel)
+int Bit_Slip_Adjust(XSpi *SpiInstancePtr, XGpio *AdcGpioPtr, int AdcGpioChannel, XGpio *BitslipGpioPtr, int BitslipGpioChannel, int BitslipMask)
 {
 
     int a1 = 0b00010010; //first 8 bits of test sequence
@@ -132,14 +132,14 @@ int Bit_Slip_Adjust(XSpi *SpiInstancePtr, XGpio *AdcGpioPtr, int AdcGpioChannel,
 
             }
         else { //turn bitslip on and off to increment the bit slip once
-            XGpio_DiscreteWrite(BitslipGpioPtr, BitslipGpioChannel, 0xFF); //write a 1 to bitslip
+            XGpio_DiscreteWrite(BitslipGpioPtr, BitslipGpioChannel, BitslipMask); //write a 1 to bitslip
             usleep(100);
-            XGpio_DiscreteWrite(BitslipGpioPtr, BitslipGpioChannel, 0x00); //write a 0 to bitslip
+            XGpio_DiscreteWrite(BitslipGpioPtr, BitslipGpioChannel, 0); //write a 0 to bitslip
 
             attempt_counter++;
         }
         xil_printf("%i\r\n",adc_data);
-        usleep(10000000);
+        //usleep(10000000);
 
         if (attempt_counter>200){
             Spi_Write(SpiInstancePtr, 1, 0b00000011, 0b00000000); //turn off the self test
@@ -285,7 +285,11 @@ int main()
     }
     
 
-    Status = Bit_Slip_Adjust(&SpiInstance, &ADCch12, 1, &bitslip, 1);
+    Status = Bit_Slip_Adjust(&SpiInstance, &ADCch12, 1, &bitslip, 1, 0b11); //adjust channel 0
+    if (Status==0){
+    xil_printf("Bitslip alignment successful \r\n");
+    }
+    Status = Bit_Slip_Adjust(&SpiInstance, &ADCch12, 2, &bitslip, 1, 0b1100); //adjuct channel 1
     if (Status==0){
     xil_printf("Bitslip alignment successful \r\n");
     }
@@ -305,6 +309,7 @@ int main()
 
     for (int i=0;i<16383;i+=1){
         Status = ADC_Check_Alignment(&SpiInstance, &ADCch12, 1, i);
+        Status = ADC_Check_Alignment(&SpiInstance, &ADCch12, 2, i);
         //xil_printf("Alignment Check Value = %i\r\n", i);
         if (Status==1) {
             //xil_printf("failed at %i\r\n", i);

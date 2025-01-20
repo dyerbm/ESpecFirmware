@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x27A5393ABD3E88A7",
+      "boundary_crc": "0xB6F27C1E374FE703",
       "device": "xc7z020clg484-1",
       "gen_directory": "../../../../SPI_Tests.gen/sources_1/bd/top",
       "name": "top",
@@ -277,12 +277,12 @@
     "ports": {
       "data_in_from_pins_p_0": {
         "direction": "I",
-        "left": "1",
+        "left": "3",
         "right": "0"
       },
       "data_in_from_pins_n_0": {
         "direction": "I",
-        "left": "1",
+        "left": "3",
         "right": "0"
       },
       "LED1_0": {
@@ -1309,11 +1309,14 @@
           "C_ALL_INPUTS": {
             "value": "1"
           },
+          "C_GPIO2_WIDTH": {
+            "value": "16"
+          },
           "C_GPIO_WIDTH": {
             "value": "16"
           },
           "C_IS_DUAL": {
-            "value": "0"
+            "value": "1"
           }
         }
       },
@@ -1328,7 +1331,7 @@
             "value": "1"
           },
           "C_GPIO_WIDTH": {
-            "value": "2"
+            "value": "4"
           }
         }
       },
@@ -1545,7 +1548,7 @@
             "value": "8"
           },
           "SYSTEM_DATA_WIDTH": {
-            "value": "2"
+            "value": "4"
           },
           "USE_SERIALIZATION": {
             "value": "true"
@@ -1634,7 +1637,7 @@
         "ports": {
           "data_in": {
             "direction": "I",
-            "left": "15",
+            "left": "31",
             "right": "0",
             "parameters": {
               "LAYERED_METADATA": {
@@ -1842,6 +1845,12 @@
         "ports": [
           "selectio_wiz_0/data_in_to_device",
           "word_inverter_0/data_in"
+        ]
+      },
+      "word_inverter_0_data_out_ch3": {
+        "ports": [
+          "word_inverter_0/data_out_ch2",
+          "axi_gpio_0/gpio2_io_i"
         ]
       }
     },

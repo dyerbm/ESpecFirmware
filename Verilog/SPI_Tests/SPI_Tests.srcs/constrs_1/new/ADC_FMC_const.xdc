@@ -23,6 +23,8 @@ set_property PACKAGE_PIN U14 [get_ports {LED8_0}];  # "LD7"
 set_property -dict {IOSTANDARD LVDS_25 DIFF_TERM TRUE PACKAGE_PIN B19} [get_ports diff_clk_in_0_clk_p]
 set_property -dict {IOSTANDARD LVDS_25 PACKAGE_PIN C17 DIFF_TERM TRUE} [get_ports {data_in_from_pins_p_0[0]}]
 set_property -dict {IOSTANDARD LVDS_25 PACKAGE_PIN B16 DIFF_TERM TRUE} [get_ports {data_in_from_pins_p_0[1]}]
+set_property -dict {IOSTANDARD LVDS_25 PACKAGE_PIN G19 DIFF_TERM TRUE} [get_ports {data_in_from_pins_p_0[2]}]
+set_property -dict {IOSTANDARD LVDS_25 PACKAGE_PIN D22 DIFF_TERM TRUE} [get_ports {data_in_from_pins_p_0[3]}]
 
 set_property -dict {DIFF_TERM TRUE IOSTANDARD LVDS_25} [get_ports diff_clk_in_0_clk_n]
 set_property -dict {DIFF_TERM TRUE IOSTANDARD LVDS_25} [get_ports {data_in_from_pins_n_0[*]}]

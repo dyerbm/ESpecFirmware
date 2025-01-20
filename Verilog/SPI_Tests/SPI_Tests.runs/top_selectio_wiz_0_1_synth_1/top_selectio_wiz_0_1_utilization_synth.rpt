@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-| Date         : Sun Jan 19 17:26:58 2025
+| Date         : Mon Jan 20 01:21:28 2025
 | Host         : DESKTOP-DRF538C running 64-bit major release  (build 9200)
 | Command      : report_utilization -file top_selectio_wiz_0_1_utilization_synth.rpt -pb top_selectio_wiz_0_1_utilization_synth.pb
 | Design       : top_selectio_wiz_0_1
@@ -93,7 +93,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +-----------------------------+------+-------+------------+-----------+-------+
 |          Site Type          | Used | Fixed | Prohibited | Available | Util% |
 +-----------------------------+------+-------+------------+-----------+-------+
-| Bonded IOB                  |    6 |     0 |          0 |       200 |  3.00 |
+| Bonded IOB                  |   10 |     0 |          0 |       200 |  5.00 |
 | Bonded IPADs                |    0 |     0 |          0 |         2 |  0.00 |
 | Bonded IOPADs               |    0 |     0 |          0 |       130 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |          0 |         4 |  0.00 |
@@ -101,13 +101,13 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | OUT_FIFO                    |    0 |     0 |          0 |        16 |  0.00 |
 | IN_FIFO                     |    0 |     0 |          0 |        16 |  0.00 |
 | IDELAYCTRL                  |    1 |     0 |          0 |         4 | 25.00 |
-| IBUFDS                      |    3 |     0 |          0 |       192 |  1.56 |
+| IBUFDS                      |    5 |     0 |          0 |       192 |  2.60 |
 | PHASER_OUT/PHASER_OUT_PHY   |    0 |     0 |          0 |        16 |  0.00 |
 | PHASER_IN/PHASER_IN_PHY     |    0 |     0 |          0 |        16 |  0.00 |
-| IDELAYE2/IDELAYE2_FINEDELAY |    3 |     0 |          0 |       200 |  1.50 |
-|   IDELAYE2 only             |    3 |     0 |            |           |       |
-| ILOGIC                      |    2 |     0 |          0 |       200 |  1.00 |
-|   ISERDES                   |    2 |       |          0 |       200 |       |
+| IDELAYE2/IDELAYE2_FINEDELAY |    5 |     0 |          0 |       200 |  2.50 |
+|   IDELAYE2 only             |    5 |     0 |            |           |       |
+| ILOGIC                      |    4 |     0 |          0 |       200 |  2.00 |
+|   ISERDES                   |    4 |       |          0 |       200 |       |
 | OLOGIC                      |    0 |     0 |          0 |       200 |  0.00 |
 +-----------------------------+------+-------+------------+-----------+-------+
 
@@ -152,9 +152,9 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +------------+------+---------------------+
 |  Ref Name  | Used | Functional Category |
 +------------+------+---------------------+
-| IDELAYE2   |    3 |                  IO |
-| IBUFDS     |    3 |                  IO |
-| ISERDESE2  |    2 |                  IO |
+| IDELAYE2   |    5 |                  IO |
+| IBUFDS     |    5 |                  IO |
+| ISERDESE2  |    4 |                  IO |
 | IDELAYCTRL |    1 |                  IO |
 | BUFR       |    1 |               Clock |
 | BUFIO      |    1 |               Clock |

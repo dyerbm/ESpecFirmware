@@ -29,3 +29,7 @@ set_property src_info {type:XDC file:1 line:24 export:INPUT save:INPUT read:READ
 set_property -dict {IOSTANDARD LVDS_25 PACKAGE_PIN C17 DIFF_TERM TRUE} [get_ports {data_in_from_pins_p_0[0]}]
 set_property src_info {type:XDC file:1 line:25 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict {IOSTANDARD LVDS_25 PACKAGE_PIN B16 DIFF_TERM TRUE} [get_ports {data_in_from_pins_p_0[1]}]
+set_property src_info {type:XDC file:1 line:26 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict {IOSTANDARD LVDS_25 PACKAGE_PIN G19 DIFF_TERM TRUE} [get_ports {data_in_from_pins_p_0[2]}]
+set_property src_info {type:XDC file:1 line:27 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict {IOSTANDARD LVDS_25 PACKAGE_PIN D22 DIFF_TERM TRUE} [get_ports {data_in_from_pins_p_0[3]}]

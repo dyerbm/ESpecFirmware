@@ -2,7 +2,7 @@
 // Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-// Date        : Sun Jan 19 17:17:30 2025
+// Date        : Mon Jan 20 01:21:28 2025
 // Host        : DESKTOP-DRF538C running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               c:/Users/soup/Documents/ESpecFirmware/Verilog/SPI_Tests/SPI_Tests.gen/sources_1/bd/top/ip/top_word_inverter_0_0/top_word_inverter_0_0_sim_netlist.v
@@ -20,50 +20,44 @@ module top_word_inverter_0_0
    (data_in,
     data_out_ch1,
     data_out_ch2);
-  input [15:0]data_in;
+  input [31:0]data_in;
   output [15:0]data_out_ch1;
   output [15:0]data_out_ch2;
 
-  wire \<const0> ;
-  wire \<const1> ;
-  wire [15:0]data_in;
+  wire [31:0]data_in;
 
   assign data_out_ch1[15] = data_in[0];
   assign data_out_ch1[14] = data_in[1];
-  assign data_out_ch1[13] = data_in[2];
-  assign data_out_ch1[12] = data_in[3];
-  assign data_out_ch1[11] = data_in[4];
-  assign data_out_ch1[10] = data_in[5];
-  assign data_out_ch1[9] = data_in[6];
-  assign data_out_ch1[8] = data_in[7];
-  assign data_out_ch1[7] = data_in[8];
-  assign data_out_ch1[6] = data_in[9];
-  assign data_out_ch1[5] = data_in[10];
-  assign data_out_ch1[4] = data_in[11];
-  assign data_out_ch1[3] = data_in[12];
-  assign data_out_ch1[2] = data_in[13];
-  assign data_out_ch1[1] = data_in[14];
-  assign data_out_ch1[0] = data_in[15];
-  assign data_out_ch2[15] = \<const0> ;
-  assign data_out_ch2[14] = \<const0> ;
-  assign data_out_ch2[13] = \<const0> ;
-  assign data_out_ch2[12] = \<const0> ;
-  assign data_out_ch2[11] = \<const0> ;
-  assign data_out_ch2[10] = \<const0> ;
-  assign data_out_ch2[9] = \<const0> ;
-  assign data_out_ch2[8] = \<const0> ;
-  assign data_out_ch2[7] = \<const0> ;
-  assign data_out_ch2[6] = \<const0> ;
-  assign data_out_ch2[5] = \<const0> ;
-  assign data_out_ch2[4] = \<const0> ;
-  assign data_out_ch2[3] = \<const1> ;
-  assign data_out_ch2[2] = \<const1> ;
-  assign data_out_ch2[1] = \<const1> ;
-  assign data_out_ch2[0] = \<const1> ;
-  GND GND
-       (.G(\<const0> ));
-  VCC VCC
-       (.P(\<const1> ));
+  assign data_out_ch1[13] = data_in[4];
+  assign data_out_ch1[12] = data_in[5];
+  assign data_out_ch1[11] = data_in[8];
+  assign data_out_ch1[10] = data_in[9];
+  assign data_out_ch1[9] = data_in[12];
+  assign data_out_ch1[8] = data_in[13];
+  assign data_out_ch1[7] = data_in[16];
+  assign data_out_ch1[6] = data_in[17];
+  assign data_out_ch1[5] = data_in[20];
+  assign data_out_ch1[4] = data_in[21];
+  assign data_out_ch1[3] = data_in[24];
+  assign data_out_ch1[2] = data_in[25];
+  assign data_out_ch1[1] = data_in[28];
+  assign data_out_ch1[0] = data_in[29];
+  assign data_out_ch2[15] = data_in[2];
+  assign data_out_ch2[14] = data_in[3];
+  assign data_out_ch2[13] = data_in[6];
+  assign data_out_ch2[12] = data_in[7];
+  assign data_out_ch2[11] = data_in[10];
+  assign data_out_ch2[10] = data_in[11];
+  assign data_out_ch2[9] = data_in[14];
+  assign data_out_ch2[8] = data_in[15];
+  assign data_out_ch2[7] = data_in[18];
+  assign data_out_ch2[6] = data_in[19];
+  assign data_out_ch2[5] = data_in[22];
+  assign data_out_ch2[4] = data_in[23];
+  assign data_out_ch2[3] = data_in[26];
+  assign data_out_ch2[2] = data_in[27];
+  assign data_out_ch2[1] = data_in[30];
+  assign data_out_ch2[0] = data_in[31];
 endmodule
 `ifndef GLBL
 `define GLBL
